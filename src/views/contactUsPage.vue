@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen w-full bg-gradient-to-b from-gray-100 to-gray-200 relative">
+    <div class="min-h-screen w-full bg-gradient-to-b from-gray-100 to-gray-200 relative animate-gradient">
       <!-- Navbar -->
       <NavbarDashboard />
   
@@ -9,7 +9,12 @@
           <path d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,101.3C672,85,768,107,864,138.7C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96V320H0Z"></path>
         </svg>
       </div>
-  
+      <img src="/registrasi/hijau.png" alt=""
+            class="absolute top-0 left-0 w-full opacity-20 pointer-events-none z-0" />
+
+        <!-- Gambar background 2 -->
+        <img src="/registrasi/biru.png" alt=""
+            class="absolute bottom-0 right-0 w-full opacity-20 pointer-events-none z-0" />
       <!-- Contact Section -->
       <section class="py-16 px-4 sm:px-8">
         <div class="max-w-5xl mx-auto bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-300 overflow-hidden fade-in">
@@ -19,7 +24,7 @@
           </div>
   
           <!-- Contact Info -->
-          <div class="p-8 sm:p-10 space-y-10 text-gray-800">
+          <div class="p-8 sm:p-10 space-y-10 text-gray-800 contact-fade contact-delay-1">
             <div class="text-center space-y-1">
               <p class="text-xl font-semibold">PORTAL INDONESIA</p>
               <p class="text-sm sm:text-base">PT. PORTAL INDONESIA GROUP</p>
@@ -50,7 +55,7 @@
             </div>
   
             <!-- Extra Info -->
-            <div class="mt-10 text-gray-700 text-center space-y-3 text-sm sm:text-base leading-relaxed">
+            <div class="mt-10 text-gray-700 text-center space-y-3 text-sm sm:text-base leading-relaxed contact-fade contact-delay-2">
               <p><strong>Contact Person:</strong></p>
               <p>PORTAL INDONESIA<br>PT. PORTAL INDONESIA GROUP</p>
               <p><strong>Office Center :</strong><br>
@@ -79,8 +84,7 @@
     </div>
   </template>
   
-  
-  
+
   <script>
   import NavbarDashboard from '@/components/NavbarDashboard.vue';
   import FooterDashboard from '@/components/FooterDashboard.vue'
@@ -113,7 +117,7 @@
   </script>
   
   <style scoped>
-  /* Animasi ringan jika dibutuhkan */
+
   .fade-in {
     animation: fadeIn 0.6s ease-in-out;
   }
@@ -141,5 +145,25 @@
       transform: translateY(0);
     }
   }
+
+  .contact-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.contact-delay-1 { animation-delay: 0.2s; }
+.contact-delay-2 { animation-delay: 0.4s; }
+.contact-delay-3 { animation-delay: 0.6s; }
+
+@keyframes gradient-slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-slide 6s linear infinite;
+}
+
+
   </style>
   

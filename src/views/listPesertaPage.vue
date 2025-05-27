@@ -27,15 +27,19 @@
 
         </section>
 
+        <FooterDashboard />
+
     </div>
 </template>
 
 <script>
+import FooterDashboard from '@/components/FooterDashboard.vue';
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 
 export default {
     components: {
-        NavbarDashboard
+        NavbarDashboard,
+        FooterDashboard
     }
 }
 </script>

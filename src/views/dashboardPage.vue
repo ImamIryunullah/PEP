@@ -74,27 +74,37 @@
       <img src="/kategori/senam.png" class="absolute bottom-0 top-[47%] right-0 w-[250px] hidden md:block"
         alt="Maskot Kanan" />
     </section>
-
-
     <section class="relative py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
-      style="background-image: url('/bg-gambar.png');">
-
-      <!-- Lengkungan Atas -->
+      style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
       <svg class="absolute top-0 left-0 w-full h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
         <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
       </svg>
 
-      <!-- Gambar Maskot -->
-      <img src="/assets/obor.png" class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float delay-1"
+      <img src="/assets/obor.png"
+        class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float animate-float delay-1 z-0"
         alt="Maskot Kiri" />
 
-      <div class="relative z-10 flex justify-end items-start h-full">
-        <h1 class="text-white text-5xl md:text-7xl font-bold max-w-[60%] pr-12 pl-6 mt-48">
+      <div class="relative z-10 flex flex-col justify-end items-end h-full max-w-7xl mx-auto px-4 md:px-8">
+        <h1 class="text-white text-5xl md:text-7xl font-bold text-right max-w-[60%] pr-4 md:pr-12 mt-48"
+          data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
           PENGENALAN MINI OLYMPIC
         </h1>
 
+        <p class="text-sm md:text-base mt-6 max-w-[60%] pr-4 md:pr-12 text-right leading-relaxed text-white"
+          data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
+          Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
+          Mini Olympic Pertamina EP didedikasikan untuk memupuk kebersamaan, mempromosikan kesehatan, dan merayakan
+          semangat sportivitas di antara Pekerja dan Mitra Kerja.
+          <br /><br />
+          Melalui serangkaian kompetisi olahraga dan kegiatan yang menarik, Mini Olympics PEP bertujuan untuk
+          memperkuat ikatan dalam keluarga besar Pertamina EP sekaligus sebagai sarana internalisasi nilai-nilai inti
+          AKHLAK (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif). Mari bersama sama kita wujudkan
+          perjalanan menuju komunitas yang lebih sehat, lebih terhubung, dan lebih berkelanjutan.
+        </p>
       </div>
     </section>
+
+
 
     <section class="relative w-full min-h-screen overflow-hidden">
       <div class="flex flex-col md:flex-row min-h-screen w-full">
@@ -121,8 +131,6 @@
         </div>
       </div>
     </section>
-
-
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
 
       <section id="horizontal-scroll" ref="horizontalSection"
@@ -496,17 +504,13 @@ body {
   --tw-scroll-snap-strictness: mandatory;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 #scroll-container::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 #scroll-container {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 
@@ -621,5 +625,21 @@ body {
 
 .rotate-right {
   transform: perspective(1000px) rotateY(-20deg);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 </style>
