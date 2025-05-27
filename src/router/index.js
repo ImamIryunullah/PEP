@@ -9,6 +9,7 @@ import registrasiPage from '@/views/registrasiPage'
 import detailBeritaPage from '@/views/detailBeritaPage'
 import beritaPage from '@/views/beritaPage'
 import informasiCaborPage from '@/views/informasiCaborPage'
+import contactUsPage from '@/views/contactUsPage'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -17,7 +18,8 @@ const routes = [
   { path: "/registrasi", name: "Registrasi", component:registrasiPage},
   { path: "/detail-berita", name: "Detail", component:detailBeritaPage},
   { path: "/berita", name: "Berita", component:beritaPage},
-  { path: "/informasi-cabang-olahraga", name: "CabangOlahraga", component:informasiCaborPage}
+  { path: "/informasi-cabang-olahraga", name: "CabangOlahraga", component:informasiCaborPage},
+  { path: "/contactUs", name: "kontak", component:contactUsPage}
 
 ]
 
