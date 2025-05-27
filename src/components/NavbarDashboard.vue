@@ -1,67 +1,73 @@
 <template>
-  <header class="bg-[#F0282D] text-white py-3 shadow">
-    <div class="container mx-auto flex items-center justify-start space-x-4 px-4">
-      <button @click="toggleMenu" class="focus:outline-none bg-gray-50 rounded-full">
-        <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
-      <img src="/logo-mini-olympic-2025.png" alt="Logo" class="h-10">
+  <header class="bg-gradient-to-r from-[#D71E28] to-[#FF7A59] text-white shadow-md z-50">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3">
+      <!-- Logo dan toggle -->
+      <div class="flex items-center gap-4">
+        <button @click="toggleMenu" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <img src="/logo-mini-olympic-2025.png" alt="Logo" class="h-10" />
+      </div>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-4 text-sm md:text-base items-center relative">
-        <a href="#" class="hover:underline">Jadwal & Hasil</a>
-        <a href="#" class="hover:underline">Registrasi</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide uppercase">
+        <a href="#" class="hover:text-yellow-300 transition">Jadwal & Hasil</a>
+        <a href="#" class="hover:text-yellow-300 transition">Registrasi</a>
 
-        <!-- Wrapper menangkap hover -->
+        <!-- Dropdown -->
         <div class="relative"
              @mouseenter="isDropdownOpen = true"
              @mouseleave="isDropdownOpen = false">
-          <button class="hover:underline">List Peserta</button>
+          <button class="hover:text-yellow-300 transition flex items-center gap-1">
+            List Peserta
+            <svg class="w-4 h-4 transform" :class="{ 'rotate-180': isDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
           <transition name="fade">
             <div v-if="isDropdownOpen"
-                 class="absolute left-0 mt-2 bg-white text-black rounded shadow-lg z-50 min-w-max w-40">
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tennis</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Basket</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Senam</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tenis Meja</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Badminton</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">E-Sport</a>
-              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Volley</a>
+                 class="absolute left-0 mt-2 bg-white text-black rounded-md shadow-lg z-50 w-48">
+              <a v-for="cabor in cabors" :key="cabor" href="#" class="block px-4 py-2 hover:bg-gray-100">
+                {{ cabor }}
+              </a>
             </div>
           </transition>
         </div>
 
-        <a href="#" class="hover:underline">Berita</a>
-        <a href="#" class="hover:underline">About Us</a>
-        <a href="#" class="hover:underline">Informasi Cabor</a>
-        <a href="#" class="hover:underline">XXXX</a>
+        <a href="#" class="hover:text-yellow-300 transition">Berita</a>
+        <a href="#" class="hover:text-yellow-300 transition">About Us</a>
+        <a href="#" class="hover:text-yellow-300 transition">Informasi Cabor</a>
+        <a href="#" class="hover:text-yellow-300 transition">Kontak</a>
       </nav>
     </div>
 
-    <!-- Mobile Navigation -->
-    <div v-if="isOpen" class="md:hidden px-4 pt-2 pb-4 space-y-2 bg-orange-500 text-sm">
-      <a href="#" class="block hover:underline">Jadwal & Hasil</a>
-      <a href="#" class="block hover:underline">Registrasi</a>
-      <div>
-        <button @click="toggleDropdown" class="block w-full text-left hover:underline">List Peserta</button>
-        <div v-if="showDropdown" class="pl-4 space-y-1">
-          <a href="#" class="block hover:underline">Tennis</a>
-          <a href="#" class="block hover:underline">Basket</a>
-          <a href="#" class="block hover:underline">Senam</a>
-          <a href="#" class="block hover:underline">Tenis Meja</a>
-          <a href="#" class="block hover:underline">Badminton</a>
-          <a href="#" class="block hover:underline">E-Sport</a>
-          <a href="#" class="block hover:underline">Volley</a>
+    <!-- Mobile Menu -->
+    <transition name="fade">
+      <div v-if="isOpen" class="md:hidden px-4 pb-4 bg-[#D71E28] space-y-2 text-sm font-semibold uppercase">
+        <a href="#" class="block hover:text-yellow-200">Jadwal & Hasil</a>
+        <a href="#" class="block hover:text-yellow-200">Registrasi</a>
+        <div>
+          <button @click="toggleDropdown" class="w-full text-left hover:text-yellow-200 flex items-center gap-1">
+            List Peserta
+            <svg class="w-4 h-4 transform" :class="{ 'rotate-180': showDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div v-if="showDropdown" class="pl-4 space-y-1 mt-1">
+            <a v-for="cabor in cabors" :key="cabor" href="#" class="block hover:text-yellow-200">
+              {{ cabor }}
+            </a>
+          </div>
         </div>
+        <a href="#" class="block hover:text-yellow-200">Berita</a>
+        <a href="#" class="block hover:text-yellow-200">About Us</a>
+        <a href="#" class="block hover:text-yellow-200">Informasi Cabor</a>
+        <a href="#" class="block hover:text-yellow-200">Kontak</a>
       </div>
-      <a href="#" class="block hover:underline">Berita</a>
-      <a href="#" class="block hover:underline">About Us</a>
-      <a href="#" class="block hover:underline">Informasi Cabor</a>
-      <a href="#" class="block hover:underline">XXXX</a>
-    </div>
+    </transition>
   </header>
 </template>
 
@@ -72,6 +78,9 @@ export default {
       isOpen: false,
       showDropdown: false,
       isDropdownOpen: false,
+      cabors: [
+        "Tennis", "Basket", "Senam", "Tenis Meja", "Badminton", "E-Sport", "Volley"
+      ]
     };
   },
   methods: {
@@ -80,18 +89,17 @@ export default {
     },
     toggleDropdown() {
       this.showDropdown = !this.showDropdown;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease;
 }
-.fade-enter-from,
-.fade-leave-to {
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

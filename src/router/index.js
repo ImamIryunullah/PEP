@@ -19,7 +19,7 @@ const routes = [
   { path: "/detail-berita", name: "Detail", component:detailBeritaPage},
   { path: "/berita", name: "Berita", component:beritaPage},
   { path: "/informasi-cabang-olahraga", name: "CabangOlahraga", component:informasiCaborPage},
-  { path: "/contactUs", name: "kontak", component:contactUsPage}
+  { path: "/contactUs", name: "kontak", component:contactUsPage},
 
 ]
 
