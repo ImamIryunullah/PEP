@@ -48,7 +48,7 @@
         <router-link to="/aboutUs" class="hover:text-yellow-300 transition">About Us</router-link>
         <router-link to="/informasi-cabang-olahraga" class="hover:text-yellow-300 transition">Informasi Cabor</router-link>
         <router-link to="/contactUs" class="hover:text-yellow-300 transition">Kontak</router-link>
-        <router-link to="" class="hover:text-yellow-300 transition">Additional Information</router-link>
+        <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition">Additional Information</router-link>
       </nav>
     </div>
 
@@ -84,6 +84,8 @@
         <router-link to="/aboutUs" class="block hover:text-yellow-200">About Us</router-link>
         <router-link to="/informasi-cabang-olahraga" class="block hover:text-yellow-200">Informasi Cabor</router-link>
         <router-link to="/contactUs" class="block hover:text-yellow-200">Kontak</router-link>
+        <router-link to="/informasi-tambahan" class="block hover:text-yellow-200">Additional Information</router-link>
+        
       </div>
     </transition>
   </header>
