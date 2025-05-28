@@ -10,7 +10,6 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-orange-600">About Us</h2>
             </div>
             <div class="bg-white max-w-7xl mx-auto rounded-xl p-6 sm:p-10 shadow-md border border-gray-200">
-                <!-- Tabs -->
                 <div class="flex justify-center gap-4 mb-6">
                     <button v-for="tab in ['Deskripsi', 'Visi', 'Misi']" :key="tab" @click="selectedTab = tab" :class="[
                         'px-5 py-2 rounded-full font-semibold border transition',
@@ -30,8 +29,6 @@
             </div>
             <div class="mt-10 flex justify-center gap-6 items-center">
                 <img src="/bunga/Group.svg" class="h-14 hidden sm:block" />
-
-                <!-- Bungkus ikon dengan latar belakang coklat -->
                 <div class="flex gap-4 items-center bg-[#8B4513] px-5 py-2 rounded-full">
                     <div class="bg-white rounded-full p-3">
                         <i class="fab fa-instagram text-orange-500 text-sm"></i>
@@ -49,14 +46,10 @@
 
                 <img src="/bunga/Group2.svg" class="h-14 rotate-180 hidden sm:block" />
             </div>
-
-
         </section>
-
     </div>
     <FooterDahboard />
 </template>
-
 <script>
 import NavbarDashboard from '@/components/NavbarDashboard.vue'
 import FooterDahboard from '@/components/FooterDashboard.vue'

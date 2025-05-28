@@ -1,7 +1,7 @@
 <template>
   <footer ref="footerRef"
     :class="['transition-opacity duration-1000 ease-out', isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6']"
-    class="bg-[#D71E28] text-white py-8 px-4 md:px-16">
+    class="bg-[#a60000] text-white py-8 px-4 md:px-16">
     <div
       class="flex flex-col md:flex-row justify-between items-start md:items-start border-b border-white/40 pb-6 gap-10">
 

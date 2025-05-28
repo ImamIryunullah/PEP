@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gradient-to-r from-[#D71E28] to-[#FF7A59] text-white shadow-md z-50">
+  <header class="bg-[#a60000] text-white shadow-md z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center gap-4">
         <button @click="toggleMenu" class="md:hidden focus:outline-none">
@@ -48,6 +48,7 @@
         <router-link to="/aboutUs" class="hover:text-yellow-300 transition">About Us</router-link>
         <router-link to="/informasi-cabang-olahraga" class="hover:text-yellow-300 transition">Informasi Cabor</router-link>
         <router-link to="/contactUs" class="hover:text-yellow-300 transition">Kontak</router-link>
+        <router-link to="" class="hover:text-yellow-300 transition">Additional Information</router-link>
       </nav>
     </div>
 
