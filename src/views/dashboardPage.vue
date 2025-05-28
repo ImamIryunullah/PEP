@@ -4,11 +4,16 @@
     <NavbarDashboard />
 
     <section class="relative w-full">
-      <img src="/hero-soccer.png" alt="Soccer" class="w-full h-full object-cover">
-      <div class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="/PERTAMINAep.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025" class="w-80 mx-auto">
       </div>
     </section>
+
 
     <section class="relative py-16 px-4 bg-[#f5f3ef] w-full min-h-screen">
       <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1"
@@ -103,34 +108,95 @@
         </p>
       </div>
     </section>
-
-
-
     <section class="relative w-full min-h-screen overflow-hidden">
       <div class="flex flex-col md:flex-row min-h-screen w-full">
 
-        <div class="w-full md:w-1/2 h-[50vh] md:h-auto relative overflow-hidden bg-[#C1CF35]">
-
+        <div class="w-full md:w-1/2 h-auto relative overflow-hidden bg-[#C1CF35]">
           <img src="/bunga/svg.png" alt="Background"
             class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 
-          <div class="relative z-10 flex items-center justify-center h-full p-8">
-            <div class="text-center">
-              <h2 class="text-4xl font-bold text-white mb-4">Area Kiri</h2>
-              <p class="text-lg text-white">Konten tetap terlihat, gambar sebagai latar dekoratif.</p>
+          <div
+            class="relative z-10 w-full max-w-2xl mx-auto mt-20 px-6 md:px-10 py-12 ">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-10">Timeline Kegiatan</h2>
+
+            <!-- Item -->
+            <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
+                1
+              </div>
+              <div class="flex-1 border-l-4 border-[#C1CF35] pl-6">
+                <h3 class="text-xl font-semibold text-black">OPEN REGISTRATION</h3>
+                <p class="text-sm md:text-base mt-1 text-white bg-black inline-block px-4 py-1 rounded">
+                  14 – 18 Juli 2025
+                </p>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
+                2
+              </div>
+              <div class="flex-1 border-l-4 border-[#C1CF35] pl-6">
+                <h3 class="text-xl font-semibold text-black">VERIFIKASI</h3>
+                <div class="mt-1 space-y-1">
+                  <p class="text-sm md:text-base bg-black text-white inline-block px-4 py-1 rounded">
+                    21 Juli – 04 Agustus 2025 – Verifikasi
+                  </p>
+                  <p class="text-sm md:text-base bg-black text-white inline-block px-4 py-1 rounded">
+                    08 Agustus 2025 – Pengumuman Final Peserta
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="flex items-start gap-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
+                3
+              </div>
+              <div class="flex-1 border-l-4 border-[#C1CF35] pl-6">
+                <h3 class="text-xl font-semibold text-black">MINI OLYMPIC</h3>
+                <div class="mt-1 space-y-1">
+                  <p class="text-sm md:text-base bg-black text-white inline-block px-4 py-1 rounded">
+                    29 – 31 Agustus 2025
+                  </p>
+                  <p class="text-sm md:text-base bg-black text-white inline-block px-4 py-1 rounded">
+                    31 Agustus 2025 – Fun Run 5K
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 bg-[#f5f3ef] flex items-center justify-center p-8 relative overflow-hidden">
+
+
+        <div
+          class="w-full md:w-1/2 bg-[#f5f3ef] flex flex-col items-center justify-center p-8 relative overflow-hidden">
+
           <img src="/bunga/timeline.png" alt="Background" class="absolute top-[20%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 
-              w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
+            w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
+
           <div>
-            <img src="/kategori/jsc.png" alt="Maskot" class="relative w-60 md:w-80" />
+            <img src="/kategori/jsc.png" alt="Maskot" class="relative w-60 md:w-80 mb-6" />
+          </div>
+
+          <div class="overflow-hidden whitespace-nowrap w-full">
+            <div class="inline-block animate-marquee space-x-24 px-4">
+              <img src="/addinfo/asean.png" alt="Sponsor 1" class="inline h-16 object-contain" />
+              <img src="/addinfo/skkmigas.png" alt="Sponsor 2" class="inline h-16 object-contain" />
+              <img src="/addinfo/iog.png" alt="Sponsor 3" class="inline h-16 object-contain" />
+              <img src="/addinfo/pertaminaEP.png" alt="Sponsor 4" class="inline h-20 object-contain" />
+              <img src="/addinfo/pertamedika.png" alt="Sponsor 5" class="inline h-16 object-contain" />
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Gambar Hiasan Overlap (Full Width) -->
+
+
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
 
       <section id="horizontal-scroll" ref="horizontalSection"
@@ -641,5 +707,29 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-in {
+  animation: slide-in 1s ease-out forwards;
+}
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
 }
 </style>
