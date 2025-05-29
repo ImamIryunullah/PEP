@@ -177,9 +177,9 @@
           <img src="/bunga/timeline.png" alt="Background" class="absolute top-[20%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 
             w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
 
-            <div class="w-full max-w-lg">
-          <ThreeDViewer />
-        </div>
+          <div class="w-full max-w-lg">
+            <ThreeDViewer />
+          </div>
 
           <div class="overflow-hidden whitespace-nowrap w-full">
             <div class="inline-block animate-marquee space-x-24 px-4">
@@ -205,6 +205,8 @@
             class="flex h-screen will-change-transform transition-transform duration-300 ease-out">
             <div class="w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat relative"
               style="background-image: url('/Hero.png');">
+              <h1 class="absolute top-20 left-20 text-gray-400 opacity-25 text-9xl font-bold">VOLLY</h1>
+              <h1 class="absolute top-52 left-20 text-gray-400 opacity-25 text-9xl font-bold">BALL</h1>
               <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-12">
                 <div class="flex flex-row gap-2">
                   <h1 class="text-4xl md:text-6xl font-bold text-yellow-300">Cabang</h1>
@@ -221,9 +223,10 @@
                   </button>
                   <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12" />
                 </div>
+                <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               </div>
               <img src="/assets/voli.png" class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat "
               style="background-image: url('/Hero.png');">
@@ -244,8 +247,9 @@
                   <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
                 </div>
               </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/bola.png" class="absolute bottom-[20%] left-[2%] w-[350px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
@@ -267,8 +271,9 @@
 
                 </div>
               </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/basket.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
@@ -290,8 +295,9 @@
 
                 </div>
               </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/lari.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
 
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
@@ -314,8 +320,9 @@
 
                 </div>
               </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/badminton.png" class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
 
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
@@ -338,8 +345,9 @@
 
                 </div>
               </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/tesnimeja.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block"
-                alt="Maskot Kanan" />
+                alt="Maskot" />
             </div>
           </div>
         </div>
@@ -373,7 +381,7 @@
           <div class="relative col-span-2 rounded-xl overflow-hidden group h-full">
             <img src="/assets/berita/bolaaa.jpg" alt="Sepak Bola"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-            <div class="absolute inset-0 bg-orange-600 bg-opacity-70"></div>
+            <div class="absolute inset-0 bg-red-600 bg-opacity-70"></div>
             <h3 class="absolute bottom-[50%] left-[30%] text-white text-5xl font-bold z-10">Sepak Bola</h3>
             <div class="absolute top-0 right-0 bg-white rounded-bl-xl px-2 py-1 z-10">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-15 text-purple-600" fill="none" viewBox="0 0 24 24"
@@ -454,9 +462,9 @@ export default {
     ThreeDViewer
   },
   mounted() {
-  console.log('Component mounted');
+    console.log('Component mounted');
 
-},
+  },
   setup() {
     const horizontalSection = ref(null);
     const currentSlide = ref(0);

@@ -12,6 +12,7 @@ import informasiCaborPage from '@/views/informasiCaborPage'
 import contactUsPage from '@/views/contactUsPage'
 import addInformationPage from '@/views/addInformationPage'
 import jadwalDanHasilPage from '@/views/jadwalDanHasilPage'
+import registrasiRunPage from '@/views/registrasiRunPage'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -24,6 +25,7 @@ const routes = [
   { path: "/contactUs", name: "kontak", component:contactUsPage},
   { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},
   { path: "/jadwal-dan-hasil", name: "jadwalHasil", component:jadwalDanHasilPage},
+  { path: "/registrasi-funrun-embed", name: "registrasiRun", component:registrasiRunPage},
 
 ]
 
