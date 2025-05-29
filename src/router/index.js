@@ -11,6 +11,7 @@ import beritaPage from '@/views/beritaPage'
 import informasiCaborPage from '@/views/informasiCaborPage'
 import contactUsPage from '@/views/contactUsPage'
 import addInformationPage from '@/views/addInformationPage'
+import jadwalDanHasilPage from '@/views/jadwalDanHasilPage'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -21,7 +22,8 @@ const routes = [
   { path: "/berita", name: "Berita", component:beritaPage},
   { path: "/informasi-cabang-olahraga", name: "CabangOlahraga", component:informasiCaborPage},
   { path: "/contactUs", name: "kontak", component:contactUsPage},
-  { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage}
+  { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},
+  { path: "/jadwal-dan-hasil", name: "jadwalHasil", component:jadwalDanHasilPage},
 
 ]
 

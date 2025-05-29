@@ -115,8 +115,7 @@
           <img src="/bunga/svg.png" alt="Background"
             class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 
-          <div
-            class="relative z-10 w-full max-w-2xl mx-auto mt-20 px-6 md:px-10 py-12 ">
+          <div class="relative z-10 w-full max-w-2xl mx-auto mt-20 px-6 md:px-10 py-12 ">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-10">Timeline Kegiatan</h2>
 
             <!-- Item -->
@@ -178,9 +177,9 @@
           <img src="/bunga/timeline.png" alt="Background" class="absolute top-[20%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 
             w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
 
-          <div>
-            <img src="/kategori/jsc.png" alt="Maskot" class="relative w-60 md:w-80 mb-6" />
-          </div>
+            <div class="w-full max-w-lg">
+          <ThreeDViewer />
+        </div>
 
           <div class="overflow-hidden whitespace-nowrap w-full">
             <div class="inline-block animate-marquee space-x-24 px-4">
@@ -344,7 +343,6 @@
             </div>
           </div>
         </div>
-
         <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
           <div v-for="(_, index) in 3" :key="index" class="w-3 h-3 rounded-full transition-all duration-300"
             :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']"></div>
@@ -360,14 +358,7 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="min-h-screen bg-white snap-start">
-        <div class="container mx-auto py-16">
-          <h2 class="text-3xl font-bold text-center">Content After Horizontal Scroll</h2>
-        </div>
-      </section> -->
     </div>
-
     <section class="py-16 bg-[#f5f3ef] px-4">
       <div class="max-w-6xl mx-auto">
         <div class="flex items-center justify-center">
@@ -427,18 +418,13 @@
     </section>
 
     <section class="bg-white py-16 relative overflow-hidden min-h-screen">
-      <!-- Background Ornamen -->
       <img src="/bunga/go.png" class="absolute top-0 left-10 w-50 opacity-50" alt="ornamen kiri">
       <img src="/bunga/go2.png" class="absolute top-0 right-10 w-50 opacity-50" alt="ornamen kanan">
-
-      <!-- Judul -->
       <div class="text-center mb-10">
         <div class="inline-block bg-red-800 text-white text-xl font-semibold px-8 py-8 rounded-xl shadow-gold">
           Opening Ceremony
         </div>
       </div>
-
-      <!-- Galeri -->
       <div class="flex flex-row justify-center gap-4 px-4 overflow-x-auto scrollbar-hide py-48">
         <div v-for="(img, index) in openingImages" :key="index" :class="[
           'min-w-[160px] sm:min-w-[192px] md:min-w-[208px] h-96 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-105',
@@ -449,14 +435,13 @@
         </div>
       </div>
     </section>
-
   </div>
   <FooterDashboard />
-
 </template>
 
 <script>
 import { onMounted, ref, onUnmounted } from 'vue';
+import ThreeDViewer from '@/components/ThreeDViewer.vue';
 
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
@@ -465,9 +450,13 @@ export default {
   name: "MiniOlympicPage",
   components: {
     NavbarDashboard,
-    FooterDashboard
+    FooterDashboard,
+    ThreeDViewer
   },
+  mounted() {
+  console.log('Component mounted');
 
+},
   setup() {
     const horizontalSection = ref(null);
     const currentSlide = ref(0);
@@ -719,15 +708,18 @@ body {
     transform: translateX(-100%);
   }
 }
+
 @keyframes slide-in {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate-slide-in {
   animation: slide-in 1s ease-out forwards;
 }
+
 .animate-marquee {
   display: inline-block;
   animation: marquee 20s linear infinite;

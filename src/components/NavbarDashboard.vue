@@ -11,7 +11,7 @@
       </div>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide uppercase">
-        <router-link to="/" class="hover:text-yellow-300 transition">Jadwal & Hasil</router-link>
+        <router-link to="/jadwal-dan-hasil" class="hover:text-yellow-300 transition">Jadwal & Hasil</router-link>
 
         <div class="relative" @mouseenter="isRegDropdownOpen = true" @mouseleave="isRegDropdownOpen = false">
           <button class="hover:text-yellow-300 transition flex items-center gap-1">
@@ -54,7 +54,7 @@
 
     <transition name="fade">
       <div v-if="isOpen" class="md:hidden px-4 pb-4 bg-[#D71E28] space-y-2 text-sm font-semibold uppercase">
-        <router-link to="/" class="block hover:text-yellow-200">Jadwal & Hasil</router-link>
+        <router-link to="/jadwal-dan-hasil" class="block hover:text-yellow-200">Jadwal & Hasil</router-link>
         <div>
           <button @click="toggleRegDropdown" class="w-full text-left hover:text-yellow-200 flex items-center gap-1">
             Registrasi
