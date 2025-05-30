@@ -23,6 +23,7 @@ import adminSkorStage from '@/views/admin/adminSkorStage'
 import dashboardUser from '@/views/peserta/dashboardUser'
 import profileUser from '@/views/peserta/profileUser'
 import bolaVolly from '@/views/result/bolaVolly'
+import buluTangkis from '@/views/result/buluTangkis'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -46,6 +47,7 @@ const routes = [
   { path: "/peserta/profile", name: "pesertaProfile", component:profileUser},
   { path: "/jadwal-dan-hasil/sepak-bola", name: "sepakBola", component:sepakBola},
   { path: "/jadwal-dan-hasil/bola-volly", name: "bolaVolly", component:bolaVolly},
+  { path: "/jadwal-dan-hasil/badminton", name: "badminton", component:buluTangkis},
 ]
 
 const router = createRouter({

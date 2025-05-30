@@ -80,7 +80,7 @@
             <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold">
                 RESULT
             </h1>
-            <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold mt-28">
+            <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold mt-">
                 BOLA VOLLY
             </h1>
             <div class="max-w-6xl mx-auto">

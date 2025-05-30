@@ -1,18 +1,12 @@
 <template>
-    <div class="min-h-screen flex bg-gray-100 relative">
-        <!-- Sidebar -->
-        <Sidebar :isOpen="isSidebarOpen" />
-
-        <!-- Overlay untuk mobile -->
+    <div class="min-h-screen flex bg-gray-100 relative">  
+        <Sidebar :isOpen="isSidebarOpen" />     
         <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
-            class="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"></div>
-
-        <!-- Konten utama -->
+            class="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"></div> 
         <div :class="[
             'flex-1 flex flex-col transition-margin duration-300 ease-in-out min-h-screen',
             isSidebarOpen ? 'md:ml-64' : 'md:ml-16'
-        ]">
-            <!-- Topbar mobile -->
+        ]"> 
             <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center md:hidden">
                 <button @click="toggleSidebar" class="text-gray-700 text-2xl focus:outline-none">
                     <i class="fas fa-bars"></i>
@@ -23,13 +17,13 @@
             <main class="px-6 py-8">
                 <h1 class="text-3xl font-bold text-gray-800 mb-6 hidden md:block">Kelola Knockout Stage</h1>
 
-                <!-- Form atau Konten Knockout -->
+                
                 <div class="bg-white rounded-xl shadow p-6">
                     <p class="text-gray-600 mb-4">
                         Tambahkan atau ubah hasil pertandingan Knockout Stage Mini Olympic PEP 2025.
                     </p>
 
-                    <!-- Placeholder: Form input knockout -->
+                    
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Tim 1</label>
@@ -59,9 +53,6 @@
                         class="mt-6 bg-[#D71E28] text-white px-6 py-2 rounded hover:bg-red-700">
                         Simpan Hasil
                     </button>
-
-                    <!-- List hasil -->
-                    <!-- List hasil -->
                     <div class="mt-8">
                         <h2 class="text-lg font-semibold mb-3">Daftar Pertandingan</h2>
                         <ul class="space-y-2">
@@ -101,7 +92,6 @@
         </div>
     </div>
 </template>
-
 <script>
 import Sidebar from '@/components/Sidebar.vue';
 

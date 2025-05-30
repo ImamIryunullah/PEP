@@ -8,21 +8,16 @@
       isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'
     ]">
 
-      <!-- Mobile Header -->
       <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center lg:hidden">
         <button @click="toggleSidebar" class="text-gray-700 text-2xl focus:outline-none hover:text-[#D71E28] transition-colors">
           <i class="fas fa-bars"></i>
         </button>
         <h1 class="text-lg font-semibold text-[#D71E28]">Dashboard Admin</h1>
-        <div class="w-8"></div> <!-- Spacer for center alignment -->
+        <div class="w-8"></div> 
       </header>
 
-      <!-- Main Content -->
       <main class="px-4 sm:px-6 py-4 sm:py-8 flex-1">
-        <!-- Desktop Title -->
         <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 hidden lg:block">Dashboard Admin</h1>
-        
-        <!-- Stats Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-10">
           <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6 flex items-center gap-3 sm:gap-4">
             <div class="bg-red-100 text-[#D71E28] p-2 sm:p-3 rounded-full flex-shrink-0">
@@ -33,7 +28,6 @@
               <p class="text-xl sm:text-2xl font-semibold">218</p>
             </div>
           </div>
-
           <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6 flex items-center gap-3 sm:gap-4">
             <div class="bg-red-100 text-[#D71E28] p-2 sm:p-3 rounded-full flex-shrink-0">
               <i class="fas fa-dumbbell text-lg sm:text-xl"></i>
@@ -43,7 +37,6 @@
               <p class="text-xl sm:text-2xl font-semibold">9</p>
             </div>
           </div>
-
           <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6 flex items-center gap-3 sm:gap-4 sm:col-span-2 lg:col-span-1">
             <div class="bg-red-100 text-[#D71E28] p-2 sm:p-3 rounded-full flex-shrink-0">
               <i class="fas fa-running text-lg sm:text-xl"></i>
@@ -54,7 +47,6 @@
             </div>
           </div>
         </div>
-
         <!-- Chart Section -->
         <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-6 sm:mb-10">
           <h2 class="text-base sm:text-lg font-bold text-gray-800 mb-3 sm:mb-4">Status Verifikasi</h2>
@@ -64,13 +56,11 @@
             </div>
           </div>
         </div>
-
         <!-- Table Section -->
         <div class="bg-white rounded-xl shadow-sm">
           <div class="p-4 sm:p-6 border-b border-gray-200">
             <h2 class="text-base sm:text-lg font-bold text-gray-800">Kontingen Terbaru</h2>
           </div>
-          
           <!-- Mobile Card View -->
           <div class="block sm:hidden">
             <div v-for="item in kontingen" :key="item.nama" class="border-b border-gray-200 last:border-b-0 p-4">
@@ -92,7 +82,6 @@
               </div>
             </div>
           </div>
-
           <!-- Desktop Table View -->
           <div class="hidden sm:block overflow-x-auto">
             <table class="min-w-full table-auto text-sm text-gray-700">
