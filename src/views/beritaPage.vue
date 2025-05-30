@@ -1,124 +1,68 @@
 <template>
     <NavbarDashboard />
-    <section class="bg-[#f7f7f7] h-full w-full">
+    <section class="bg-[#f7f7f7] min-h-screen pt-10 fade-in-up">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <!-- Gambar background atas -->
+            <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
 
-        <div class="text-center mb-10 relative">
-
-            <h1 class="text-9xl text-gray-200 font-bold absolute inset-0 top-0 z-0">BERITA</h1>
-  
-                <img src="/berita/svg.png" class="absolute top-[20%] left-0 w-[17%] pointer-events-none z-20"
-                    alt="border2" />
-
-            <h2 class="text-3xl font-bold text-black relative z-10">BERITA</h2>
-            <h3 class="text-2xl font-semibold text-gray-700 relative z-10">MINI OLYMPIC</h3>
+            <!-- Gambar background bawah -->
+            <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5" />
         </div>
-        <img src="/berita/api.png" alt="Api" class="mx-auto w-20 relative z-10 mb-2" />
-        <div class="bg-white shadow-lg rounded-xl p-6 max-w-7xl mx-auto">
+
+        <div class="relative text-center mb-16 px-4">
+            <!-- Background Judul Besar -->
+            <h1
+                class="text-[9rem] sm:text-[10rem] lg:text-[12rem] leading-none text-gray-200 font-extrabold absolute inset-0 top-0 z-0 select-none">
+                BERITA
+            </h1>
+
+            <!-- Ornamen SVG Kiri -->
+            <!-- <img src="/berita/svg.png" alt="Ornamen"
+                class="absolute top-1/3 left-0 w-28 sm:w-36 lg:w-44 pointer-events-none z-10 opacity-80" /> -->
+
+            <!-- Judul Utama -->
+            <div class="relative z-20">
+                <h3 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-700 py-12 drop-shadow-md">
+                    MINI OLYMPIC
+                </h3>
+            </div>
+
+            <!-- Api Icon -->
+            <div class="relative z-20">
+                <img src="/berita/api.png" alt="Api" class="mx-auto w-16 sm:w-20 lg:w-24 mt-[-16px] fade-in-up"
+                    style="animation-delay: 0.3s" />
+            </div>
+        </div>
+
+
+        <div class="bg-white shadow-xl rounded-xl p-6 max-w-7xl mx-auto fade-in-up" style="animation-delay: 0.5s">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
+                <div v-for="(item, index) in 6" :key="index"
+                    class="bg-white rounded-xl shadow-md border border-red-500 overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl zoom-in"
+                    :style="`animation-delay: ${index * 0.1 + 0.6}s`">
                     <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
+                        <img src="/berita/berita.jpg" alt="Berita" class="w-full h-48 object-cover" />
+                        <div
+                            class="absolute bottom-0 text-white px-4 py-2 bg-gradient-to-t from-black/70 to-transparent w-full">
+                            <h4 class="font-bold text-lg">Twibbon</h4>
                             <span class="text-sm">12 Juli 2024</span>
                         </div>
                     </div>
                     <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
                         <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
+                        <router-link to="/detail-berita"
+                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end text-center">
                             See More
-                        </button>
+                        </router-link>
+
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
-                    <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
-                            <span class="text-sm">12 Juli 2024</span>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
-                            See More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
-                    <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
-                            <span class="text-sm">12 Juli 2024</span>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
-                            See More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
-                    <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
-                            <span class="text-sm">12 Juli 2024</span>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
-                            See More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
-                    <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
-                            <span class="text-sm">12 Juli 2024</span>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
-                            See More
-                        </button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md border border-red-500 overflow-hidden">
-                    <div class="relative">
-                        <img src="/berita/berita.jpg" alt="Twibbon" class="w-full h-48 object-cover" />
-                        <div class="absolute bottom-0 text-white px-4 py-2">
-                            <h4 class="font-bold">Twibbon</h4>
-                            <span class="text-sm">12 Juli 2024</span>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-red-600 text-white text-sm h-[120px] flex flex-col justify-between">
-                        <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button
-                            class="bg-white text-red-600 font-semibold text-sm mt-2 px-4 py-1 rounded hover:bg-gray-200 self-end">
-                            See More
-                        </button>
-                    </div>
-                </div>
-                <!-- Salin card lainnya di sini... -->
             </div>
         </div>
     </section>
-
     <FooterDashboard />
-
 </template>
+
 
 <script>
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
@@ -132,4 +76,36 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+.zoom-in {
+    animation: zoomIn 0.6s ease-out both;
+}
+</style>

@@ -52,22 +52,9 @@
             </transition>
           </div>
 
-          <div class="relative" @mouseenter="isDropdownOpen = true" @mouseleave="isDropdownOpen = false">
-            <button class="hover:text-yellow-300 transition flex items-center gap-1">
-              List Peserta
-              <svg class="w-4 h-4 transform" :class="{ 'rotate-180': isDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <transition name="fade">
-              <div v-if="isDropdownOpen" class="absolute left-0 mt-2 bg-white text-black rounded-md shadow-lg z-50 w-48 max-h-60 overflow-auto">
-                <router-link v-for="cabor in cabors" :key="cabor" to="/list-peserta" class="block px-4 py-2 hover:bg-gray-100">
-                  {{ cabor }}
-                </router-link>
-              </div>
-            </transition>
-          </div>
+          
 
+          <router-link to="/list-peserta" class="hover:text-yellow-300 transition">List Peserta</router-link>
           <router-link to="/berita" class="hover:text-yellow-300 transition">Berita</router-link>
           <router-link to="/aboutUs" class="hover:text-yellow-300 transition">About Us</router-link>
           <router-link to="/informasi-cabang-olahraga" class="hover:text-yellow-300 transition">Informasi Cabor</router-link>
@@ -90,20 +77,8 @@
               <router-link to="/registrasi" class="block hover:text-yellow-200">Peserta</router-link>
               <router-link to="/registrasi-funrun-embed" class="block hover:text-yellow-200">5K Fun Run</router-link>
             </div>
-          </div>
-          <div>
-            <button @click="toggleDropdown" class="w-full text-left hover:text-yellow-200 flex items-center gap-1">
-              List Peserta
-              <svg class="w-4 h-4 transform" :class="{ 'rotate-180': showDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div v-if="showDropdown" class="pl-4 space-y-1 mt-1 max-h-60 overflow-auto">
-              <router-link v-for="cabor in cabors" :key="cabor" to="/list-peserta" class="block hover:text-yellow-200">
-                {{ cabor }}
-              </router-link>
-            </div>
-          </div>
+          </div>      
+          <router-link to="/list-peserta" class="block hover:text-yellow-200">List Peserta</router-link>
           <router-link to="/berita" class="block hover:text-yellow-200">Berita</router-link>
           <router-link to="/aboutUs" class="block hover:text-yellow-200">About Us</router-link>
           <router-link to="/informasi-cabang-olahraga" class="block hover:text-yellow-200">Informasi Cabor</router-link>
@@ -114,7 +89,6 @@
     </div>
   </header>
 </template>
-
 <script>
 export default {
   data() {

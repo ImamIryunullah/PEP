@@ -118,7 +118,7 @@
           <div class="relative z-10 w-full max-w-2xl mx-auto mt-20 px-6 md:px-10 py-12 ">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-10">Timeline Kegiatan</h2>
 
-            <!-- Item -->
+            
             <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 1
@@ -131,7 +131,7 @@
               </div>
             </div>
 
-            <!-- Item -->
+            
             <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 2
@@ -149,7 +149,7 @@
               </div>
             </div>
 
-            <!-- Item -->
+            
             <div class="flex items-start gap-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 3
@@ -168,19 +168,13 @@
             </div>
           </div>
         </div>
-
-
-
         <div
           class="w-full md:w-1/2 bg-[#f5f3ef] flex flex-col items-center justify-center p-8 relative overflow-hidden">
-
           <img src="/bunga/timeline.png" alt="Background" class="absolute top-[20%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 
             w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
-
           <div class="w-full max-w-lg">
             <ThreeDViewer />
           </div>
-
           <div class="overflow-hidden whitespace-nowrap w-full">
             <div class="inline-block animate-marquee space-x-24 px-4">
               <img src="/addinfo/asean.png" alt="Sponsor 1" class="inline h-16 object-contain" />
@@ -193,11 +187,7 @@
         </div>
       </div>
     </section>
-    <!-- Gambar Hiasan Overlap (Full Width) -->
-
-
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
-
       <section id="horizontal-scroll" ref="horizontalSection"
         class="relative w-full h-screen snap-start overflow-hidden">
         <div class="h-screen overflow-hidden">
@@ -407,7 +397,6 @@
             </div>
           </div>
         </div>
-
         <Transition name="fade">
           <div v-if="showAll" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 auto-rows-[250px] gap-6 mt-10">
             <div v-for="(item, index) in olahragaList" :key="index" :class="[
@@ -425,28 +414,28 @@
       </div>
     </section>
 
-    <section class="bg-white py-16 relative overflow-hidden min-h-screen">
-      <img src="/bunga/go.png" class="absolute top-0 left-10 w-50 opacity-50" alt="ornamen kiri">
-      <img src="/bunga/go2.png" class="absolute top-0 right-10 w-50 opacity-50" alt="ornamen kanan">
-      <div class="text-center mb-10">
-        <div class="inline-block bg-red-800 text-white text-xl font-semibold px-8 py-8 rounded-xl shadow-gold">
-          Opening Ceremony
+    <section class="bg-white relative overflow-hidden py-20 min-h-screen">
+      <img src="/bunga/go.png" class="absolute top-0 left-0 w-40 opacity-30" alt="ornamen kiri" />
+      <img src="/bunga/go2.png" class="absolute top-0 right-0 w-40 opacity-30" alt="ornamen kanan" />
+      <div class="text-center mb-12 z-10 relative">
+        <h2 class="text-4xl sm:text-5xl font-bold text-[#A60000] drop-shadow-md">Opening Ceremony</h2>
+        <div class="mt-2 w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+      </div>
+      <div class="relative z-10">
+        <div class="flex flex-row gap-6 overflow-x-auto px-6 sm:px-10 scrollbar-hide pb-4 snap-x snap-mandatory">
+          <div v-for="(img, index) in openingImages" :key="index"
+            class="snap-start min-w-[240px] sm:min-w-[280px] md:min-w-[320px] h-[400px] rounded-3xl overflow-hidden transform transition-all duration-300 ease-in-out bg-white border border-gray-200 hover:shadow-inner hover:scale-95 active:scale-90">
+            <img :src="img" alt="Opening Image" class="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
-      <div class="flex flex-row justify-center gap-4 px-4 overflow-x-auto scrollbar-hide py-48">
-        <div v-for="(img, index) in openingImages" :key="index" :class="[
-          'min-w-[160px] sm:min-w-[192px] md:min-w-[208px] h-96 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg transition-transform hover:scale-105',
-          index === 0 || index === 1 ? 'rotate-right' : '',
-          index === 3 || index === 4 ? 'rotate-left' : ''
-        ]">
-          <img :src="img" alt="Opening Image" class="w-full h-full object-cover" />
-        </div>
+      <div class="mt-16 flex justify-center">
+        <img src="/bunga/hiasan2.png" class="w-24 sm:w-32 opacity-70" alt="hiasan bawah" />
       </div>
     </section>
   </div>
   <FooterDashboard />
 </template>
-
 <script>
 import { onMounted, ref, onUnmounted } from 'vue';
 import ThreeDViewer from '@/components/ThreeDViewer.vue';
