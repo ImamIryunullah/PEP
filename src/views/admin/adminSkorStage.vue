@@ -1,97 +1,253 @@
 <template>
-    <div class="min-h-screen flex bg-gray-100 relative">  
+    <div class="min-h-screen flex bg-gray-50 relative">  
         <Sidebar :isOpen="isSidebarOpen" />     
         <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
-            class="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"></div> 
+            class="fixed inset-0 bg-black bg-opacity-30 z-30 lg:hidden"></div> 
         <div :class="[
-            'flex-1 flex flex-col transition-margin duration-300 ease-in-out min-h-screen',
-            isSidebarOpen ? 'md:ml-64' : 'md:ml-16'
+            'flex-1 flex flex-col transition-all duration-300 ease-in-out min-h-screen',
+            isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'
         ]"> 
-            <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center md:hidden">
-                <button @click="toggleSidebar" class="text-gray-700 text-2xl focus:outline-none">
+            <header class="bg-white shadow-sm px-4 py-3 flex justify-between items-center lg:hidden border-b">
+                <button @click="toggleSidebar" class="text-gray-700 text-xl focus:outline-none hover:text-[#D71E28] transition-colors">
                     <i class="fas fa-bars"></i>
                 </button>
                 <h1 class="text-lg font-semibold text-[#D71E28]">Knockout Stage</h1>
+                <div class="w-6"></div>
             </header>
 
-            <main class="px-6 py-8">
-                <h1 class="text-3xl font-bold text-gray-800 mb-6 hidden md:block">Kelola Knockout Stage</h1>
-
-                
-                <div class="bg-white rounded-xl shadow p-6">
-                    <p class="text-gray-600 mb-4">
-                        Tambahkan atau ubah hasil pertandingan Knockout Stage Mini Olympic PEP 2025.
-                    </p>
-
+            <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+                <div class="hidden lg:block mb-6">
+                    <h1 class="text-2xl xl:text-3xl font-bold text-gray-800">Kelola Knockout Stage</h1>
+                    <p class="text-gray-600 mt-2">Kelola hasil pertandingan knockout stage berdasarkan kategori dan sub-kategori olahraga</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Pilih Kategori Olahraga</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                        <button 
+                            v-for="kategori in Object.keys(sportCategories)" 
+                            :key="kategori"
+                            @click="selectedKategori = kategori"
+                            :class="[
+                                'px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border',
+                                selectedKategori === kategori 
+                                    ? 'bg-[#D71E28] text-white shadow-md border-[#D71E28]' 
+                                    : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                            ]"
+                        >
+                            <i :class="sportIcons[kategori]" class="mr-2"></i>
+                            {{ kategori }}
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Sub-Kategori {{ selectedKategori }}</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                            {{ sportCategories[selectedKategori]?.length || 0 }} kategori
+                        </span>
+                    </div>
                     
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Tim 1</label>
-                            <input v-model="match.tim1" class="w-full p-2 border rounded" placeholder="Nama Tim 1" />
+                    <div v-if="sportCategories[selectedKategori]" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
+                        <button 
+                            v-for="subKategori in sportCategories[selectedKategori]" 
+                            :key="subKategori"
+                            @click="selectedSubKategori = subKategori"
+                            :class="[
+                                'px-3 py-2 rounded-md text-sm font-medium transition-all duration-200',
+                                selectedSubKategori === subKategori 
+                                    ? 'bg-blue-600 text-white shadow-sm' 
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            ]"
+                        >
+                            {{ subKategori }}
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Match Input Form -->
+                <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-800">Tambah Pertandingan</h2>
+                        <div class="flex gap-2">
+                            <span class="text-sm text-white bg-[#D71E28] px-3 py-1 rounded-full">{{ selectedKategori }}</span>
+                            <span class="text-sm text-white bg-blue-600 px-3 py-1 rounded-full">{{ selectedSubKategori }}</span>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Tim 2</label>
-                            <input v-model="match.tim2" class="w-full p-2 border rounded" placeholder="Nama Tim 2" />
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="sm:col-span-2 lg:col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                {{ getParticipantLabel(selectedKategori, 'tim1') }}
+                            </label>
+                            <input 
+                                v-model="match.tim1" 
+                                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all" 
+                                :placeholder="getParticipantPlaceholder(selectedKategori, 'tim1')" 
+                            />
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Skor</label>
-                            <input v-model="match.hasil" class="w-full p-2 border rounded"
-                                placeholder="Skor, contoh: 2 - 1" />
+                        <div class="sm:col-span-2 lg:col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                {{ getParticipantLabel(selectedKategori, 'tim2') }}
+                            </label>
+                            <input 
+                                v-model="match.tim2" 
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all" 
+                                :placeholder="getParticipantPlaceholder(selectedKategori, 'tim2')" 
+                            />
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Pertandingan</label>
-                            <select v-model="match.tahap" class="w-full p-2 border rounded">
-                                <option>Perempat Final</option>
-                                <option>Semifinal</option>
-                                <option>Final</option>
-                                <option>Perebutan Tempat Ketiga</option>
+                        <div class="col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                {{ getScoreLabel(selectedKategori) }}
+                            </label>
+                            <input 
+                                v-model="match.hasil" 
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all" 
+                                :placeholder="getScorePlaceholder(selectedKategori)" 
+                            />
+                        </div>
+                        <div class="col-span-1">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tahap</label>
+                            <select 
+                                v-model="match.tahap" 
+                                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all"
+                            >
+                                <option value="Perempat Final">Perempat Final</option>
+                                <option value="Semifinal">Semifinal</option>
+                                <option value="Final">Final</option>
+                                <option value="Perebutan Tempat Ketiga">Perebutan Tempat Ketiga</option>
                             </select>
                         </div>
                     </div>
 
-                    <button @click="simpanHasil"
-                        class="mt-6 bg-[#D71E28] text-white px-6 py-2 rounded hover:bg-red-700">
+                    <button 
+                        @click="simpanHasil"
+                        :disabled="!canSaveMatch"
+                        :class="[
+                            'mt-6 w-full sm:w-auto px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all',
+                            canSaveMatch 
+                                ? 'bg-[#D71E28] text-white hover:bg-red-700' 
+                                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                        ]"
+                    >
+                        <i class="fas fa-save"></i>
                         Simpan Hasil
                     </button>
-                    <div class="mt-8">
-                        <h2 class="text-lg font-semibold mb-3">Daftar Pertandingan</h2>
-                        <ul class="space-y-2">
-                            <li v-for="(item, index) in daftarHasil" :key="index"
-                                class="bg-gray-100 p-3 rounded flex justify-between items-center">
-                                <div v-if="editIndex !== index">
-                                    {{ item.tahap }}: {{ item.tim1 }} {{ item.hasil }} {{ item.tim2 }}
-                                </div>
-                                <div v-else class="flex flex-wrap gap-2 w-full">
-                                    <input v-model="editMatch.tim1" class="p-1 border rounded" />
-                                    <input v-model="editMatch.hasil" class="p-1 border rounded w-20" />
-                                    <input v-model="editMatch.tim2" class="p-1 border rounded" />
-                                    <select v-model="editMatch.tahap" class="p-1 border rounded">
-                                        <option>Perempat Final</option>
-                                        <option>Semifinal</option>
-                                        <option>Final</option>
-                                        <option>Perebutan Tempat Ketiga</option>
-                                    </select>
-                                    <button @click="simpanEdit(index)"
-                                        class="text-sm text-green-600 hover:underline">Simpan</button>
-                                    <button @click="batalEdit"
-                                        class="text-sm text-gray-600 hover:underline">Batal</button>
-                                </div>
+                </div>
 
-                                <div v-if="editIndex !== index" class="space-x-2">
-                                    <button @click="mulaiEdit(index)"
-                                        class="text-sm text-blue-600 hover:underline">Edit</button>
-                                    <button @click="hapusHasil(index)"
-                                        class="text-sm text-red-600 hover:underline">Hapus</button>
-                                </div>
-                            </li>
-                        </ul>
+                <!-- Match Results -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <div class="p-4 sm:p-6 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Daftar Pertandingan - {{ selectedKategori }} ({{ selectedSubKategori }})
+                        </h2>
+                        <p class="text-sm text-gray-600 mt-1">{{ getCurrentMatches().length }} pertandingan</p>
                     </div>
 
+                    <div class="p-4 sm:p-6">
+                        <div v-if="getCurrentMatches().length === 0" class="text-center py-12">
+                            <i class="fas fa-trophy text-4xl text-gray-300 mb-4"></i>
+                            <p class="text-gray-500 text-lg mb-2">Belum ada pertandingan</p>
+                            <p class="text-gray-400 text-sm">untuk {{ selectedKategori }} - {{ selectedSubKategori }}</p>
+                        </div>
+
+                        <div v-else class="space-y-4">
+                            <div 
+                                v-for="(item, index) in getCurrentMatches()" 
+                                :key="index"
+                                class="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200"
+                            >
+                                <!-- View Mode -->
+                                <div v-if="editIndex !== getOriginalIndex(item)" class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                                            <span class="bg-[#D71E28] text-white text-xs px-2 py-1 rounded-full font-medium">
+                                                {{ item.tahap }}
+                                            </span>
+                                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
+                                                {{ item.kategori }}
+                                            </span>
+                                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
+                                                {{ item.subKategori }}
+                                            </span>
+                                        </div>
+                                        <div class="text-base lg:text-lg font-semibold text-gray-800">
+                                            <span class="text-blue-700">{{ item.tim1 }}</span>
+                                            <span class="mx-3 text-[#D71E28] font-bold text-lg">{{ item.hasil }}</span>
+                                            <span class="text-blue-700">{{ item.tim2 }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <button 
+                                            @click="mulaiEdit(getOriginalIndex(item))"
+                                            class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1"
+                                        >
+                                            <i class="fas fa-edit text-xs"></i>
+                                            Edit
+                                        </button>
+                                        <button 
+                                            @click="hapusHasil(getOriginalIndex(item))"
+                                            class="bg-red-50 text-red-600 hover:bg-red-100 px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1"
+                                        >
+                                            <i class="fas fa-trash text-xs"></i>
+                                            Hapus
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Edit Mode -->
+                                <div v-else class="space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                        <input 
+                                            v-model="editMatch.tim1" 
+                                            class="p-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#D71E28] focus:border-transparent" 
+                                            :placeholder="getParticipantPlaceholder(item.kategori, 'tim1')"
+                                        />
+                                        <input 
+                                            v-model="editMatch.hasil" 
+                                            class="p-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#D71E28] focus:border-transparent" 
+                                            :placeholder="getScorePlaceholder(item.kategori)"
+                                        />
+                                        <input 
+                                            v-model="editMatch.tim2" 
+                                            class="p-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#D71E28] focus:border-transparent" 
+                                            :placeholder="getParticipantPlaceholder(item.kategori, 'tim2')"
+                                        />
+                                        <select 
+                                            v-model="editMatch.tahap" 
+                                            class="p-3 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#D71E28] focus:border-transparent"
+                                        >
+                                            <option value="Perempat Final">Perempat Final</option>
+                                            <option value="Semifinal">Semifinal</option>
+                                            <option value="Final">Final</option>
+                                            <option value="Perebutan Tempat Ketiga">Perebutan Tempat Ketiga</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex gap-2 justify-end">
+                                        <button 
+                                            @click="simpanEdit(getOriginalIndex(item))"
+                                            class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors flex items-center gap-2"
+                                        >
+                                            <i class="fas fa-check text-xs"></i>
+                                            Simpan
+                                        </button>
+                                        <button 
+                                            @click="batalEdit"
+                                            class="bg-gray-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-600 transition-colors flex items-center gap-2"
+                                        >
+                                            <i class="fas fa-times text-xs"></i>
+                                            Batal
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
     </div>
 </template>
+
 <script>
 import Sidebar from '@/components/Sidebar.vue';
 
@@ -101,6 +257,30 @@ export default {
     data() {
         return {
             isSidebarOpen: false,
+            selectedKategori: 'Badminton',
+            selectedSubKategori: 'MS',
+            sportCategories: {
+                'Badminton': ['MS', 'WS', 'MD', 'WD', 'XD'],
+                'Tenis Meja': ['MS', 'WS', 'MD', 'WD', 'XD'],
+                'Tenis Lapangan': ['MS', 'WS', 'MD', 'WD', 'XD'],
+                'Volley': ['Putra', 'Putri'],
+                'Sepak Bola': ['Putra', 'Putri'],
+                'Basket': ['Putra', 'Putri'],
+                'Lari': ['100m Putra', '100m Putri', '200m Putra', '200m Putri', '400m Putra', '400m Putri', 'Estafet Putra', 'Estafet Putri'],
+                'Senam': ['Artistik Putra', 'Artistik Putri', 'Ritmik Putri'],
+                'Esport': ['Mobile Legends', 'PUBG Mobile', 'Free Fire', 'Valorant', 'FIFA']
+            },
+            sportIcons: {
+                'Badminton': 'fas fa-shuttlecock',
+                'Tenis Meja': 'fas fa-table-tennis',
+                'Tenis Lapangan': 'fas fa-tennis-ball',
+                'Volley': 'fas fa-volleyball-ball',
+                'Sepak Bola': 'fas fa-futbol',
+                'Basket': 'fas fa-basketball-ball',
+                'Lari': 'fas fa-running',
+                'Senam': 'fas fa-gymnastics',
+                'Esport': 'fas fa-gamepad'
+            },
             match: {
                 tim1: '',
                 tim2: '',
@@ -117,13 +297,31 @@ export default {
             },
         };
     },
+    computed: {
+        canSaveMatch() {
+            return this.match.tim1 && this.match.tim2 && this.match.hasil && this.selectedSubKategori;
+        }
+    },
+    watch: {
+        selectedKategori(newVal) {
+            // Auto select first sub-category when sport changes
+            if (this.sportCategories[newVal] && this.sportCategories[newVal].length > 0) {
+                this.selectedSubKategori = this.sportCategories[newVal][0];
+            }
+        }
+    },
     methods: {
         toggleSidebar() {
             this.isSidebarOpen = !this.isSidebarOpen;
         },
         simpanHasil() {
-            if (this.match.tim1 && this.match.tim2 && this.match.hasil) {
-                this.daftarHasil.push({ ...this.match });
+            if (this.canSaveMatch) {
+                this.daftarHasil.push({ 
+                    ...this.match, 
+                    kategori: this.selectedKategori,
+                    subKategori: this.selectedSubKategori,
+                    id: Date.now()
+                });
                 this.match = {
                     tim1: '',
                     tim2: '',
@@ -140,7 +338,12 @@ export default {
             this.editMatch = { ...this.daftarHasil[index] };
         },
         simpanEdit(index) {
-            this.$set(this.daftarHasil, index, { ...this.editMatch });
+            this.$set(this.daftarHasil, index, { 
+                ...this.editMatch,
+                kategori: this.daftarHasil[index].kategori,
+                subKategori: this.daftarHasil[index].subKategori,
+                id: this.daftarHasil[index].id
+            });
             this.editIndex = null;
             this.editMatch = {
                 tim1: '',
@@ -151,8 +354,52 @@ export default {
         },
         batalEdit() {
             this.editIndex = null;
+            this.editMatch = {
+                tim1: '',
+                tim2: '',
+                hasil: '',
+                tahap: '',
+            };
         },
+        getCurrentMatches() {
+            return this.daftarHasil.filter(match => 
+                match.kategori === this.selectedKategori && 
+                match.subKategori === this.selectedSubKategori
+            );
+        },
+        getOriginalIndex(item) {
+            return this.daftarHasil.findIndex(match => match.id === item.id);
+        },
+        getParticipantLabel(kategori, position) {
+            const teamSports = ['Volley', 'Sepak Bola', 'Basket'];
+            if (teamSports.includes(kategori)) {
+                return position === 'tim1' ? 'Tim 1' : 'Tim 2';
+            }
+            return position === 'tim1' ? 'Peserta 1' : 'Peserta 2';
+        },
+        getParticipantPlaceholder(kategori, position) {
+            const teamSports = ['Volley', 'Sepak Bola', 'Basket'];
+            if (teamSports.includes(kategori)) {
+                return position === 'tim1' ? 'Nama Tim 1' : 'Nama Tim 2';
+            }
+            return position === 'tim1' ? 'Nama Peserta 1' : 'Nama Peserta 2';
+        },
+        getScoreLabel(kategori) {
+            if (kategori === 'Lari') return 'Waktu';
+            if (kategori === 'Senam') return 'Skor';
+            return 'Skor';
+        },
+        getScorePlaceholder(kategori) {
+            if (kategori === 'Lari') return '10.25 - 10.48';
+            if (kategori === 'Senam') return '9.5 - 9.2';
+            if (['Badminton', 'Tenis Meja', 'Tenis Lapangan'].includes(kategori)) return '21-15, 21-18';
+            return '2 - 1';
+        }
     },
-
+    mounted() {
+        if (this.sportCategories[this.selectedKategori]) {
+            this.selectedSubKategori = this.sportCategories[this.selectedKategori][0];
+        }
+    }
 };
 </script>
