@@ -3,9 +3,9 @@
       <NavbarDashboard />
   
       <section class="relative w-full mt-12 mb-12">
-        <!-- Card Putih Konten -->
+        
         <div class="bg-white max-w-7xl mx-auto rounded-xl p-6 sm:p-10 shadow-md border border-gray-200 text-left">
-          <!-- Logo & Judul -->
+          
           <div class="flex items-center justify-start gap-4 mb-6">
             <div class="w-20 h-20 p-2 rounded-full border-4 border-[#D71E28] flex items-center justify-center">
               <img src="/logo-mini-olympic-2025.png" alt="Logo" class="w-16 h-16 object-contain rounded-full" />
@@ -13,7 +13,7 @@
             <h2 class="text-3xl sm:text-4xl font-bold text-[#D71E28]">About Us</h2>
           </div>
   
-          <!-- Tab Navigasi -->
+          
           <div class="flex justify-center gap-4 mb-6">
             <button
               v-for="tab in ['Deskripsi', 'Visi', 'Misi']"
@@ -30,18 +30,15 @@
             </button>
           </div>
   
-          <!-- Konten Tab -->
           <p class="text-justify text-sm sm:text-base text-gray-700">
             {{ tabContent[selectedTab] }}
           </p>
-  
-          <!-- Motif Bawah -->
+          
           <div class="mt-6">
             <img src="/bunga/hiasan2.png" class="mx-auto w-32" alt="Motif" />
           </div>
         </div>
   
-        <!-- Sosial Media -->
         <div class="mt-10 flex justify-center gap-6 items-center">
           <div class="flex gap-4 items-center bg-[#D71E28] px-5 py-2 rounded-full">
             <div class="bg-white rounded-full p-3">
