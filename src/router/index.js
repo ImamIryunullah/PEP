@@ -15,6 +15,7 @@ import registrasiRunPage from '@/views/registrasiRunPage'
 import teknikalMeetingPage from '@/views/teknikalMeetingPage'
 import konsepDokumenPage from '@/views/konsepDokumenPage'
 import adminDashboard from '@/views/admin/adminDashboard'
+import loginPage from '@/views/authPage/loginPage'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -30,6 +31,7 @@ const routes = [
   { path: "/dokumen-technical-meeting", name: "dokumen1", component:teknikalMeetingPage},
   { path: "/dokumen-konsep", name: "dokumen2", component:konsepDokumenPage},
   { path: "/dashboard-admin", name: "adminDashboard", component:adminDashboard},
+  { path: "/login", name: "login", component:loginPage},
 ]
 
 const router = createRouter({

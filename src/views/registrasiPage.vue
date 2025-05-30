@@ -2,15 +2,15 @@
     <NavbarDashboard />
     <section class="min-h-screen relative bg-[#F7F7F7] w-full overflow-hidden">
 
-        
+
         <div class="absolute inset-0 z-0 pointer-events-none">
-            
+
             <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full" />
 
-            
+
             <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full" />
 
-            
+
             <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-bold">REGIS</h1>
             <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-bold">TRASI</h1>
         </div>
@@ -38,6 +38,19 @@
                                     class="bg-transparent w-full focus:outline-none placeholder-white" required />
                             </div>
                         </div>
+
+                        <!-- Tambahan: Input Password -->
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Password</label>
+                            <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
+                                <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                <input type="password" placeholder="Minimal 8 karakter"
+                                    class="bg-transparent w-full focus:outline-none placeholder-white" required />
+                            </div>
+                        </div>
+
+
+
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
@@ -77,13 +90,18 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="flex justify-center pt-6">
                             <button type="submit"
                                 class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-10 rounded-full shadow-md transition duration-300 ease-in-out">
                                 SUBMIT
                             </button>
                         </div>
+                        <div class="text-center text-sm text-gray-600 mt-4">
+                            Sudah terdaftar?
+                            <a href="/login" class="text-red-600 hover:underline font-medium">Coba login</a>
+                        </div>
+
                     </form>
                 </div>
             </div>

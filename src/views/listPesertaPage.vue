@@ -22,70 +22,68 @@
                 class="absolute bottom-[20%] left-1/2 transform -translate-x-1/2 w-[150px] py-12 z-10" />
         </section>
         <section class="min-h-screen relative bg-[#F7F7F7] px-8 py-6 font-sans">
-            
-            <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
-                <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5" />
-                <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-black">LIST</h1>
-                <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-black">PESERTA</h1>
-            </div>
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
+        <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5" />
+        <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-black">LIST</h1>
+        <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-black">PESERTA</h1>
+    </div>
 
-            <div class="relative z-10 space-y-8 animate-fade-in">
-                
-                <div class="flex gap-3 justify-center flex-wrap">
-                    <button
-                        v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
-                        :key="kategori" @click="selectedOlahraga = kategori" :class="[
-                            'px-5 py-2 rounded-lg font-medium transition duration-300 shadow-sm',
-                            selectedOlahraga === kategori
-                                ? 'bg-[#D71E28] text-white shadow-md scale-105'
-                                : 'bg-white border border-[#D71E28] text-[#D71E28] hover:bg-[#D71E28] hover:text-white'
-                        ]">
-                        {{ kategori }}
-                    </button>   
-                </div>
+    <div class="relative z-10 space-y-8 animate-fade-in animate-stagger">
+        <div class="flex gap-3 justify-center flex-wrap">
+            <button
+                v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
+                :key="kategori" @click="selectedOlahraga = kategori" :class="[ 
+                    'px-5 py-2 rounded-lg font-medium transition duration-300 shadow-sm',
+                    selectedOlahraga === kategori
+                        ? 'bg-[#D71E28] text-white shadow-md scale-105'
+                        : 'bg-white border border-[#D71E28] text-[#D71E28] hover:bg-[#D71E28] hover:text-white'
+                ]">
+                {{ kategori }}
+            </button>
+        </div>
 
-                
-                <div class="overflow-x-auto animate-fade-in">
-                    <table class="min-w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
-                        <thead class="bg-[#D71E28] text-white uppercase text-xs">
-                            <tr>
-                                <th class="px-6 py-4 text-left font-bold">No</th>
-                                <th class="px-6 py-4 text-left font-bold">Kontingen</th>
-                                <th class="px-6 py-4 text-left font-bold">Nama</th>
-                                <th class="px-6 py-4 text-left font-bold">Status</th>
-                                <th class="px-6 py-4 text-left font-bold">Pemain/Official</th>
-                                <th class="px-6 py-4 text-left font-bold">Verifikasi</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-800 divide-y divide-gray-200">
-                            <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
-                                <tr v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
-                                    class="hover:bg-gray-100 transition duration-200">
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ i + j + 1 }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap" v-if="j === 0"
-                                        :rowspan="kontingen.peserta.length">
-                                        <span class="font-semibold">{{ kontingen.kontingen }}</span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.nama }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.status }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.peran }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <span :class="{
-                                            'text-green-600 font-bold': pemain.verifikasi === 'Terverifikasi',
-                                            'text-yellow-600': pemain.verifikasi === 'Menunggu',
-                                            'text-red-600 font-semibold': pemain.verifikasi === 'Ditolak'
-                                        }">
-                                            {{ pemain.verifikasi }}
-                                        </span>
-                                    </td>
-                                </tr>
-                            </template>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-xl shadow-xl overflow-hidden text-sm transform transition duration-500 hover:scale-[1.01]">
+                <thead class="bg-[#D71E28] text-white uppercase text-xs">
+                    <tr>
+                        <th class="px-6 py-4 text-left font-bold">No</th>
+                        <th class="px-6 py-4 text-left font-bold">Kontingen</th>
+                        <th class="px-6 py-4 text-left font-bold">Nama</th>
+                        <th class="px-6 py-4 text-left font-bold">Status</th>
+                        <th class="px-6 py-4 text-left font-bold">Pemain/Official</th>
+                        <th class="px-6 py-4 text-left font-bold">Verifikasi</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-800 divide-y divide-gray-200">
+                    <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
+                        <tr v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
+                            class="hover:bg-gray-100 transition duration-200 animate-fade-in">
+                            <td class="px-6 py-4 whitespace-nowrap">{{ i + j + 1 }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap" v-if="j === 0"
+                                :rowspan="kontingen.peserta.length">
+                                <span class="font-semibold">{{ kontingen.kontingen }}</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ pemain.nama }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ pemain.status }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ pemain.peran }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span :class="{
+                                    'text-green-600 font-bold': pemain.verifikasi === 'Terverifikasi',
+                                    'text-yellow-600': pemain.verifikasi === 'Menunggu',
+                                    'text-red-600 font-semibold': pemain.verifikasi === 'Ditolak'
+                                }">
+                                    {{ pemain.verifikasi }}
+                                </span>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
 
 
         <FooterDashboard />
@@ -162,4 +160,36 @@ export default {
     transform: translateY(0);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.animate-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-stagger > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-stagger > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-stagger > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+/* Tambahkan sesuai jumlah elemen jika perlu */
+
 </style>
