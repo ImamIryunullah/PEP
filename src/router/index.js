@@ -8,11 +8,13 @@ import listPesertaPage from '@/views/listPesertaPage'
 import registrasiPage from '@/views/registrasiPage'
 import detailBeritaPage from '@/views/detailBeritaPage'
 import beritaPage from '@/views/beritaPage'
-import informasiCaborPage from '@/views/informasiCaborPage'
 import contactUsPage from '@/views/contactUsPage'
 import addInformationPage from '@/views/addInformationPage'
 import jadwalDanHasilPage from '@/views/jadwalDanHasilPage'
 import registrasiRunPage from '@/views/registrasiRunPage'
+import teknikalMeetingPage from '@/views/teknikalMeetingPage'
+import konsepDokumenPage from '@/views/konsepDokumenPage'
+import adminDashboard from '@/views/admin/adminDashboard'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -21,12 +23,13 @@ const routes = [
   { path: "/registrasi", name: "Registrasi", component:registrasiPage},
   { path: "/detail-berita", name: "Detail", component:detailBeritaPage},
   { path: "/berita", name: "Berita", component:beritaPage},
-  { path: "/informasi-cabang-olahraga", name: "CabangOlahraga", component:informasiCaborPage},
   { path: "/contactUs", name: "kontak", component:contactUsPage},
   { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},
   { path: "/jadwal-dan-hasil", name: "jadwalHasil", component:jadwalDanHasilPage},
   { path: "/registrasi-funrun-embed", name: "registrasiRun", component:registrasiRunPage},
-
+  { path: "/dokumen-technical-meeting", name: "dokumen1", component:teknikalMeetingPage},
+  { path: "/dokumen-konsep", name: "dokumen2", component:konsepDokumenPage},
+  { path: "/dashboard-admin", name: "adminDashboard", component:adminDashboard},
 ]
 
 const router = createRouter({

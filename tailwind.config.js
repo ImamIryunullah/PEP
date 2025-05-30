@@ -23,5 +23,8 @@ module.exports = {
     },
   },
   darkMode: "class", // Gunakan 'class' agar bisa dikontrol secara manual
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
+  
 };

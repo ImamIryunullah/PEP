@@ -1,20 +1,15 @@
 <template>
   <div class="min-h-screen bg-[#f5f3ef]">
-
     <NavbarDashboard />
-
     <section class="relative w-full">
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
         <source src="/PERTAMINAep.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-
       <div class="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025" class="w-80 mx-auto">
       </div>
     </section>
-
-
     <section class="relative py-16 px-4 bg-[#f5f3ef] w-full min-h-screen">
       <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1"
         alt="Maskot Kiri" />
@@ -118,7 +113,7 @@
           <div class="relative z-10 w-full max-w-2xl mx-auto mt-20 px-6 md:px-10 py-12 ">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-black mb-10">Timeline Kegiatan</h2>
 
-            
+
             <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 1
@@ -131,7 +126,7 @@
               </div>
             </div>
 
-            
+
             <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 2
@@ -149,7 +144,7 @@
               </div>
             </div>
 
-            
+
             <div class="flex items-start gap-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 3
@@ -413,26 +408,63 @@
 
       </div>
     </section>
+    <section class="bg-[#f5f3ef] py-16 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-16 tracking-wide drop-shadow-md">
+          Opening Ceremony
+        </h2>
 
-    <section class="bg-white relative overflow-hidden py-20 min-h-screen">
-      <img src="/bunga/go.png" class="absolute top-0 left-0 w-40 opacity-30" alt="ornamen kiri" />
-      <img src="/bunga/go2.png" class="absolute top-0 right-0 w-40 opacity-30" alt="ornamen kanan" />
-      <div class="text-center mb-12 z-10 relative">
-        <h2 class="text-4xl sm:text-5xl font-bold text-[#A60000] drop-shadow-md">Opening Ceremony</h2>
-        <div class="mt-2 w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div>
-      </div>
-      <div class="relative z-10">
-        <div class="flex flex-row gap-6 overflow-x-auto px-6 sm:px-10 scrollbar-hide pb-4 snap-x snap-mandatory">
-          <div v-for="(img, index) in openingImages" :key="index"
-            class="snap-start min-w-[240px] sm:min-w-[280px] md:min-w-[320px] h-[400px] rounded-3xl overflow-hidden transform transition-all duration-300 ease-in-out bg-white border border-gray-200 hover:shadow-inner hover:scale-95 active:scale-90">
-            <img :src="img" alt="Opening Image" class="w-full h-full object-cover" />
+        <div class="grid grid-cols-1 gap-8">
+
+          <!-- Gambar besar atas -->
+          <div class="relative group overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent
+                  hover:border-[#E91717] transition-all duration-500 cursor-pointer">
+            <img src="/opening/obor.png" alt="Opening Ceremony 1"
+              class="w-full h-auto object-cover max-h-[500px] transform group-hover:scale-105 transition-transform duration-500" />
+            <!-- Optional overlay on hover -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-6 rounded-3xl">
+              <h3 class="text-white text-2xl font-semibold drop-shadow-lg">Obor Ceremony</h3>
+            </div>
+          </div>
+
+          <!-- 3 gambar bawah -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent
+                    hover:border-[#E91717] transition-all duration-500 cursor-pointer">
+              <img src="/opening/kopraljono.png" alt="Opening Ceremony 2"
+                class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-4 rounded-3xl">
+                <h3 class="text-white text-lg font-semibold drop-shadow-md">Kopral Jono</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent
+                    hover:border-[#E91717] transition-all duration-500 cursor-pointer">
+              <img src="/opening/marchingband.png" alt="Opening Ceremony 3"
+                class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-4 rounded-3xl">
+                <h3 class="text-white text-lg font-semibold drop-shadow-md">Marching Band</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent
+                    hover:border-[#E91717] transition-all duration-500 cursor-pointer">
+              <img src="/opening/tarikolosal.png" alt="Opening Ceremony 4"
+                class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-4 rounded-3xl">
+                <h3 class="text-white text-lg font-semibold drop-shadow-md">Tarik Kolosal</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="mt-16 flex justify-center">
-        <img src="/bunga/hiasan2.png" class="w-24 sm:w-32 opacity-70" alt="hiasan bawah" />
-      </div>
     </section>
+
+
   </div>
   <FooterDashboard />
 </template>
@@ -512,22 +544,13 @@ export default {
         section.removeEventListener('wheel', handleWheel);
       }
     });
-    const openingImages = [
-      '/opening/kiri.png',
-      '/opening/tengahkiri.png',
-      '/opening/tengah.png',
-      '/opening/tengahkanan.png',
-      '/opening/kanan.png',
-    ];
-
-
 
     return {
       horizontalSection,
       currentSlide,
       showAll,
       olahragaList,
-      openingImages
+
     };
   }
 };
@@ -653,7 +676,7 @@ body {
   opacity: 0;
 }
 
-/* Sembunyikan scrollbar horizontal (untuk gallery Opening Ceremony) */
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

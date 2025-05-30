@@ -72,6 +72,19 @@
             </div>
         </section>
 
+        <section class="relative z-10 py-16">
+
+            <div class="overflow-hidden whitespace-nowrap">
+                <div class="inline-block animate-marquee space-x-24 px-4">
+                    <img src="/addinfo/asean.png" alt="Sponsor 1" class="inline h-16 object-contain" />
+                    <img src="/addinfo/skkmigas.png" alt="Sponsor 2" class="inline h-16 object-contain" />
+                    <img src="/addinfo/iog.png" alt="Sponsor 3" class="inline h-16 object-contain" />
+                    <img src="/addinfo/pertaminaEP.png" alt="Sponsor 4" class="inline h-20 object-contain" />
+                    <img src="/addinfo/pertamedika.png" alt="Sponsor 5" class="inline h-16 object-contain" />
+                </div>
+            </div>
+        </section>
+
         <section class="relative z-10 flex items-center justify-center py-20">
             <div class="absolute top-10 left-20 z-0 pointer-events-none select-none">
                 <h1 class="text-gray-600 opacity-5 text-9xl font-bold pt-12">TRANSPORT</h1>
@@ -104,21 +117,41 @@
                 </div>
             </div>
         </section>
-        
+        <section class="relative z-10 flex items-center justify-center py-20">
+            <!-- Large Floating Title -->
+            <div class="absolute top-10 left-20 z-0 pointer-events-none select-none">
+                <h1 class="text-gray-600 opacity-5 text-9xl font-bold pt-12">VENUE</h1>
+                <h1 class="text-gray-600 opacity-5 text-9xl font-bold">LOKASI</h1>
+            </div>
 
-        <section class="relative z-10 py-16">
+            <!-- Main Card Container -->
+            <div class="bg-white/30 backdrop-blur-md border border-white/50 rounded-3xl shadow-xl p-4 sm:p-6 max-w-5xl w-full transition hover:scale-105 duration-300"
+                v-intersect="'fade-slide-up'">
 
-            <div class="overflow-hidden whitespace-nowrap">
-                <div class="inline-block animate-marquee space-x-24 px-4">
-                    <img src="/addinfo/asean.png" alt="Sponsor 1" class="inline h-16 object-contain" />
-                    <img src="/addinfo/skkmigas.png" alt="Sponsor 2" class="inline h-16 object-contain" />
-                    <img src="/addinfo/iog.png" alt="Sponsor 3" class="inline h-16 object-contain" />
-                    <img src="/addinfo/pertaminaEP.png" alt="Sponsor 4" class="inline h-20 object-contain" />
-                    <img src="/addinfo/pertamedika.png" alt="Sponsor 5" class="inline h-16 object-contain" />
+                <img src="/addinfo/header.png" alt="header" class="w-full mb-4" />
+                <h2 class="text-3xl font-bold text-red-600 text-center mb-8">VENUE PERTANDINGAN</h2>
+
+                <!-- Venue Images -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+                    <div class="rounded-xl overflow-hidden group" v-intersect="'fade-left'">
+                        <img src="/informasicabor/overviewvenue.png" alt="Venue 1"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="rounded-xl overflow-hidden group" v-intersect="'fade-right'">
+                        <img src="/informasicabor/overviewvenue2.png" alt="Venue 2"
+                            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500" />
+                    </div>
+                </div>
+
+                <!-- Optional Descriptions -->
+                <div class="text-sm text-gray-900 opacity-80 text-center px-4">
+                    <p class="text-orange-900">
+                        Venue pertandingan Mini Olympic tersebar di beberapa lokasi strategis yang sudah disiapkan untuk
+                        mendukung kenyamanan dan kelancaran seluruh cabang olahraga.
+                    </p>
                 </div>
             </div>
         </section>
-
 
         <FooterDashboard />
     </div>
@@ -206,17 +239,17 @@ export default {
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .animate-marquee {
-  display: inline-block;
-  animation: marquee 20s linear infinite;
+    display: inline-block;
+    animation: marquee 20s linear infinite;
 }
-
 </style>

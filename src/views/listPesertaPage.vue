@@ -21,61 +21,64 @@
             <img src="/bunga/hiasan.png" alt="hiasan"
                 class="absolute bottom-[20%] left-1/2 transform -translate-x-1/2 w-[150px] py-12 z-10" />
         </section>
-
-        <section class="min-h-screen relative bg-[#F7F7F7] px-8 py-6">
-            <!-- BACKGROUND -->
+        <section class="min-h-screen relative bg-[#F7F7F7] px-8 py-6 font-sans">
+            <!-- Background aesthetic -->
             <div class="absolute inset-0 z-0 pointer-events-none">
-                <!-- Gambar background atas -->
                 <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
-
-                <!-- Gambar background bawah -->
                 <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5" />
-
-                <!-- Heading besar sebagai latar -->
-                <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-bold">LIST</h1>
-                <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-bold">PESERTA</h1>
+                <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-black">LIST</h1>
+                <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-black">PESERTA</h1>
             </div>
 
-            <!-- KONTEN UTAMA -->
-            <div class="relative z-10">
-                <!-- Tombol kategori -->
-                <div class="flex gap-4 justify-center mb-8 flex-wrap">
+            <div class="relative z-10 space-y-8 animate-fade-in">
+                <!-- Kategori button group -->
+                <div class="flex gap-3 justify-center flex-wrap">
                     <button
                         v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
                         :key="kategori" @click="selectedOlahraga = kategori" :class="[
-                            'px-4 py-2 rounded-full font-semibold',
+                            'px-5 py-2 rounded-full font-medium transition duration-300 shadow-sm',
                             selectedOlahraga === kategori
-                                ? 'bg-[#D71E28] text-white'
-                                : 'border border-[#D71E28] text-[#D71E28]'
+                                ? 'bg-[#D71E28] text-white shadow-md scale-105'
+                                : 'bg-white border border-[#D71E28] text-[#D71E28] hover:bg-[#D71E28] hover:text-white'
                         ]">
                         {{ kategori }}
                     </button>
                 </div>
 
-                <!-- Tabel -->
-                <div class="overflow-x-auto">
-                    <table class="min-w-full table-auto bg-white rounded-xl shadow-md overflow-hidden">
-                        <thead class="bg-[#D71E28] text-white text-sm">
+                <!-- Table -->
+                <div class="overflow-x-auto animate-fade-in">
+                    <table class="min-w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
+                        <thead class="bg-[#D71E28] text-white uppercase text-xs">
                             <tr>
-                                <th class="px-6 py-3 text-left font-semibold">No</th>
-                                <th class="px-6 py-3 text-left font-semibold">Kontingen</th>
-                                <th class="px-6 py-3 text-left font-semibold">Nama</th>
-                                <th class="px-6 py-3 text-left font-semibold">Status</th>
-                                <th class="px-6 py-3 text-left font-semibold">Pemain/Official</th>
-                                <th class="px-6 py-3 text-left font-semibold">Hasil Verifikasi</th>
+                                <th class="px-6 py-4 text-left font-bold">No</th>
+                                <th class="px-6 py-4 text-left font-bold">Kontingen</th>
+                                <th class="px-6 py-4 text-left font-bold">Nama</th>
+                                <th class="px-6 py-4 text-left font-bold">Status</th>
+                                <th class="px-6 py-4 text-left font-bold">Pemain/Official</th>
+                                <th class="px-6 py-4 text-left font-bold">Verifikasi</th>
                             </tr>
                         </thead>
-                        <tbody class="text-gray-700 divide-y divide-gray-200 text-sm">
+                        <tbody class="text-gray-800 divide-y divide-gray-200">
                             <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
-                                <tr v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama">
-                                    <td class="px-6 py-4">{{ i + j + 1 }}</td>
-                                    <td class="px-6 py-4" v-if="j === 0" :rowspan="kontingen.peserta.length">
-                                        {{ kontingen.kontingen }}
+                                <tr v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
+                                    class="hover:bg-gray-100 transition duration-200">
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ i + j + 1 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap" v-if="j === 0"
+                                        :rowspan="kontingen.peserta.length">
+                                        <span class="font-semibold">{{ kontingen.kontingen }}</span>
                                     </td>
-                                    <td class="px-6 py-4">{{ pemain.nama }}</td>
-                                    <td class="px-6 py-4">{{ pemain.status }}</td>
-                                    <td class="px-6 py-4">{{ pemain.peran }}</td>
-                                    <td class="px-6 py-4">{{ pemain.verifikasi }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.nama }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.status }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.peran }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span :class="{
+                                            'text-green-600 font-bold': pemain.verifikasi === 'Terverifikasi',
+                                            'text-yellow-600': pemain.verifikasi === 'Menunggu',
+                                            'text-red-600 font-semibold': pemain.verifikasi === 'Ditolak'
+                                        }">
+                                            {{ pemain.verifikasi }}
+                                        </span>
+                                    </td>
                                 </tr>
                             </template>
                         </tbody>
@@ -83,6 +86,7 @@
                 </div>
             </div>
         </section>
+
 
         <FooterDashboard />
     </div>
@@ -143,3 +147,19 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(0.75rem); /* translate-y-3 */
+  transition: all 0.5s ease-out;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
