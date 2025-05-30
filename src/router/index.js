@@ -16,6 +16,10 @@ import teknikalMeetingPage from '@/views/teknikalMeetingPage'
 import konsepDokumenPage from '@/views/konsepDokumenPage'
 import adminDashboard from '@/views/admin/adminDashboard'
 import loginPage from '@/views/authPage/loginPage'
+import dataPesertaPage from '@/views/admin/dataPesertaPage'
+import verifikasiPesertaPage from '@/views/admin/verifikasiPesertaPage'
+import kelolaBeriaPage from '@/views/admin/kelolaBeritaPage'
+import adminSkorStage from '@/views/admin/adminSkorStage'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -30,8 +34,12 @@ const routes = [
   { path: "/registrasi-funrun-embed", name: "registrasiRun", component:registrasiRunPage},
   { path: "/dokumen-technical-meeting", name: "dokumen1", component:teknikalMeetingPage},
   { path: "/dokumen-konsep", name: "dokumen2", component:konsepDokumenPage},
-  { path: "/dashboard-admin", name: "adminDashboard", component:adminDashboard},
+  { path: "/admin/dashboard", name: "adminDashboard", component:adminDashboard},
   { path: "/login", name: "login", component:loginPage},
+  { path: "/admin/peserta", name: "adminDataPeserta", component:dataPesertaPage},
+  { path: "/admin/verifikasi-peserta", name: "adminVerifikasiPeserta", component:verifikasiPesertaPage},
+  { path: "/admin/kelola-berita", name: "adminKelolaBerita", component:kelolaBeriaPage},
+  { path: "/admin/kelola-skor", name: "adminKelolaSkor", component:adminSkorStage},
 ]
 
 const router = createRouter({

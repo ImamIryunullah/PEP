@@ -2,7 +2,6 @@
     <NavbarDashboard />
     <section class="min-h-screen relative bg-[#F7F7F7] w-full overflow-hidden">
   
-      <!-- Background & Decoration -->
       <div class="absolute inset-0 z-0 pointer-events-none">
         <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full" />
         <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full" />
@@ -40,7 +39,6 @@
                   LOGIN
                 </button>
               </div>
-  
               <div class="text-center text-sm text-gray-600 mt-4">
                 Belum punya akun?
                 <a href="/registrasi" class="text-red-600 hover:underline font-medium">Daftar sekarang</a>
@@ -49,7 +47,6 @@
           </div>
         </div>
       </div>
-  
     </section>
     <FooterDashboard />
   </template>
