@@ -10,7 +10,7 @@ import detailBeritaPage from '@/views/detailBeritaPage'
 import beritaPage from '@/views/beritaPage'
 import contactUsPage from '@/views/contactUsPage'
 import addInformationPage from '@/views/addInformationPage'
-import jadwalDanHasilPage from '@/views/jadwalDanHasilPage'
+import sepakBola from '@/views/result/sepakBola'
 import registrasiRunPage from '@/views/registrasiRunPage'
 import teknikalMeetingPage from '@/views/teknikalMeetingPage'
 import konsepDokumenPage from '@/views/konsepDokumenPage'
@@ -20,6 +20,9 @@ import dataPesertaPage from '@/views/admin/dataPesertaPage'
 import verifikasiPesertaPage from '@/views/admin/verifikasiPesertaPage'
 import kelolaBeriaPage from '@/views/admin/kelolaBeritaPage'
 import adminSkorStage from '@/views/admin/adminSkorStage'
+import dashboardUser from '@/views/peserta/dashboardUser'
+import profileUser from '@/views/peserta/profileUser'
+import bolaVolly from '@/views/result/bolaVolly'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -30,7 +33,6 @@ const routes = [
   { path: "/berita", name: "Berita", component:beritaPage},
   { path: "/contactUs", name: "kontak", component:contactUsPage},
   { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},
-  { path: "/jadwal-dan-hasil", name: "jadwalHasil", component:jadwalDanHasilPage},
   { path: "/registrasi-funrun-embed", name: "registrasiRun", component:registrasiRunPage},
   { path: "/dokumen-technical-meeting", name: "dokumen1", component:teknikalMeetingPage},
   { path: "/dokumen-konsep", name: "dokumen2", component:konsepDokumenPage},
@@ -40,6 +42,10 @@ const routes = [
   { path: "/admin/verifikasi-peserta", name: "adminVerifikasiPeserta", component:verifikasiPesertaPage},
   { path: "/admin/kelola-berita", name: "adminKelolaBerita", component:kelolaBeriaPage},
   { path: "/admin/kelola-skor", name: "adminKelolaSkor", component:adminSkorStage},
+  { path: "/peserta/dashboard", name: "pesertaDashboard", component:dashboardUser},
+  { path: "/peserta/profile", name: "pesertaProfile", component:profileUser},
+  { path: "/jadwal-dan-hasil/sepak-bola", name: "sepakBola", component:sepakBola},
+  { path: "/jadwal-dan-hasil/bola-volly", name: "bolaVolly", component:bolaVolly},
 ]
 
 const router = createRouter({

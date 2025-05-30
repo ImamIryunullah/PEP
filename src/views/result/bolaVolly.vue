@@ -5,7 +5,6 @@
             <div class="absolute inset-0">
                 <img src="/jadwaldanhasil/bg.png" alt="Background" class="w-full h-full object-cover opacity-5" />
             </div>
-
             <div class="max-w-7xl mx-auto overflow-x-auto z-10">
                 <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Knockout Stage</h2>
                 <div class="flex justify-center gap-12 text-sm text-center text-gray-800 min-w-[1000px]">
@@ -31,15 +30,11 @@
                             <div>1 <span class="text-green-600">FT</span> 1 (e)</div>
                         </div>
                     </div>
-
-                    <!-- Semi Final -->
                     <div class="space-y-36 pt-24">
                         <div class="bg-white p-4 rounded shadow w-32">
                             <div>3 <span class="text-green-600">FT</span> 0</div>
                         </div>
-                    </div>
-
-                    <!-- Final -->
+                    </div>  
                     <div class="space-y-8 pt-12">
                         <div class="bg-blue-600 text-white p-4 rounded shadow w-32 font-bold">
                             Final<br />
@@ -50,15 +45,11 @@
                             2 <span class="text-white">FT</span> 1
                         </div>
                     </div>
-
-                    <!-- Mirror Semi Final -->
                     <div class="space-y-36 pt-24">
                         <div class="bg-white p-4 rounded shadow w-32">
                             <div>2 <span class="text-green-600">FT</span> 0</div>
                         </div>
-                    </div>
-
-                    <!-- Mirror Quarter Final -->
+                    </div> 
                     <div class="space-y-24 pt-12">
                         <div class="bg-white p-4 rounded shadow w-32">
                             <div>1 <span class="text-green-600">FT</span> 2</div>
@@ -85,26 +76,14 @@
                 </div>
             </div>
         </section>
-
         <section class="bg-[#F7f7f7] py-12 px-4 relative">
             <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold">
                 RESULT
             </h1>
+            <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold mt-28">
+                BOLA VOLLY
+            </h1>
             <div class="max-w-6xl mx-auto">
-                <div class="flex gap-4 justify-center mb-8">
-                    <button class="bg-[#D71E28] text-white px-4 py-2 rounded-full font-semibold">Sepak Bola</button>
-                    <button
-                        class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Volley</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Tenis
-                        Meja</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Tenis
-                        Lapangan</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Esport</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Badminton</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Lari</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Senam</button>
-                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Basket</button>
-                </div>
                 <div class="grid grid-cols-3 gap-8 justify-items-center">
                     <div class="space-y-6">
                         <div class="bg-white border rounded-lg shadow p-4 w-72">
@@ -171,5 +150,4 @@ export default {
 }
 </script>
 <style>
-
 </style>

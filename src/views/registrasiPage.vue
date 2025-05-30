@@ -29,7 +29,6 @@
                                     class="bg-transparent w-full focus:outline-none placeholder-white" />
                             </div>
                         </div>
-
                         <div>
                             <label class="block text-gray-700 font-medium mb-1">Email</label>
                             <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -38,8 +37,6 @@
                                     class="bg-transparent w-full focus:outline-none placeholder-white" required />
                             </div>
                         </div>
-
-                        <!-- Tambahan: Input Password -->
                         <div>
                             <label class="block text-gray-700 font-medium mb-1">Password</label>
                             <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -48,10 +45,6 @@
                                     class="bg-transparent w-full focus:outline-none placeholder-white" required />
                             </div>
                         </div>
-
-
-
-
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
@@ -79,7 +72,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Upload Foto</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -89,8 +81,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="flex justify-center pt-6">
                             <button type="submit"
                                 class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-10 rounded-full shadow-md transition duration-300 ease-in-out">

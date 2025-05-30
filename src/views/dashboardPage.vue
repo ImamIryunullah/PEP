@@ -11,8 +11,6 @@
       </div>
     </section>
     <section class="relative py-16 px-4 bg-[#f5f3ef] w-full min-h-screen">
-
-      <!-- Maskot Kiri -->
       <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1"
         alt="Maskot Kiri" />
       <img src="/kategori/lari.png"
@@ -21,8 +19,6 @@
         class="absolute top-[43%] left-[15%] w-[260px] hidden md:block animate-float delay-2" alt="Maskot Basket" />
       <img src="/kategori/bulutangkis.png"
         class="absolute top-[48%] left-0 w-[350px] hidden md:block animate-float delay-1" alt="Maskot Bulutangkis" />
-
-      <!-- Card 1 -->
       <div class="relative z-10 max-w-md mt-8 mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
             opacity-0 animate-fade-in-up animation-delay-500">
         <div class="flex justify-between text-xs text-gray-600 mb-1">
@@ -46,8 +42,6 @@
         </div>
         <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
       </div>
-
-      <!-- Card 2 -->
       <div class="relative z-10 max-w-md mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
             opacity-0 animate-fade-in-up animation-delay-[700ms]">
         <div class="flex justify-between text-xs text-gray-600 mb-1">
@@ -70,8 +64,6 @@
         </div>
         <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
       </div>
-
-      <!-- Maskot Kanan -->
       <img src="/kategori/esport.png"
         class="absolute bottom-[25%] right-[2%] w-[400px] hidden md:block animate-float delay-1" alt="Maskot Kanan" />
       <img src="/kategori/bola.png"
@@ -81,23 +73,19 @@
       <img src="/kategori/senam.png" class="absolute top-[47%] right-0 w-[250px] hidden md:block animate-float delay-4"
         alt="Maskot Senam" />
     </section>
-
     <section class="relative py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
       style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
       <svg class="absolute top-0 left-0 w-full h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
         <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
       </svg>
-
       <img src="/assets/obor.png"
         class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float animate-float delay-1 z-0"
         alt="Maskot Kiri" />
-
       <div class="relative z-10 flex flex-col justify-end items-end h-full max-w-7xl mx-auto px-4 md:px-8">
         <h1 class="text-white text-5xl md:text-7xl font-bold text-right max-w-[60%] pr-4 md:pr-12 mt-48"
           data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
           PENGENALAN MINI OLYMPIC
         </h1>
-
         <p class="text-sm md:text-base mt-6 max-w-[60%] pr-4 md:pr-12 text-right leading-relaxed text-white"
           data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
           Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
@@ -133,8 +121,6 @@
                 </p>
               </div>
             </div>
-
-
             <div class="flex items-start gap-6 mb-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 2
@@ -151,8 +137,6 @@
                 </div>
               </div>
             </div>
-
-
             <div class="flex items-start gap-6" data-aos="fade-up" data-aos-delay="100">
               <div class="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white font-bold">
                 3
@@ -422,7 +406,7 @@
           Opening Ceremony
         </h2>
 
-        <!-- Hero Opening Card -->
+        
         <div class="relative group overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent 
                 hover:border-[#E91717] transition-all duration-500 cursor-pointer max-w-4xl mx-auto mb-14 
                 animate-fade-in-up">
@@ -435,20 +419,20 @@
           </div>
         </div>
 
-        <!-- Grid of 3 Smaller Cards -->
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 animate-fade-in-up delay-2">
-          <!-- Card 1 -->
+          
           <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent 
             hover:border-[#E91717] transition-all duration-500 cursor-pointer">
             <img src="/opening/kopraljono.png" alt="Kopral Jono"
               class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" />
 
-            <!-- Garis horizontal -->
+            
             <div
               class="h-[3px] w-[60%] bg-[#E91717] mx-auto mt-[-3px] z-10 relative rounded-full transition-all duration-500 group-hover:w-[80%]">
             </div>
 
-            <!-- Overlay title -->
+            
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 
             group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-4">
               <h3 class="text-white text-xl font-semibold drop-shadow-md">Kopral Jono</h3>
@@ -456,7 +440,7 @@
           </div>
 
 
-          <!-- Card 2 -->
+          
           <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent 
                   hover:border-[#E91717] transition-all duration-500 cursor-pointer">
             <img src="/opening/marchingband.png" alt="Marching Band"
@@ -468,7 +452,7 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
+          
           <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent 
                   hover:border-[#E91717] transition-all duration-500 cursor-pointer">
             <img src="/opening/tarikolosal.png" alt="Tari Kolosal"
@@ -812,4 +796,5 @@ body {
 .delay-4 {
   animation-delay: 1.2s;
 }
+
 </style>

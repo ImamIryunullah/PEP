@@ -1,13 +1,18 @@
   <template>
     <header>
       <!-- Top bar -->
-      <div class="bg-white text-gray-700 text-sm font-medium px-4 py-1 flex justify-between items-center border-b border-gray-200">
+      <div
+        class="bg-white text-gray-700 text-sm font-medium px-4 py-1 flex justify-between items-center border-b border-gray-200">
         <div>{{ currentDate }} - {{ currentTime }}</div>
         <div class="flex gap-4 text-xl">
-          <a href="https://facebook.com" target="_blank" class="hover:text-blue-600" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com" target="_blank" class="hover:text-blue-400" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://instagram.com" target="_blank" class="hover:text-pink-500" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com" target="_blank" class="hover:text-red-600" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://facebook.com" target="_blank" class="hover:text-blue-600" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" class="hover:text-blue-400" aria-label="Twitter"><i
+              class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank" class="hover:text-pink-500" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" class="hover:text-red-600" aria-label="YouTube"><i
+              class="fab fa-youtube"></i></a>
         </div>
       </div>
 
@@ -18,7 +23,7 @@
           <div class="flex items-center gap-4">
             <button @click="toggleMenu" class="md:hidden focus:outline-none">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
             <img src="/logo-mini-olympic-2025.png" alt="Logo" class="h-10" />
@@ -27,49 +32,90 @@
           <!-- Desktop Menu -->
           <nav class="hidden md:flex items-center gap-6 text-sm font-semibold tracking-wide uppercase">
             <router-link to="/" class="hover:text-yellow-300 transition duration-300">HOME</router-link>
-            <router-link to="/jadwal-dan-hasil" class="hover:text-yellow-300 transition duration-300">Jadwal & Hasil</router-link>
+            <div class="relative group">
+              <button class="hover:text-yellow-300 transition duration-300 flex items-center gap-1">
+                JADWAL DAN HASIL
+                <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': isRegDropdownOpen }"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <transition name="fade">
+                <div
+                  class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-52 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-y-3 z-50">
+                  <router-link to="/jadwal-dan-hasil/sepak-bola"
+                    class="block px-5 py-2 hover:bg-gray-100 rounded-t">Sepak Bola</router-link>
+                  <router-link to="/jadwal-dan-hasil/volley"
+                    class="block px-5 py-2 hover:bg-gray-100">Volley</router-link>
+                  <router-link to="/jadwal-dan-hasil/tenis-meja" class="block px-5 py-2 hover:bg-gray-100">Tenis
+                    Meja</router-link>
+                  <router-link to="/jadwal-dan-hasil/tenis-lapangan" class="block px-5 py-2 hover:bg-gray-100">Tenis
+                    Lapangan</router-link>
+                  <router-link to="/jadwal-dan-hasil/esport"
+                    class="block px-5 py-2 hover:bg-gray-100">Esport</router-link>
+                  <router-link to="/jadwal-dan-hasil/badminton"
+                    class="block px-5 py-2 hover:bg-gray-100">Badminton</router-link>
+                  <router-link to="/jadwal-dan-hasil/lari" class="block px-5 py-2 hover:bg-gray-100">Lari</router-link>
+                  <router-link to="/jadwal-dan-hasil/senam"
+                    class="block px-5 py-2 hover:bg-gray-100">Senam</router-link>
+                  <router-link to="/jadwal-dan-hasil/basket"
+                    class="block px-5 py-2 hover:bg-gray-100 rounded-b">Basket</router-link>
+                </div>
+              </transition>
+            </div>
 
             <!-- Registrasi Dropdown -->
             <div class="relative group">
               <button class="hover:text-yellow-300 transition duration-300 flex items-center gap-1">
                 REGISTRASI
-                <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': isRegDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': isRegDropdownOpen }"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <transition name="fade">
-                <div class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-52 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-y-3 z-50">
-                  <router-link to="/registrasi" class="block px-5 py-2 hover:bg-gray-100 rounded-t">Peserta</router-link>
-                  <router-link to="/registrasi-funrun-embed" class="block px-5 py-2 hover:bg-gray-100 rounded-b">5K Fun Run</router-link>
+                <div
+                  class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-52 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-y-3 z-50">
+                  <router-link to="/registrasi"
+                    class="block px-5 py-2 hover:bg-gray-100 rounded-t">Peserta</router-link>
+                  <router-link to="/registrasi-funrun-embed" class="block px-5 py-2 hover:bg-gray-100 rounded-b">5K Fun
+                    Run</router-link>
                 </div>
               </transition>
             </div>
 
-            <router-link to="/list-peserta" class="hover:text-yellow-300 transition duration-300">List Peserta</router-link>
+            <router-link to="/list-peserta" class="hover:text-yellow-300 transition duration-300">List
+              Peserta</router-link>
             <router-link to="/berita" class="hover:text-yellow-300 transition duration-300">Berita</router-link>
             <div class="relative group">
               <button class="hover:text-yellow-300 transition duration-300 flex items-center gap-1">
                 ABOUTS
-                <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': isRegDropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': isRegDropdownOpen }"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <transition name="fade">
-                <div class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-52 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-y-3 z-50">
-                  <router-link to="/aboutUs" class="block px-5 py-2 hover:bg-gray-100 rounded-t">Tentang Kami</router-link>
-                  <router-link to="/dokumen-technical-meeting" class="block px-5 py-2 hover:bg-gray-100 rounded-t">Dokumen Teknikal Meeting</router-link>
-                  <router-link to="/dokumen-konsep" class="block px-5 py-2 hover:bg-gray-100 rounded-b">Dokumen Konsep</router-link>
+                <div
+                  class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-52 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 transform -translate-y-3 z-50">
+                  <router-link to="/aboutUs" class="block px-5 py-2 hover:bg-gray-100 rounded-t">Tentang
+                    Kami</router-link>
+                  <router-link to="/dokumen-technical-meeting"
+                    class="block px-5 py-2 hover:bg-gray-100 rounded-t">Dokumen Teknikal Meeting</router-link>
+                  <router-link to="/dokumen-konsep" class="block px-5 py-2 hover:bg-gray-100 rounded-b">Dokumen
+                    Konsep</router-link>
                 </div>
               </transition>
             </div>
             <router-link to="/contactUs" class="hover:text-yellow-300 transition duration-300">Kontak</router-link>
-            <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition duration-300">Additional Info</router-link>
+            <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition duration-300">Additional
+              Info</router-link>
           </nav>
         </div>
 
         <!-- Mobile Menu -->
         <transition name="fade">
-          <div v-if="isOpen" class="md:hidden bg-[#D71E28] px-4 pb-4 text-sm font-semibold uppercase space-y-2">
+          <div v-if="isOpen" class="md:hidden bg-[#a60000] px-4 pb-4 text-sm font-semibold uppercase space-y-2">
             <router-link to="/" class="block hover:text-yellow-200">HOME</router-link>
             <router-link to="/jadwal-dan-hasil" class="block hover:text-yellow-200">Jadwal & Hasil</router-link>
 
@@ -77,8 +123,9 @@
             <div>
               <button @click="toggleRegDropdown" class="w-full flex justify-between items-center hover:text-yellow-200">
                 REGISTRASI
-                <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': showRegDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': showRegDropdown }" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div v-if="showRegDropdown" class="ml-4 mt-2 space-y-1">
@@ -144,10 +191,13 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: all 0.3s ease;
 }
-.fade-enter-from, .fade-leave-to {
+
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
   transform: translateY(-10px);
 }
