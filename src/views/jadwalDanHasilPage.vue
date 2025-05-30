@@ -88,18 +88,21 @@
 
         <section class="bg-white py-12 px-4">
             <div class="max-w-6xl mx-auto">
-                <!-- Tabs -->
                 <div class="flex gap-4 justify-center mb-8">
-                    <button class="bg-red-500 text-white px-4 py-2 rounded-full font-semibold">Sepak Bola</button>
+                    <button class="bg-[#D71E28] text-white px-4 py-2 rounded-full font-semibold">Sepak Bola</button>
                     <button
-                        class="border border-orange-400 text-orange-500 px-4 py-2 rounded-full font-semibold">Volley</button>
-                    <button class="border border-orange-400 text-orange-500 px-4 py-2 rounded-full font-semibold">Tenis
+                        class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Volley</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Tenis
                         Meja</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Tenis
+                        Lapangan</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Esport</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Badminton</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Lari</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Senam</button>
+                    <button class="border border-[#D71E28] text-[#D71E28] px-4 py-2 rounded-full font-semibold">Basket</button>
                 </div>
-
-                <!-- Match Cards Layout -->
                 <div class="grid grid-cols-3 gap-8 justify-items-center">
-                    <!-- Column 1 -->
                     <div class="space-y-6">
                         <div class="bg-white border rounded-lg shadow p-4 w-72">
                             <div class="text-sm text-gray-500 mb-1">Final · 18 Des 2022</div>
@@ -116,8 +119,6 @@
                                     class="float-right text-xl font-bold">1</span></div>
                         </div>
                     </div>
-
-                    <!-- Column 2 (duplikat untuk visual) -->
                     <div class="space-y-6">
                         <div class="bg-white border rounded-lg shadow p-4 w-72">
                             <div class="text-sm text-gray-500 mb-1">Final · 18 Des 2022</div>
@@ -134,8 +135,6 @@
                                     class="float-right text-xl font-bold">1</span></div>
                         </div>
                     </div>
-
-                    <!-- Column 3 (duplikat untuk visual) -->
                     <div class="space-y-6">
                         <div class="bg-white border rounded-lg shadow p-4 w-72">
                             <div class="text-sm text-gray-500 mb-1">Final · 18 Des 2022</div>
@@ -155,12 +154,9 @@
                 </div>
             </div>
         </section>
-
-
         <FooterDashboard />
     </div>
 </template>
-
 <script>
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
@@ -171,5 +167,6 @@ export default {
     }
 }
 </script>
+<style>
 
-<style></style>
+</style>
