@@ -22,7 +22,7 @@
                 class="absolute bottom-[20%] left-1/2 transform -translate-x-1/2 w-[150px] py-12 z-10" />
         </section>
         <section class="min-h-screen relative bg-[#F7F7F7] px-8 py-6 font-sans">
-            <!-- Background aesthetic -->
+            
             <div class="absolute inset-0 z-0 pointer-events-none">
                 <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
                 <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5" />
@@ -31,21 +31,21 @@
             </div>
 
             <div class="relative z-10 space-y-8 animate-fade-in">
-                <!-- Kategori button group -->
+                
                 <div class="flex gap-3 justify-center flex-wrap">
                     <button
                         v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
                         :key="kategori" @click="selectedOlahraga = kategori" :class="[
-                            'px-5 py-2 rounded-full font-medium transition duration-300 shadow-sm',
+                            'px-5 py-2 rounded-lg font-medium transition duration-300 shadow-sm',
                             selectedOlahraga === kategori
                                 ? 'bg-[#D71E28] text-white shadow-md scale-105'
                                 : 'bg-white border border-[#D71E28] text-[#D71E28] hover:bg-[#D71E28] hover:text-white'
                         ]">
                         {{ kategori }}
-                    </button>
+                    </button>   
                 </div>
 
-                <!-- Table -->
+                
                 <div class="overflow-x-auto animate-fade-in">
                     <table class="min-w-full bg-white rounded-xl shadow-lg overflow-hidden text-sm">
                         <thead class="bg-[#D71E28] text-white uppercase text-xs">

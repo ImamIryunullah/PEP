@@ -168,7 +168,7 @@
           <img src="/bunga/timeline.png" alt="Background" class="absolute top-[20%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 
             w-[300px] md:w-[400px] opacity-40 pointer-events-none" />
           <div class="w-full max-w-lg">
-            <ThreeDViewer />
+            <img src="/kategori/jsc.png" alt="maskot" class="w-auto h-full">
           </div>
           <div class="overflow-hidden whitespace-nowrap w-full">
             <div class="inline-block animate-marquee space-x-24 px-4">
@@ -416,19 +416,19 @@
 
         <div class="grid grid-cols-1 gap-8">
 
-          <!-- Gambar besar atas -->
+          
           <div class="relative group overflow-hidden rounded-3xl shadow-2xl border-4 border-transparent
                   hover:border-[#E91717] transition-all duration-500 cursor-pointer">
             <img src="/opening/obor.png" alt="Opening Ceremony 1"
               class="w-full h-auto object-cover max-h-[500px] transform group-hover:scale-105 transition-transform duration-500" />
-            <!-- Optional overlay on hover -->
+            
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-6 rounded-3xl">
               <h3 class="text-white text-2xl font-semibold drop-shadow-lg">Obor Ceremony</h3>
             </div>
           </div>
 
-          <!-- 3 gambar bawah -->
+          
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="relative group overflow-hidden rounded-3xl shadow-xl border-2 border-transparent
                     hover:border-[#E91717] transition-all duration-500 cursor-pointer">
@@ -470,7 +470,7 @@
 </template>
 <script>
 import { onMounted, ref, onUnmounted } from 'vue';
-import ThreeDViewer from '@/components/ThreeDViewer.vue';
+// import ThreeDViewer from '@/components/ThreeDViewer.vue';
 
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
@@ -480,7 +480,7 @@ export default {
   components: {
     NavbarDashboard,
     FooterDashboard,
-    ThreeDViewer
+
   },
   mounted() {
     console.log('Component mounted');

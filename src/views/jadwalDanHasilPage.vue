@@ -86,7 +86,10 @@
             </div>
         </section>
 
-        <section class="bg-white py-12 px-4">
+        <section class="bg-[#F7f7f7] py-12 px-4 relative">
+            <h1 class="absolute top-[20%] text-gray-600 opacity-5 text-9xl font-bold">
+                RESULT
+            </h1>
             <div class="max-w-6xl mx-auto">
                 <div class="flex gap-4 justify-center mb-8">
                     <button class="bg-[#D71E28] text-white px-4 py-2 rounded-full font-semibold">Sepak Bola</button>
