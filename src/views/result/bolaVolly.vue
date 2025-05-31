@@ -9,6 +9,7 @@
                 <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Knockout Stage</h2>
                 <div class="flex justify-center gap-12 text-sm text-center text-gray-800 min-w-[1000px]">
                     <div class="space-y-8">
+            
                         <div class="bg-white p-4 rounded shadow w-32">
                             <div>3 <span class="text-green-600">FT</span> 1</div>
                         </div>

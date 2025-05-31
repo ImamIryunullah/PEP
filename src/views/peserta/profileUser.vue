@@ -1,4 +1,3 @@
-<!-- src/views/user/ProfilPeserta.vue -->
 <template>
     <section class="min-h-screen bg-gray-100 p-6">
       <h1 class="text-3xl font-bold text-gray-800 mb-4">Profil Saya</h1>
