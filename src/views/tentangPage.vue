@@ -1,89 +1,80 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-[#f5f3ef] via-[#faf8f4] to-[#f0ede7]">
     <NavbarDashboard />
-
     <section class="relative w-full mt-12 mb-12 px-4 sm:px-6 lg:px-8">
-      
-      <!-- Main Content Card -->
-      <div class=" backdrop-blur-sm max-w-7xl mx-auto rounded-3xl p-6 sm:p-10 shadow-2xl border border-gray-200/50 text-left transform hover:scale-[1.01] transition-all duration-500">
-        
-        <!-- Header Section -->
+
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-bold">REGIS</h1>
+        <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-bold">TRASI</h1>
+      </div>
+      <div
+        class="max-w-7xl mx-auto rounded-3xl p-6 sm:p-10  text-left transform hover:scale-[1.01] transition-all duration-500">
+
         <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 mb-8 animate-fade-in">
-          <div class="w-20 h-20 sm:w-24 sm:h-24 p-2 rounded-full border-4 border-[#D71E28] flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
-            <img src="/logo-mini-olympic-2025.png" alt="Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full" />
+          <div
+            class="w-20 h-20 sm:w-24 sm:h-24 p-2 rounded-full border-4 border-[#D71E28] flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+            <img src="/logo-mini-olympic-2025.png" alt="Logo"
+              class="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-full" />
           </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#D71E28] text-center sm:text-left bg-gradient-to-r from-[#D71E28] to-[#ff4757] bg-clip-text text-transparent">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#D71E28] text-center sm:text-left bg-gradient-to-r from-[#D71E28] to-[#ff4757] bg-clip-text text-transparent">
             About Us
           </h2>
         </div>
-
-        <!-- Tab Navigation -->
         <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
-          <button
-            v-for="(tab, index) in tabs"
-            :key="tab"
-            @click="selectTab(tab, index)"
+          <button v-for="(tab, index) in tabs" :key="tab" @click="selectTab(tab, index)"
+            class="tab-button px-4 sm:px-6 py-3 rounded-full font-semibold border-2 transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
             :class="[
-              'px-4 sm:px-6 py-3 rounded-full font-semibold border-2 transition-all duration-300 transform hover:scale-105 relative overflow-hidden',
               selectedTab === tab
                 ? 'bg-[#D71E28] text-white border-[#D71E28] shadow-lg'
                 : 'text-[#D71E28] border-[#D71E28] hover:bg-[#D71E28]/10 hover:shadow-md'
-            ]"
-          >
+            ]">
             <span class="relative z-10 text-sm sm:text-base">{{ tab }}</span>
-            <div 
-              v-if="selectedTab === tab"
-              class="absolute inset-0 bg-gradient-to-r from-[#D71E28] to-[#ff4757] animate-pulse"
-            ></div>
+            <div v-if="selectedTab === tab"
+              class="absolute inset-0 bg-gradient-to-r from-[#D71E28] to-[#ff4757] animate-pulse"></div>
           </button>
         </div>
-
-        <!-- Content Section -->
         <div class="relative min-h-[300px] sm:min-h-[400px]">
           <transition name="slide-fade" mode="out-in">
             <div :key="selectedTab" class="animate-content-slide">
-              
-              <!-- Deskripsi Content -->
               <div v-if="selectedTab === 'Deskripsi'" class="space-y-6">
-                <div class="bg-gradient-to-r from-[#D71E28]/5 to-transparent p-6 rounded-2xl border-l-4 border-[#D71E28]">
+                <div
+                  class="bg-gradient-to-r from-[#D71E28]/5 to-transparent p-6 rounded-2xl border-l-4 border-[#D71E28]">
                   <p class="text-justify text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
                     {{ tabContent.Deskripsi }}
                   </p>
                 </div>
               </div>
-
-              <!-- Visi Content -->
               <div v-if="selectedTab === 'Visi'" class="space-y-6">
                 <div class="text-center mb-8">
-                  <div class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-6 py-3 rounded-full shadow-lg">
+                  <div
+                    class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-6 py-3 rounded-full shadow-lg">
                     <i class="fas fa-eye text-xl"></i>
                     <span class="font-bold text-lg">VISI KAMI</span>
                   </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl shadow-inner border border-blue-200/50">
+                <div
+                  class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl shadow-inner border border-blue-200/50">
                   <p class="text-center text-lg sm:text-xl font-medium text-gray-800 leading-relaxed italic">
                     "{{ tabContent.Visi }}"
                   </p>
                 </div>
               </div>
-
-              <!-- Misi Content -->
               <div v-if="selectedTab === 'Misi'" class="space-y-6">
                 <div class="text-center mb-8">
-                  <div class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-6 py-3 rounded-full shadow-lg">
+                  <div
+                    class="inline-flex items-center gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-6 py-3 rounded-full shadow-lg">
                     <i class="fas fa-bullseye text-xl"></i>
                     <span class="font-bold text-lg">MISI KAMI</span>
                   </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div
-                    v-for="(misi, index) in tabContent.Misi"
-                    :key="index"
+                  <div v-for="(misi, index) in tabContent.Misi" :key="index"
                     class="mission-card bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-200/50 transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
-                    :style="{ animationDelay: `${index * 0.1}s` }"
-                  >
+                    :style="{ animationDelay: `${index * 0.1}s` }">
                     <div class="flex items-start gap-4">
-                      <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#D71E28] to-[#ff4757] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      <div
+                        class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#D71E28] to-[#ff4757] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                         {{ index + 1 }}
                       </div>
                       <div class="flex-1">
@@ -95,33 +86,27 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </transition>
         </div>
-        
-        <!-- Decorative Element -->
         <div class="mt-8 flex justify-center">
-          <img src="/bunga/hiasan2.png" class="w-24 sm:w-32 opacity-80 hover:opacity-100 transition-opacity duration-300 animate-float" alt="Motif" />
+          <img src="/bunga/hiasan2.png"
+            class="w-24 sm:w-32 opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Motif" />
         </div>
       </div>
 
-      <!-- Social Media Section -->
+
       <div class="mt-12 flex justify-center">
-        <div class="flex gap-4 items-center bg-gradient-to-r from-[#D71E28] to-[#ff4757] px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300">
-          <div
-            v-for="(social, index) in socialMedia"
-            :key="social.name"
+        <div
+          class="flex gap-4 items-center bg-gradient-to-r from-[#D71E28] to-[#ff4757] px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div v-for="(social, index) in socialMedia" :key="social.name"
             class="social-icon bg-white rounded-full p-3 cursor-pointer transform hover:scale-110 transition-all duration-300 hover:shadow-lg"
-            :style="{ animationDelay: `${index * 0.1}s` }"
-            @click="openSocialMedia(social.url)"
-          >
+            :style="{ animationDelay: `${index * 0.1}s` }" @click="openSocialMedia(social.url)">
             <i :class="social.icon + ' text-[#D71E28] text-lg hover:text-[#ff4757] transition-colors duration-300'"></i>
           </div>
         </div>
       </div>
     </section>
-
     <FooterDahboard />
   </div>
 </template>
@@ -177,10 +162,10 @@ export default {
   methods: {
     selectTab(tab, index) {
       this.selectedTab = tab;
-      // Add ripple effect
+      // Menggunakan class khusus untuk button tab
       this.$nextTick(() => {
-        const buttons = document.querySelectorAll('button');
-        const button = buttons[index + 1]; // +1 because navbar might have buttons too
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const button = tabButtons[index];
         if (button) {
           button.classList.add('animate-ping');
           setTimeout(() => {
@@ -217,6 +202,7 @@ export default {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -228,6 +214,7 @@ export default {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -235,9 +222,12 @@ export default {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -248,6 +238,7 @@ export default {
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -304,7 +295,7 @@ export default {
   .mission-card {
     margin-bottom: 1rem;
   }
-  
+
   .social-icon {
     padding: 0.75rem;
   }
@@ -325,9 +316,11 @@ export default {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }

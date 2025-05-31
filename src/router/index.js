@@ -24,13 +24,15 @@ import dashboardUser from '@/views/peserta/dashboardUser'
 import profileUser from '@/views/peserta/profileUser'
 import bolaVolly from '@/views/result/bolaVolly'
 import buluTangkis from '@/views/result/buluTangkis'
+import eSport from '@/views/result/eSport'
+import tenisMeja from '@/views/result/tenisMeja'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
   { path: "/aboutUs", name: "aboutUs", component:tentangPage},
   { path: "/list-peserta", name: "listPeserta", component:listPesertaPage},
   { path: "/registrasi", name: "Registrasi", component:registrasiPage},
-  { path: "/detail-berita", name: "Detail", component:detailBeritaPage},
+  { path: "/detail-berita", name: "DetailBerita", component:detailBeritaPage},
   { path: "/berita", name: "Berita", component:beritaPage},
   { path: "/contactUs", name: "kontak", component:contactUsPage},
   { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},
@@ -48,6 +50,8 @@ const routes = [
   { path: "/jadwal-dan-hasil/sepak-bola", name: "sepakBola", component:sepakBola},
   { path: "/jadwal-dan-hasil/bola-volly", name: "bolaVolly", component:bolaVolly},
   { path: "/jadwal-dan-hasil/badminton", name: "badminton", component:buluTangkis},
+  { path: "/jadwal-dan-hasil/esport", name: "e-sport", component:eSport},
+  { path: "/jadwal-dan-hasil/tenis-meja", name: "tenis-meja", component:tenisMeja},
 ]
 
 const router = createRouter({
