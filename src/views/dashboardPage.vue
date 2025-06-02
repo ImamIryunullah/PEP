@@ -1,743 +1,756 @@
 <template>
-<div class="min-h-screen bg-[#f5f3ef]">
+  <div class="min-h-screen bg-[#f5f3ef]">
     <NavbarDashboard />
     <section class="relative w-full">
-        <video autoplay muted loop playsinline class="w-full h-full object-cover">
-            <source src="/PERTAMINAep.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-            <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025" class="w-80 mx-auto">
-        </div>
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="/PERTAMINAep.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+        <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025" class="w-80 mx-auto">
+      </div>
     </section>
     <section class="relative py-16 px-4 bg-[#f5f3ef] w-full min-h-screen">
-        <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1" alt="Maskot Kiri" />
-        <img src="/kategori/lari.png" class="absolute top-[47%] left-[30%] w-[260px] hidden md:block animate-float delay-3" alt="Maskot Lari" />
-        <img src="/kategori/basket.png" class="absolute top-[43%] left-[15%] w-[260px] hidden md:block animate-float delay-2" alt="Maskot Basket" />
-        <img src="/kategori/bulutangkis.png" class="absolute top-[48%] left-0 w-[350px] hidden md:block animate-float delay-1" alt="Maskot Bulutangkis" />
-        <div class="relative z-10 max-w-md mt-8 mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
-            opacity-0 animate-fade-in-up animation-delay-500">
-            <div class="flex justify-between text-xs text-gray-600 mb-1">
-                <span>Final</span>
-                <span>18 Des 2022</span>
-            </div>
-            <div class="text-xs text-gray-600 mb-1">Lusail Stadium</div>
-            <div class="flex justify-between items-center mb-1">
-                <span class="font-semibold text-gray-900 text-sm">TIM 1</span>
-                <div class="text-center leading-tight">
-                    <span class="text-base font-bold">3</span>
-                    <div class="text-[10px] text-gray-700">(4)</div>
-                </div>
-            </div>
-            <div class="flex justify-between items-center">
-                <span class="font-semibold text-gray-900 text-sm">TIM 2</span>
-                <div class="text-center leading-tight">
-                    <span class="text-base font-bold">3</span>
-                    <div class="text-[10px] text-gray-700">(2)</div>
-                </div>
-            </div>
-            <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
+      <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1"
+        alt="Maskot Kiri" />
+      <img src="/kategori/lari.png"
+        class="absolute top-[47%] left-[30%] w-[260px] hidden md:block animate-float delay-3" alt="Maskot Lari" />
+      <img src="/kategori/basket.png"
+        class="absolute top-[43%] left-[15%] w-[260px] hidden md:block animate-float delay-2" alt="Maskot Basket" />
+      <img src="/kategori/bulutangkis.png"
+        class="absolute top-[48%] left-0 w-[350px] hidden md:block animate-float delay-1" alt="Maskot Bulutangkis" />
+      <div class="relative z-10 max-w-md mt-8 mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
+              opacity-0 animate-fade-in-up animation-delay-500">
+        <div class="flex justify-between text-xs text-gray-600 mb-1">
+          <span>Final</span>
+          <span>18 Des 2022</span>
         </div>
-        <div class="relative z-10 max-w-md mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
-            opacity-0 animate-fade-in-up animation-delay-[700ms]">
-            <div class="flex justify-between text-xs text-gray-600 mb-1">
-                <span>Play-Off Peringkat 3</span>
-                <span>Stadion Panahan</span>
-            </div>
-            <div class="flex justify-between items-center mb-1">
-                <span class="font-semibold text-gray-900 text-sm">TIM 3</span>
-                <div class="text-center leading-tight">
-                    <span class="text-base font-bold">3</span>
-                    <div class="text-[10px] text-gray-700">(4)</div>
-                </div>
-            </div>
-            <div class="flex justify-between items-center">
-                <span class="font-semibold text-gray-900 text-sm">TIM 4</span>
-                <div class="text-center leading-tight">
-                    <span class="text-base font-bold">3</span>
-                    <div class="text-[10px] text-gray-700">(2)</div>
-                </div>
-            </div>
-            <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
+        <div class="text-xs text-gray-600 mb-1">Lusail Stadium</div>
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-semibold text-gray-900 text-sm">TIM 1</span>
+          <div class="text-center leading-tight">
+            <span class="text-base font-bold">3</span>
+            <div class="text-[10px] text-gray-700">(4)</div>
+          </div>
         </div>
-        <img src="/kategori/esport.png" class="absolute bottom-[25%] right-[2%] w-[400px] hidden md:block animate-float delay-1" alt="Maskot Kanan" />
-        <img src="/kategori/bola.png" class="absolute top-[47%] right-[14%] w-[250px] hidden md:block animate-float delay-2" alt="Maskot Bola" />
-        <img src="/kategori/tenislap.png" class="absolute top-[47%] right-[25%] w-[250px] hidden md:block animate-float delay-3" alt="Maskot Tenis" />
-        <img src="/kategori/senam.png" class="absolute top-[47%] right-0 w-[250px] hidden md:block animate-float delay-4" alt="Maskot Senam" />
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-gray-900 text-sm">TIM 2</span>
+          <div class="text-center leading-tight">
+            <span class="text-base font-bold">3</span>
+            <div class="text-[10px] text-gray-700">(2)</div>
+          </div>
+        </div>
+        <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
+      </div>
+      <div class="relative z-10 max-w-md mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
+              opacity-0 animate-fade-in-up animation-delay-[700ms]">
+        <div class="flex justify-between text-xs text-gray-600 mb-1">
+          <span>Play-Off Peringkat 3</span>
+          <span>Stadion Panahan</span>
+        </div>
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-semibold text-gray-900 text-sm">TIM 3</span>
+          <div class="text-center leading-tight">
+            <span class="text-base font-bold">3</span>
+            <div class="text-[10px] text-gray-700">(4)</div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-gray-900 text-sm">TIM 4</span>
+          <div class="text-center leading-tight">
+            <span class="text-base font-bold">3</span>
+            <div class="text-[10px] text-gray-700">(2)</div>
+          </div>
+        </div>
+        <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
+      </div>
+      <img src="/kategori/esport.png"
+        class="absolute bottom-[25%] right-[2%] w-[400px] hidden md:block animate-float delay-1" alt="Maskot Kanan" />
+      <img src="/kategori/bola.png"
+        class="absolute top-[47%] right-[14%] w-[250px] hidden md:block animate-float delay-2" alt="Maskot Bola" />
+      <img src="/kategori/tenislap.png"
+        class="absolute top-[47%] right-[25%] w-[250px] hidden md:block animate-float delay-3" alt="Maskot Tenis" />
+      <img src="/kategori/senam.png" class="absolute top-[47%] right-0 w-[250px] hidden md:block animate-float delay-4"
+        alt="Maskot Senam" />
     </section>
-    <section class="relative py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden" style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
-        <svg class="absolute top-0 left-0 w-full h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
-            <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
-        </svg>
-        <img src="/assets/obor.png" class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float animate-float delay-1 z-0" alt="Maskot Kiri" />
-        <div class="relative z-10 flex flex-col justify-end items-end h-full max-w-7xl mx-auto px-4 md:px-8">
-            <h1 class="text-white text-5xl md:text-7xl font-bold text-right max-w-[60%] pr-4 md:pr-12 mt-48" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
-                PENGENALAN MINI OLYMPIC
-            </h1>
-            <p class="text-sm md:text-base mt-6 max-w-[60%] pr-4 md:pr-12 text-right leading-relaxed text-white" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
-                Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
-                Mini Olympic Pertamina EP didedikasikan untuk memupuk kebersamaan, mempromosikan kesehatan, dan merayakan
-                semangat sportivitas di antara Pekerja dan Mitra Kerja.
-                <br /><br />
-                Melalui serangkaian kompetisi olahraga dan kegiatan yang menarik, Mini Olympics PEP bertujuan untuk
-                memperkuat ikatan dalam keluarga besar Pertamina EP sekaligus sebagai sarana internalisasi nilai-nilai inti
-                AKHLAK (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif). Mari bersama sama kita wujudkan
-                perjalanan menuju komunitas yang lebih sehat, lebih terhubung, dan lebih berkelanjutan.
-            </p>
-        </div>
+    <section class="relative py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
+      style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
+      <svg class="absolute top-0 left-0 w-full h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
+        <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
+      </svg>
+      <img src="/assets/obor.png"
+        class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float animate-float delay-1 z-0"
+        alt="Maskot Kiri" />
+      <div class="relative z-10 flex flex-col justify-end items-end h-full max-w-7xl mx-auto px-4 md:px-8">
+        <h1 class="text-white text-5xl md:text-7xl font-bold text-right max-w-[60%] pr-4 md:pr-12 mt-48"
+          data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
+          PENGENALAN MINI OLYMPIC
+        </h1>
+        <p class="text-sm md:text-base mt-6 max-w-[60%] pr-4 md:pr-12 text-right leading-relaxed text-white"
+          data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
+          Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
+          Mini Olympic Pertamina EP didedikasikan untuk memupuk kebersamaan, mempromosikan kesehatan, dan merayakan
+          semangat sportivitas di antara Pekerja dan Mitra Kerja.
+          <br /><br />
+          Melalui serangkaian kompetisi olahraga dan kegiatan yang menarik, Mini Olympics PEP bertujuan untuk
+          memperkuat ikatan dalam keluarga besar Pertamina EP sekaligus sebagai sarana internalisasi nilai-nilai inti
+          AKHLAK (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif). Mari bersama sama kita wujudkan
+          perjalanan menuju komunitas yang lebih sehat, lebih terhubung, dan lebih berkelanjutan.
+        </p>
+      </div>
     </section>
     <section class="relative w-full min-h-screen overflow-hidden">
-        <div class="flex flex-col lg:flex-row min-h-screen w-full">
+      <div class="flex flex-col lg:flex-row min-h-screen w-full">
 
-            <!-- Timeline Section (Left) -->
-            <div class="w-full lg:w-1/2 h-auto relative overflow-hidden bg-[#C1CF35] min-h-[60vh] lg:min-h-screen">
-                <!-- Background Pattern -->
-                <img src="/bunga/svg.png" alt="Background Pattern" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
+        <!-- Timeline Section (Left) -->
+        <div class="w-full lg:w-1/2 h-auto relative overflow-hidden bg-[#C1CF35] min-h-[60vh] lg:min-h-screen">
+          <!-- Background Pattern -->
+          <img src="/bunga/svg.png" alt="Background Pattern"
+            class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 
-                <!-- Content Container -->
-                <div class="relative z-10 w-full max-w-2xl mx-auto pt-8 sm:pt-12 lg:pt-20 px-4 sm:px-6 lg:px-10 pb-8 sm:pb-12 timeline-container">
+          <!-- Content Container -->
+          <div
+            class="relative z-10 w-full max-w-2xl mx-auto pt-8 sm:pt-12 lg:pt-20 px-4 sm:px-6 lg:px-10 pb-8 sm:pb-12 timeline-container">
 
-                    <!-- Header -->
-                    <div class="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-left">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
-                            Timeline Kegiatan
-                        </h2>
-                        <div class="w-20 sm:w-24 h-1 bg-black mx-auto rounded-full"></div>
-                    </div>
-
-                    <!-- Timeline Items -->
-                    <div class="space-y-4 sm:space-y-6 lg:space-y-8">
-
-                        <!-- Timeline Item 1 -->
-                        <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-100">
-                            <div class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
-                                1
-                            </div>
-                            <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6 pb-6">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
-                                    OPEN REGISTRATION
-                                </h3>
-                                <div class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
-                                    14 – 18 Juli 2025
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 2 -->
-                        <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-200">
-                            <div class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
-                                2
-                            </div>
-                            <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6 pb-6">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
-                                    VERIFIKASI
-                                </h3>
-                                <div class="space-y-2">
-                                    <div class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
-                                        21 Juli – 04 Agustus 2025 – Verifikasi
-                                    </div>
-                                    <br class="block sm:hidden" />
-                                    <div class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg mt-2 sm:mt-0 sm:ml-2">
-                                        08 Agustus 2025 – Pengumuman Final Peserta
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Timeline Item 3 -->
-                        <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-300">
-                            <div class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
-                                3
-                            </div>
-                            <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6">
-                                <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
-                                    MINI OLYMPIC
-                                </h3>
-                                <div class="space-y-2">
-                                    <div class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
-                                        29 – 31 Agustus 2025
-                                    </div>
-                                    <br class="block sm:hidden" />
-                                    <div class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg mt-2 sm:mt-0 sm:ml-2">
-                                        31 Agustus 2025 – Fun Run 5K
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Header -->
+            <div class="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-left">
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
+                Timeline Kegiatan
+              </h2>
+              <div class="w-20 sm:w-24 h-1 bg-black mx-auto rounded-full"></div>
             </div>
-            <div class="w-full lg:w-1/2 bg-[#f5f3ef] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden min-h-[40vh] lg:min-h-screen">
-                <img src="/bunga/timeline.png" alt="Background Decoration" class="absolute top-[15%] sm:top-[20%] left-[50%] sm:left-[60%] transform -translate-x-1/2 -translate-y-1/2 
-                            w-[200px] sm:w-[300px] lg:w-[400px] opacity-40 pointer-events-none animate-float" />
-                <div class="w-full max-w-xs sm:max-w-sm lg:max-w-lg mb-6 sm:mb-8 lg:mb-12 animate-slide-right delay-200">
-                    <img src="/kategori/jsc.png" alt="Maskot JSC" class="w-[300px] h-auto animate-pulse-scale" />
-                </div>
-                <div class="w-full overflow-hidden whitespace-nowrap bg-white/50 rounded-2xl py-3 sm:py-4 lg:py-6 animate-slide-right delay-400">
-                    <div class="inline-block animate-marquee space-x-8 sm:space-x-12 lg:space-x-24 px-4">
-                        <img src="/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/pertaminaEP.png" alt="Pertamina EP" class="inline h-12 sm:h-16 lg:h-20 object-contain" />
-                        <img src="/addinfo/pertamedika.png" alt="Pertamedika" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
 
-                        <!-- Duplicate for seamless loop -->
-                        <img src="/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-                        <img src="/addinfo/pertaminaEP.png" alt="Pertamina EP" class="inline h-12 sm:h-16 lg:h-20 object-contain" />
-                        <img src="/addinfo/pertamedika.png" alt="Pertamedika" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+            <!-- Timeline Items -->
+            <div class="space-y-4 sm:space-y-6 lg:space-y-8">
+
+              <!-- Timeline Item 1 -->
+              <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-100">
+                <div
+                  class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
+                  1
+                </div>
+                <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6 pb-6">
+                  <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
+                    OPEN REGISTRATION
+                  </h3>
+                  <div
+                    class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+                    14 – 18 Juli 2025
+                  </div>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-200">
+                <div
+                  class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
+                  2
+                </div>
+                <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6 pb-6">
+                  <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
+                    VERIFIKASI
+                  </h3>
+                  <div class="space-y-2">
+                    <div
+                      class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+                      21 Juli – 04 Agustus 2025 – Verifikasi
                     </div>
+                    <br class="block sm:hidden" />
+                    <div
+                      class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg mt-2 sm:mt-0 sm:ml-2">
+                      08 Agustus 2025 – Pengumuman Final Peserta
+                    </div>
+                  </div>
                 </div>
-                <div class="mt-4 sm:mt-6 lg:mt-8 text-center animate-fade-up delay-500">
-                    <p class="text-xs sm:text-sm text-gray-600 font-medium">
-                        Didukung oleh Partner Terpercaya
-                    </p>
+              </div>
+
+              <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-300">
+                <div
+                  class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
+                  3
                 </div>
+                <div class="flex-1 border-l-4 border-black pl-4 sm:pl-6">
+                  <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-2 sm:mb-3">
+                    MINI OLYMPIC
+                  </h3>
+                  <div class="space-y-2">
+                    <div
+                      class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg">
+                      29 – 31 Agustus 2025
+                    </div>
+                    <br class="block sm:hidden" />
+                    <div
+                      class="date-badge text-xs sm:text-sm lg:text-base text-white inline-block px-3 sm:px-4 py-1 sm:py-2 rounded-lg mt-2 sm:mt-0 sm:ml-2">
+                      31 Agustus 2025 – Fun Run 5K
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+        <div
+          class="w-full lg:w-1/2 bg-[#f5f3ef] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden min-h-[40vh] lg:min-h-screen">
+          <img src="/bunga/timeline.png" alt="Background Decoration" class="absolute top-[15%] sm:top-[20%] left-[50%] sm:left-[60%] transform -translate-x-1/2 -translate-y-1/2 
+                              w-[200px] sm:w-[300px] lg:w-[400px] opacity-40 pointer-events-none animate-float" />
+          <div class="w-full max-w-xs sm:max-w-sm lg:max-w-lg mb-6 sm:mb-8 lg:mb-12 animate-slide-right delay-200">
+            <img src="/kategori/jsc.png" alt="Maskot JSC" class="w-[300px] h-auto animate-pulse-scale" />
+          </div>
+          <div
+            class="w-full overflow-hidden whitespace-nowrap bg-white/50 rounded-2xl py-3 sm:py-4 lg:py-6 animate-slide-right delay-400">
+            <div class="inline-block animate-marquee space-x-8 sm:space-x-12 lg:space-x-24 px-4">
+              <img src="/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/pertaminaEP.png" alt="Pertamina EP"
+                class="inline h-12 sm:h-16 lg:h-20 object-contain" />
+              <img src="/addinfo/pertamedika.png" alt="Pertamedika"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+
+              <!-- Duplicate for seamless loop -->
+              <img src="/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="/addinfo/pertaminaEP.png" alt="Pertamina EP"
+                class="inline h-12 sm:h-16 lg:h-20 object-contain" />
+              <img src="/addinfo/pertamedika.png" alt="Pertamedika"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+            </div>
+          </div>
+          <div class="mt-4 sm:mt-6 lg:mt-8 text-center animate-fade-up delay-500">
+            <p class="text-xs sm:text-sm text-gray-600 font-medium">
+              Didukung oleh Partner Terpercaya
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
-    <section 
-      id="horizontal-scroll" 
-      ref="horizontalSection"
-      class="relative w-full h-screen snap-start overflow-hidden"
-    >
-      <div class="h-screen overflow-hidden">
-        <div 
-          id="horizontal-wrapper"
-          ref="horizontalWrapper"
-          class="flex h-screen will-change-transform transition-transform duration-500 ease-out"
-          :style="{ transform: `translateX(-${currentSlide * 100}vw)` }"
-        >
-          <!-- Volleyball Slide -->
-          <div class="w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat relative"
-            style="background-image: url('/Hero.png');">
-            <h1 class="absolute top-20 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">VOLLY</h1>
-            <h1 class="absolute top-52 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">BALL</h1>
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-12">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-300">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+      <section id="horizontal-scroll" ref="horizontalSection"
+        class="relative w-full h-screen snap-start overflow-hidden">
+        <div class="h-screen overflow-hidden">
+          <div id="horizontal-wrapper" ref="horizontalWrapper"
+            class="flex h-screen will-change-transform transition-transform duration-500 ease-out"
+            :style="{ transform: `translateX(-${currentSlide * 100}vw)` }">
+
+            <div class="w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat relative"
+              style="background-image: url('/Hero.png');">
+              <h1 class="absolute top-20 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">VOLLY</h1>
+              <h1 class="absolute top-52 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">BALL</h1>
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-12">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-300">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Volly Ball</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12" />
+                </div>
+                <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               </div>
-              <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Volly Ball</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12" />
+              <img src="/assets/voli.png"
+                class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
+            </div>
+
+            <!-- Football Slide -->
+            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+              style="background-image: url('/Hero.png');">
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Football</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
+                </div>
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+              <img src="/assets/bola.png"
+                class="absolute bottom-[20%] left-[2%] w-[350px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
             </div>
-            <img src="/assets/voli.png" class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
-          </div>
 
-          <!-- Football Slide -->
-          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/Hero.png');">
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+              style="background-image: url('/Hero.png');">
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Basket Ball</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
+                </div>
               </div>
-              <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Football</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-              </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+              <img src="/assets/basket.png"
+                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
             </div>
-            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-            <img src="/assets/bola.png" class="absolute bottom-[20%] left-[2%] w-[350px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
-          </div>
 
-          <!-- Basketball Slide -->
-          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/Hero.png');">
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+            <!-- Running Slide -->
+            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+              style="background-image: url('/Hero.png');">
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Running</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
+                </div>
               </div>
-              <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Basket Ball</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-              </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+              <img src="/assets/lari.png"
+                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
             </div>
-            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-            <img src="/assets/basket.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
-          </div>
 
-          <!-- Running Slide -->
-          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/Hero.png');">
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+            <!-- Badminton Slide -->
+            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+              style="background-image: url('/Hero.png');">
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Badminton</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
+                </div>
               </div>
-              <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Running</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-              </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+              <img src="/assets/badminton.png"
+                class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
             </div>
-            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-            <img src="/assets/lari.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
-          </div>
 
-          <!-- Badminton Slide -->
-          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/Hero.png');">
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+            <!-- Tenis Meja Slide -->
+            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+              style="background-image: url('/Hero.png');">
+              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
+                <div class="flex flex-row gap-2">
+                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
+                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
+                </div>
+                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Tenis Meja</h1>
+                <div class="flex flex-col">
+                  <button
+                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
+                    Lokasi
+                  </button>
+                  <button
+                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
+                </div>
               </div>
-              <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Badminton</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-              </div>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+              <img src="/assets/tesnimeja.png"
+                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
+                alt="Maskot" />
             </div>
-            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-            <img src="/assets/badminton.png" class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
-          </div>
-
-          <!-- Tenis Meja Slide -->
-          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-            style="background-image: url('/Hero.png');">
-            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-              <div class="flex flex-row gap-2">
-                <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-              </div>
-              <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Tenis Meja</h1>
-              <div class="flex flex-col">
-                <button class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                  Lokasi
-                </button>
-                <button class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                  Registrasi
-                </button>
-                <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-              </div>
-            </div>
-            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-            <img src="/assets/tesnimeja.png" class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105" alt="Maskot" />
           </div>
         </div>
-      </div>
 
-      <!-- Slide Indicators -->
-      <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
-        <div 
-          v-for="(_, index) in slideCount" 
-          :key="index" 
-          class="w-3 h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-110"
-          :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']"
-          @click="goToSlide(index)"
-        ></div>
-      </div>
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+          <div v-for="(_, index) in slideCount" :key="index"
+            class="w-3 h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-110"
+            :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']" @click="goToSlide(index)"></div>
+        </div>
 
-      <!-- Navigation Arrows -->
-      <button 
-        v-if="currentSlide > 0"
-        @click="previousSlide"
-        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10"
-      >
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-      
-      <button 
-        v-if="currentSlide < slideCount - 1"
-        @click="nextSlide"
-        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10"
-      >
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
-
-      <!-- Scroll Down Indicator -->
-      <div 
-        v-if="currentSlide === slideCount - 1" 
-        class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10"
-      >
-        <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">
-          <span class="mb-1">Scroll Down</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <!-- Navigation Arrows -->
+        <button v-if="currentSlide > 0" @click="previousSlide"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
-        </div>
-      </div>
-
-      <!-- Progress Bar -->
-      <div class="absolute top-4 left-0 right-0 px-4 z-10">
-        <div class="w-full bg-white/20 rounded-full h-1">
-          <div 
-            class="bg-white h-1 rounded-full transition-all duration-500 ease-out"
-            :style="{ width: `${((currentSlide + 1) / slideCount) * 100}%` }"
-          ></div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <section class="py-12 md:py-16 bg-gradient-to-br from-[#f8f6f2] to-[#f2ede7] px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <!-- Header Section -->
-      <div class="text-center mb-8 md:mb-12">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-700 mb-2">
-          Lokasi Venue
-        </h2>
-        <div class="w-16 h-1 bg-red-600 mx-auto rounded-full"></div>
-      </div>
-
-      <!-- Toggle Button -->
-      <div class="flex justify-end mb-6 md:mb-8">
-        <button 
-          @click="showAll = !showAll" 
-          class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            class="w-4 h-4 mr-2 transition-transform duration-300"
-            :class="{ 'rotate-180': showAll }"
-            fill="none" 
-            viewBox="0 0 24 24" 
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-          {{ showAll ? 'Sembunyikan' : 'Lihat Semua' }}
         </button>
-      </div>
 
-      <!-- Main Grid -->
-      <div class="grid lg:grid-cols-3 gap-4 md:gap-6 h-auto lg:h-[500px]">
-        <!-- Main Feature Card -->
-        <div class="lg:col-span-2 relative rounded-2xl overflow-hidden group h-64 sm:h-80 lg:h-full shadow-xl">
-          <img 
-            src="/assets/berita/bolaaa.jpg" 
-            alt="Sepak Bola" 
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 via-red-600/60 to-transparent"></div>
-          
-          <!-- Title -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <h3 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold z-10 text-center px-4 drop-shadow-2xl">
-              Sepak Bola
-            </h3>
-          </div>
-          
-          <!-- Arrow Icon -->
-          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 md:p-3 z-10 shadow-lg">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              class="w-5 h-5 md:w-6 md:h-6 text-red-600" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14" />
+        <button v-if="currentSlide < slideCount - 1" @click="nextSlide"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Scroll Down Indicator -->
+        <div v-if="currentSlide === slideCount - 1"
+          class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
+          <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">
+            <span class="mb-1">Scroll Down</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
-          
-          <!-- Decorative Elements -->
-          <img 
-            src="/assets/berita/ornamenkiri.svg" 
-            class="absolute bottom-3 left-3 w-12 md:w-16 lg:w-20 opacity-80" 
-            alt="Ornamen Kiri"
-          >
-          <img 
-            src="/assets/berita/ornamenkanan.svg" 
-            class="absolute bottom-3 right-3 w-12 md:w-16 lg:w-20 opacity-80" 
-            alt="Ornamen Kanan"
-          >
         </div>
 
-        <!-- Secondary Cards -->
-        <div class="flex flex-col gap-4 md:gap-6 h-auto lg:h-full">
-          <!-- Volley Card -->
-          <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
-            <img 
-              src="/assets/berita/voly.jpg" 
-              alt="Volley" 
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/70 via-yellow-600/50 to-transparent"></div>
+        <!-- Progress Bar -->
+        <div class="absolute top-4 left-0 right-0 px-4 z-10">
+          <div class="w-full bg-white/20 rounded-full h-1">
+            <div class="bg-white h-1 rounded-full transition-all duration-500 ease-out"
+              :style="{ width: `${((currentSlide + 1) / slideCount) * 100}%` }"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="py-12 md:py-16 bg-gradient-to-br from-[#f8f6f2] to-[#f2ede7] px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-8 md:mb-12">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-700 mb-2">
+            Lokasi Venue
+          </h2>
+          <div class="w-16 h-1 bg-red-600 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="flex justify-end mb-6 md:mb-8">
+          <button @click="showAll = !showAll"
+            class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 transition-transform duration-300"
+              :class="{ 'rotate-180': showAll }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            {{ showAll ? 'Sembunyikan' : 'Lihat Semua' }}
+          </button>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid lg:grid-cols-3 gap-4 md:gap-6 h-auto lg:h-[500px]">
+          <!-- Main Feature Card -->
+          <div class="lg:col-span-2 relative rounded-2xl overflow-hidden group h-64 sm:h-80 lg:h-full shadow-xl">
+            <img src="/assets/berita/bolaaa.jpg" alt="Sepak Bola"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 via-red-600/60 to-transparent"></div>
+
+            <!-- Title -->
             <div class="absolute inset-0 flex items-center justify-center">
-              <h3 class="text-white text-xl sm:text-2xl font-bold z-10 text-center drop-shadow-lg">
-                Volley
+              <h3 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold z-10 text-center px-4 drop-shadow-2xl">
+                Sepak Bola
               </h3>
             </div>
+
+            <!-- Arrow Icon -->
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 md:p-3 z-10 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14" />
+              </svg>
+            </div>
+
+            <!-- Decorative Elements -->
+            <img src="/assets/berita/ornamenkiri.svg" class="absolute bottom-3 left-3 w-12 md:w-16 lg:w-20 opacity-80"
+              alt="Ornamen Kiri">
+            <img src="/assets/berita/ornamenkanan.svg" class="absolute bottom-3 right-3 w-12 md:w-16 lg:w-20 opacity-80"
+              alt="Ornamen Kanan">
           </div>
-          
-          <!-- Tenis Meja Card -->
-          <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
-            <img 
-              src="/assets/berita/tenismeja.jpg" 
-              alt="Tenis Meja" 
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/70 via-yellow-600/50 to-transparent"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <h3 class="text-white text-lg sm:text-xl font-bold z-10 text-center drop-shadow-lg">
-                Tenis Meja
-              </h3>
+
+          <!-- Secondary Cards -->
+          <div class="flex flex-col gap-4 md:gap-6 h-auto lg:h-full">
+            <!-- Volley Card -->
+            <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
+              <img src="/assets/berita/voly.jpg" alt="Volley"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/70 via-yellow-600/50 to-transparent"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <h3 class="text-white text-xl sm:text-2xl font-bold z-10 text-center drop-shadow-lg">
+                  Volley
+                </h3>
+              </div>
+            </div>
+
+            <!-- Tenis Meja Card -->
+            <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
+              <img src="/assets/berita/tenismeja.jpg" alt="Tenis Meja"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-yellow-900/70 via-yellow-600/50 to-transparent"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <h3 class="text-white text-lg sm:text-xl font-bold z-10 text-center drop-shadow-lg">
+                  Tenis Meja
+                </h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Expandable Grid -->
-      <Transition 
-        name="fade-slide"
-        enter-active-class="transition-all duration-500 ease-out"
-        enter-from-class="opacity-0 transform translate-y-8"
-        enter-to-class="opacity-100 transform translate-y-0"
-        leave-active-class="transition-all duration-300 ease-in"
-        leave-from-class="opacity-100 transform translate-y-0"
-        leave-to-class="opacity-0 transform translate-y-8"
-      >
-        <div v-if="showAll" class="mt-8 md:mt-12">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            <div 
-              v-for="(item, index) in olahragaList" 
-              :key="index" 
-              :class="[
+        <!-- Expandable Grid -->
+        <Transition name="fade-slide" enter-active-class="transition-all duration-500 ease-out"
+          enter-from-class="opacity-0 transform translate-y-8" enter-to-class="opacity-100 transform translate-y-0"
+          leave-active-class="transition-all duration-300 ease-in"
+          leave-from-class="opacity-100 transform translate-y-0" leave-to-class="opacity-0 transform translate-y-8">
+          <div v-if="showAll" class="mt-8 md:mt-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+              <div v-for="(item, index) in olahragaList" :key="index" :class="[
                 'relative rounded-2xl overflow-hidden group h-48 md:h-56 shadow-lg hover:shadow-xl transition-all duration-300',
                 item.grid,
                 // Stagger animation delay
                 `animate-fade-in-up`
-              ]"
-              :style="{ 'animation-delay': `${index * 100}ms` }"
-            >
-              <img 
-                :src="item.gambar" 
-                :alt="item.nama" 
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-              <div class="absolute inset-0 flex items-end p-4">
-                <h3 class="text-white text-lg sm:text-xl font-bold z-10 drop-shadow-lg">
-                  {{ item.nama }}
-                </h3>
+              ]" :style="{ 'animation-delay': `${index * 100}ms` }">
+                <img :src="item.gambar" :alt="item.nama"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div class="absolute inset-0 flex items-end p-4">
+                  <h3 class="text-white text-lg sm:text-xl font-bold z-10 drop-shadow-lg">
+                    {{ item.nama }}
+                  </h3>
+                </div>
+
+                <!-- Hover overlay -->
+                <div
+                  class="absolute inset-0 bg-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                </div>
               </div>
-              
-              <!-- Hover overlay -->
-              <div class="absolute inset-0 bg-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </div>
+        </Transition>
+      </div>
+    </section>
+    <section class="bg-[#f5f3ef] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+      <div class="max-w-7xl mx-auto w-full">
+        <!-- Header -->
+        <div class="text-center mb-16 lg:mb-20">
+          <div
+            class="inline-flex items-center justify-center w-16 h-16 bg-[#E91717] rounded-full mb-6 animate-pulse-border">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 tracking-tight">
+            <span class="bg-gradient-to-r from-[#E91717] to-red-600 bg-clip-text text-transparent animate-slide-up">
+              Opening Ceremony
+            </span>
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-[#E91717] to-red-600 mx-auto rounded-full animate-slide-up"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="mb-16 lg:mb-20 animate-slide-up">
+          <div class="relative group max-w-5xl mx-auto">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-[#E91717] to-red-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+            </div>
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img src="/opening/obor.png" alt="Obor Ceremony"
+                class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" />
+
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+              <!-- Content -->
+              <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
+                <div class="glass-effect bg-white/10 rounded-2xl p-6 border border-white/20">
+                  <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 animate-float">
+                    🔥 Obor Ceremony
+                  </h3>
+                  <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl">
+                    The grand opening torch ceremony that lights up the spirit of our celebration
+                  </p>
+                  <div class="flex items-center mt-4">
+                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse mx-1" style="animation-delay: 0.2s;">
+                    </div>
+                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </Transition>
-    </div>
-  </section>
-    <section class="bg-[#f5f3ef] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
-        <div class="max-w-7xl mx-auto w-full">
-            <!-- Header -->
-            <div class="text-center mb-16 lg:mb-20">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-[#E91717] rounded-full mb-6 animate-pulse-border">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"></path>
-                    </svg>
+
+        <!-- Performance Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Kopral Jono -->
+          <div class="group card-hover animate-slide-left">
+            <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+              <!-- Image Container -->
+              <div class="relative h-64 sm:h-72 overflow-hidden">
+                <img src="/opening/kopraljono.png" alt="Kopral Jono"
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
-                <h2 class="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 tracking-tight">
-                    <span class="bg-gradient-to-r from-[#E91717] to-red-600 bg-clip-text text-transparent animate-slide-up">
-                        Opening Ceremony
-                    </span>
-                </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-[#E91717] to-red-600 mx-auto rounded-full animate-slide-up"></div>
+
+                <!-- Badge -->
+                <div class="absolute top-4 right-4">
+                  <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
+                    FEATURED
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
+                    🎭 Kopral Jono
+                  </h3>
+                  <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">
+                  Traditional Indonesian comedy performance bringing laughter and joy to the ceremony
+                </p>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
+                  <div
+                    class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
+                    style="width: 60%"></div>
+                </div>
+
+              </div>
             </div>
+          </div>
 
-            <!-- Hero Section -->
-            <div class="mb-16 lg:mb-20 animate-slide-up">
-                <div class="relative group max-w-5xl mx-auto">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[#E91717] to-red-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <div class="relative overflow-hidden rounded-3xl shadow-2xl">
-                        <img src="/opening/obor.png" alt="Obor Ceremony" class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" />
+          <!-- Marching Band -->
+          <div class="group card-hover animate-slide-up" style="animation-delay: 0.2s;">
+            <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+              <!-- Image Container -->
+              <div class="relative h-64 sm:h-72 overflow-hidden">
+                <img src="/opening/marchingband.png" alt="Marching Band"
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
 
-                        <!-- Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-
-                        <!-- Content -->
-                        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
-                            <div class="glass-effect bg-white/10 rounded-2xl p-6 border border-white/20">
-                                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 animate-float">
-                                    🔥 Obor Ceremony
-                                </h3>
-                                <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl">
-                                    The grand opening torch ceremony that lights up the spirit of our celebration
-                                </p>
-                                <div class="flex items-center mt-4">
-                                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse"></div>
-                                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse mx-1" style="animation-delay: 0.2s;"></div>
-                                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
+
+                <!-- Badge -->
+                <div class="absolute top-4 right-4">
+                  <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
+                    LIVE
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
+                    🎺 Marching Band
+                  </h3>
+                  <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">
+                  Spectacular musical performance with synchronized movements and powerful melodies
+                </p>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
+                  <div
+                    class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
+                    style="width: 80%"></div>
+                </div>
+
+              </div>
             </div>
+          </div>
 
-            <!-- Performance Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Kopral Jono -->
-                <div class="group card-hover animate-slide-left">
-                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-                        <!-- Image Container -->
-                        <div class="relative h-64 sm:h-72 overflow-hidden">
-                            <img src="/opening/kopraljono.png" alt="Kopral Jono" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+          <!-- Tari Kolosal -->
+          <div class="group card-hover animate-slide-right md:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
+            <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
+              <!-- Image Container -->
+              <div class="relative h-64 sm:h-72 overflow-hidden">
+                <img src="/opening/tarikolosal.png" alt="Tari Kolosal"
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
 
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            <!-- Badge -->
-                            <div class="absolute top-4 right-4">
-                                <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    FEATURED
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
-                                    🎭 Kopral Jono
-                                </h3>
-                                <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
-                            </div>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Traditional Indonesian comedy performance bringing laughter and joy to the ceremony
-                            </p>
-
-                            <!-- Progress Bar -->
-                            <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
-                                <div class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full" style="width: 60%"></div>
-                            </div>
-
-                        </div>
-                    </div>
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
 
-                <!-- Marching Band -->
-                <div class="group card-hover animate-slide-up" style="animation-delay: 0.2s;">
-                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-                        <!-- Image Container -->
-                        <div class="relative h-64 sm:h-72 overflow-hidden">
-                            <img src="/opening/marchingband.png" alt="Marching Band" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                <!-- Badge -->
+                <div class="absolute top-4 right-4">
+                  <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
+                    GRAND
+                  </div>
+                </div>
+              </div>
 
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
+                    💃 Tari Kolosal
+                  </h3>
+                  <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">
+                  Massive traditional dance performance showcasing Indonesian cultural heritage
+                </p>
 
-                            <!-- Badge -->
-                            <div class="absolute top-4 right-4">
-                                <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    LIVE
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
-                                    🎺 Marching Band
-                                </h3>
-                                <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
-                            </div>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Spectacular musical performance with synchronized movements and powerful melodies
-                            </p>
-
-                            <!-- Progress Bar -->
-                            <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
-                                <div class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full" style="width: 80%"></div>
-                            </div>
-
-                        </div>
-                    </div>
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
+                  <div
+                    class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
+                    style="width: 90%"></div>
                 </div>
 
-                <!-- Tari Kolosal -->
-                <div class="group card-hover animate-slide-right md:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
-                    <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-                        <!-- Image Container -->
-                        <div class="relative h-64 sm:h-72 overflow-hidden">
-                            <img src="/opening/tarikolosal.png" alt="Tari Kolosal" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            <!-- Badge -->
-                            <div class="absolute top-4 right-4">
-                                <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    GRAND
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-3">
-                                <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
-                                    💃 Tari Kolosal
-                                </h3>
-                                <div class="w-3 h-3 bg-[#E91717] rounded-full animate-pulse"></div>
-                            </div>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Massive traditional dance performance showcasing Indonesian cultural heritage
-                            </p>
-
-                            <!-- Progress Bar -->
-                            <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
-                                <div class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full" style="width: 90%"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <!-- Bottom CTA -->
-            <div class="text-center mt-16 lg:mt-20">
-                <div class="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <span class="text-gray-700 font-medium">Experience the Grand Opening</span>
-                    <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse"></div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Bottom CTA -->
+        <div class="text-center mt-16 lg:mt-20">
+          <div
+            class="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <span class="text-gray-700 font-medium">Experience the Grand Opening</span>
+            <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-</div>
-<FooterDashboard />
+  </div>
+  <FooterDashboard />
 </template>
 
 <script>
@@ -980,533 +993,535 @@ export default {
 
 <style>
 body {
-    @apply font-montserrat;
-    margin: 0;
-    padding: 0;
+  @apply font-montserrat;
+  margin: 0;
+  padding: 0;
 }
 
 #horizontal-wrapper {
-    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .snap-y {
-    scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 .snap-start {
-    scroll-snap-align: start;
+  scroll-snap-align: start;
 }
 
 .snap-mandatory {
-    --tw-scroll-snap-strictness: mandatory;
+  --tw-scroll-snap-strictness: mandatory;
 }
 
 #scroll-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 #scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes float {
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-10px);
-    }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .shadow-gold {
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
-    /* gold shadow */
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+  /* gold shadow */
 }
 
 @keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .float {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .zoom-in {
-    animation: zoomIn 0.6s ease-out forwards;
+  animation: zoomIn 0.6s ease-out forwards;
 }
 
 .delay-1 {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .delay-2 {
-    animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .delay-3 {
-    animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 
 .hover-scale {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .hover-scale:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* ini style punya lokasi venue */
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .rotate-left {
-    transform: rotateY(20deg);
+  transform: rotateY(20deg);
 }
 
 .rotate-right {
-    transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
 }
 
 .rotate-left {
-    transform: perspective(1000px) rotateY(20deg);
+  transform: perspective(1000px) rotateY(20deg);
 }
 
 .rotate-right {
-    transform: perspective(1000px) rotateY(-20deg);
+  transform: perspective(1000px) rotateY(-20deg);
 }
 
 @keyframes float {
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-10px);
-    }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slide-in {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-slide-in {
-    animation: slide-in 1s ease-out forwards;
+  animation: slide-in 1s ease-out forwards;
 }
 
 .animate-marquee {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
+  display: inline-block;
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-10px);
-    }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float {
-    animation: float 4s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .animate-fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .delay-1 {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .delay-2 {
-    animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 .delay-3 {
-    animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 
 .delay-4 {
-    animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 
-<style>@keyframes float {
 
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
 
-    50% {
-        transform: translateY(-10px);
-    }
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse-border {
 
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(233, 23, 23, 0.4);
-    }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(233, 23, 23, 0.4);
+  }
 
-    50% {
-        box-shadow: 0 0 0 20px rgba(233, 23, 23, 0);
-    }
+  50% {
+    box-shadow: 0 0 0 20px rgba(233, 23, 23, 0);
+  }
 }
 
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 .animate-slide-up {
-    animation: slideInUp 0.8s ease-out;
+  animation: slideInUp 0.8s ease-out;
 }
 
 .animate-slide-left {
-    animation: slideInLeft 0.8s ease-out;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .animate-slide-right {
-    animation: slideInRight 0.8s ease-out;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .animate-pulse-border {
-    animation: pulse-border 2s infinite;
+  animation: pulse-border 2s infinite;
 }
 
 .glass-effect {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .hero-gradient {
-    background: linear-gradient(135deg, rgba(233, 23, 23, 0.1) 0%, rgba(233, 23, 23, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(233, 23, 23, 0.1) 0%, rgba(233, 23, 23, 0.05) 100%);
 }
 
 .card-hover {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card-hover:hover {
-    transform: translateY(-20px) scale(1.03);
+  transform: translateY(-20px) scale(1.03);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #E91717;
-    border-radius: 4px;
+  background: #E91717;
+  border-radius: 4px;
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse-scale {
 
-    0%,
-    100% {
-        transform: scale(1);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.05);
-    }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes float {
 
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
 
-    50% {
-        transform: translateY(-10px);
-    }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-marquee {
-    animation: marquee 20s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 .animate-fade-up {
-    animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .animate-slide-left {
-    animation: slideInLeft 0.8s ease-out;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .animate-slide-right {
-    animation: slideInRight 0.8s ease-out;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .animate-pulse-scale {
-    animation: pulse-scale 2s ease-in-out infinite;
+  animation: pulse-scale 2s ease-in-out infinite;
 }
 
 .animate-float {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .delay-100 {
-    animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .delay-200 {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .delay-300 {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .delay-400 {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .delay-500 {
-    animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .timeline-item {
-    position: relative;
-    transition: all 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 .timeline-item:hover {
-    transform: translateX(8px);
+  transform: translateX(8px);
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -2px;
-    top: 50px;
-    bottom: -20px;
-    width: 2px;
-    background: linear-gradient(to bottom, #C1CF35, transparent);
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 50px;
+  bottom: -20px;
+  width: 2px;
+  background: linear-gradient(to bottom, #C1CF35, transparent);
 }
 
 .timeline-item:last-child::before {
-    display: none;
+  display: none;
 }
 
 .date-badge {
-    background: linear-gradient(135deg, #000 0%, #333 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #000 0%, #333 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .number-circle {
-    background: linear-gradient(135deg, #000 0%, #333 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #000 0%, #333 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Custom scrollbar for mobile */
 ::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #C1CF35;
-    border-radius: 2px;
+  background: #C1CF35;
+  border-radius: 2px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .timeline-container {
-        padding: 1.5rem 1rem;
-    }
+  .timeline-container {
+    padding: 1.5rem 1rem;
+  }
 
-    .timeline-item {
-        margin-bottom: 2rem;
-    }
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
 
-    .timeline-item::before {
-        left: 15px;
-        top: 40px;
-    }
+  .timeline-item::before {
+    left: 15px;
+    top: 40px;
+  }
 }
 </style>
 
 <style scoped>
-
 #horizontal-wrapper {
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
-button, .cursor-pointer {
+button,
+.cursor-pointer {
   transition: all 0.2s ease;
 }
 
@@ -1524,6 +1539,7 @@ button, .cursor-pointer {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1556,18 +1572,17 @@ button, .cursor-pointer {
   ::-webkit-scrollbar {
     width: 4px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: #dc2626;
     border-radius: 2px;
   }
 }
 
-/* Additional responsive utilities */
 @media (max-width: 640px) {
   .grid-responsive {
     grid-template-columns: 1fr;

@@ -21,7 +21,6 @@ import verifikasiPesertaPage from '@/views/admin/verifikasiPesertaPage'
 import kelolaBeriaPage from '@/views/admin/kelolaBeritaPage'
 import adminSkorStage from '@/views/admin/adminSkorStage'
 import dashboardUser from '@/views/peserta/dashboardUser'
-import profileUser from '@/views/peserta/profileUser'
 import bolaVolly from '@/views/result/bolaVolly'
 import buluTangkis from '@/views/result/buluTangkis'
 import eSport from '@/views/result/eSport'
@@ -47,7 +46,6 @@ const routes = [
   { path: "/admin/kelola-berita", name: "adminKelolaBerita", component:kelolaBeriaPage},
   { path: "/admin/kelola-skor", name: "adminKelolaSkor", component:adminSkorStage},
   { path: "/peserta/dashboard", name: "pesertaDashboard", component:dashboardUser},
-  { path: "/peserta/profile", name: "pesertaProfile", component:profileUser},
   { path: "/jadwal-dan-hasil/sepak-bola", name: "sepakBola", component:sepakBola},
   { path: "/jadwal-dan-hasil/bola-volly", name: "bolaVolly", component:bolaVolly},
   { path: "/jadwal-dan-hasil/badminton", name: "badminton", component:buluTangkis},
