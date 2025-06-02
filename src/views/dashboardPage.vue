@@ -1,118 +1,255 @@
 <template>
   <div class="min-h-screen bg-[#f5f3ef]">
     <NavbarDashboard />
-    <section class="relative w-full">
-      <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <source src="/PERTAMINAep.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="absolute top-[90%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-        <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025" class="w-80 mx-auto">
-      </div>
-    </section>
-    <section class="relative py-16 px-4 bg-[#f5f3ef] w-full min-h-screen">
-      <img src="/kategori/voli.png" class="absolute bottom-[20%] left-[2%] w-[550px] hidden md:block float delay-1"
-        alt="Maskot Kiri" />
+    <section class="relative w-full h-screen min-h-[400px] overflow-hidden">
+    <!-- Background Video -->
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/PERTAMINAep.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <!-- Overlay for better text visibility (optional) -->
+    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    
+    <!-- Logo Container -->
+    <div class="absolute inset-0 flex items-center justify-center z-10 p-4">
+      <img 
+        src="/logo-mini-olympic-2025.png" 
+        alt="Mini Olympic 2025" 
+        class="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 max-w-full h-auto mx-auto drop-shadow-lg"
+      >
+    </div>
+  </section>
+    <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-[#f5f3ef] w-full min-h-screen overflow-hidden">
+      
+      <!-- Left Side Mascots - Desktop -->
+      <img src="/kategori/voli.png" 
+        class="absolute bottom-[20%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block float delay-1 z-0"
+        alt="Maskot Voli" />
       <img src="/kategori/lari.png"
-        class="absolute top-[47%] left-[30%] w-[260px] hidden md:block animate-float delay-3" alt="Maskot Lari" />
+        class="absolute top-[47%] left-[25%] lg:left-[30%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block animate-float delay-3 z-0" 
+        alt="Maskot Lari" />
       <img src="/kategori/basket.png"
-        class="absolute top-[43%] left-[15%] w-[260px] hidden md:block animate-float delay-2" alt="Maskot Basket" />
+        class="absolute top-[43%] left-[12%] lg:left-[15%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block animate-float delay-2 z-0" 
+        alt="Maskot Basket" />
       <img src="/kategori/bulutangkis.png"
-        class="absolute top-[48%] left-0 w-[350px] hidden md:block animate-float delay-1" alt="Maskot Bulutangkis" />
-      <div class="relative z-10 max-w-md mt-8 mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
-              opacity-0 animate-fade-in-up animation-delay-500">
-        <div class="flex justify-between text-xs text-gray-600 mb-1">
-          <span>Final</span>
-          <span>18 Des 2022</span>
-        </div>
-        <div class="text-xs text-gray-600 mb-1">Lusail Stadium</div>
-        <div class="flex justify-between items-center mb-1">
-          <span class="font-semibold text-gray-900 text-sm">TIM 1</span>
-          <div class="text-center leading-tight">
-            <span class="text-base font-bold">3</span>
-            <div class="text-[10px] text-gray-700">(4)</div>
-          </div>
-        </div>
-        <div class="flex justify-between items-center">
-          <span class="font-semibold text-gray-900 text-sm">TIM 2</span>
-          <div class="text-center leading-tight">
-            <span class="text-base font-bold">3</span>
-            <div class="text-[10px] text-gray-700">(2)</div>
-          </div>
-        </div>
-        <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
-      </div>
-      <div class="relative z-10 max-w-md mx-auto bg-white rounded-xl shadow-md p-4 mb-6 
-              opacity-0 animate-fade-in-up animation-delay-[700ms]">
-        <div class="flex justify-between text-xs text-gray-600 mb-1">
-          <span>Play-Off Peringkat 3</span>
-          <span>Stadion Panahan</span>
-        </div>
-        <div class="flex justify-between items-center mb-1">
-          <span class="font-semibold text-gray-900 text-sm">TIM 3</span>
-          <div class="text-center leading-tight">
-            <span class="text-base font-bold">3</span>
-            <div class="text-[10px] text-gray-700">(4)</div>
-          </div>
-        </div>
-        <div class="flex justify-between items-center">
-          <span class="font-semibold text-gray-900 text-sm">TIM 4</span>
-          <div class="text-center leading-tight">
-            <span class="text-base font-bold">3</span>
-            <div class="text-[10px] text-gray-700">(2)</div>
-          </div>
-        </div>
-        <div class="mt-1 inline-block px-2 py-[2px] bg-purple-900 text-white text-[10px] rounded-full">FT</div>
-      </div>
+        class="absolute top-[48%] left-0 w-[250px] lg:w-[300px] xl:w-[350px] hidden md:block animate-float delay-1 z-0" 
+        alt="Maskot Bulutangkis" />
+
+      <!-- Right Side Mascots - Desktop -->
       <img src="/kategori/esport.png"
-        class="absolute bottom-[25%] right-[2%] w-[400px] hidden md:block animate-float delay-1" alt="Maskot Kanan" />
+        class="absolute bottom-[25%] right-[2%] w-[280px] lg:w-[350px] xl:w-[400px] hidden md:block animate-float delay-1 z-0" 
+        alt="Maskot Esport" />
       <img src="/kategori/bola.png"
-        class="absolute top-[47%] right-[14%] w-[250px] hidden md:block animate-float delay-2" alt="Maskot Bola" />
+        class="absolute top-[47%] right-[12%] lg:right-[14%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-2 z-0" 
+        alt="Maskot Bola" />
       <img src="/kategori/tenislap.png"
-        class="absolute top-[47%] right-[25%] w-[250px] hidden md:block animate-float delay-3" alt="Maskot Tenis" />
-      <img src="/kategori/senam.png" class="absolute top-[47%] right-0 w-[250px] hidden md:block animate-float delay-4"
+        class="absolute top-[47%] right-[22%] lg:right-[25%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-3 z-0" 
+        alt="Maskot Tenis" />
+      <img src="/kategori/senam.png" 
+        class="absolute top-[47%] right-0 w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-4 z-0"
         alt="Maskot Senam" />
+
+      <!-- Mobile Mascots - Smaller and positioned differently -->
+      <div class="block md:hidden absolute inset-0 pointer-events-none">
+        <!-- Top row mobile mascots -->
+        <img src="/kategori/bulutangkis.png" 
+          class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px] animate-float delay-1 opacity-60" 
+          alt="Maskot Bulutangkis" />
+        <img src="/kategori/basket.png" 
+          class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px] animate-float delay-2 opacity-60" 
+          alt="Maskot Basket" />
+        
+        <!-- Bottom row mobile mascots -->
+        <img src="/kategori/voli.png" 
+          class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px] animate-float delay-1 opacity-60" 
+          alt="Maskot Voli" />
+        <img src="/kategori/esport.png" 
+          class="absolute bottom-[18%] right-[2%] w-[100px] sm:w-[130px] animate-float delay-3 opacity-60" 
+          alt="Maskot Esport" />
+        
+        <!-- Floating sports icons -->
+        <img src="/kategori/lari.png" 
+          class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px] animate-float delay-4 opacity-50" 
+          alt="Maskot Lari" />
+        <img src="/kategori/bola.png" 
+          class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px] animate-float delay-5 opacity-50" 
+          alt="Maskot Bola" />
+        <img src="/kategori/tenislap.png" 
+          class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px] animate-float delay-6 opacity-50" 
+          alt="Maskot Tenis" />
+        <img src="/kategori/senam.png" 
+          class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px] animate-float delay-7 opacity-50" 
+          alt="Maskot Senam" />
+      </div>
+
+      <!-- Main Content - Match Cards -->
+      <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-8">
+        
+        <!-- First Match Card -->
+        <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
+                opacity-0 animate-fade-in-up animation-delay-500">
+          <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
+            <span class="font-medium">Final</span>
+            <span>18 Des 2024</span>
+          </div>
+          <div class="text-xs sm:text-sm text-gray-600 mb-3">Lusail Stadium</div>
+          
+          <div class="space-y-2 sm:space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 1</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
+                <div class="text-xs text-gray-700">(4)</div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 2</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
+                <div class="text-xs text-gray-700">(2)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 sm:mt-4">
+            <span class="inline-block px-3 py-1 bg-purple-900 text-white text-xs rounded-full font-medium">FT</span>
+          </div>
+        </div>
+
+        <!-- Second Match Card -->
+        <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
+                opacity-0 animate-fade-in-up animation-delay-[700ms]">
+          <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
+            <span class="font-medium">Play-Off Peringkat 3</span>
+            <span>Stadion Panahan</span>
+          </div>
+          
+          <div class="space-y-2 sm:space-y-3 mt-3">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 3</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
+                <div class="text-xs text-gray-700">(4)</div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 4</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
+                <div class="text-xs text-gray-700">(2)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3 sm:mt-4">
+            <span class="inline-block px-3 py-1 bg-purple-900 text-white text-xs rounded-full font-medium">FT</span>
+          </div>
+        </div>
+
+        <!-- Additional Match Card for Mobile Balance -->
+        <div class="block sm:hidden max-w-sm w-full mx-auto bg-white rounded-xl shadow-lg p-4 mb-6 
+                opacity-0 animate-fade-in-up animation-delay-[900ms]">
+          <div class="flex justify-between text-xs text-gray-600 mb-2">
+            <span class="font-medium">Semi Final</span>
+            <span>19 Des 2024</span>
+          </div>
+          <div class="text-xs text-gray-600 mb-3">Arena Olahraga</div>
+          
+          <div class="space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm">TIM A</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg font-bold text-gray-900">2</span>
+                <div class="text-xs text-gray-700">(3)</div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="font-semibold text-gray-900 text-sm">TIM B</span>
+              <div class="text-center leading-tight">
+                <span class="text-lg font-bold text-gray-900">1</span>
+                <div class="text-xs text-gray-700">(1)</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-3">
+            <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full font-medium">LIVE</span>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="relative py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
+    <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
       style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
-      <svg class="absolute top-0 left-0 w-full h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      
+      <!-- Decorative SVG Wave -->
+      <svg class="absolute top-0 left-0 w-full h-12 sm:h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
         <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
       </svg>
+      
+
       <img src="/assets/obor.png"
-        class="absolute bottom-[10%] left-[0%] w-[600px] hidden md:block float animate-float delay-1 z-0"
+        class="absolute bottom-[5%] sm:bottom-[8%] lg:bottom-[10%] left-[0%] w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] hidden md:block float animate-float delay-1 z-0"
         alt="Maskot Kiri" />
-      <div class="relative z-10 flex flex-col justify-end items-end h-full max-w-7xl mx-auto px-4 md:px-8">
-        <h1 class="text-white text-5xl md:text-7xl font-bold text-right max-w-[60%] pr-4 md:pr-12 mt-48"
+    
+      <div class="relative z-10 flex flex-col justify-center lg:justify-end items-center lg:items-end h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-32">
+        
+        <!-- Main Heading -->
+        <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center lg:text-right w-full lg:max-w-[70%] xl:max-w-[60%] lg:pr-4 xl:pr-12 mb-6 sm:mb-8 leading-tight"
           data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
           PENGENALAN MINI OLYMPIC
         </h1>
-        <p class="text-sm md:text-base mt-6 max-w-[60%] pr-4 md:pr-12 text-right leading-relaxed text-white"
-          data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
-          Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
-          Mini Olympic Pertamina EP didedikasikan untuk memupuk kebersamaan, mempromosikan kesehatan, dan merayakan
-          semangat sportivitas di antara Pekerja dan Mitra Kerja.
-          <br /><br />
-          Melalui serangkaian kompetisi olahraga dan kegiatan yang menarik, Mini Olympics PEP bertujuan untuk
-          memperkuat ikatan dalam keluarga besar Pertamina EP sekaligus sebagai sarana internalisasi nilai-nilai inti
-          AKHLAK (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif). Mari bersama sama kita wujudkan
-          perjalanan menuju komunitas yang lebih sehat, lebih terhubung, dan lebih berkelanjutan.
-        </p>
+        
+        <!-- Description Text -->
+        <div class="w-full lg:max-w-[70%] xl:max-w-[60%] lg:pr-4 xl:pr-12">
+          <p class="text-xs sm:text-sm md:text-base lg:text-base leading-relaxed sm:leading-loose text-white text-center lg:text-right"
+            data-aos="fade-left" data-aos-delay="600" data-aos-duration="1200">
+            Selamat datang di halaman resmi Mini Olympic Pertamina EP! Sebagai acara yang dinamis dan penuh semangat,
+            Mini Olympic Pertamina EP didedikasikan untuk memupuk kebersamaan, mempromosikan kesehatan, dan merayakan
+            semangat sportivitas di antara Pekerja dan Mitra Kerja.
+          </p>
+          
+          <p class="text-xs sm:text-sm md:text-base lg:text-base leading-relaxed sm:leading-loose text-white text-center lg:text-right mt-4 sm:mt-6"
+            data-aos="fade-left" data-aos-delay="800" data-aos-duration="1200">
+            Melalui serangkaian kompetisi olahraga dan kegiatan yang menarik, Mini Olympics PEP bertujuan untuk
+            memperkuat ikatan dalam keluarga besar Pertamina EP sekaligus sebagai sarana internalisasi nilai-nilai inti
+            AKHLAK (Amanah, Kompeten, Harmonis, Loyal, Adaptif, Kolaboratif). Mari bersama sama kita wujudkan
+            perjalanan menuju komunitas yang lebih sehat, lebih terhubung, dan lebih berkelanjutan.
+          </p>
+        </div>
+        
+        <!-- Optional CTA Button for Mobile -->
+        <div class="mt-8 sm:mt-10 lg:hidden">
+          <button class="bg-white bg-opacity-20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-30 transition-all duration-300 border border-white border-opacity-30"
+            data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200">
+            Pelajari Lebih Lanjut
+          </button>
+        </div>
       </div>
+      
+      <!-- Mobile Background Overlay for Better Text Readability -->
+      <div class="absolute inset-0 bg-black bg-opacity-20 lg:bg-opacity-0 z-5"></div>
     </section>
     <section class="relative w-full min-h-screen overflow-hidden">
       <div class="flex flex-col lg:flex-row min-h-screen w-full">
 
-        <!-- Timeline Section (Left) -->
+
         <div class="w-full lg:w-1/2 h-auto relative overflow-hidden bg-[#C1CF35] min-h-[60vh] lg:min-h-screen">
-          <!-- Background Pattern -->
+
           <img src="/bunga/svg.png" alt="Background Pattern"
             class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 
-          <!-- Content Container -->
+
           <div
             class="relative z-10 w-full max-w-2xl mx-auto pt-8 sm:pt-12 lg:pt-20 px-4 sm:px-6 lg:px-10 pb-8 sm:pb-12 timeline-container">
 
-            <!-- Header -->
+
             <div class="text-center mb-8 sm:mb-12 lg:mb-16 animate-slide-left">
               <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">
                 Timeline Kegiatan
@@ -120,10 +257,10 @@
               <div class="w-20 sm:w-24 h-1 bg-black mx-auto rounded-full"></div>
             </div>
 
-            <!-- Timeline Items -->
+
             <div class="space-y-4 sm:space-y-6 lg:space-y-8">
 
-              <!-- Timeline Item 1 -->
+
               <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-100">
                 <div
                   class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
@@ -140,7 +277,7 @@
                 </div>
               </div>
 
-              <!-- Timeline Item 2 -->
+
               <div class="timeline-item flex items-start gap-4 sm:gap-6 animate-fade-up delay-200">
                 <div
                   class="number-circle w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white font-bold text-sm sm:text-base flex-shrink-0">
@@ -207,7 +344,7 @@
               <img src="/addinfo/pertamedika.png" alt="Pertamedika"
                 class="inline h-10 sm:h-12 lg:h-16 object-contain" />
 
-              <!-- Duplicate for seamless loop -->
+
               <img src="/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
@@ -226,223 +363,290 @@
       </div>
     </section>
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
-      <section id="horizontal-scroll" ref="horizontalSection"
-        class="relative w-full h-screen snap-start overflow-hidden">
-        <div class="h-screen overflow-hidden">
-          <div id="horizontal-wrapper" ref="horizontalWrapper"
-            class="flex h-screen will-change-transform transition-transform duration-500 ease-out"
-            :style="{ transform: `translateX(-${currentSlide * 100}vw)` }">
-
-            <div class="w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat relative"
-              style="background-image: url('/Hero.png');">
-              <h1 class="absolute top-20 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">VOLLY</h1>
-              <h1 class="absolute top-52 left-20 text-gray-400 opacity-25 text-9xl font-bold select-none">BALL</h1>
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-12">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-300">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Volly Ball</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
-                    Registrasi
-                  </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12" />
-                </div>
-                <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+    <section 
+      id="horizontal-scroll" 
+      ref="horizontalSection"
+      class="relative w-full h-screen snap-start overflow-hidden"
+    >
+      <div class="h-screen overflow-hidden">
+        <div 
+          id="horizontal-wrapper" 
+          ref="horizontalWrapper"
+          class="flex h-screen will-change-transform transition-transform duration-500 ease-out"
+          :style="{ transform: `translateX(-${currentSlide * 100}vw)` }"
+        >
+          <!-- Volleyball Slide -->
+          <div class="w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat relative"
+            style="background-image: url('/Hero.png');">
+            <h1 class="absolute top-8 sm:top-12 md:top-20 left-4 sm:left-8 md:left-20 text-gray-400 opacity-25 text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold select-none">VOLLY</h1>
+            <h1 class="absolute top-16 sm:top-24 md:top-52 left-4 sm:left-8 md:left-20 text-gray-400 opacity-25 text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold select-none">BALL</h1>
+            
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-6 sm:gap-8 md:gap-12">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-300">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
               </div>
-              <img src="/assets/voli.png"
-                class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
-            </div>
-
-            <!-- Football Slide -->
-            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('/Hero.png');">
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-3xl md:text-5xl font-bold text-white mt-12">Football</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+              <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white mt-6 sm:mt-8 md:mt-12">Volly Ball</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
                     Registrasi
                   </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-                </div>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/bola.png"
-                class="absolute bottom-[20%] left-[2%] w-[350px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
             </div>
+            <img 
+              src="/assets/voli.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
 
-            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('/Hero.png');">
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Basket Ball</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+          <!-- Football Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-white mt-6 sm:mt-8 md:mt-12">Football</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
                     Registrasi
                   </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-                </div>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/basket.png"
-                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
             </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/bola.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-44 sm:w-56 md:w-72 lg:w-[350px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
 
-            <!-- Running Slide -->
-            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('/Hero.png');">
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Running</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+          <!-- Basketball Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Basket Ball</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
                     Registrasi
                   </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-                </div>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/lari.png"
-                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
             </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/basket.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
 
-            <!-- Badminton Slide -->
-            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('/Hero.png');">
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Badminton</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+          <!-- Running Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Running</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
                     Registrasi
                   </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-                </div>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/badminton.png"
-                class="absolute bottom-[20%] left-[2%] w-[400px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
             </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/lari.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
 
-            <!-- Tenis Meja Slide -->
-            <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('/Hero.png');">
-              <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-24 gap-6">
-                <div class="flex flex-row gap-2">
-                  <h1 class="text-4xl md:text-6xl font-bold text-yellow-200">Cabang</h1>
-                  <h1 class="text-4xl md:text-6xl font-bold text-white">Olahraga</h1>
-                </div>
-                <h1 class="text-white text-3xl md:text-5xl font-bold mt-12">Tenis Meja</h1>
-                <div class="flex flex-col">
-                  <button
-                    class="text-white border border-white rounded-lg text-sm font-semibold px-9 py-2 mt-24 hover:bg-white hover:text-black transition-colors">
-                    Lokasi
-                  </button>
-                  <button
-                    class="text-white border border-red-700 bg-red-700 rounded-lg text-sm font-semibold px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+          <!-- Badminton Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Badminton</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
                     Registrasi
                   </button>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-[150px] py-12">
-                </div>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/tesnimeja.png"
-                class="absolute bottom-[20%] left-[2%] w-[450px] hidden md:block transition-transform hover:scale-105"
-                alt="Maskot" />
             </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/badminton.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
+
+          <!-- Tenis Meja Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Tenis Meja</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+              </div>
+            </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/tesnimeja.png"
+              class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
+
+          <!-- Senam Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Senam</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+              </div>
+            </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/senam.png"
+              class="absolute bottom-[35%] sm:bottom-[40%] md:bottom-[50%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
+          </div>
+
+          <!-- Esport Slide -->
+          <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
+            style="background-image: url('/Hero.png');">
+            <div class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
+              <div class="flex flex-row gap-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-200">Cabang</h1>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white">Olahraga</h1>
+              </div>
+              <h1 class="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mt-6 sm:mt-8 md:mt-12">Esport</h1>
+              <div class="flex flex-col items-center">
+                <router-link to="/registrasi">
+                  <button class="text-white border border-red-700 bg-red-700 rounded-lg text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2 mt-2 hover:bg-red-800 transition-colors">
+                    Registrasi
+                  </button>
+                </router-link>
+                <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+              </div>
+            </div>
+            <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+            <img 
+              src="/assets/esport.png"
+              class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              alt="Maskot" 
+            />
           </div>
         </div>
+      </div>
 
-        <!-- Slide Indicators -->
-        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
-          <div v-for="(_, index) in slideCount" :key="index"
-            class="w-3 h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-110"
-            :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']" @click="goToSlide(index)"></div>
-        </div>
+      <!-- Pagination Dots -->
+      <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+        <div 
+          v-for="(_, index) in slideCount" 
+          :key="index"
+          class="w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-110"
+          :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']" 
+          @click="goToSlide(index)"
+        ></div>
+      </div>
 
-        <!-- Navigation Arrows -->
-        <button v-if="currentSlide > 0" @click="previousSlide"
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      <!-- Navigation Arrows -->
+      <button 
+        v-if="currentSlide > 0" 
+        @click="previousSlide"
+        class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10"
+      >
+        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button 
+        v-if="currentSlide < slideCount - 1" 
+        @click="nextSlide"
+        class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10"
+      >
+        <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <!-- Scroll Down Indicator -->
+      <div 
+        v-if="currentSlide === slideCount - 1"
+        class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10"
+      >
+        <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">
+          <span class="mb-1 text-sm sm:text-base">Scroll Down</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </button>
-
-        <button v-if="currentSlide < slideCount - 1" @click="nextSlide"
-          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-
-        <!-- Scroll Down Indicator -->
-        <div v-if="currentSlide === slideCount - 1"
-          class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
-          <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">
-            <span class="mb-1">Scroll Down</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
         </div>
+      </div>
 
-        <!-- Progress Bar -->
-        <div class="absolute top-4 left-0 right-0 px-4 z-10">
-          <div class="w-full bg-white/20 rounded-full h-1">
-            <div class="bg-white h-1 rounded-full transition-all duration-500 ease-out"
-              :style="{ width: `${((currentSlide + 1) / slideCount) * 100}%` }"></div>
-          </div>
+      <!-- Progress Bar -->
+      <div class="absolute top-4 left-0 right-0 px-4 z-10">
+        <div class="w-full bg-white/20 rounded-full h-1">
+          <div 
+            class="bg-white h-1 rounded-full transition-all duration-500 ease-out"
+            :style="{ width: `${((currentSlide + 1) / slideCount) * 100}%` }"
+          ></div>
         </div>
-      </section>
-    </div>
-    <section class="py-12 md:py-16 bg-gradient-to-br from-[#f8f6f2] to-[#f2ede7] px-4 sm:px-6 lg:px-8">
+      </div>
+    </section>
+  </div>
+    <!-- <section class="py-12 md:py-16 bg-gradient-to-br from-[#f8f6f2] to-[#f2ede7] px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
-        <!-- Header Section -->
+
         <div class="text-center mb-8 md:mb-12">
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-red-700 mb-2">
             Lokasi Venue
@@ -450,7 +654,7 @@
           <div class="w-16 h-1 bg-red-600 mx-auto rounded-full"></div>
         </div>
 
-        <!-- Toggle Button -->
+
         <div class="flex justify-end mb-6 md:mb-8">
           <button @click="showAll = !showAll"
             class="inline-flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
@@ -462,22 +666,22 @@
           </button>
         </div>
 
-        <!-- Main Grid -->
+
         <div class="grid lg:grid-cols-3 gap-4 md:gap-6 h-auto lg:h-[500px]">
-          <!-- Main Feature Card -->
+
           <div class="lg:col-span-2 relative rounded-2xl overflow-hidden group h-64 sm:h-80 lg:h-full shadow-xl">
             <img src="/assets/berita/bolaaa.jpg" alt="Sepak Bola"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 via-red-600/60 to-transparent"></div>
 
-            <!-- Title -->
+
             <div class="absolute inset-0 flex items-center justify-center">
               <h3 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold z-10 text-center px-4 drop-shadow-2xl">
                 Sepak Bola
               </h3>
             </div>
 
-            <!-- Arrow Icon -->
+
             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 md:p-3 z-10 shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-6 md:h-6 text-red-600" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
@@ -485,16 +689,15 @@
               </svg>
             </div>
 
-            <!-- Decorative Elements -->
+
             <img src="/assets/berita/ornamenkiri.svg" class="absolute bottom-3 left-3 w-12 md:w-16 lg:w-20 opacity-80"
               alt="Ornamen Kiri">
             <img src="/assets/berita/ornamenkanan.svg" class="absolute bottom-3 right-3 w-12 md:w-16 lg:w-20 opacity-80"
               alt="Ornamen Kanan">
           </div>
 
-          <!-- Secondary Cards -->
+
           <div class="flex flex-col gap-4 md:gap-6 h-auto lg:h-full">
-            <!-- Volley Card -->
             <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
               <img src="/assets/berita/voly.jpg" alt="Volley"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -506,7 +709,7 @@
               </div>
             </div>
 
-            <!-- Tenis Meja Card -->
+
             <div class="relative rounded-2xl overflow-hidden group flex-1 h-32 sm:h-40 lg:h-auto shadow-lg">
               <img src="/assets/berita/tenismeja.jpg" alt="Tenis Meja"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -520,7 +723,6 @@
           </div>
         </div>
 
-        <!-- Expandable Grid -->
         <Transition name="fade-slide" enter-active-class="transition-all duration-500 ease-out"
           enter-from-class="opacity-0 transform translate-y-8" enter-to-class="opacity-100 transform translate-y-0"
           leave-active-class="transition-all duration-300 ease-in"
@@ -530,7 +732,6 @@
               <div v-for="(item, index) in olahragaList" :key="index" :class="[
                 'relative rounded-2xl overflow-hidden group h-48 md:h-56 shadow-lg hover:shadow-xl transition-all duration-300',
                 item.grid,
-                // Stagger animation delay
                 `animate-fade-in-up`
               ]" :style="{ 'animation-delay': `${index * 100}ms` }">
                 <img :src="item.gambar" :alt="item.nama"
@@ -542,7 +743,7 @@
                   </h3>
                 </div>
 
-                <!-- Hover overlay -->
+
                 <div
                   class="absolute inset-0 bg-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
@@ -551,10 +752,9 @@
           </div>
         </Transition>
       </div>
-    </section>
+    </section> -->
     <section class="bg-[#f5f3ef] py-16 lg:py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
       <div class="max-w-7xl mx-auto w-full">
-        <!-- Header -->
         <div class="text-center mb-16 lg:mb-20">
           <div
             class="inline-flex items-center justify-center w-16 h-16 bg-[#E91717] rounded-full mb-6 animate-pulse-border">
@@ -570,7 +770,7 @@
           <div class="w-24 h-1 bg-gradient-to-r from-[#E91717] to-red-600 mx-auto rounded-full animate-slide-up"></div>
         </div>
 
-        <!-- Hero Section -->
+
         <div class="mb-16 lg:mb-20 animate-slide-up">
           <div class="relative group max-w-5xl mx-auto">
             <div
@@ -579,11 +779,8 @@
             <div class="relative overflow-hidden rounded-3xl shadow-2xl">
               <img src="/opening/obor.png" alt="Obor Ceremony"
                 class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" />
-
-              <!-- Overlay -->
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-              <!-- Content -->
               <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
                 <div class="glass-effect bg-white/10 rounded-2xl p-6 border border-white/20">
                   <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 animate-float">
@@ -604,30 +801,21 @@
           </div>
         </div>
 
-        <!-- Performance Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <!-- Kopral Jono -->
           <div class="group card-hover animate-slide-left">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-              <!-- Image Container -->
               <div class="relative h-64 sm:h-72 overflow-hidden">
                 <img src="/opening/kopraljono.png" alt="Kopral Jono"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-
-                <!-- Gradient Overlay -->
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
-
-                <!-- Badge -->
                 <div class="absolute top-4 right-4">
                   <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
                     FEATURED
                   </div>
                 </div>
               </div>
-
-              <!-- Content -->
               <div class="p-6">
                 <div class="flex items-center justify-between mb-3">
                   <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
@@ -638,8 +826,6 @@
                 <p class="text-gray-600 text-sm mb-4">
                   Traditional Indonesian comedy performance bringing laughter and joy to the ceremony
                 </p>
-
-                <!-- Progress Bar -->
                 <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
                   <div
                     class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
@@ -649,29 +835,20 @@
               </div>
             </div>
           </div>
-
-          <!-- Marching Band -->
           <div class="group card-hover animate-slide-up" style="animation-delay: 0.2s;">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-              <!-- Image Container -->
               <div class="relative h-64 sm:h-72 overflow-hidden">
                 <img src="/opening/marchingband.png" alt="Marching Band"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-
-                <!-- Gradient Overlay -->
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
-
-                <!-- Badge -->
                 <div class="absolute top-4 right-4">
                   <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
                     LIVE
                   </div>
                 </div>
               </div>
-
-              <!-- Content -->
               <div class="p-6">
                 <div class="flex items-center justify-between mb-3">
                   <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#E91717] transition-colors duration-300">
@@ -682,8 +859,6 @@
                 <p class="text-gray-600 text-sm mb-4">
                   Spectacular musical performance with synchronized movements and powerful melodies
                 </p>
-
-                <!-- Progress Bar -->
                 <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
                   <div
                     class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
@@ -693,21 +868,14 @@
               </div>
             </div>
           </div>
-
-          <!-- Tari Kolosal -->
           <div class="group card-hover animate-slide-right md:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
-              <!-- Image Container -->
               <div class="relative h-64 sm:h-72 overflow-hidden">
                 <img src="/opening/tarikolosal.png" alt="Tari Kolosal"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-
-                <!-- Gradient Overlay -->
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
-
-                <!-- Badge -->
                 <div class="absolute top-4 right-4">
                   <div class="bg-[#E91717] text-white px-3 py-1 rounded-full text-xs font-bold">
                     GRAND
@@ -726,7 +894,7 @@
                   Massive traditional dance performance showcasing Indonesian cultural heritage
                 </p>
 
-                <!-- Progress Bar -->
+
                 <div class="w-full bg-gray-200 rounded-full h-1 mb-4">
                   <div
                     class="bg-gradient-to-r from-[#E91717] to-red-600 h-1 rounded-full transition-all duration-1000 group-hover:w-full"
@@ -738,7 +906,6 @@
           </div>
         </div>
 
-        <!-- Bottom CTA -->
         <div class="text-center mt-16 lg:mt-20">
           <div
             class="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -769,7 +936,7 @@ export default {
     const horizontalWrapper = ref(null);
     const currentSlide = ref(0);
     const isTransitioning = ref(false);
-    const slideCount = 6;
+    const slideCount = 8;
     const wheelAccumulator = ref(0);
     const wheelThreshold = 50;
     const lastWheelTime = ref(0);
@@ -780,10 +947,10 @@ export default {
     const showAll = ref(false);
     const olahragaList = [
       { nama: 'Badminton', gambar: '/assets/bulutangkis.png', grid: 'col-span-2 row-span-1' },
-      { nama: 'Basket', gambar: '/assets/berita/basket.png', grid: 'col-span-1 row-span-1' },
-      { nama: 'E-Sport', gambar: '/assets/berita/esport.png', grid: 'col-span-1 row-span-1' },
-      { nama: 'Lari', gambar: '/assets/berita/lari.png', grid: 'col-span-2 row-span-2' },
-      { nama: 'Senam', gambar: '/assets/berita/senam.png', grid: 'col-span-1 row-span-1' },
+      { nama: 'Basket', gambar: '/assets/berita/basket.jpg', grid: 'col-span-1 row-span-1' },
+      { nama: 'E-Sport', gambar: '/assets/berita/esport.jpg', grid: 'col-span-1 row-span-1' },
+      { nama: 'Lari', gambar: '/assets/berita/lari.jpg', grid: 'col-span-2 row-span-2' },
+      { nama: 'Senam', gambar: '/assets/berita/senam.jpg', grid: 'col-span-1 row-span-1' },
       { nama: 'Tenis Lapangan', gambar: '/assets/berita/tenislap.jpg', grid: 'col-span-1 row-span-1' },
     ];
 
@@ -1594,4 +1761,74 @@ button,
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Enhanced Float Animation */
+@keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-8px) rotate(1deg); }
+      50% { transform: translateY(-15px) rotate(0deg); }
+      75% { transform: translateY(-8px) rotate(-1deg); }
+    }
+    
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    /* Staggered Animation Delays */
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+    .delay-4 { animation-delay: 2s; }
+    .delay-5 { animation-delay: 2.5s; }
+    .delay-6 { animation-delay: 3s; }
+    .delay-7 { animation-delay: 3.5s; }
+    
+    /* Fade In Up Animation */
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out forwards;
+    }
+    
+    .animation-delay-500 {
+      animation-delay: 500ms;
+    }
+    
+    .animation-delay-\[700ms\] {
+      animation-delay: 700ms;
+    }
+    
+    .animation-delay-\[900ms\] {
+      animation-delay: 900ms;
+    }
+    
+    /* Mobile Specific Styles */
+    @media (max-width: 768px) {
+      /* Prevent horizontal scroll on mobile */
+      section {
+        overflow-x: hidden;
+      }
+      
+      /* Ensure mascots don't interfere with content */
+      .animate-float {
+        animation-duration: 6s;
+      }
+    }
+    
+    /* Tablet Adjustments */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      /* Slightly reduce mascot sizes for tablets */
+      img[class*="absolute"] {
+        transform: scale(0.8);
+      }
+    }
 </style>
