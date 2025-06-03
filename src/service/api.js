@@ -21,5 +21,34 @@ export default {
         'Content-Type': 'application/json'
       }
     });
-  }
+  },
+
+  getAllBerita() {
+    return API.get('/berita');
+  },
+
+  getBeritaByID(id) {
+    return API.get(`/berita/${id}`);
+  },
+
+  createBerita(formData) {
+    return API.post('/berita/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data' 
+      }
+    });
+  },
+
+  updateBerita(id, formData) {
+    return API.put(`/berita/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data' 
+      }
+    });
+  },
+
+  deleteBerita(id) {
+    return API.delete(`/berita/${id}`);
+  },
+  
 };
