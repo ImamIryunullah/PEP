@@ -166,7 +166,6 @@
 
                     </div>
 
-                    <!-- Quick Actions -->
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                             <i class="fas fa-bolt text-[#D71E28] mr-2"></i>
@@ -217,7 +216,7 @@ export default {
                 aset: 'Head Office PEP',
                 statusVerifikasi: 'Terverifikasi',
                 tanggalDaftar: '15 Januari 2024',
-                foto: null, // URL foto atau null jika tidak ada
+                foto: null, 
                 totalKegiatan: 12,
                 kegiatanAktif: 3,
                 prestasi: 5,
@@ -230,7 +229,6 @@ export default {
             this.isSidebarOpen = !this.isSidebarOpen;
         },
         handleLogout() {
-            // Lakukan logout, misalnya: this.$router.push('/login')
             alert('Logout berhasil!');
         },
     },

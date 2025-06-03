@@ -26,6 +26,8 @@ import buluTangkis from '@/views/result/buluTangkis'
 import eSport from '@/views/result/eSport'
 import tenisMeja from '@/views/result/tenisMeja'
 import lariResults from '@/views/result/lariResults'
+import tenisLapangan from '@/views/result/tenisLapangan'
+import basketResult from '@/views/result/basketResult'
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -52,6 +54,8 @@ const routes = [
   { path: "/jadwal-dan-hasil/esport", name: "e-sport", component:eSport},
   { path: "/jadwal-dan-hasil/tenis-meja", name: "tenis-meja", component:tenisMeja},
   { path: "/jadwal-dan-hasil/lari", name: "lari", component:lariResults},
+  { path: "/jadwal-dan-hasil/tenis-lapangan", name: "tenisLapangan", component:tenisLapangan},
+  { path: "/jadwal-dan-hasil/basket", name: "basketResult", component:basketResult},
 ]
 
 const router = createRouter({

@@ -14,8 +14,6 @@
                 <div class="flex justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
                     <div class="w-full max-w-3xl space-y-6 bg-white p-8 rounded-lg shadow-md">
                         <h2 class="text-2xl font-bold text-center text-gray-800">Formulir Pendaftaran</h2>
-                        
-                        <!-- Loading State -->
                         <div v-if="loading" class="text-center py-4">
                             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
                             <p class="mt-2 text-gray-600">Sedang memproses...</p>
@@ -198,7 +196,6 @@ export default {
             this.fileError = '';
             
             if (file) {
-                // Validate file type
                 const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
                 if (!allowedTypes.includes(file.type)) {
                     this.fileError = 'File harus berupa gambar (JPEG, PNG, GIF)';
@@ -206,8 +203,7 @@ export default {
                     return;
                 }
                 
-                // Validate file size (max 5MB)
-                const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+                const maxSize = 5 * 1024 * 1024; 
                 if (file.size > maxSize) {
                     this.fileError = 'Ukuran file tidak boleh lebih dari 5MB';
                     this.fotoFile = null;
@@ -220,13 +216,9 @@ export default {
         
         async submitForm() {
             if (this.loading) return;
-            
-            // Clear previous messages
             this.message = '';
             this.success = false;
             this.loading = true;
-
-            // Validate form
             if (!this.validateForm()) {
                 this.loading = false;
                 return;
@@ -250,11 +242,9 @@ export default {
                 
                 this.success = true;
                 this.message = 'Pendaftaran berhasil! Silakan login dengan akun Anda.';
-                
-                // Reset form after successful registration
+        
                 this.resetForm();
-                
-                // Redirect to login page after 2 seconds
+            
                 setTimeout(() => {
                     this.$router.push('/login');
                 }, 2000);
@@ -264,9 +254,7 @@ export default {
                 
                 this.success = false;
                 
-                // Handle different types of errors
                 if (error.response) {
-                    // Server responded with error status
                     const status = error.response.status;
                     const data = error.response.data;
                     
@@ -300,7 +288,6 @@ export default {
                 return false;
             }
             
-            // Email format validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(this.form.email)) {
                 this.message = 'Format email tidak valid';
@@ -346,8 +333,7 @@ export default {
             };
             this.fotoFile = null;
             this.fileError = '';
-            
-            // Reset file input element
+        
             if (this.$refs.fileInput) {
                 this.$refs.fileInput.value = '';
             }
