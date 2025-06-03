@@ -558,8 +558,7 @@
               class="absolute bottom-[35%] sm:bottom-[40%] md:bottom-[50%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
               alt="Maskot" 
             />
-          </div>
-
+          </div>  
           <!-- Esport Slide -->
           <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
             style="background-image: url('/Hero.png');">

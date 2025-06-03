@@ -1,31 +1,31 @@
 <template>
     <div class="min-h-screen flex bg-gray-50 relative">
-      <!-- Sidebar Component -->
+      
       <Sidebar :isOpen="isSidebarOpen" />
   
-      <!-- Overlay for mobile -->
+      
       <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
            class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"></div>
   
-      <!-- Main Content -->
+      
       <div :class="[
         'flex-1 flex flex-col transition-all duration-300 ease-in-out min-h-screen',
         isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'
       ]">
         
-        <!-- Mobile Header -->
+        
         <header class="bg-white shadow-sm px-4 py-3 flex justify-between items-center lg:hidden border-b">
           <button @click="toggleSidebar" 
                   class="text-gray-700 hover:text-[#D71E28] p-2 rounded-lg hover:bg-gray-100 transition-colors">
             <i class="fas fa-bars text-xl"></i>
           </button>
           <h1 class="text-lg font-semibold text-[#D71E28]">Data Peserta</h1>
-          <div class="w-10"></div> <!-- Spacer for center alignment -->
+          <div class="w-10"></div> 
         </header>
   
-        <!-- Main Content Area -->
+        
         <main class="flex-1 p-4 lg:p-8">
-          <!-- Desktop Header -->
+          
           <div class="hidden lg:flex justify-between items-center mb-8">
             <h1 class="text-3xl font-bold text-gray-800">Data Peserta</h1>
             <div class="flex gap-3">
@@ -41,8 +41,7 @@
               </button>
             </div>
           </div>
-  
-          <!-- Mobile Action Buttons -->
+
           <div class="flex gap-2 mb-4 lg:hidden">
             <button @click="showAddModal = true"
                     class="flex-1 bg-[#D71E28] hover:bg-[#B91C1C] text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors">
@@ -55,10 +54,9 @@
             </button>
           </div>
   
-          <!-- Search and Filter -->
+          
           <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
             <div class="flex flex-col lg:flex-row gap-4">
-              <!-- Search -->
               <div class="flex-1">
                 <div class="relative">
                   <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
@@ -68,14 +66,12 @@
                          class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
                 </div>
               </div>
-              <!-- Filters -->
               <div class="flex gap-2">
                 <select v-model="filterJenis" 
                         class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
                   <option value="">Semua Jenis</option>
                   <option value="Mitra">Mitra</option>
-                  <option value="Karyawan">Karyawan</option>
-                  <option value="Umum">Umum</option>
+                  <option value="Peserta  ">Peserta</option>
                 </select>
                 <select v-model="filterCabang" 
                         class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
@@ -88,8 +84,6 @@
               </div>
             </div>
           </div>
-  
-          <!-- Stats Cards (Mobile & Desktop) -->
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <div class="bg-white p-4 rounded-xl shadow-sm">
               <div class="flex items-center">
@@ -119,25 +113,14 @@
                   <i class="fas fa-id-badge text-purple-600"></i>
                 </div>
                 <div class="ml-3">
-                  <p class="text-sm text-gray-500">Karyawan</p>
-                  <p class="text-xl font-semibold">{{ karyawanCount }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white p-4 rounded-xl shadow-sm">
-              <div class="flex items-center">
-                <div class="p-2 bg-orange-100 rounded-lg">
-                  <i class="fas fa-user text-orange-600"></i>
-                </div>
-                <div class="ml-3">
-                  <p class="text-sm text-gray-500">Umum</p>
-                  <p class="text-xl font-semibold">{{ umumCount }}</p>
+                  <p class="text-sm text-gray-500">Peserta</p>
+                  <p class="text-xl font-semibold">{{ PesertaCount }}</p>
                 </div>
               </div>
             </div>
           </div>
   
-          <!-- Desktop Table -->
+          
           <div class="hidden lg:block bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="overflow-x-auto">
               <table class="min-w-full divide-y divide-gray-200">
@@ -203,7 +186,7 @@
             </div>
           </div>
   
-          <!-- Mobile Cards -->
+          
           <div class="lg:hidden space-y-4">
             <div v-for="peserta in paginatedPeserta" :key="peserta.email"
                  class="bg-white rounded-xl shadow-sm p-4">
@@ -247,7 +230,7 @@
             </div>
           </div>
   
-          <!-- Pagination -->
+          
           <div v-if="totalPages > 1" class="mt-6 flex justify-center">
             <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
               <button @click="currentPage = Math.max(1, currentPage - 1)"
@@ -277,7 +260,7 @@
         </main>
       </div>
   
-      <!-- Add/Edit Modal -->
+      
       <div v-if="showAddModal || editingPeserta" 
            class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl shadow-xl w-full max-w-md">
@@ -392,7 +375,7 @@
           {
             namaLengkap: "Budi Santoso",
             email: "budi@example.com",
-            jenisPeserta: "Karyawan",
+            jenisPeserta: "Peserta",
             cabangOlahraga: "Tenis Meja",
             aset: "Kantor Cabang Jakarta",
             foto: null,
@@ -400,7 +383,7 @@
           {
             namaLengkap: "Maya Putri",
             email: "maya@example.com",
-            jenisPeserta: "Umum",
+            jenisPeserta: "Peserta",
             cabangOlahraga: "Voli",
             aset: "Area Publik",
             foto: "/registrasi/foto2.jpg",
@@ -454,12 +437,10 @@
       mitraCount() {
         return this.pesertaList.filter(p => p.jenisPeserta === 'Mitra').length;
       },
-      karyawanCount() {
-        return this.pesertaList.filter(p => p.jenisPeserta === 'Karyawan').length;
+      PesertaCount() {
+        return this.pesertaList.filter(p => p.jenisPeserta === 'Peserta').length;
       },
-      umumCount() {
-        return this.pesertaList.filter(p => p.jenisPeserta === 'Umum').length;
-      }
+
     },
     watch: {
       searchQuery() {
