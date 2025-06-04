@@ -18,7 +18,8 @@
                             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
                             <p class="mt-2 text-gray-600">Sedang memproses...</p>
                         </div>
-                        <form @submit.prevent="submitForm" class="space-y-6" enctype="multipart/form-data" :class="{ 'opacity-50 pointer-events-none': loading }">
+                        <form @submit.prevent="submitForm" class="space-y-6" enctype="multipart/form-data"
+                            :class="{ 'opacity-50 pointer-events-none': loading }">
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Nama Lengkap</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -48,11 +49,13 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
-                                    <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
                                         <select v-model="form.jenis_peserta" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Peserta</option>
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Peserta
+                                            </option>
                                             <option value="Mitra" class="bg-gray-800 text-white">Mitra</option>
                                             <option value="Peserta" class="bg-gray-800 text-white">Peserta</option>
                                         </select>
@@ -62,21 +65,26 @@
                                         </svg>
                                     </div>
                                 </div>
-                                
+
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Cabang Olahraga</label>
-                                    <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
                                         <select v-model="form.cabang_olahraga" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Cabang Olahraga</option>
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Cabang
+                                                Olahraga</option>
                                             <option value="Volley" class="bg-gray-800 text-white">Volley</option>
-                                            <option value="Sepak Bola" class="bg-gray-800 text-white">Sepak Bola</option>
-                                            <option value="Tenis Meja" class="bg-gray-800 text-white">Tenis Meja</option>
+                                            <option value="Sepak Bola" class="bg-gray-800 text-white">Sepak Bola
+                                            </option>
+                                            <option value="Tenis Meja" class="bg-gray-800 text-white">Tenis Meja
+                                            </option>
                                             <option value="Badminton" class="bg-gray-800 text-white">Badminton</option>
                                             <option value="Lari" class="bg-gray-800 text-white">Lari</option>
                                             <option value="Senam" class="bg-gray-800 text-white">Senam</option>
-                                            <option value="Tenis Lapangan" class="bg-gray-800 text-white">Tenis Lapangan</option>
+                                            <option value="Tenis Lapangan" class="bg-gray-800 text-white">Tenis Lapangan
+                                            </option>
                                             <option value="Basket" class="bg-gray-800 text-white">Basket</option>
                                             <option value="Esport" class="bg-gray-800 text-white">Esport</option>
                                         </select>
@@ -91,12 +99,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Aset</label>
-                                    <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
                                         <select v-model="form.aset" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Aset</option>
-                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">Head Office PEP</option>
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Aset
+                                            </option>
+                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">Head Office PEP
+                                            </option>
                                             <option value="Aset1" class="bg-gray-800 text-white">Aset 1</option>
                                             <option value="Aset2" class="bg-gray-800 text-white">Aset2</option>
                                             <option value="Aset3" class="bg-gray-800 text-white">Aset3</option>
@@ -109,16 +120,13 @@
                                         </svg>
                                     </div>
                                 </div>
-                                
+
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Upload Foto</label>
-                                    <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <input 
-                                            type="file" 
-                                            @change="handleFileUpload" 
-                                            accept="image/*"
-                                            required
+                                        <input type="file" @change="handleFileUpload" accept="image/*" required
                                             ref="fileInput"
                                             class="text-white file:bg-white file:text-[#a60000] file:rounded-full file:px-4 file:py-1 file:border-0 file:mr-2 bg-transparent w-full focus:outline-none" />
                                     </div>
@@ -132,6 +140,12 @@
                                     {{ loading ? 'MEMPROSES...' : 'SUBMIT' }}
                                 </button>
                             </div>
+                            <div class="text-center text-sm text-gray-600 mt-4">
+                                <span>Belum tahu persyaratan?</span>
+                                <a href="/syarat-pendaftaran" class="text-red-600 hover:underline font-medium">Lihat
+                                    persyaratan pendaftaran</a>
+                            </div>
+
 
                             <div class="text-center text-sm text-gray-600 mt-4">
                                 Sudah terdaftar?
@@ -139,7 +153,8 @@
                             </div>
 
                             <!-- Message Display -->
-                            <div v-if="message" :class="messageClass" class="mt-4 p-4 rounded-lg text-center font-semibold">
+                            <div v-if="message" :class="messageClass"
+                                class="mt-4 p-4 rounded-lg text-center font-semibold">
                                 {{ message }}
                             </div>
                         </form>
@@ -191,7 +206,7 @@ export default {
         handleFileUpload(event) {
             const file = event.target.files[0];
             this.fileError = '';
-            
+
             if (file) {
                 const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
                 if (!allowedTypes.includes(file.type)) {
@@ -199,18 +214,18 @@ export default {
                     this.fotoFile = null;
                     return;
                 }
-                
-                const maxSize = 5 * 1024 * 1024; 
+
+                const maxSize = 5 * 1024 * 1024;
                 if (file.size > maxSize) {
                     this.fileError = 'Ukuran file tidak boleh lebih dari 5MB';
                     this.fotoFile = null;
                     return;
                 }
-                
+
                 this.fotoFile = file;
             }
         },
-        
+
         async submitForm() {
             if (this.loading) return;
             this.message = '';
@@ -228,7 +243,7 @@ export default {
             formData.append('jenis_peserta', this.form.jenis_peserta);
             formData.append('cabang_olahraga', this.form.cabang_olahraga);
             formData.append('aset', this.form.aset);
-            
+
             if (this.fotoFile) {
                 formData.append('foto', this.fotoFile);
             }
@@ -236,25 +251,25 @@ export default {
             try {
                 const response = await API.registerPeserta(formData);
                 console.log('Registration successful:', response.data);
-                
+
                 this.success = true;
                 this.message = 'Pendaftaran berhasil! Silakan login dengan akun Anda.';
-        
+
                 this.resetForm();
-            
+
                 setTimeout(() => {
                     this.$router.push('/login');
                 }, 2000);
-                
+
             } catch (error) {
                 console.error('Registration error:', error);
-                
+
                 this.success = false;
-                
+
                 if (error.response) {
                     const status = error.response.status;
                     const data = error.response.data;
-                    
+
                     if (status === 400) {
                         this.message = data.message || 'Data yang Anda masukkan tidak valid. Periksa kembali form.';
                     } else if (status === 409) {
@@ -267,7 +282,7 @@ export default {
                 } else if (error.request) {
                     this.message = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda.';
                 } else {
-            
+
                     this.message = 'Terjadi kesalahan yang tidak terduga. Silakan coba lagi.';
                 }
             } finally {
@@ -279,46 +294,46 @@ export default {
                 this.message = 'Nama lengkap harus diisi';
                 return false;
             }
-            
+
             if (!this.form.email.trim()) {
                 this.message = 'Email harus diisi';
                 return false;
             }
-            
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(this.form.email)) {
                 this.message = 'Format email tidak valid';
                 return false;
             }
-            
+
             if (this.form.password.length < 8) {
                 this.message = 'Password minimal 8 karakter';
                 return false;
             }
-            
+
             if (!this.form.jenis_peserta) {
                 this.message = 'Jenis peserta harus dipilih';
                 return false;
             }
-            
+
             if (!this.form.cabang_olahraga) {
                 this.message = 'Cabang olahraga harus dipilih';
                 return false;
             }
-            
+
             if (!this.form.aset) {
                 this.message = 'Aset harus dipilih';
                 return false;
             }
-            
+
             if (!this.fotoFile) {
                 this.message = 'Foto harus diupload';
                 return false;
             }
-            
+
             return true;
         },
-        
+
         resetForm() {
             this.form = {
                 nama_lengkap: '',
@@ -330,7 +345,7 @@ export default {
             };
             this.fotoFile = null;
             this.fileError = '';
-        
+
             if (this.$refs.fileInput) {
                 this.$refs.fileInput.value = '';
             }
@@ -342,7 +357,9 @@ export default {
 <style scoped>
 /* Loading animation */
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .animate-spin {

@@ -28,6 +28,8 @@ const tenisMeja = () => import( '@/views/result/tenisMeja')
 const lariResults = () => import( '@/views/result/lariResults')
 const tenisLapangan = () => import( '@/views/result/tenisLapangan')
 const basketResult = () => import( '@/views/result/basketResult')
+const syaratPendaftaran = () => import( '@/views/syaratPendaftaran')
+
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
   { path: "/aboutUs", name: "aboutUs", component:tentangPage},
@@ -55,6 +57,7 @@ const routes = [
   { path: "/jadwal-dan-hasil/lari", name: "lari", component:lariResults},
   { path: "/jadwal-dan-hasil/tenis-lapangan", name: "tenisLapangan", component:tenisLapangan},
   { path: "/jadwal-dan-hasil/basket", name: "basketResult", component:basketResult},
+  { path: "/syarat-pendaftaran", name: "syaratPendaftaran", component:syaratPendaftaran},
 ]
 
 const router = createRouter({

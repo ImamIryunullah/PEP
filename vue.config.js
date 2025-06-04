@@ -8,7 +8,7 @@ module.exports = {
   },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src'), // alias @ to point to the src folder
+        '@': path.resolve(__dirname, 'src'), 
       },
     },
     module: {
@@ -19,7 +19,7 @@ module.exports = {
             {
               loader: 'file-loader',
               options: {
-                name: 'assets/[name].[hash:8].[ext]', // Handle PDF file loading
+                name: 'assets/[name].[hash:8].[ext]', 
               },
             },
           ],
