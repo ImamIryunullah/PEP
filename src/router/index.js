@@ -28,7 +28,6 @@ import tenisMeja from '@/views/result/tenisMeja'
 import lariResults from '@/views/result/lariResults'
 import tenisLapangan from '@/views/result/tenisLapangan'
 import basketResult from '@/views/result/basketResult'
-
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
   { path: "/aboutUs", name: "aboutUs", component:tentangPage},

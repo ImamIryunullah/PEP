@@ -1,20 +1,17 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-[#f5f3ef] via-[#faf8f4] to-[#f0ede7]">
     <NavbarDashboard />
-    
-    <!-- Main Section -->
+
     <section class="relative w-full mt-8 sm:mt-12 mb-8 sm:mb-12 px-3 sm:px-4 md:px-6 lg:px-8">
-      
-      <!-- Background Text -->
+
       <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <h1 class="absolute top-12 sm:top-16 md:top-20 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">REGIS</h1>
         <h1 class="absolute top-24 sm:top-32 md:top-40 lg:top-52 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">TRASI</h1>
       </div>
-      
-      <!-- Main Content Container -->
+
       <div class="max-w-7xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 text-left transform hover:scale-[1.01] transition-all duration-500">
 
-        <!-- Header Section -->
+        
         <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 animate-fade-in">
           <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-2 rounded-full border-2 sm:border-4 border-[#D71E28] flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
             <img src="/logo-mini-olympic-2025.png" alt="Logo"
@@ -24,8 +21,6 @@
             About Us
           </h2>
         </div>
-        
-        <!-- Tab Navigation -->
         <div class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
           <button 
             v-for="(tab, index) in tabs" 
@@ -42,13 +37,11 @@
               class="absolute inset-0 bg-gradient-to-r from-[#D71E28] to-[#ff4757] animate-pulse"></div>
           </button>
         </div>
-        
-        <!-- Content Area -->
         <div class="relative min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px]">
           <transition name="slide-fade" mode="out-in">
             <div :key="selectedTab" class="animate-content-slide">
               
-              <!-- Deskripsi Tab -->
+              
               <div v-if="selectedTab === 'Deskripsi'" class="space-y-4 sm:space-y-6">
                 <div class="bg-gradient-to-r from-[#D71E28]/5 to-transparent p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border-l-4 border-[#D71E28]">
                   <p class="text-justify text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
@@ -56,8 +49,6 @@
                   </p>
                 </div>
               </div>
-              
-              <!-- Visi Tab -->
               <div v-if="selectedTab === 'Visi'" class="space-y-4 sm:space-y-6">
                 <div class="text-center mb-6 sm:mb-8">
                   <div class="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg">
@@ -71,8 +62,6 @@
                   </p>
                 </div>
               </div>
-              
-              <!-- Misi Tab -->
               <div v-if="selectedTab === 'Misi'" class="space-y-4 sm:space-y-6">
                 <div class="text-center mb-6 sm:mb-8">
                   <div class="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-[#D71E28] to-[#ff4757] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg">
@@ -104,14 +93,14 @@
           </transition>
         </div>
         
-        <!-- Decorative Image -->
+        
         <div class="mt-6 sm:mt-8 flex justify-center">
           <img src="/bunga/hiasan2.png"
             class="w-16 sm:w-20 md:w-24 lg:w-32 opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Motif" />
         </div>
       </div>
 
-      <!-- Social Media Section -->
+      
       <div class="mt-8 sm:mt-12 flex justify-center px-4">
         <div class="flex gap-2 sm:gap-3 md:gap-4 items-center bg-gradient-to-r from-[#D71E28] to-[#ff4757] px-4 sm:px-6 py-3 sm:py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300">
           <div 
@@ -182,7 +171,6 @@ export default {
   methods: {
     selectTab(tab, index) {
       this.selectedTab = tab;
-      // Menggunakan class khusus untuk button tab
       this.$nextTick(() => {
         const tabButtons = document.querySelectorAll('.tab-button');
         const button = tabButtons[index];
@@ -199,7 +187,6 @@ export default {
     }
   },
   mounted() {
-    // Add entrance animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -216,7 +203,6 @@ export default {
 </script>
 
 <style scoped>
-/* Custom Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -291,7 +277,6 @@ export default {
   animation: fade-in-up 0.6s ease-out forwards;
 }
 
-/* Transition Effects */
 .slide-fade-enter-active {
   transition: all 0.4s ease-out;
 }
@@ -309,8 +294,6 @@ export default {
   opacity: 0;
   transform: translateX(-30px);
 }
-
-/* Responsive adjustments */
 @media (max-width: 640px) {
   .mission-card {
     margin-bottom: 1rem;
@@ -321,7 +304,6 @@ export default {
   }
 }
 
-/* Hover effects for better interactivity */
 .mission-card:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
@@ -331,7 +313,6 @@ export default {
   transition: transform 0.6s ease-in-out;
 }
 
-/* Gradient text animation */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -353,7 +334,7 @@ export default {
 </style>
 
 <style scoped>
-/* Enhanced animations for better mobile experience */
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
 }

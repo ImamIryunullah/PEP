@@ -18,7 +18,6 @@
                             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
                             <p class="mt-2 text-gray-600">Sedang memproses...</p>
                         </div>
-
                         <form @submit.prevent="submitForm" class="space-y-6" enctype="multipart/form-data" :class="{ 'opacity-50 pointer-events-none': loading }">
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Nama Lengkap</label>
@@ -28,7 +27,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-                            
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Email</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -37,7 +35,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Password</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">

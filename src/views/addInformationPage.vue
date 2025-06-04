@@ -2,13 +2,13 @@
     <div class="min-h-screen bg-[#f7f7f7] relative">
         <NavbarDashboard />
 
-        <!-- Background Text - Hidden on small screens -->
+        
         <div class="absolute top-10 left-4 md:left-20 z-0 pointer-events-none select-none hidden lg:block">
             <h1 class="text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-9xl font-bold pt-12">ADDITIONAL</h1>
             <h1 class="text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-9xl font-bold">INFORMATION</h1>
         </div>
 
-        <!-- ID Card Section -->
+        
         <section class="relative z-10 flex items-center justify-center py-10 md:py-20 px-4">
             <div class="bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 max-w-5xl w-full transition hover:scale-105 duration-300"
                 v-intersect="'fade-slide-up'">
@@ -45,7 +45,7 @@
             </div>
         </section>
 
-        <!-- QR System Section -->
+        
         <section class="relative z-10 flex items-center justify-center py-10 md:py-20 px-4">
             <div class="absolute top-10 left-4 md:left-20 z-0 pointer-events-none select-none hidden lg:block">
                 <h1 class="text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-9xl font-bold pt-12">ID CARD</h1>
@@ -73,7 +73,7 @@
             </div>
         </section>
 
-        <!-- Sponsor Marquee Section -->
+        
         <section class="relative z-10 py-8 md:py-16">
             <div class="overflow-hidden whitespace-nowrap">
                 <div class="inline-block animate-marquee space-x-8 sm:space-x-12 md:space-x-24 px-4">
@@ -86,7 +86,7 @@
             </div>
         </section>
 
-        <!-- Transportation Section -->
+        
         <section class="relative z-10 flex items-center justify-center py-10 md:py-20 px-4">
             <div class="absolute top-10 left-4 md:left-20 z-0 pointer-events-none select-none hidden lg:block">
                 <h1 class="text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-9xl font-bold pt-12">TRANSPORT</h1>
@@ -117,7 +117,7 @@
             </div>
         </section>
 
-        <!-- Venue Section -->
+        
         <section class="relative z-10 flex items-center justify-center py-10 md:py-20 px-4">
             <div class="absolute top-10 left-4 md:left-20 z-0 pointer-events-none select-none hidden lg:block">
                 <h1 class="text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-9xl font-bold pt-12">VENUE</h1>

@@ -189,7 +189,6 @@
                             </button>
                         </div>
 
-                        <!-- Round of 16 Matches -->
                         <div v-show="selectedRound === 'round16'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div v-for="(match, index) in round16Matches" :key="index" 
                                  class="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
@@ -199,8 +198,6 @@
                                 <div class="text-sm text-gray-500">vs {{ match.loser }}</div>
                             </div>
                         </div>
-
-                        <!-- Quarterfinals -->
                         <div v-show="selectedRound === 'quarters'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div v-for="(match, index) in quarterMatches" :key="index" 
                                  class="bg-white p-4 rounded-lg shadow-md border-l-4 border-orange-500">
@@ -211,7 +208,6 @@
                             </div>
                         </div>
 
-                        <!-- Semifinals -->
                         <div v-show="selectedRound === 'semis'" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div v-for="(match, index) in semiMatches" :key="index" 
                                  class="bg-white p-4 rounded-lg shadow-md border-l-4 border-red-500">
@@ -222,7 +218,6 @@
                             </div>
                         </div>
 
-                        <!-- Finals -->
                         <div v-show="selectedRound === 'finals'" class="space-y-4">
                             <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white p-6 rounded-lg shadow-lg border-2 border-yellow-600">
                                 <div class="text-sm font-bold mb-2">🏆 FINAL</div>
@@ -241,8 +236,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Tournament Results Section -->
+
         <section class="bg-[#F7f7f7] py-8 md:py-12 px-4 relative">
             <h1 class="absolute top-[15%] md:top-[20%] left-1/2 transform -translate-x-1/2 text-gray-600 opacity-5 text-6xl md:text-9xl font-bold whitespace-nowrap">
                 TOURNAMENT
@@ -252,10 +246,9 @@
             </h1>
             <div class="max-w-7xl mx-auto relative z-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Championship Results</h2>
-                
-                <!-- Main Categories Grid -->
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8 md:mb-12">
-                    <!-- Men's Singles -->
+
                     <div class="space-y-4 md:space-y-6">
                         <h3 class="text-lg md:text-xl font-bold text-gray-800 text-center mb-4">Men's Singles</h3>
                         <div class="bg-white border rounded-lg shadow-lg p-4 md:p-6 hover:shadow-xl transition-shadow">

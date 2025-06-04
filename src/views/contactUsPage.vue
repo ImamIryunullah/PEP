@@ -8,10 +8,6 @@
                 </path>
             </svg>
         </div>
-        <img src="/registrasi/hijau.png" alt=""
-            class="absolute top-0 left-0 w-full opacity-20 pointer-events-none z-0" />   
-        <img src="/registrasi/biru.png" alt=""
-            class="absolute bottom-0 right-0 w-full opacity-20 pointer-events-none z-0" />
         <section class="py-16 px-4 sm:px-8">
             <div
                 class="max-w-5xl mx-auto bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl border border-gray-300 overflow-hidden fade-in">

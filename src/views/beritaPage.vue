@@ -5,16 +5,12 @@
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
             <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
-        </div>
-
-        
+        </div> 
         <div class="relative text-center mb-8 sm:mb-12 md:mb-16 px-4">
-            
+
             <h1 class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] leading-none text-gray-200 font-extrabold absolute inset-0 top-0 z-0 select-none">
                 BERITA
-            </h1>
-            
-            
+            </h1>     
             <div class="relative z-20">
                 <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-700 py-8 sm:py-10 md:py-12 drop-shadow-md">
                     MINI OLYMPIC
@@ -100,16 +96,14 @@ export default {
     },
     methods: {
         goToDetailBerita(newsItem) {
-      // Navigasi ke detail berita
       this.$router.push({
-        name: 'DetailBerita', // atau path yang sesuai
+        name: 'DetailBerita', 
         params: { id: newsItem.id },
         query: { 
-          // Bisa tambah parameter lain jika diperlukan
           category: newsItem.category 
         }
       }).then(() => {
-        // Pastikan scroll ke atas setelah navigasi
+
         this.$nextTick(() => {
           window.scrollTo({
             top: 0,
@@ -155,7 +149,6 @@ export default {
     animation: zoomIn 0.6s ease-out both;
 }
 
-/* Line Clamp Utility */
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -170,7 +163,6 @@ export default {
     overflow: hidden;
 }
 
-/* Responsive improvements */
 @media (max-width: 640px) {
     .grid {
         gap: 1rem;
