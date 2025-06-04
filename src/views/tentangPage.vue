@@ -5,8 +5,8 @@
     <section class="relative w-full mt-8 sm:mt-12 mb-8 sm:mb-12 px-3 sm:px-4 md:px-6 lg:px-8">
 
       <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <h1 class="absolute top-12 sm:top-16 md:top-20 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">REGIS</h1>
-        <h1 class="absolute top-24 sm:top-32 md:top-40 lg:top-52 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">TRASI</h1>
+        <h1 class="absolute top-12 sm:top-16 md:top-20 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">ABOUT</h1>
+        <h1 class="absolute top-24 sm:top-32 md:top-40 lg:top-52 left-4 sm:left-8 md:left-12 lg:left-20 text-gray-600 opacity-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">US</h1>
       </div>
 
       <div class="max-w-7xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 text-left transform hover:scale-[1.01] transition-all duration-500">

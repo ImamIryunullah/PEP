@@ -380,7 +380,15 @@
 </template>
 
 <script>
+import NavbarDashboard from '@/components/NavbarDashboard.vue';
+import FooterDashboard from '@/components/FooterDashboard.vue';
 
+export default {
+    components: {
+        NavbarDashboard,
+        FooterDashboard
+    }
+}
 </script>
 
 

@@ -1,7 +1,11 @@
 const path = require('path');
 
-module.exports = {
+module.exports = {  
+  productionSourceMap:false,
   configureWebpack: {
+  optimization:{
+    splitChunks:{chunks:'all'}
+  },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'), // alias @ to point to the src folder

@@ -384,7 +384,7 @@
 
             <!-- Football Slide -->
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
-              style="background-image: url('../assets/Hero.png');">
+              style="background-image: url('/Hero.png');">
               <div
                 class="flex flex-col items-center justify-start h-full text-white px-4 pt-16 sm:pt-20 md:pt-24 gap-4 sm:gap-6">
                 <div class="flex flex-row gap-2">

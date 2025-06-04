@@ -2,32 +2,32 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 
-import dashboardPage from '@/views/dashboardPage.vue'
-import tentangPage from '@/views/tentangPage.vue'
-import listPesertaPage from '@/views/listPesertaPage'
-import registrasiPage from '@/views/registrasiPage'
-import detailBeritaPage from '@/views/detailBeritaPage'
-import beritaPage from '@/views/beritaPage'
-import contactUsPage from '@/views/contactUsPage'
-import addInformationPage from '@/views/addInformationPage'
-import sepakBola from '@/views/result/sepakBola'
-import registrasiRunPage from '@/views/registrasiRunPage'
-import teknikalMeetingPage from '@/views/teknikalMeetingPage'
-import konsepDokumenPage from '@/views/konsepDokumenPage'
-import adminDashboard from '@/views/admin/adminDashboard'
-import loginPage from '@/views/authPage/loginPage'
-import dataPesertaPage from '@/views/admin/dataPesertaPage'
-import verifikasiPesertaPage from '@/views/admin/verifikasiPesertaPage'
-import kelolaBeriaPage from '@/views/admin/kelolaBeritaPage'
-import adminSkorStage from '@/views/admin/adminSkorStage'
-import dashboardUser from '@/views/peserta/dashboardUser'
-import bolaVolly from '@/views/result/bolaVolly'
-import buluTangkis from '@/views/result/buluTangkis'
-import eSport from '@/views/result/eSport'
-import tenisMeja from '@/views/result/tenisMeja'
-import lariResults from '@/views/result/lariResults'
-import tenisLapangan from '@/views/result/tenisLapangan'
-import basketResult from '@/views/result/basketResult'
+const dashboardPage =() => import( '@/views/dashboardPage.vue')
+const tentangPage = () => import( '@/views/tentangPage.vue')
+const listPesertaPage = () => import( '@/views/listPesertaPage')
+const registrasiPage = () => import( '@/views/registrasiPage')
+const detailBeritaPage = () => import( '@/views/detailBeritaPage')
+const beritaPage = () => import( '@/views/beritaPage')
+const contactUsPage = () => import( '@/views/contactUsPage')
+const addInformationPage = () => import( '@/views/addInformationPage')
+const sepakBola = () => import( '@/views/result/sepakBola')
+const registrasiRunPage = () => import( '@/views/registrasiRunPage')
+const teknikalMeetingPage = () => import( '@/views/teknikalMeetingPage')
+const konsepDokumenPage = () => import( '@/views/konsepDokumenPage')
+const adminDashboard = () => import( '@/views/admin/adminDashboard')
+const loginPage = () => import( '@/views/authPage/loginPage')
+const dataPesertaPage = () => import( '@/views/admin/dataPesertaPage')
+const verifikasiPesertaPage = () => import( '@/views/admin/verifikasiPesertaPage')
+const kelolaBeriaPage = () => import( '@/views/admin/kelolaBeritaPage')
+const adminSkorStage = () => import( '@/views/admin/adminSkorStage')
+const dashboardUser = () => import( '@/views/peserta/dashboardUser')
+const bolaVolly = () => import( '@/views/result/bolaVolly')
+const buluTangkis = () => import( '@/views/result/buluTangkis')
+const eSport = () => import( '@/views/result/eSport')
+const tenisMeja = () => import( '@/views/result/tenisMeja')
+const lariResults = () => import( '@/views/result/lariResults')
+const tenisLapangan = () => import( '@/views/result/tenisLapangan')
+const basketResult = () => import( '@/views/result/basketResult')
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
   { path: "/aboutUs", name: "aboutUs", component:tentangPage},

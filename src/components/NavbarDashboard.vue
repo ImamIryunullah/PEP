@@ -1,6 +1,5 @@
 <template>
   <header>
-    <!-- Top Social Bar -->
     <div class="bg-white text-gray-700 text-xs sm:text-sm font-medium px-2 sm:px-4 py-1 flex justify-between items-center border-b border-gray-200">
       <div class="text-xs sm:text-sm">{{ currentDate }} - {{ currentTime }}</div>
       <div class="flex gap-2 sm:gap-4 text-lg sm:text-xl">
@@ -18,10 +17,10 @@
         </a>
       </div>
     </div>
-
     <div class="bg-[#a60000] text-white shadow-md z-50 relative">
       <div class="container mx-auto px-2 sm:px-4 py-3 flex items-center justify-between">
-        
+        <a href="/"><span class="tex-white font-bold">PEP-Mini Olympic 2025</span></a>
+      
         <div class="flex items-center gap-2 sm:gap-4">
           <button 
             @click="toggleMenu" 
@@ -34,17 +33,15 @@
           </button>
           <img src="/logo-mini-olympic-2025.png" alt="Logo" class="h-8 sm:h-10 w-auto" />
         </div>
-
         <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-semibold tracking-wide uppercase">
           <router-link to="/" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             HOME
-          </router-link>
-          
+          </router-link>  
           <div class="relative" 
                @mouseenter="showJadwalDropdown = true" 
                @mouseleave="showJadwalDropdown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
-              <span class="hidden xl:inline">JADWAL DAN HASIL</span>
+              <span class="hidden xl:inline">JADWAL & HASIL</span>
               <span class="xl:hidden">JADWAL</span>
               <svg class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300" 
                    :class="{ 'rotate-180': showJadwalDropdown }"
@@ -135,7 +132,7 @@
           </router-link>
           
           <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
-            <span class="hidden xl:inline">ADDITIONAL INFO</span>
+            <span class="hidden xl:inline">ADDITIONAL</span>
             <span class="xl:hidden">INFO</span>
           </router-link>
         </nav>
@@ -149,7 +146,7 @@
           
           <div>
             <button @click="toggleJadwalDropdown" class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
-              JADWAL DAN HASIL
+              JADWAL & HASIL
               <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileJadwalDropdown }" 
                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
