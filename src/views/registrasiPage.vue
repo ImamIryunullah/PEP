@@ -9,7 +9,6 @@
                 <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-bold">REGIS</h1>
                 <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-bold">TRASI</h1>
             </div>
-
             <div class="relative z-10">
                 <div class="flex justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
                     <div class="w-full max-w-4xl space-y-6 bg-white p-8 rounded-lg shadow-md">
@@ -20,8 +19,7 @@
                         </div>
                         <form @submit.prevent="submitForm" class="space-y-6" enctype="multipart/form-data"
                             :class="{ 'opacity-50 pointer-events-none': loading }">
-                            
-                            <!-- Basic Information -->
+
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Nama Lengkap</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -30,7 +28,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-                            
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Email</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -39,7 +36,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-                            
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Password</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
@@ -49,19 +45,18 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
+                                    <label class="block text-gray-700 font-medium mb-1">Jenis Pekerja</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.jenis_peserta" @change="resetConditionalFields" required
+                                        <select v-model="form.jenis_pekerja" @change="resetConditionalFields" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Peserta
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Pekerja
                                             </option>
                                             <option value="Mitra" class="bg-gray-800 text-white">Mitra</option>
-                                            <option value="Peserta" class="bg-gray-800 text-white">Peserta</option>
+                                            <option value="Pekerja" class="bg-gray-800 text-white">Pekerja</option>
                                         </select>
                                         <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
                                             stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -69,7 +64,6 @@
                                         </svg>
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Cabang Olahraga</label>
                                     <div
@@ -99,7 +93,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Aset</label>
@@ -124,7 +117,6 @@
                                         </svg>
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Upload Foto</label>
                                     <div
@@ -137,15 +129,12 @@
                                     <p v-if="fileError" class="text-red-500 text-sm mt-1">{{ fileError }}</p>
                                 </div>
                             </div>
-
-                            <!-- Conditional Forms Based on Jenis Peserta -->
-                            <div v-if="form.jenis_peserta" class="border-t pt-6">
+                            <div v-if="form.jenis_pekerja" class="border-t pt-6">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4">
-                                    📄 Persyaratan Dokumen {{ form.jenis_peserta === 'Peserta' ? '(Pekerja)' : '(Mitra Kerja)' }}
+                                    📄 Persyaratan Dokumen {{ form.jenis_pekerja === 'Pekerja' ? '(Pekerja)' : '(Mitra Kerja)' }}
                                 </h3>
-                                
-                                <!-- Form untuk Peserta/Pekerja -->
-                                <div v-if="form.jenis_peserta === 'Peserta'" class="space-y-4">
+
+                                <div v-if="form.jenis_pekerja === 'Pekerja'" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">Scan ID Card Pekerja</label>
@@ -174,8 +163,7 @@
                                                 accept=".pdf,.jpg,.jpeg,.png" required
                                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                   
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">Surat Pernyataan Keabsahan Data (Bermaterai)</label>
@@ -199,8 +187,8 @@
                                     </div>
                                 </div>
 
-                                <!-- Form untuk Mitra Kerja -->
-                                <div v-if="form.jenis_peserta === 'Mitra'" class="space-y-4">
+                                
+                                <div v-if="form.jenis_pekerja === 'Mitra'" class="space-y-4">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">Scan ID Card Mitra Kerja</label>
@@ -214,8 +202,7 @@
                                                 accept=".pdf,.jpg,.jpeg,.png" required
                                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                  
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">BPJS Digital (Screenshot Aplikasi JMO)</label>
@@ -229,8 +216,7 @@
                                                 accept=".pdf,.jpg,.jpeg,.png" required
                                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                 
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">Kontrak Kerja (Min. 1 Tahun)</label>
@@ -259,8 +245,7 @@
                                                 accept=".pdf,.jpg,.jpeg,.png" required
                                                 class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                   
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-gray-700 font-medium mb-1">Form PRQ dengan Hasil MCU</label>
@@ -279,14 +264,12 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="flex justify-center pt-6">
                                 <button type="submit" :disabled="loading"
                                     class="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white font-bold py-2 px-10 rounded-full shadow-md transition duration-300 ease-in-out">
                                     {{ loading ? 'MEMPROSES...' : 'SUBMIT' }}
                                 </button>
                             </div>
-                            
                             <div class="text-center text-sm text-gray-600 mt-4">
                                 <span>Belum tahu persyaratan?</span>
                                 <a href="/syarat-pendaftaran" class="text-red-600 hover:underline font-medium">Lihat
@@ -298,7 +281,7 @@
                                 <a href="/login" class="text-red-600 hover:underline font-medium">Coba login</a>
                             </div>
 
-                            <!-- Message Display -->
+                            
                             <div v-if="message" :class="messageClass"
                                 class="mt-4 p-4 rounded-lg text-center font-semibold">
                                 {{ message }}
@@ -307,12 +290,10 @@
                     </div>
                 </div>
             </div>
-
         </section>
         <FooterDashboard />
     </div>
 </template>
-
 <script>
 import FooterDashboard from '@/components/FooterDashboard.vue'
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
@@ -329,7 +310,7 @@ export default {
                 nama_lengkap: '',
                 email: '',
                 password: '',
-                jenis_peserta: '',
+                jenis_pekerja: '',
                 cabang_olahraga: '',
                 aset: '',
                 media_sosial: ''
@@ -385,7 +366,7 @@ export default {
                     return;
                 }
 
-                const maxSize = 10 * 1024 * 1024; // 10MB
+                const maxSize = 10 * 1024 * 1024;
                 if (file.size > maxSize) {
                     this.message = `Ukuran file ${fieldName} tidak boleh lebih dari 10MB`;
                     this.success = false;
@@ -425,40 +406,35 @@ export default {
                 return false;
             }
 
-            if (!this.form.jenis_peserta) {
-                this.message = 'Jenis peserta harus dipilih';
+            if (!this.form.jenis_pekerja) {
+                this.message = 'Jenis Pekerja harus dipilih';
                 return false;
             }
-
             if (!this.form.cabang_olahraga) {
                 this.message = 'Cabang olahraga harus dipilih';
                 return false;
             }
-
             if (!this.form.aset) {
                 this.message = 'Aset harus dipilih';
                 return false;
             }
-
             if (!this.fotoFile) {
                 this.message = 'Foto harus diupload';
                 return false;
             }
-
-            // Validate conditional fields based on jenis_peserta
-            if (this.form.jenis_peserta === 'Peserta') {
-                const requiredPesertaFields = [
+            if (this.form.jenis_pekerja === 'Pekerja') {
+                const requiredPekerjaFields = [
                     'id_card_pekerja', 'ktp', 'kartu_medika', 'bpjs', 
                     'surat_pernyataan', 'surat_layak_bertanding', 'form_prq'
                 ];
                 
-                for (let field of requiredPesertaFields) {
+                for (let field of requiredPekerjaFields) {
                     if (!this.conditionalFiles[field]) {
                         this.message = `Dokumen ${field.replace(/_/g, ' ')} harus diupload`;
                         return false;
                     }
                 }
-            } else if (this.form.jenis_peserta === 'Mitra') {
+            } else if (this.form.jenis_pekerja === 'Mitra') {
                 const requiredMitraFields = [
                     'id_card_mitra', 'ktp_mitra', 'bpjs_mitra', 'surat_kerja',
                     'kontrak_kerja', 'sertifikat', 'surat_pernyataan_mitra',
@@ -490,12 +466,11 @@ export default {
         async submitFormData() {
             try {
                 const formData = new FormData();
-                
-                // Basic form data
+
                 formData.append('nama_lengkap', this.form.nama_lengkap);
                 formData.append('email', this.form.email);
                 formData.append('password', this.form.password);
-                formData.append('jenis_peserta', this.form.jenis_peserta);
+                formData.append('jenis_pekerja', this.form.jenis_pekerja);
                 formData.append('cabang_olahraga', this.form.cabang_olahraga);
                 formData.append('aset', this.form.aset);
 
@@ -503,17 +478,15 @@ export default {
                     formData.append('foto', this.fotoFile);
                 }
 
-                // Conditional files
                 Object.keys(this.conditionalFiles).forEach(key => {
                     formData.append(key, this.conditionalFiles[key]);
                 });
 
-                // Media sosial for Mitra
-                if (this.form.jenis_peserta === 'Mitra' && this.form.media_sosial) {
+                if (this.form.jenis_pekerja === 'Mitra' && this.form.media_sosial) {
                     formData.append('media_sosial', this.form.media_sosial);
                 }
 
-                const response = await API.registerPeserta(formData);
+                const response = await API.registerPekerja(formData);
                 console.log('Registration successful:', response.data);
 
                 this.success = true;
@@ -571,7 +544,7 @@ export default {
                 nama_lengkap: '',
                 email: '',
                 password: '',
-                jenis_peserta: '',
+                jenis_pekerja: '',
                 cabang_olahraga: '',
                 aset: '',
                 media_sosial: ''
@@ -584,7 +557,7 @@ export default {
                 this.$refs.fileInput.value = '';
             }
 
-            // Reset all conditional file inputs
+
             const fileInputs = this.$el.querySelectorAll('input[type="file"]');
             fileInputs.forEach(input => {
                 if (input !== this.$refs.fileInput) {
@@ -597,7 +570,7 @@ export default {
 </script>
 
 <style scoped>
-/* Custom styles for form */
+
 .bg-\[#a60000\] {
     background-color: #a60000;
 }
@@ -610,7 +583,6 @@ export default {
     border-color: #a60000;
 }
 
-/* Loading spinner animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -620,7 +592,6 @@ export default {
     animation: spin 1s linear infinite;
 }
 
-/* File input styling */
 input[type="file"]::-webkit-file-upload-button {
     background: white;
     color: #a60000;
@@ -636,12 +607,10 @@ input[type="file"]::-webkit-file-upload-button:hover {
     background: #f3f4f6;
 }
 
-/* Select dropdown arrow */
 select {
     background-image: none;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .grid-cols-1.md\:grid-cols-2 {
         grid-template-columns: 1fr;
@@ -660,12 +629,10 @@ select {
     }
 }
 
-/* Form validation error styling */
 .text-red-500 {
     color: #ef4444;
 }
 
-/* Success/Error message styling */
 .bg-green-100 {
     background-color: #dcfce7;
 }
@@ -690,16 +657,14 @@ select {
     border-color: #fca5a5;
 }
 
-/* Focus states */
 input:focus, select:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(166, 0, 0, 0.3);
 }
 
-/* Disabled state */
 .disabled\:bg-gray-400:disabled {
     background-color: #9ca3af;
-}
+}   
 
 .opacity-50 {
     opacity: 0.5;

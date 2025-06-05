@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"], // Tidak ada `purge`
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"], 
   theme: {
     extend: {
       fontFamily: {
@@ -28,7 +28,7 @@ module.exports = {
       },
     },
   },
-  darkMode: "class", // Gunakan 'class' agar bisa dikontrol secara manual
+  darkMode: "class", 
   plugins: [
     require('@tailwindcss/line-clamp'),
   ],

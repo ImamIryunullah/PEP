@@ -1,6 +1,6 @@
 <template>
     <NavbarDashboard />
-    <section class="min-h-screen bg-gray-100 flex flex-col lg:flex-row items-start justify-center gap-6 p-4 lg:p-6">
+    <section class="min-h-screen bg-gray-100 flex flex-col lg:flex-row items-start justify-center gap-6 p-4 lg:p-6 font-montserrat">
         
         <aside class="bg-white rounded-xl shadow-md w-full lg:w-64 order-2 lg:order-1">
             <div class="bg-red-600 text-white text-center py-3 rounded-t-xl font-semibold">

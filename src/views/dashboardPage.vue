@@ -410,12 +410,12 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="../assets/bunga/hiasan.png" alt="hiasan"
+                  <img src="../assets/bunga/hiasan.png" alt="hiasan" loading="lazy"
                     class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
                 </div>
-                <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
+                <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               </div>
-              <img src="../assets/assets/voli.png"
+              <img src="../assets/kategori/voli.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -441,8 +441,8 @@
                   <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/bola.png"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="../assets/kategori/bola.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[5%] w-40 sm:w-52 md:w-64 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -465,12 +465,12 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/basket.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[420px] transition-transform hover:scale-105"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
+              <img src="../assets/kategori/basket.png" loading="lazy"
+                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
@@ -492,12 +492,12 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/lari.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="../assets/kategori/lari.png" loading="lazy"
+                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[350px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
@@ -517,12 +517,12 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/badminton.png"
-                class="absolute bottom-[12%] sm:bottom-[15%] md:bottom-[20%] left-[2%] w-44 sm:w-60 md:w-72 lg:w-[360px] transition-transform hover:scale-105"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
+              <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+                class="absolute bottom-[12%] sm:bottom-[15%] md:bottom-[20%] left-[2%] w-44 sm:w-60 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
@@ -544,11 +544,11 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/tesnimeja.png"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="../assets/kategori/tenismeja.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -571,12 +571,12 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/senam.png"
-                class="absolute bottom-[10%] sm:bottom-[10%] md:bottom-[30%] left-[2%] w-56 sm:w-64 md:w-72 lg:w-[500px] transition-transform hover:scale-105"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="../assets/kategori/senam.png" loading="lazy"
+                class="absolute bottom-[10%] sm:bottom-[10%] md:bottom-[30%] left-[2%] w-56 sm:w-64 md:w-72 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
@@ -597,17 +597,16 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
-              <img src="/assets/esport.png"
-                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-42 sm:w-62 md:w-70 lg:w-[350px] transition-transform hover:scale-105"
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="../assets/kategori/esport.png" loading="lazy"
+                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-42 sm:w-62 md:w-70 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
           </div>
         </div>
-
 
         <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
           <div v-for="(_, index) in slideCount" :key="index"
@@ -629,8 +628,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
           </svg>
         </button>
-
-
         <div v-if="currentSlide === slideCount - 1"
           class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
           <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">

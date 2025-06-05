@@ -1,31 +1,34 @@
 <template>
     <div class="min-h-screen bg-[#F7F7F7]">
         <NavbarDashboard />
-        
+
         <!-- Hero Section -->
-        <section class="min-h-[60vh] sm:min-h-screen relative bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_rgba(0,0,0,1)_45%)] overflow-hidden">
+        <section
+            class="min-h-[60vh] sm:min-h-screen relative bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_rgba(0,0,0,1)_45%)] overflow-hidden">
             <!-- Decorative Images - Hidden on mobile -->
-            <img src="/listpeserta/atas.png" 
-                class="absolute bottom-[60%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block" 
+            <img src="/listpeserta/atas.png" loading="lazy"
+                class="absolute bottom-[60%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
                 alt="border1" />
-            <img src="/listpeserta/bawah.png" 
-                class="absolute bottom-[20%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block" 
+            <img src="/listpeserta/bawah.png" loading="lazy"
+                class="absolute bottom-[20%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
                 alt="border2" />
-            <img src="/listpeserta/awan.png" alt="Gambar bawah"
+            <img src="/listpeserta/awan.png" alt="Gambar bawah" loading="lazy"
                 class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[15%] sm:h-[20%]" />
 
             <!-- Sport Image - Always visible, responsive positioning -->
             <img :src="getOlahragaImage(selectedOlahraga)"
-                class="absolute top-[5%] sm:top-[10%] w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] left-[5%] sm:left-[10%] float delay-2 opacity-70 sm:opacity-80 lg:opacity-100 z-5" 
+                class="absolute top-[5%] sm:top-[10%] w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] left-[5%] sm:left-[10%] float delay-2 opacity-70 sm:opacity-80 lg:opacity-100 z-5"
                 alt="Maskot" />
 
             <!-- Background Text - Responsive -->
-            <h1 class="absolute top-[20%] sm:top-[30%] left-0 text-white opacity-5 text-4xl sm:text-6xl lg:text-8xl font-bold ml-4 sm:ml-8 lg:ml-16 z-0 hidden sm:block">
+            <h1
+                class="absolute top-[20%] sm:top-[30%] left-0 text-white opacity-5 text-4xl sm:text-6xl lg:text-8xl font-bold ml-4 sm:ml-8 lg:ml-16 z-0 hidden sm:block">
                 {{ selectedOlahraga.toUpperCase() }}
             </h1>
 
             <!-- Main Title - Responsive -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center sm:items-end sm:justify-center text-center sm:text-right px-4 sm:px-8 lg:px-16">
+            <div
+                class="absolute inset-0 flex flex-col justify-center items-center sm:items-end sm:justify-center text-center sm:text-right px-4 sm:px-8 lg:px-16">
                 <h1 class="text-white text-3xl sm:text-5xl lg:text-8xl font-bold leading-tight">
                     LIST PESERTA
                 </h1>
@@ -43,10 +46,16 @@
         <section class="min-h-screen relative bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 py-6 font-sans">
             <!-- Background Elements -->
             <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5 hidden lg:block" />
-                <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5 hidden lg:block" />
-                <h1 class="absolute top-10 sm:top-20 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">LIST</h1>
-                <h1 class="absolute top-20 sm:top-52 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">PESERTA</h1>
+                <img src="/registrasi/hijau.png" alt=""
+                    class="absolute top-0 left-0 w-full opacity-5 hidden lg:block" />
+                <img src="/registrasi/biru.png" alt=""
+                    class="absolute bottom-0 right-0 w-full opacity-5 hidden lg:block" />
+                <h1
+                    class="absolute top-10 sm:top-20 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">
+                    LIST</h1>
+                <h1
+                    class="absolute top-20 sm:top-52 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">
+                    PESERTA</h1>
             </div>
 
             <div class="relative z-10 space-y-6 sm:space-y-8 animate-fade-in animate-stagger">
@@ -54,9 +63,7 @@
                 <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 justify-center">
                     <button
                         v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
-                        :key="kategori" 
-                        @click="selectedOlahraga = kategori" 
-                        :class="[ 
+                        :key="kategori" @click="selectedOlahraga = kategori" :class="[
                             'px-3 sm:px-5 py-2 rounded-lg font-medium transition duration-300 shadow-sm text-xs sm:text-sm',
                             selectedOlahraga === kategori
                                 ? 'bg-[#D71E28] text-white shadow-md scale-105'
@@ -74,7 +81,7 @@
                                 <h3 class="font-bold text-lg">{{ kontingen.kontingen }}</h3>
                             </div>
                             <div class="divide-y divide-gray-200">
-                                <div v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama" 
+                                <div v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
                                     class="p-4 hover:bg-gray-50 transition duration-200">
                                     <div class="space-y-2">
                                         <div class="flex justify-between items-start">
@@ -112,7 +119,8 @@
 
                 <!-- Desktop Table View -->
                 <div class="hidden lg:block overflow-x-auto">
-                    <table class="min-w-full bg-white rounded-xl shadow-xl overflow-hidden text-sm transform transition duration-500 hover:scale-[1.01]">
+                    <table
+                        class="min-w-full bg-white rounded-xl shadow-xl overflow-hidden text-sm transform transition duration-500 hover:scale-[1.01]">
                         <thead class="bg-[#D71E28] text-white uppercase text-xs">
                             <tr>
                                 <th class="px-6 py-4 text-left font-bold">No</th>
@@ -167,6 +175,7 @@
 import FooterDashboard from '@/components/FooterDashboard.vue';
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 
+
 export default {
     components: {
         NavbarDashboard,
@@ -174,6 +183,7 @@ export default {
     },
     data() {
         return {
+
             selectedOlahraga: 'Volley',
             pesertaData: [
                 {
@@ -202,97 +212,110 @@ export default {
     methods: {
         getOlahragaImage(olahraga) {
             const imgMap = {
-                'Volley': '/assets/voli.png',
-                'Sepak Bola': '/assets/bola.png',
-                'Tenis Meja': '/assets/tesnimeja.png',
-                'Badminton': '/assets/badminton.png',
-                'Lari': '/assets/lari.png',
-                'Senam': '/assets/senam.png',
-                'Tenis Lapangan': '/assets/tenislap.png',
-                'Basket': '/assets/basket.png',
-                'Esport': '/assets/esport.png'
+                'Volley': 'voli.png',
+                'Sepak Bola': 'bola.png',
+                'Tenis Meja': 'tenismeja.png',
+                'Badminton': 'bulutangkis.png',
+                'Lari': 'lari.png',
+                'Senam': 'senam.png',
+                'Tenis Lapangan': 'tenislap.png',
+                'Basket': 'basket.png',
+                'Esport': 'esport.png'
             };
-            return imgMap[olahraga] || '';
+
+            const filename = imgMap[olahraga];
+            return filename ? require(`@/assets/kategori/${filename}`) : '';
         }
     }
+
 }
 </script>
 
 <style scoped>
 /* Animations */
 .animate-fade-in {
-  opacity: 0;
-  transform: translateY(0.75rem);
-  transition: all 0.5s ease-out;
-  animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: all 0.5s ease-out;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in {
-  animation: fadeInUp 0.8s ease-out both;
+    animation: fadeInUp 0.8s ease-out both;
 }
 
-.animate-stagger > * {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
+.animate-stagger>* {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.animate-stagger > *:nth-child(1) {
-  animation-delay: 0.1s;
+.animate-stagger>*:nth-child(1) {
+    animation-delay: 0.1s;
 }
-.animate-stagger > *:nth-child(2) {
-  animation-delay: 0.2s;
+
+.animate-stagger>*:nth-child(2) {
+    animation-delay: 0.2s;
 }
-.animate-stagger > *:nth-child(3) {
-  animation-delay: 0.3s;
+
+.animate-stagger>*:nth-child(3) {
+    animation-delay: 0.3s;
 }
 
 /* Float animation for sport image */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .float {
-  animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
 }
 
 .delay-2 {
-  animation-delay: 2s;
+    animation-delay: 2s;
 }
 
 /* Responsive utilities */
 @media (max-width: 640px) {
-  .grid-cols-2 > button {
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .grid-cols-2>button {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Smooth transitions */
 * {
-  transition-property: transform, opacity, background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+    transition-property: transform, opacity, background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
 }
 </style>
