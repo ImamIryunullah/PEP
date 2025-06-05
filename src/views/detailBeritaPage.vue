@@ -83,7 +83,7 @@
                     <div v-html="formatContent(currentNews.content)" class="text-gray-800 leading-relaxed"></div>
                 </div>
           
-                <div v-if="currentNews.gallery && currentNews.gallery.length > 0" class="mt-8">
+                <!-- <div v-if="currentNews.gallery && currentNews.gallery.length > 0" class="mt-8">
                     <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
                         <i class="fas fa-images mr-2 text-red-600"></i>Galeri Foto
                     </h3>
@@ -95,7 +95,7 @@
                                  class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <div class="mt-8 pt-6 border-t border-gray-200">
                     <h4 class="text-sm font-semibold text-gray-700 mb-3">Tags:</h4>
@@ -132,7 +132,7 @@
             </div>
         </div>
     </section>
-    <div v-if="galleryOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" @click="closeGallery">
+    <!-- <div v-if="galleryOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" @click="closeGallery">
         <div class="max-w-4xl max-h-full">
             <img :src="currentNews.gallery[currentGalleryIndex].url" 
                  :alt="currentNews.gallery[currentGalleryIndex].caption"
@@ -150,7 +150,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <FooterDashboard />
 </template>
@@ -168,8 +168,8 @@ export default {
         return {
             loading: false,
             linkCopied: false,
-            galleryOpen: false,
-            currentGalleryIndex: 0,
+            // galleryOpen: false,
+            // currentGalleryIndex: 0,
             currentNews: {
                 id: 1,
                 title: "Tim Volley Putra Raih Medali Emas dalam Mini Olympic 2025",
@@ -192,20 +192,20 @@ export default {
                 `,
                 image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
                 imageCaption: "Tim volley putra saat melakukan selebrasi setelah memenangkan pertandingan final",
-                gallery: [
-                    {
-                        url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-                        caption: "Momen spike menentukan di set terakhir"
-                    },
-                    {
-                        url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
-                        caption: "Selebrasi tim setelah memenangkan pertandingan"
-                    },
-                    {
-                        url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-                        caption: "Penyerahan medali emas kepada para juara"
-                    }
-                ],
+                // gallery: [
+                //     {
+                //         url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                //         caption: "Momen spike menentukan di set terakhir"
+                //     },
+                //     {
+                //         url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
+                //         caption: "Selebrasi tim setelah memenangkan pertandingan"
+                //     },
+                //     {
+                //         url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+                //         caption: "Penyerahan medali emas kepada para juara"
+                //     }
+                // ],
                 tags: ["volley", "medali-emas", "mini-olympic", "olahraga", "universitas", "final"]
             },
             otherNews: [
@@ -301,7 +301,7 @@ export default {
                 'Lari': 'fas fa-running',
                 'Senam': 'fas fa-gymnastics',
                 'Tenis Lapangan': 'fas fa-tennis-ball',
-                'Basket': 'fas fa-basketball-ball',
+                'Basket': 'fas fa-basketball-ball', 
                 'Esport': 'fas fa-gamepad'
             };
             return icons[category] || 'fas fa-newspaper';
@@ -361,30 +361,30 @@ export default {
             });
         },
         
-        openGallery(index) {
-            this.currentGalleryIndex = index;
-            this.galleryOpen = true;
-        },
+        // openGallery(index) {
+        //     this.currentGalleryIndex = index;
+        //     this.galleryOpen = true;
+        // },
         
-        closeGallery() {
-            this.galleryOpen = false;
-        },
+        // closeGallery() {
+        //     this.galleryOpen = false;
+        // },
         
-        nextGalleryImage() {
-            if (this.currentGalleryIndex < this.currentNews.gallery.length - 1) {
-                this.currentGalleryIndex++;
-            } else {
-                this.currentGalleryIndex = 0;
-            }
-        },
+        // nextGalleryImage() {
+        //     if (this.currentGalleryIndex < this.currentNews.gallery.length - 1) {
+        //         this.currentGalleryIndex++;
+        //     } else {
+        //         this.currentGalleryIndex = 0;
+        //     }
+        // },
         
-        prevGalleryImage() {
-            if (this.currentGalleryIndex > 0) {
-                this.currentGalleryIndex--;
-            } else {
-                this.currentGalleryIndex = this.currentNews.gallery.length - 1;
-            }
-        }
+        // prevGalleryImage() {
+        //     if (this.currentGalleryIndex > 0) {
+        //         this.currentGalleryIndex--;
+        //     } else {
+        //         this.currentGalleryIndex = this.currentNews.gallery.length - 1;
+        //     }
+        // }
     }
 }
 </script>

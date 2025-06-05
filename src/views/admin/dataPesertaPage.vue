@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex bg-gray-50 relative">
+    <div class="min-h-screen flex bg-gray-50 relative font-sans">
       
       <Sidebar :isOpen="isSidebarOpen" />
   

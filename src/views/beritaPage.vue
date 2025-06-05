@@ -1,6 +1,6 @@
 <template>
     <NavbarDashboard />
-    <section class="bg-[#f7f7f7] min-h-screen pt-8 md:pt-10 fade-in-up">
+    <section class="bg-[#f7f7f7] min-h-screen pt-8 md:pt-10 fade-in-up font-sans">
         
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />

@@ -1,16 +1,16 @@
 <template>
-    <div class="min-h-screen flex bg-gray-100 relative">
-      <!-- Sidebar -->
+    <div class="min-h-screen flex bg-gray-100 relative font-sans">
+      
       <Sidebar :isOpen="isSidebarOpen" />
   
-      <!-- Overlay ketika sidebar terbuka di mobile -->
+      
       <div
         v-if="isSidebarOpen"
         @click="isSidebarOpen = false"
         class="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"
       ></div>
   
-      <!-- Konten utama -->
+      
       <div :class="[
         'flex-1 flex flex-col transition-margin duration-300 ease-in-out min-h-screen',
         isSidebarOpen ? 'md:ml-64' : 'md:ml-16'
@@ -20,17 +20,17 @@
           <i class="fas fa-bars"></i>
         </button>
         <h1 class="text-lg font-semibold text-[#D71E28]">Verifikasi Peserta</h1>
-        <div class="w-8"></div> <!-- Spacer for center alignment -->
+        <div class="w-8"></div> 
       </header>
 
         <main class="px-4 sm:px-6 py-4 sm:py-8 flex-1">
-          <!-- Header dengan statistik -->
+          
           <div class="mb-6">
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 hidden md:block">
               Verifikasi Peserta
             </h1>
             
-            <!-- Statistik Cards -->
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               <div class="bg-white rounded-lg shadow p-4">
                 <div class="flex items-center">
@@ -82,11 +82,11 @@
             </div>
           </div>
   
-          <!-- Filter dan Search -->
+          
           <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
             <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <!-- Search -->
+                
                 <div class="relative">
                   <input
                     v-model="searchTerm"
@@ -97,7 +97,7 @@
                   <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                 </div>
                 
-                <!-- Filter Status -->
+                
                 <select
                   v-model="statusFilter"
                   class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent"
@@ -108,7 +108,7 @@
                 </select>
               </div>
               
-              <!-- Bulk Actions -->
+              
               <div class="flex gap-2 w-full sm:w-auto">
                 <button
                   v-if="selectedPeserta.length > 0"
@@ -133,7 +133,7 @@
             </div>
           </div>
   
-          <!-- Tabel Desktop & Tablet -->
+          
           <div class="bg-white rounded-lg shadow overflow-hidden hidden sm:block">
             <div class="overflow-x-auto">
               <table class="min-w-full">
@@ -223,7 +223,7 @@
               </table>
             </div>
             
-            <!-- Pagination -->
+            
             <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
               <div class="flex items-center justify-between">
                 <div class="text-sm text-gray-700">
@@ -250,7 +250,7 @@
             </div>
           </div>
   
-          <!-- Card Layout untuk Mobile -->
+          
           <div class="sm:hidden space-y-4">
             <div
               v-for="peserta in filteredPeserta"
@@ -306,7 +306,7 @@
             </div>
           </div>
   
-          <!-- Tidak ada data -->
+          
           <div v-if="filteredPeserta.length === 0" class="bg-white rounded-lg shadow p-8 text-center">
             <i class="fas fa-inbox text-4xl text-gray-400 mb-4"></i>
             <h3 class="text-lg font-medium text-gray-900 mb-2">Tidak ada peserta ditemukan</h3>
@@ -315,7 +315,7 @@
         </main>
       </div>
   
-      <!-- Modal Detail Peserta -->
+      
       <div v-if="showDetailModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-md w-full p-6">
           <div class="flex justify-between items-center mb-4">
@@ -364,7 +364,7 @@
         </div>
       </div>
   
-      <!-- Toast Notification -->
+      
       <div
         v-if="showToast"
         class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity"

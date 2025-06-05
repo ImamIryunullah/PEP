@@ -4,13 +4,11 @@
       <section class="min-h-screen bg-[#F7F7F7] py-12 px-6">
         <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md space-y-8">
           <h1 class="text-3xl font-bold text-center text-gray-800">Persyaratan Pendaftaran</h1>
-  
           <div class="space-y-6">
             <h2 class="text-xl font-semibold text-[#a60000]">📌 Komposisi Peserta</h2>
             <p class="text-gray-700">
               Jumlah pemain pekerja dan mitra kerja disesuaikan dengan peraturan cabornya masing-masing.
             </p>
-  
             <div>
               <h2 class="text-xl font-semibold text-[#a60000]">📄 Persyaratan Dokumen (Pekerja)</h2>
               <ul class="list-decimal list-inside text-gray-700 space-y-1 mt-2">
@@ -22,7 +20,6 @@
                 <li>Peserta adalah Pekerja Nopek PEP dan Non PEP yang ditugaskan di WK PEP, HO Zona yang memiliki WK PEP dan HO Reg 2</li>
               </ul>
             </div>
-  
             <div>
               <h2 class="text-xl font-semibold text-[#a60000]">📄 Persyaratan Dokumen (Mitra Kerja)</h2>
               <ul class="list-decimal list-inside text-gray-700 space-y-1 mt-2">
@@ -40,9 +37,8 @@
               </ul>
             </div>
           </div>
-  
           <div class="text-center">
-            <RouterLink to="/regitsrasi" class="inline-block mt-6 bg-[#a60000] hover:bg-[#880000] text-white px-6 py-2 rounded-full shadow-md transition duration-300">
+            <RouterLink to="/registrasi" class="inline-block mt-6 bg-[#a60000] hover:bg-[#880000] text-white px-6 py-2 rounded-full shadow-md transition duration-300">
               Kembali ke Formulir Pendaftaran
             </RouterLink>
           </div>

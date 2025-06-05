@@ -1,75 +1,110 @@
 <template>
   <div class="min-h-screen bg-[#f5f3ef]">
     <NavbarDashboard />
-    <section class="relative w-full h-screen min-h-[400px] overflow-hidden">
-
-      <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-        <source src="../assets/PERTAMINAep.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-
-      <div class="absolute inset-0 flex items-center justify-center z-10 p-4">
-        <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025"
-          class="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 max-w-full h-auto mx-auto drop-shadow-lg">
+    <section class="relative w-full h-screen min-h-[400px] overflow-hidden bg-gray-900">
+      
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-red-500 rounded-full blur-3xl opacity-10"></div>
+        <div class="absolute bottom-10 right-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-10"></div>
       </div>
+
+      
+      <div class="absolute top-12 left-1/2 transform -translate-x-1/2 opacity-20">
+        <div class="flex space-x-2">
+          <div class="w-12 h-12 border-2 border-blue-400 rounded-full "></div>
+          <div class="w-12 h-12 border-2 border-yellow-400 rounded-full"></div>
+          <div class="w-12 h-12 border-2 border-black rounded-full"></div>
+          <div class="w-12 h-12 border-2 border-green-400 rounded-full"></div>
+          <div class="w-12 h-12 border-2 border-red-400 rounded-full"></div>
+        </div>
+      </div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 p-4">
+        
+        <div class="mb-6 animate-fade-in-up">
+          <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025"
+            class="w-40 md:w-48 lg:w-56 xl:w-64 h-auto mx-auto drop-shadow-md">
+        </div>
+        <div class="space-y-2 animate-fade-in-up delay-200">
+          <h1 class="text-4xl sm:text-5xl font-bold text-white">
+            SELAMAT <span class="block mt-1">DATANG</span>
+          </h1>
+          <p class="text-xl sm:text-2xl font-semibold text-red-500 mt-2">
+            MINI OLYMPIC PERTAMINA 2025
+          </p>
+        </div>
+        <div class="mt-4 max-w-xl text-gray-300 animate-fade-in-up delay-400">
+          <p class="text-base sm:text-lg leading-relaxed">
+            Bergabunglah dalam kompetisi olahraga terbesar Pertamina tahun ini.
+            Tunjukkan semangat sportivitas dan raih prestasi terbaik!
+          </p>
+        </div>
+        <div class="mt-8 animate-fade-in-up delay-600">
+          <button
+            class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-red-500/30">
+            Lihat Kompetisi
+          </button>
+        </div>
+      </div>
+      <div class="absolute top-0 left-0 w-full h-1 bg-red-600/50"></div>
+      <div class="absolute bottom-0 left-0 w-full h-1 bg-red-600/50"></div>
     </section>
+
     <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-[#f5f3ef] w-full min-h-screen overflow-hidden">
 
 
-      <img src="../assets/kategori/voli.png"
-        class="absolute bottom-[20%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block float delay-1 z-0"
+      <img src="../assets/kategori/voli.png" loading="lazy"
+        class="absolute bottom-[20%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block z-0"
         alt="Maskot Voli" />
-      <img src="../assets/kategori/lari.png"
-        class="absolute top-[47%] left-[25%] lg:left-[30%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block animate-float delay-3 z-0"
+
+      <img src="../assets/kategori/lari.png" loading="lazy"
+        class="absolute top-[47%] left-[25%] lg:left-[30%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block  z-0"
         alt="Maskot Lari" />
-      <img src="../assets/kategori/basket.png"
-        class="absolute top-[43%] left-[12%] lg:left-[15%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block animate-float delay-2 z-0"
+      <img src="../assets/kategori/basket.png" loading="lazy"
+        class="absolute top-[43%] left-[12%] lg:left-[15%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block  z-0"
         alt="Maskot Basket" />
-      <img src="../assets/kategori/bulutangkis.png"
-        class="absolute top-[48%] left-0 w-[250px] lg:w-[300px] xl:w-[350px] hidden md:block animate-float delay-1 z-0"
+      <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+        class="absolute top-[48%] left-0 w-[250px] lg:w-[300px] xl:w-[350px] hidden md:block  z-0"
         alt="Maskot Bulutangkis" />
 
-      <img src="../assets/kategori/esport.png"
-        class="absolute bottom-[25%] right-[2%] w-[280px] lg:w-[350px] xl:w-[400px] hidden md:block animate-float delay-1 z-0"
+      <img src="../assets/kategori/esport.png" loading="lazy"
+        class="absolute bottom-[25%] right-[2%] w-[280px] lg:w-[350px] xl:w-[400px] hidden md:block  z-0"
         alt="Maskot Esport" />
-      <img src="../assets/kategori/bola.png"
-        class="absolute top-[47%] right-[12%] lg:right-[14%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-2 z-0"
+      <img src="../assets/kategori/bola.png" loading="lazy"
+        class="absolute top-[47%] right-[12%] lg:right-[14%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Bola" />
-      <img src="../assets/kategori/tenislap.png"
-        class="absolute top-[47%] right-[22%] lg:right-[25%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-3 z-0"
+      <img src="../assets/kategori/tenislap.png" loading="lazy"
+        class="absolute top-[47%] right-[22%] lg:right-[25%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Tenis" />
-      <img src="../assets/kategori/senam.png"
-        class="absolute top-[47%] right-0 w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block animate-float delay-4 z-0"
+      <img src="../assets/kategori/senam.png" loading="lazy"
+        class="absolute top-[47%] right-0 w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Senam" />
       <div class="block md:hidden absolute inset-0 pointer-events-none">
 
-        <img src="../assets/kategori/bulutangkis.png"
-          class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px] animate-float delay-1 opacity-60"
+        <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+          class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px]  opacity-60"
           alt="Maskot Bulutangkis" />
-        <img src="../assets/kategori/basket.png"
-          class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px] animate-float delay-2 opacity-60"
+        <img src="../assets/kategori/basket.png" loading="lazy"
+          class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px]  opacity-60"
           alt="Maskot Basket" />
 
-        <img src="../assets/kategori/voli.png"
-          class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px] animate-float delay-1 opacity-60"
+        <img src="../assets/kategori/voli.png" loading="lazy"
+          class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px]  opacity-60"
           alt="Maskot Voli" />
-        <img src="../assets/kategori/esport.png"
-          class="absolute bottom-[18%] right-[2%] w-[100px] sm:w-[130px] animate-float delay-3 opacity-60"
+        <img src="../assets/kategori/esport.png" loading="lazy"
+          class="absolute bottom-[18%] right-[2%] w-[100px] sm:w-[130px]  opacity-60"
           alt="Maskot Esport" />
 
-        <img src="../assets/kategori/lari.png"
-          class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px] animate-float delay-4 opacity-50"
+        <img src="../assets/kategori/lari.png" loading="lazy"
+          class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px]  opacity-50"
           alt="Maskot Lari" />
-        <img src="../assets/kategori/bola.png"
-          class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px] animate-float delay-5 opacity-50"
+        <img src="../assets/kategori/bola.png" loading="lazy"
+          class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px]  opacity-50"
           alt="Maskot Bola" />
-        <img src="../assets/kategori/tenislap.png"
-          class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px] animate-float delay-6 opacity-50"
+        <img src="../assets/kategori/tenislap.png" loading="lazy"
+          class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px]  opacity-50"
           alt="Maskot Tenis" />
-        <img src="../assets/kategori/senam.png"
-          class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px] animate-float delay-7 opacity-50"
+        <img src="../assets/kategori/senam.png" loading="lazy"
+          class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px]  opacity-50"
           alt="Maskot Senam" />
       </div>
 
@@ -169,13 +204,13 @@
       class="relative py-8 sm:py-12 lg:py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
       style="background-image: url('/bg-gambar.png');" data-aos="fade-up" data-aos-duration="1500">
 
-      <!-- Decorative SVG Wave -->
+
       <svg class="absolute top-0 left-0 w-full h-12 sm:h-16 z-10" viewBox="0 0 1440 150" preserveAspectRatio="none">
         <path fill="#f5f3ef" d="M0,150 C480,50 960,50 1440,150 L1440,0 L0,0 Z" />
       </svg>
 
 
-      <img src="../assets/assets/obor.png"
+      <img src="../assets/assets/obor.png" loading="lazy"
         class="absolute bottom-[5%] sm:bottom-[8%] lg:bottom-[10%] left-[0%] w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] hidden md:block float animate-float delay-1 z-0"
         alt="Maskot Kiri" />
 
@@ -317,7 +352,8 @@
             class="w-full overflow-hidden whitespace-nowrap bg-white/50 rounded-2xl py-3 sm:py-4 lg:py-6 animate-slide-right delay-400">
             <div class="inline-block animate-marquee space-x-8 sm:space-x-12 lg:space-x-24 px-4">
               <img src="../assets/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="../assets/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="../assets/addinfo/pertaminaEP.png" alt="Pertamina EP"
                 class="inline h-12 sm:h-16 lg:h-20 object-contain" />
@@ -326,7 +362,8 @@
 
 
               <img src="../assets/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="../assets/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
               <img src="../assets/addinfo/pertaminaEP.png" alt="Pertamina EP"
                 class="inline h-12 sm:h-16 lg:h-20 object-contain" />
@@ -373,7 +410,8 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="../assets/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
+                  <img src="../assets/bunga/hiasan.png" alt="hiasan"
+                    class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
                 </div>
                 <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               </div>
@@ -382,7 +420,7 @@
                 alt="Maskot" />
             </div>
 
-            <!-- Football Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -405,11 +443,11 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/bola.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-44 sm:w-56 md:w-72 lg:w-[350px] transition-transform hover:scale-105"
+                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[5%] w-40 sm:w-52 md:w-64 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
-            <!-- Basketball Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -432,11 +470,11 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/basket.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[420px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
-            <!-- Running Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -462,8 +500,6 @@
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
-
-            <!-- Badminton Slide -->
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -486,11 +522,11 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/badminton.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
+                class="absolute bottom-[12%] sm:bottom-[15%] md:bottom-[20%] left-[2%] w-44 sm:w-60 md:w-72 lg:w-[360px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
-            <!-- Tenis Meja Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -513,11 +549,11 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/tesnimeja.png"
-                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+                class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
 
-            <!-- Senam Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -540,10 +576,10 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/senam.png"
-                class="absolute bottom-[35%] sm:bottom-[40%] md:bottom-[50%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+                class="absolute bottom-[10%] sm:bottom-[10%] md:bottom-[30%] left-[2%] w-56 sm:w-64 md:w-72 lg:w-[500px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
-            <!-- Esport Slide -->
+
             <div class="relative w-screen flex-shrink-0 bg-cover bg-center bg-no-repeat"
               style="background-image: url('/Hero.png');">
               <div
@@ -566,20 +602,20 @@
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" />
               <img src="/assets/esport.png"
-                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[450px] transition-transform hover:scale-105"
+                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-42 sm:w-62 md:w-70 lg:w-[350px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
           </div>
         </div>
 
-        <!-- Pagination Dots -->
+
         <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
           <div v-for="(_, index) in slideCount" :key="index"
             class="w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 cursor-pointer hover:scale-110"
             :class="[currentSlide === index ? 'bg-white scale-125' : 'bg-white/50']" @click="goToSlide(index)"></div>
         </div>
 
-        <!-- Navigation Arrows -->
+
         <button v-if="currentSlide > 0" @click="previousSlide"
           class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yellow-300 transition-colors z-10">
           <svg class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -594,7 +630,7 @@
           </svg>
         </button>
 
-        <!-- Scroll Down Indicator -->
+
         <div v-if="currentSlide === slideCount - 1"
           class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce z-10">
           <div class="text-white flex flex-col items-center cursor-pointer" @click="scrollToNext">
@@ -995,6 +1031,25 @@ export default {
         section.addEventListener('mouseleave', () => {
           if (autoPlay.value) startAutoPlay();
         });
+      }
+
+      const video = document.querySelector("video");
+
+      if (video) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              video.play().catch((e) => {
+                console.warn("Autoplay blocked:", e);
+              });
+            } else {
+              video.pause();
+            }
+          },
+          { threshold: 0.5 }
+        );
+
+        observer.observe(video);
       }
     });
 
@@ -1537,7 +1592,6 @@ body {
   border-radius: 2px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .timeline-container {
     padding: 1.5rem 1rem;
@@ -1573,7 +1627,6 @@ button,
   z-index: 10;
 }
 
-/* Custom animations */
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -1591,7 +1644,6 @@ button,
   opacity: 0;
 }
 
-/* Transition styles */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
   transition: all 0.5s ease;
@@ -1607,7 +1659,6 @@ button,
   transform: translateY(-30px);
 }
 
-/* Custom scrollbar for mobile */
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 4px;
@@ -1656,38 +1707,7 @@ button,
   }
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
 
-/* Staggered Animation Delays */
-.delay-1 {
-  animation-delay: 0.5s;
-}
-
-.delay-2 {
-  animation-delay: 1s;
-}
-
-.delay-3 {
-  animation-delay: 1.5s;
-}
-
-.delay-4 {
-  animation-delay: 2s;
-}
-
-.delay-5 {
-  animation-delay: 2.5s;
-}
-
-.delay-6 {
-  animation-delay: 3s;
-}
-
-.delay-7 {
-  animation-delay: 3.5s;
-}
 
 /* Fade In Up Animation */
 @keyframes fade-in-up {
@@ -1718,24 +1738,16 @@ button,
   animation-delay: 900ms;
 }
 
-/* Mobile Specific Styles */
 @media (max-width: 768px) {
 
-  /* Prevent horizontal scroll on mobile */
   section {
     overflow-x: hidden;
   }
 
-  /* Ensure mascots don't interfere with content */
-  .animate-float {
-    animation-duration: 6s;
-  }
 }
 
-/* Tablet Adjustments */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  /* Slightly reduce mascot sizes for tablets */
   img[class*="absolute"] {
     transform: scale(0.8);
   }

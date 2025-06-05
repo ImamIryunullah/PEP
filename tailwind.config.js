@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         jaro: ['Jaro', 'sans-serif'],
+        sans: ['Bebas Neue', 'sans-serif'],
       },
       keyframes: {
         fadeIn: {
