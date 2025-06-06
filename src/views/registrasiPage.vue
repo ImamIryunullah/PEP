@@ -21,14 +21,6 @@
                             :class="{ 'opacity-50 pointer-events-none': loading }">
 
                             <div>
-                                <label class="block text-gray-700 font-medium mb-1">Nama Lengkap</label>
-                                <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
-                                    <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                    <input type="text" placeholder="Nama Lengkap" v-model="form.nama_lengkap" required
-                                        class="bg-transparent w-full focus:outline-none placeholder-white" />
-                                </div>
-                            </div>
-                            <div>
                                 <label class="block text-gray-700 font-medium mb-1">Email</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-msd">
                                     <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
@@ -45,7 +37,7 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
                                     <div
@@ -73,9 +65,9 @@
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
                                             <option disabled value="" class="bg-gray-800 text-white">Pilih Provinsi
                                             </option>
-                                            <option value="Mitra" class="bg-gray-800 text-white">Jawa Timur</option>
-                                            <option value="Pekerja" class="bg-gray-800 text-white">Jawa Barat</option>
-                                            <option value="Pekerja" class="bg-gray-800 text-white">Sumatera</option>
+                                            <option value="JawaTimur" class="bg-gray-800 text-white">Jawa Timur</option>
+                                            <option value="JawaBarat" class="bg-gray-800 text-white">Jawa Barat</option>
+                                            <option value="Sumatera" class="bg-gray-800 text-white">Sumatera</option>
                                         </select>
                                         <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
                                             stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -83,35 +75,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <!-- <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Cabang Olahraga</label>
-                                    <div
-                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.cabang_olahraga" required
-                                            class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Cabang
-                                                Olahraga</option>
-                                            <option value="Volley" class="bg-gray-800 text-white">Volley</option>
-                                            <option value="Sepak Bola" class="bg-gray-800 text-white">Sepak Bola
-                                            </option>
-                                            <option value="Tenis Meja" class="bg-gray-800 text-white">Tenis Meja
-                                            </option>
-                                            <option value="Badminton" class="bg-gray-800 text-white">Badminton</option>
-                                            <option value="Lari" class="bg-gray-800 text-white">Lari</option>
-                                            <option value="Senam" class="bg-gray-800 text-white">Senam</option>
-                                            <option value="Tenis Lapangan" class="bg-gray-800 text-white">Tenis Lapangan
-                                            </option>
-                                            <option value="Basket" class="bg-gray-800 text-white">Basket</option>
-                                            <option value="Esport" class="bg-gray-800 text-white">Esport</option>
-                                        </select>
-                                        <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
-                                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                </div> -->
-                            </div>
+                            </div> -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Aset</label>
@@ -192,10 +156,9 @@ export default {
     data() {
         return {
             form: {
-                nama_lengkap: '',
                 email: '',
                 password: '',
-                jenis_pekerja: '',
+                // jenis_pekerja: '',
                 provinsi: '',
                 aset: '',
             },
@@ -269,10 +232,6 @@ export default {
         },
 
         validateForm() {
-            if (!this.form.nama_lengkap.trim()) {
-                this.message = 'Nama lengkap harus diisi';
-                return false;
-            }
 
             if (!this.form.email.trim()) {
                 this.message = 'Email harus diisi';
@@ -290,10 +249,10 @@ export default {
                 return false;
             }
 
-            if (!this.form.jenis_pekerja) {
-                this.message = 'Jenis Pekerja harus dipilih';
-                return false;
-            }
+            // if (!this.form.jenis_pekerja) {
+            //     this.message = 'Jenis Pekerja harus dipilih';
+            //     return false;
+            // }
             if (!this.form.provinsi) {
                 this.message = 'Provinsi harus dipilih';
                 return false;
@@ -315,12 +274,10 @@ export default {
             try {
                 const formData = new FormData();
 
-                formData.append('nama_lengkap', this.form.nama_lengkap);
                 formData.append('email', this.form.email);
                 formData.append('password', this.form.password);
-                formData.append('jenis_pekerja', this.form.jenis_pekerja);
+                // formData.append('jenis_pekerja', this.form.jenis_pekerja);
                 formData.append('provinsi', this.form.provinsi);
-                // formData.append('cabang_olahraga', this.form.cabang_olahraga);
                 formData.append('aset', this.form.aset);
 
                 if (this.fotoFile) {
@@ -386,10 +343,9 @@ export default {
 
         resetForm() {
             this.form = {
-                nama_lengkap: '',
                 email: '',
                 password: '',
-                jenis_pekerja: '',
+                // jenis_pekerja: '',
                 provinsi: '',
                 aset: '',
             };
@@ -434,7 +390,7 @@ export default {
 
 .animate-spin {
     animation: spin 1s linear infinite;
-}
+}   
 
 input[type="file"]::-webkit-file-upload-button {
     background: white;

@@ -22,13 +22,11 @@
             
             <main class="px-6 py-8">
                 <section class="min-h-screen p-6 bg-gray-100">
-                    <!-- Welcome Header -->
                     <div class="mb-8">
                         <h1 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang, {{ userData.namaLengkap }}</h1>
                         <p class="text-gray-600">Dashboard Peserta - Kelola informasi dan aktivitas Anda</p>
                     </div>
 
-                    <!-- Profile Summary Card -->
                     <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
                         <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
                             <div class="flex-shrink-0">
@@ -57,10 +55,10 @@
                         </div>
                     </div>
 
-                    <!-- Main Dashboard Cards -->
+                    
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                         
-                        <!-- Cabang Olahraga Card -->
+                        
                         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#D71E28] bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
@@ -74,7 +72,7 @@
                             <p class="text-2xl font-bold text-[#D71E28]">{{ userData.cabangOlahraga }}</p>
                         </div>
 
-                        <!-- Status Verifikasi Card -->
+                        
                         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
@@ -93,7 +91,7 @@
                             </p>
                         </div>
 
-                        <!-- Aset Card -->
+                        
                         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
@@ -109,10 +107,10 @@
 
                     </div>
 
-                    <!-- Detailed Information Cards -->
+                    
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                         
-                        <!-- Personal Information -->
+                        
                         <div class="bg-white rounded-xl shadow-lg p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                                 <i class="fas fa-user-circle text-[#D71E28] mr-2"></i>
@@ -138,7 +136,7 @@
                             </div>
                         </div>
 
-                        <!-- Activity Summary -->
+                        
                         <div class="bg-white rounded-xl shadow-lg p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                                 <i class="fas fa-chart-line text-[#D71E28] mr-2"></i>
