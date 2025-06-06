@@ -30,7 +30,7 @@
                             </div>
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Email</label>
-                                <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
+                                <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-msd">
                                     <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
                                     <input type="email" placeholder="Email (harus valid)" v-model="form.email" required
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
@@ -47,7 +47,7 @@
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Jenis Pekerja</label>
+                                    <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
@@ -65,6 +65,25 @@
                                     </div>
                                 </div>
                                 <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Provinsi</label>
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
+                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                        <select v-model="form.provinsi" @change="resetConditionalFields" required
+                                            class="bg-transparent w-full focus:outline-none text-white appearance-none">
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Provinsi
+                                            </option>
+                                            <option value="Mitra" class="bg-gray-800 text-white">Jawa Timur</option>
+                                            <option value="Pekerja" class="bg-gray-800 text-white">Jawa Barat</option>
+                                            <option value="Pekerja" class="bg-gray-800 text-white">Sumatera</option>
+                                        </select>
+                                        <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
+                                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <!-- <div>
                                     <label class="block text-gray-700 font-medium mb-1">Cabang Olahraga</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
@@ -91,7 +110,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -129,141 +148,7 @@
                                     <p v-if="fileError" class="text-red-500 text-sm mt-1">{{ fileError }}</p>
                                 </div>
                             </div>
-                            <div v-if="form.jenis_pekerja" class="border-t pt-6">
-                                <h3 class="text-xl font-bold text-gray-800 mb-4">
-                                    📄 Persyaratan Dokumen {{ form.jenis_pekerja === 'Pekerja' ? '(Pekerja)' : '(Mitra Kerja)' }}
-                                </h3>
 
-                                <div v-if="form.jenis_pekerja === 'Pekerja'" class="space-y-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Scan ID Card Pekerja</label>
-                                            <input type="file" @change="handleConditionalFileUpload('id_card_pekerja', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Scan KTP</label>
-                                            <input type="file" @change="handleConditionalFileUpload('ktp', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Kartu Medika Plaza</label>
-                                            <input type="file" @change="handleConditionalFileUpload('kartu_medika', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">BPJS (Screenshot Aplikasi JMO)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('bpjs', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>                                   
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Surat Pernyataan Keabsahan Data (Bermaterai)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('surat_pernyataan', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Surat Layak Bertanding dari Dokter</label>
-                                            <input type="file" @change="handleConditionalFileUpload('surat_layak_bertanding', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <label class="block text-gray-700 font-medium mb-1">Form PRQ dengan Hasil MCU</label>
-                                        <input type="file" @change="handleConditionalFileUpload('form_prq', $event)" 
-                                            accept=".pdf,.jpg,.jpeg,.png" required
-                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                    </div>
-                                </div>
-
-                                
-                                <div v-if="form.jenis_pekerja === 'Mitra'" class="space-y-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Scan ID Card Mitra Kerja</label>
-                                            <input type="file" @change="handleConditionalFileUpload('id_card_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Scan KTP</label>
-                                            <input type="file" @change="handleConditionalFileUpload('ktp_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>                                  
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">BPJS Digital (Screenshot Aplikasi JMO)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('bpjs_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Surat Keterangan Kerja (Min. 6 Bulan)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('surat_kerja', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>                                 
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Kontrak Kerja (Min. 1 Tahun)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('kontrak_kerja', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Sertifikat BST/HSSE/SIML</label>
-                                            <input type="file" @change="handleConditionalFileUpload('sertifikat', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Surat Pernyataan Keabsahan Data (Bermaterai)</label>
-                                            <input type="file" @change="handleConditionalFileUpload('surat_pernyataan_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Surat Layak Bertanding dari Dokter</label>
-                                            <input type="file" @change="handleConditionalFileUpload('surat_layak_bertanding_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                    </div>                                   
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Form PRQ dengan Hasil MCU</label>
-                                            <input type="file" @change="handleConditionalFileUpload('form_prq_mitra', $event)" 
-                                                accept=".pdf,.jpg,.jpeg,.png" required
-                                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" />
-                                        </div>
-                                        <div>
-                                            <label class="block text-gray-700 font-medium mb-1">Link Media Sosial Aktif</label>
-                                            <div class="flex items-center bg-gray-100 px-4 py-3 rounded-lg">
-                                                <input type="url" placeholder="https://instagram.com/username atau https://facebook.com/username" 
-                                                    v-model="form.media_sosial" required
-                                                    class="bg-transparent w-full focus:outline-none" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="flex justify-center pt-6">
                                 <button type="submit" :disabled="loading"
                                     class="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white font-bold py-2 px-10 rounded-full shadow-md transition duration-300 ease-in-out">
@@ -311,9 +196,8 @@ export default {
                 email: '',
                 password: '',
                 jenis_pekerja: '',
-                cabang_olahraga: '',
+                provinsi: '',
                 aset: '',
-                media_sosial: ''
             },
             fotoFile: null,
             conditionalFiles: {},
@@ -410,8 +294,8 @@ export default {
                 this.message = 'Jenis Pekerja harus dipilih';
                 return false;
             }
-            if (!this.form.cabang_olahraga) {
-                this.message = 'Cabang olahraga harus dipilih';
+            if (!this.form.provinsi) {
+                this.message = 'Provinsi harus dipilih';
                 return false;
             }
             if (!this.form.aset) {
@@ -422,43 +306,7 @@ export default {
                 this.message = 'Foto harus diupload';
                 return false;
             }
-            if (this.form.jenis_pekerja === 'Pekerja') {
-                const requiredPekerjaFields = [
-                    'id_card_pekerja', 'ktp', 'kartu_medika', 'bpjs', 
-                    'surat_pernyataan', 'surat_layak_bertanding', 'form_prq'
-                ];
-                
-                for (let field of requiredPekerjaFields) {
-                    if (!this.conditionalFiles[field]) {
-                        this.message = `Dokumen ${field.replace(/_/g, ' ')} harus diupload`;
-                        return false;
-                    }
-                }
-            } else if (this.form.jenis_pekerja === 'Mitra') {
-                const requiredMitraFields = [
-                    'id_card_mitra', 'ktp_mitra', 'bpjs_mitra', 'surat_kerja',
-                    'kontrak_kerja', 'sertifikat', 'surat_pernyataan_mitra',
-                    'surat_layak_bertanding_mitra', 'form_prq_mitra'
-                ];
-                
-                for (let field of requiredMitraFields) {
-                    if (!this.conditionalFiles[field]) {
-                        this.message = `Dokumen ${field.replace(/_/g, ' ')} harus diupload`;
-                        return false;
-                    }
-                }
-
-                if (!this.form.media_sosial.trim()) {
-                    this.message = 'Link media sosial harus diisi untuk Mitra Kerja';
-                    return false;
-                }
-
-                const urlRegex = /^https?:\/\/.+/;
-                if (!urlRegex.test(this.form.media_sosial)) {
-                    this.message = 'Format link media sosial tidak valid (harus dimulai dengan http:// atau https://)';
-                    return false;
-                }
-            }
+           
 
             return true;
         },
@@ -471,7 +319,8 @@ export default {
                 formData.append('email', this.form.email);
                 formData.append('password', this.form.password);
                 formData.append('jenis_pekerja', this.form.jenis_pekerja);
-                formData.append('cabang_olahraga', this.form.cabang_olahraga);
+                formData.append('provinsi', this.form.provinsi);
+                // formData.append('cabang_olahraga', this.form.cabang_olahraga);
                 formData.append('aset', this.form.aset);
 
                 if (this.fotoFile) {
@@ -481,10 +330,6 @@ export default {
                 Object.keys(this.conditionalFiles).forEach(key => {
                     formData.append(key, this.conditionalFiles[key]);
                 });
-
-                if (this.form.jenis_pekerja === 'Mitra' && this.form.media_sosial) {
-                    formData.append('media_sosial', this.form.media_sosial);
-                }
 
                 const response = await API.registerPekerja(formData);
                 console.log('Registration successful:', response.data);
@@ -545,9 +390,8 @@ export default {
                 email: '',
                 password: '',
                 jenis_pekerja: '',
-                cabang_olahraga: '',
+                provinsi: '',
                 aset: '',
-                media_sosial: ''
             };
             this.fotoFile = null;
             this.conditionalFiles = {};

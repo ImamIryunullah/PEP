@@ -19,9 +19,8 @@
         </div>
       </div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 p-4">
-        
         <div class="mb-6 animate-fade-in-up">
-          <img src="/logo-mini-olympic-2025.png" alt="Mini Olympic 2025"
+          <img src="../assets/logo-mini-olympic-2025.png" alt="Mini Olympic 2025"
             class="w-40 md:w-48 lg:w-56 xl:w-64 h-auto mx-auto drop-shadow-md">
         </div>
         <div class="space-y-2 animate-fade-in-up delay-200">
@@ -48,10 +47,7 @@
       <div class="absolute top-0 left-0 w-full h-1 bg-red-600/50"></div>
       <div class="absolute bottom-0 left-0 w-full h-1 bg-red-600/50"></div>
     </section>
-
     <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-[#f5f3ef] w-full min-h-screen overflow-hidden">
-
-
       <img src="../assets/kategori/voli.png" loading="lazy"
         class="absolute bottom-[20%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block z-0"
         alt="Maskot Voli" />
@@ -65,7 +61,6 @@
       <img src="../assets/kategori/bulutangkis.png" loading="lazy"
         class="absolute top-[48%] left-0 w-[250px] lg:w-[300px] xl:w-[350px] hidden md:block  z-0"
         alt="Maskot Bulutangkis" />
-
       <img src="../assets/kategori/esport.png" loading="lazy"
         class="absolute bottom-[25%] right-[2%] w-[280px] lg:w-[350px] xl:w-[400px] hidden md:block  z-0"
         alt="Maskot Esport" />
@@ -86,7 +81,6 @@
         <img src="../assets/kategori/basket.png" loading="lazy"
           class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px]  opacity-60"
           alt="Maskot Basket" />
-
         <img src="../assets/kategori/voli.png" loading="lazy"
           class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px]  opacity-60"
           alt="Maskot Voli" />
@@ -107,9 +101,7 @@
           class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px]  opacity-50"
           alt="Maskot Senam" />
       </div>
-
       <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-8">
-
         <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
                 opacity-0 animate-fade-in-up animation-delay-500">
           <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
@@ -117,7 +109,6 @@
             <span>18 Des 2024</span>
           </div>
           <div class="text-xs sm:text-sm text-gray-600 mb-3">Lusail Stadium</div>
-
           <div class="space-y-2 sm:space-y-3">
             <div class="flex justify-between items-center">
               <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 1</span>
@@ -134,12 +125,10 @@
               </div>
             </div>
           </div>
-
           <div class="mt-3 sm:mt-4">
             <span class="inline-block px-3 py-1 bg-purple-900 text-white text-xs rounded-full font-medium">FT</span>
           </div>
         </div>
-
         <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
                 opacity-0 animate-fade-in-up animation-delay-[700ms]">
           <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
