@@ -26,7 +26,7 @@
 
         <div class="hidden lg:block mb-8">
           <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Kelola Berita</h1>
-          <p class="text-gray-600">Tambah, edit, dan kelola berita untuk website Anda</p>
+          <p class="text-gray-600">Tambah, edit, dan kelola berita untuk PEP Olympic 2025</p>
         </div>
 
 
@@ -149,9 +149,10 @@
               <button type="submit" :disabled="isSubmitting"
                 class="w-full sm:w-auto bg-[#D71E28] text-white px-8 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors duration-200 disabled:opacity-50 order-1 sm:order-2">
                 <i v-if="isSubmitting" class="fas fa-spinner fa-spin mr-2"></i>
-                <i v-else :class="editingIndex === null ? 'fas fa-plus' : 'fas fa-save'" class="mr-2"></i>
-                {{ editingIndex === null ? "Tambah Berita" : "Update Berita" }}
+                <i v-else :class="buttonIcon" class="mr-2"></i>
+                {{ buttonText }}
               </button>
+
             </div>
           </form>
         </div>
@@ -164,7 +165,9 @@
                 <i class="fas fa-newspaper text-white"></i>
               </div>
               <div>
-                <h2 class="text-xl lg:text-2xl font-bold text-gray-900">Daftar Berita</h2>
+                <h2 class="text-xl lg:text-2xl font-bold text-gray-900">
+                  {{ formTitle }}
+                </h2>
                 <p class="text-sm text-gray-600">{{ beritaList }} berita tersimpan</p>
               </div>
             </div>
@@ -304,464 +307,363 @@ export default {
   components: { Sidebar },
   data() {
     return {
+      // Sidebar state
       isSidebarOpen: false,
+      
+      // Form data
+      form: {
+        judul: '',
+        subtitle: '',
+        tanggal: '',
+        penulis: '',
+        isi: '',
+        foto: null
+      },
+      
+      // UI states
       isSubmitting: false,
-      isLoading: false,
-      networkError: false,
+      editingIndex: null,
       showMessage: false,
-      messageType: 'success',
       messageText: '',
+      messageType: 'success',
+      
+      // Delete modal
       showDeleteModal: false,
       deleteIndex: null,
+      
+      // News list
+      beritas: [],
       searchQuery: '',
-      beritaList: [],
-      form: {
-        judul: "",
-        subtitle: "",
-        tanggal: "",
-        penulis: "",
-        isi: "",
-        foto: null,
-        fotoFile: null,
-      },
-      editingId: null, // Konsisten menggunakan editingId
+      
+      // File handling
+      selectedFile: null
     };
   },
+  
   computed: {
-    // Computed property untuk mendeteksi mode editing
-    isEditing() {
-      return this.editingId !== null;
+    // Filter berita berdasarkan search query
+    filteredBerita() {
+      if (!this.searchQuery) return this.beritas;
+      
+      const query = this.searchQuery.toLowerCase();
+      return this.beritas.filter(berita => 
+        berita.judul.toLowerCase().includes(query) ||
+        berita.subtitle?.toLowerCase().includes(query) ||
+        berita.penulis.toLowerCase().includes(query) ||
+        berita.isi.toLowerCase().includes(query)
+      );
     },
     
-    filteredBerita() {
-      if (!this.searchQuery) return this.beritaList;
-
-      const query = this.searchQuery.toLowerCase();
-      return this.beritaList.filter(berita => {
-        const judul = berita.judul ? berita.judul.toLowerCase() : '';
-        const subtitle = berita.subtitle ? berita.subtitle.toLowerCase() : '';
-        const penulis = berita.penulis ? berita.penulis.toLowerCase() : '';
-        const isi = berita.isi ? berita.isi.toLowerCase() : '';
-        
-        return judul.includes(query) ||
-               subtitle.includes(query) ||
-               penulis.includes(query) ||
-               isi.includes(query);
-      });
+    // Dynamic button text
+    buttonText() {
+      if (this.isSubmitting) {
+        return this.editingIndex !== null ? 'Memperbarui...' : 'Menyimpan...';
+      }
+      return this.editingIndex !== null ? 'Perbarui Berita' : 'Simpan Berita';
+    },
+    
+    // Dynamic button icon
+    buttonIcon() {
+      return this.editingIndex !== null ? 'fas fa-save' : 'fas fa-plus';
+    },
+    
+    // Dynamic form title
+    formTitle() {
+      return 'Daftar Berita';
+    },
+    
+    // Count berita
+    beritaList() {
+      return this.beritas.length;
     }
   },
-  mounted() {
-    this.initializeForm();
-    this.fetchBeritaList();
+  
+  async mounted() {
+    await this.loadBerita();
+    this.setTodayDate();
   },
+  
   methods: {
-    initializeForm() {
-      this.form.tanggal = new Date().toISOString().split('T')[0];
-    },
-
+    // Toggle sidebar
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
-
-    async fetchBeritaList() {
-      this.isLoading = true;
-      this.networkError = false;
-      
+    
+    // Set today's date as default
+    setTodayDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      this.form.tanggal = `${year}-${month}-${day}`;
+    },
+    
+    // Load all berita from API
+    async loadBerita() {
       try {
-        console.log('Fetching berita list...');
-        const response = await API.getAllBerita();
-        console.log('API Response:', response);
-        let data = [];
-        if (response && response.data) {
-          if (response.data.data && Array.isArray(response.data.data)) {
-            data = response.data.data;
-          }
-          else if (Array.isArray(response.data)) {
-            data = response.data;
-          }
-          else if (response.data && typeof response.data === 'object') {
-            data = Object.values(response.data).find(val => Array.isArray(val)) || [];
-          }
-        }
-        else if (Array.isArray(response)) {
-          data = response;
-        }
-        
-        this.beritaList = data;
-        console.log('Berita list updated:', this.beritaList);
-        
+        const response = await API.get('/berita');
+        this.beritas = response.data.data || [];
       } catch (error) {
-        console.error('Error fetching berita:', error);
-        this.networkError = true;
-        this.showErrorMessage('Gagal memuat daftar berita. Periksa koneksi internet Anda.');
-        this.beritaList = [];
-      } finally {
-        this.isLoading = false;
+        console.error('Error loading berita:', error);
+        this.showMessageAlert('Gagal memuat data berita', 'error');
       }
     },
-
-    async submitBerita() {
-      const requiredFields = [
-        { field: 'judul', message: 'Judul berita harus diisi' },
-        { field: 'tanggal', message: 'Tanggal harus diisi' },
-        { field: 'penulis', message: 'Nama penulis harus diisi' },
-        { field: 'isi', message: 'Isi berita harus diisi' }
-      ];
-
-      for (const item of requiredFields) {
-        if (!this.form[item.field] || this.form[item.field].trim() === '') {
-          this.showErrorMessage(item.message);
-          return;
-        }
+    
+    // Handle file selection
+    onFileChange(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      
+      // Validate file type
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+      if (!allowedTypes.includes(file.type)) {
+        this.showMessageAlert('Format file tidak didukung. Gunakan JPG, PNG, GIF, atau WebP', 'error');
+        this.clearFileInput();
+        return;
       }
       
-      if (this.form.judul.trim().length < 10) {
-        this.showErrorMessage('Judul berita minimal 10 karakter');
+      // Validate file size (5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        this.showMessageAlert('Ukuran file terlalu besar. Maksimal 5MB', 'error');
+        this.clearFileInput();
         return;
       }
-
-      if (this.form.isi.trim().length < 50) {
-        this.showErrorMessage('Isi berita minimal 50 karakter');
+      
+      this.selectedFile = file;
+      
+      // Create preview URL
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.form.foto = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    
+    // Clear file input
+    clearFileInput() {
+      if (this.$refs.fileInput) {
+        this.$refs.fileInput.value = '';
+      }
+      this.selectedFile = null;
+    },
+    
+    // Remove foto
+    removeFoto() {
+      this.form.foto = null;
+      this.selectedFile = null;
+      this.clearFileInput();
+    },
+    
+    // Create FormData for API request
+    createFormData() {
+      const formData = new FormData();
+      formData.append('judul', this.form.judul);
+      formData.append('subtitle', this.form.subtitle || '');
+      formData.append('tanggal', this.form.tanggal);
+      formData.append('penulis', this.form.penulis);
+      formData.append('isi', this.form.isi);
+      
+      if (this.selectedFile) {
+        formData.append('foto', this.selectedFile);
+      }
+      
+      return formData;
+    },
+    
+    // Submit form (create or update)
+    async submitBerita() {
+      if (this.isSubmitting) return;
+      
+      // Validate required fields
+      if (!this.form.judul || !this.form.tanggal || !this.form.penulis || !this.form.isi) {
+        this.showMessageAlert('Silakan lengkapi semua field yang wajib diisi', 'error');
         return;
       }
-
+      
       this.isSubmitting = true;
-
+      
       try {
-        const formData = new FormData();
-        formData.append('judul', this.form.judul.trim());
-        formData.append('subtitle', this.form.subtitle ? this.form.subtitle.trim() : '');
-        formData.append('tanggal', this.form.tanggal);
-        formData.append('penulis', this.form.penulis.trim());
-        formData.append('isi', this.form.isi.trim());
-
-        // Hanya kirim file jika ada file baru yang dipilih
-        if (this.form.fotoFile) {
-          formData.append('foto', this.form.fotoFile);
-        }
-
-        console.log('Data yang akan dikirim:');
-        console.log('Mode editing:', this.editingId ? 'Update' : 'Create');
-        console.log('Editing ID:', this.editingId);
-        for (let [key, value] of formData.entries()) {
-          console.log(`${key}:`, value instanceof File ? `File: ${value.name}` : value);
-        }
-
-        let response;
-        if (!this.editingId) {
-          // Mode CREATE - Tambah berita baru
-          console.log('Creating new berita...');
-          response = await API.createBerita(formData);
-          console.log('Create response:', response);
-          this.showSuccessMessage('Berita berhasil ditambahkan!');
+        const formData = this.createFormData();
+        
+        if (this.editingIndex !== null) {
+          // Update existing berita
+          const beritaId = this.beritas[this.editingIndex].id;
+          await API.put(`/berita/${beritaId}`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+          this.showMessageAlert('Berita berhasil diperbarui', 'success');
         } else {
-          // Mode UPDATE - Edit berita existing
-          console.log('Updating berita with ID:', this.editingId);
-          response = await API.updateBerita(this.editingId, formData);
-          console.log('Update response:', response);
-          this.showSuccessMessage('Berita berhasil diperbarui!');
+          // Create new berita
+          await API.post('/berita/', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+          this.showMessageAlert('Berita berhasil disimpan', 'success');
         }
-
-        // PENTING: Reset form setelah submit berhasil
+        
+        // Reload data and reset form
+        await this.loadBerita();
         this.resetForm();
-        await this.fetchBeritaList();
-
+        
       } catch (error) {
-        console.error('Error saat submit berita:', error);
-        console.error('Error response:', error.response);
-        let errorMessage = 'Gagal menyimpan berita. Silakan coba lagi.';
-        
-        if (error.response) {
-          const status = error.response.status;
-          const data = error.response.data;
-          
-          switch (status) {
-            case 400:
-              errorMessage = data?.message || 'Data yang dikirim tidak valid';
-              break;
-            case 401:
-              errorMessage = 'Sesi Anda telah berakhir. Silakan login kembali';
-              break;
-            case 403:
-              errorMessage = 'Anda tidak memiliki izin untuk melakukan aksi ini';
-              break;
-            case 404:
-              errorMessage = 'Endpoint tidak ditemukan';
-              break;
-            case 413:
-              errorMessage = 'File yang diunggah terlalu besar';
-              break;
-            case 422:
-              errorMessage = data?.message || 'Validasi data gagal';
-              break;
-            case 500:
-              errorMessage = 'Terjadi kesalahan server. Silakan coba lagi nanti';
-              break;
-            default:
-              errorMessage = data?.message || errorMessage;
-          }
-        } else if (error.request) {
-          errorMessage = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda';
-        }
-        
-        this.showErrorMessage(errorMessage);
+        console.error('Error submitting berita:', error);
+        const errorMessage = error.response?.data?.error || 'Gagal menyimpan berita';
+        this.showMessageAlert(errorMessage, 'error');
       } finally {
         this.isSubmitting = false;
       }
     },
-
-    // DIPERBAIKI: Reset form dan pastikan editingId di-reset
-    resetForm() {
-      this.form = {
-        judul: "",
-        subtitle: "",
-        tanggal: new Date().toISOString().split('T')[0],
-        penulis: "",
-        isi: "",
-        foto: null,
-        fotoFile: null,
-      };
-      
-      // PENTING: Reset editingId ke null
-      this.editingId = null;
-      
-      if (this.$refs.fileInput) {
-        this.$refs.fileInput.value = '';
-      }
-      
-      console.log('Form reset completed, editingId:', this.editingId);
-    },
-
-    // DIPERBAIKI: Edit berita dengan path gambar yang benar
+    
+    // Edit berita
     editBerita(index) {
-      if (index < 0 || index >= this.beritaList.length) {
-        this.showErrorMessage('Data berita tidak valid');
-        return;
-      }
-
-      const berita = this.beritaList[index];
-      if (!berita || !berita.id) {
-        this.showErrorMessage('Data berita tidak lengkap');
-        return;
-      }
-
+      const berita = this.beritas[index];
+      this.editingIndex = index;
+      
       this.form = {
-        judul: berita.judul || "",
-        subtitle: berita.subtitle || "",
-        tanggal: berita.tanggal || "",
-        penulis: berita.penulis || "",
-        isi: berita.isi || "",
-        foto: berita.foto ? this.getImagePath(berita.foto) : null, // Perbaikan path gambar
-        fotoFile: null,
+        judul: berita.judul,
+        subtitle: berita.subtitle || '',
+        tanggal: this.formatDateForInput(berita.tanggal),
+        penulis: berita.penulis,
+        isi: berita.isi,
+        foto: berita.foto ? `/uploads/${berita.foto}` : null
       };
       
-      // Set editing ID
-      this.editingId = berita.id;
-
-      console.log('Editing berita with ID:', this.editingId);
-      console.log('Form data:', this.form);
+      // Clear selected file since we're editing
+      this.selectedFile = null;
+      this.clearFileInput();
       
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Scroll to form
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
-
-    getOriginalIndex(berita) {
-      if (berita && berita.id) {
-        return this.beritaList.findIndex(item => item.id === berita.id);
-      }
-
-      return this.beritaList.findIndex(item => 
-        item.judul === berita.judul && 
-        item.tanggal === berita.tanggal &&
-        item.penulis === berita.penulis
-      );
-    },
-
+    
+    // Show delete confirmation
     hapusBerita(index) {
-      if (index < 0 || index >= this.filteredBerita.length) {
-        this.showErrorMessage('Data berita tidak valid');
-        return;
-      }
-      
       this.deleteIndex = index;
       this.showDeleteModal = true;
     },
-
+    
+    // Confirm delete
     async confirmDelete() {
-      if (this.deleteIndex === null || this.deleteIndex < 0) {
-        this.showErrorMessage('Data berita tidak valid');
-        return;
-      }
-
+      if (this.deleteIndex === null) return;
+      
       try {
-        const berita = this.filteredBerita[this.deleteIndex];
-        if (!berita || !berita.id) {
-          this.showErrorMessage('ID berita tidak ditemukan');
-          return;
-        }
-
-        console.log('Deleting berita with ID:', berita.id);
-        await API.deleteBerita(berita.id);
+        const beritaId = this.beritas[this.deleteIndex].id;
+        await API.delete(`/berita/${beritaId}`);
         
-        this.showSuccessMessage('Berita berhasil dihapus!');
-        await this.fetchBeritaList();
-        
-        // Reset form jika berita yang dihapus sedang di-edit
-        if (this.editingId === berita.id) {
-          this.resetForm();
-        }
+        this.showMessageAlert('Berita berhasil dihapus', 'success');
+        await this.loadBerita();
         
       } catch (error) {
         console.error('Error deleting berita:', error);
-        let errorMessage = 'Gagal menghapus berita.';
-        
-        if (error.response?.status === 404) {
-          errorMessage = 'Berita tidak ditemukan atau sudah dihapus';
-        } else if (error.response?.status === 403) {
-          errorMessage = 'Anda tidak memiliki izin untuk menghapus berita ini';
-        }
-        
-        this.showErrorMessage(errorMessage);
+        const errorMessage = error.response?.data?.error || 'Gagal menghapus berita';
+        this.showMessageAlert(errorMessage, 'error');
       } finally {
         this.showDeleteModal = false;
         this.deleteIndex = null;
       }
     },
-
-    formatDate(dateStr) {
-      if (!dateStr) return 'Tanggal tidak tersedia';
-      
-      try {
-        const options = {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          timeZone: "Asia/Jakarta"
-        };
-        return new Date(dateStr).toLocaleDateString("id-ID", options);
-      } catch (error) {
-        console.error('Error formatting date:', error);
-        return dateStr;
-      }
-    },
-
-    onFileChange(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      console.log('File selected:', file);
-
-      const maxSize = 5 * 1024 * 1024; 
-      if (file.size > maxSize) {
-        this.showErrorMessage('Ukuran file terlalu besar. Maksimal 5MB.');
-        this.resetFileInput();
-        return;
-      }
-
-      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-      if (!allowedTypes.includes(file.type.toLowerCase())) {
-        this.showErrorMessage('Format file tidak didukung. Gunakan JPG, PNG, GIF, atau WebP.');
-        this.resetFileInput();
-        return;
-      }
-
-      this.form.fotoFile = file;
-
-      const reader = new FileReader();
-      reader.onload = e => {
-        this.form.foto = e.target.result;
-        console.log('Photo preview created');
+    
+    // Reset form
+    resetForm() {
+      this.form = {
+        judul: '',
+        subtitle: '',
+        tanggal: '',
+        penulis: '',
+        isi: '',
+        foto: null
       };
-      reader.onerror = () => {
-        this.showErrorMessage('Gagal membaca file gambar.');
-        this.resetFileInput();
+      this.editingIndex = null;
+      this.selectedFile = null;
+      this.clearFileInput();
+      this.setTodayDate();
+    },
+    
+    // Show message alert
+    showMessageAlert(text, type = 'success') {
+      this.messageText = text;
+      this.messageType = type;
+      this.showMessage = true;
+      
+      // Auto hide after 5 seconds
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 5000);
+    },
+    
+    // Format date for display
+    formatDate(dateString) {
+      const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'Asia/Jakarta'
       };
-      reader.readAsDataURL(file);
+      return new Date(dateString).toLocaleDateString('id-ID', options);
     },
-
-    resetFileInput() {
-      if (this.$refs.fileInput) {
-        this.$refs.fileInput.value = '';
-      }
-      this.form.fotoFile = null;
+    
+    // Format date for input field
+    formatDateForInput(dateString) {
+      const date = new Date(dateString);
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
     },
-
-    removeFoto() {
-      this.form.foto = null;
-      this.form.fotoFile = null;
-      this.resetFileInput();
-    },
-
-    // BARU: Method untuk handle path gambar dengan benar
-    getImagePath(foto) {
-      if (!foto) return '';
-      
-      // Jika foto sudah berupa URL lengkap (data:image atau http/https)
-      if (foto.startsWith('data:') || foto.startsWith('http')) {
-        return foto;
-      }
-      
-      // Jika foto hanya nama file, tambahkan path uploads
-      return `/uploads/${foto}`;
-    },
-
-    // BARU: Method untuk debug gambar
-    debugImage(berita) {
-      console.log('Debug image for berita:', berita.judul);
-      console.log('Foto value:', berita.foto);
-      console.log('Image path:', this.getImagePath(berita.foto));
-    },
-
-    showSuccessMessage(message, duration = 5000) {
-      this.messageType = 'success';
-      this.messageText = message;
-      this.showMessage = true;
-  
-      if (this.messageTimeout) {
-        clearTimeout(this.messageTimeout);
-      }
-      
-      this.messageTimeout = setTimeout(() => {
-        this.showMessage = false;
-      }, duration);
-    },
-
-    showErrorMessage(message, duration = 7000) {
-      this.messageType = 'error';
-      this.messageText = message;
-      this.showMessage = true;
-
-      if (this.messageTimeout) {
-        clearTimeout(this.messageTimeout);
-      }
-      
-      this.messageTimeout = setTimeout(() => {
-        this.showMessage = false;
-      }, duration);
-    },
-
-    closeMessage() {
-      this.showMessage = false;
-      if (this.messageTimeout) {
-        clearTimeout(this.messageTimeout);
-      }
-    },
-
-    retryFetch() {
-      this.fetchBeritaList();
+    
+    getOriginalIndex(berita) {
+      return this.beritas.findIndex(b => b.id === berita.id);
     }
   },
-
-  beforeUnmount() {
-    if (this.messageTimeout) {
-      clearTimeout(this.messageTimeout);
-    }
+  
+  // Add CSS transitions
+  style: `
+  .slide-down-enter-active, .slide-down-leave-active {
+    transition: all 0.3s ease;
   }
+  .slide-down-enter-from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  .slide-down-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .list-enter-active, .list-leave-active {
+    transition: all 0.3s ease;
+  }
+  .list-enter-from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  `
 };
 </script>
 
 
 <style scoped>
-/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

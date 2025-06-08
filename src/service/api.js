@@ -6,7 +6,47 @@ const API = axios.create({
   baseURL: baseURL,
 });
 
+API.interceptors.request.use(
+  (config) => {
+    console.log('Making request to:', config.url);
+    return config;
+  },
+  (error) => {
+    console.error('Request error:', error);
+    return Promise.reject(error);
+  }
+);
+
+API.interceptors.response.use(
+  (response) => {
+    console.log('Response received:', response.data);
+    return response;
+  },
+  (error) => {
+    console.error('Response error:', error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
+
 export default {
+  submitParticipantRegistration(formData) {
+    return API.post('/daftar', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }); 
+  },
+
+  getParticipants() {
+    return API.get('/daftar');
+  },  
+    updateParticipantRegistration(id, formData) {
+      return API.put(`/daftar/${id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+    },
   registerPeserta(formData) {
     return API.post('/register', formData, {
       headers: {
@@ -49,6 +89,5 @@ export default {
 
   deleteBerita(id) {
     return API.delete(`/berita/${id}`);
-  },
-  
+  }
 };

@@ -32,7 +32,7 @@
                                     <div class="relative">
                                         <input 
                                             type="text" 
-                                            v-model="searchQuery"
+                                            v-model="searchQuery"       
                                             placeholder="Cari nama atau email..."
                                             class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D71E28] focus:border-transparent w-full sm:w-64"
                                         >
@@ -422,7 +422,8 @@ export default {
             currentPage: 1,
             itemsPerPage: 10,
             showDetailModal: false,
-            selectedParticipant: null
+            selectedParticipant: null,
+          
         };
     },
     computed: {
@@ -524,18 +525,70 @@ export default {
             localStorage.removeItem('token');
             this.$router.push('/login');
         },
-
         async fetchParticipants() {
             try {
                 this.loading = true;
+                this.error = null;
+                
+                console.log('Fetching participants from API...');
                 const response = await API.getParticipants();
-                this.participants = response.data || [];
+                
+                console.log('Full API Response:', response);
+
+                if (response.data) {
+                    if (response.data.data) {
+                        this.participants = response.data.data || [];
+                    } else if (Array.isArray(response.data)) {
+                        this.participants = response.data;
+                    } else {
+                        console.warn('Unexpected response structure:', response.data);
+                        this.participants = [];
+                    }
+                } else {
+                    this.participants = [];
+                }
+                
+                console.log('Participants loaded:', this.participants.length);
+                
             } catch (error) {
                 console.error('Error fetching participants:', error);
                 this.participants = [];
+                
+                if (error.response) {
+                    console.error('Error Response:', {
+                        status: error.response.status,
+                        data: error.response.data,
+                        headers: error.response.headers
+                    });
+                    
+                    switch (error.response.status) {
+                        case 500:
+                            this.error = 'Server sedang mengalami masalah. Silakan coba lagi nanti.';
+                            break;
+                        case 404:
+                            this.error = 'Endpoint tidak ditemukan.';
+                            break;
+                        case 403:
+                            this.error = 'Akses ditolak. Periksa token autentikasi.';
+                            break;
+                        default:
+                            this.error = `Error: ${error.response.status} - ${error.response.statusText}`;
+                    }
+                } else if (error.request) {
+                    console.error('Network Error:', error.request);
+                    this.error = 'Tidak dapat terhubung ke server. Periksa koneksi internet.';
+                } else {
+                    console.error('Error:', error.message);
+                    this.error = 'Terjadi kesalahan yang tidak diketahui.';
+                }
             } finally {
                 this.loading = false;
             }
+        },
+        showErrorMessage(message) {
+
+            alert(message);
+
         },
 
         getInitials(name) {
@@ -674,9 +727,6 @@ export default {
     outline-offset: 2px;
 }
 
-.focus\\:ring-\\[\\#D71E28\\]:focus {
-    --tw-ring-color: #D71E28;
-}
 
 
 @media (max-width: 1024px) {

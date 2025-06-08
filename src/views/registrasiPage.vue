@@ -2,7 +2,6 @@
     <div>
         <NavbarDashboard />
         <section class="min-h-screen relative bg-[#F7F7F7] w-full overflow-hidden">
-
             <div class="absolute inset-0 z-0 pointer-events-none">
                 <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full" />
                 <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full" />
@@ -37,45 +36,6 @@
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
                             </div>
-                            <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Jenis Peserta</label>
-                                    <div
-                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.jenis_pekerja" @change="resetConditionalFields" required
-                                            class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Pekerja
-                                            </option>
-                                            <option value="Mitra" class="bg-gray-800 text-white">Mitra</option>
-                                            <option value="Pekerja" class="bg-gray-800 text-white">Pekerja</option>
-                                        </select>
-                                        <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
-                                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Provinsi</label>
-                                    <div
-                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.provinsi" @change="resetConditionalFields" required
-                                            class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Provinsi
-                                            </option>
-                                            <option value="JawaTimur" class="bg-gray-800 text-white">Jawa Timur</option>
-                                            <option value="JawaBarat" class="bg-gray-800 text-white">Jawa Barat</option>
-                                            <option value="Sumatera" class="bg-gray-800 text-white">Sumatera</option>
-                                        </select>
-                                        <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
-                                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-gray-700 font-medium mb-1">Aset</label>
@@ -112,6 +72,30 @@
                                     <p v-if="fileError" class="text-red-500 text-sm mt-1">{{ fileError }}</p>
                                 </div>
                             </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-1">Provinsi</label>
+                                    <div
+                                        class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
+                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                        <select v-model="form.provinsi" required
+                                            class="bg-transparent w-full focus:outline-none text-white appearance-none">
+                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Provinsi
+                                            </option>
+                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">Jawa Timur
+                                            </option>
+                                            <option value="JawaTimur" class="bg-gray-800 text-white">Jawa Timur</option>
+                                            <option value="JawaBarat" class="bg-gray-800 text-white">Jawa Barat</option>
+                                            <option value="JawaTengah" class="bg-gray-800 text-white">JawaTengah</option>
+                                            <option value="Sumatera" class="bg-gray-800 text-white">Sumatera</option>
+                                        </select>
+                                        <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
+                                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="flex justify-center pt-6">
                                 <button type="submit" :disabled="loading"
@@ -128,9 +112,7 @@
                             <div class="text-center text-sm text-gray-600 mt-4">
                                 Sudah terdaftar?
                                 <a href="/login" class="text-red-600 hover:underline font-medium">Coba login</a>
-                            </div>
-
-                            
+                            </div>                
                             <div v-if="message" :class="messageClass"
                                 class="mt-4 p-4 rounded-lg text-center font-semibold">
                                 {{ message }}
@@ -158,7 +140,6 @@ export default {
             form: {
                 email: '',
                 password: '',
-                // jenis_pekerja: '',
                 provinsi: '',
                 aset: '',
             },
@@ -231,52 +212,14 @@ export default {
             this.message = '';
         },
 
-        validateForm() {
-
-            if (!this.form.email.trim()) {
-                this.message = 'Email harus diisi';
-                return false;
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(this.form.email)) {
-                this.message = 'Format email tidak valid';
-                return false;
-            }
-
-            if (this.form.password.length < 8) {
-                this.message = 'Password minimal 8 karakter';
-                return false;
-            }
-
-            // if (!this.form.jenis_pekerja) {
-            //     this.message = 'Jenis Pekerja harus dipilih';
-            //     return false;
-            // }
-            if (!this.form.provinsi) {
-                this.message = 'Provinsi harus dipilih';
-                return false;
-            }
-            if (!this.form.aset) {
-                this.message = 'Aset harus dipilih';
-                return false;
-            }
-            if (!this.fotoFile) {
-                this.message = 'Foto harus diupload';
-                return false;
-            }
-           
-
-            return true;
-        },
 
         async submitFormData() {
             try {
                 const formData = new FormData();
 
-                formData.append('email', this.form.email);
+                // Pastikan semua field sesuai dengan yang diharapkan backend
+                formData.append('email', this.form.email.trim());
                 formData.append('password', this.form.password);
-                // formData.append('jenis_pekerja', this.form.jenis_pekerja);
                 formData.append('provinsi', this.form.provinsi);
                 formData.append('aset', this.form.aset);
 
@@ -284,15 +227,17 @@ export default {
                     formData.append('foto', this.fotoFile);
                 }
 
-                Object.keys(this.conditionalFiles).forEach(key => {
-                    formData.append(key, this.conditionalFiles[key]);
-                });
+                // Debug: lihat isi FormData
+                for (let [key, value] of formData.entries()) {
+                    console.log(key, value);
+                }
 
-                const response = await API.registerPekerja(formData);
+                // Ganti dari registerPekerja ke registerPeserta
+                const response = await API.registerPeserta(formData);
                 console.log('Registration successful:', response.data);
 
                 this.success = true;
-                this.message = 'Pendaftaran berhasil! Silakan login dengan akun Anda.';
+                this.message = response.data.message || 'Pendaftaran berhasil! Silakan login dengan akun Anda.';
 
                 this.resetForm();
 
@@ -302,28 +247,81 @@ export default {
 
             } catch (error) {
                 console.error('Registration error:', error);
-
                 this.success = false;
 
                 if (error.response) {
                     const status = error.response.status;
                     const data = error.response.data;
 
-                    if (status === 400) {
-                        this.message = data.message || 'Data yang Anda masukkan tidak valid. Periksa kembali form.';
-                    } else if (status === 409) {
-                        this.message = 'Email sudah terdaftar. Gunakan email lain atau coba login.';
-                    } else if (status === 500) {
-                        this.message = 'Terjadi kesalahan server. Silakan coba lagi nanti.';
-                    } else {
-                        this.message = data.message || 'Terjadi kesalahan saat pendaftaran. Silakan coba lagi.';
+                    console.log('Error response:', data); // Debug
+
+                    switch (status) {
+                        case 400:
+                            this.message = data.message || 'Data yang Anda masukkan tidak valid. Periksa kembali form.';
+                            // Tampilkan error detail jika ada
+                            if (data.errors) {
+                                this.message += ` Detail: ${data.errors}`;
+                            }
+                            break;
+                        case 409:
+                            this.message = 'Email sudah terdaftar. Gunakan email lain atau coba login.';
+                            break;
+                        case 500:
+                            this.message = 'Terjadi kesalahan server. Silakan coba lagi nanti.';
+                            break;
+                        default:
+                            this.message = data.message || 'Terjadi kesalahan saat pendaftaran. Silakan coba lagi.';
                     }
                 } else if (error.request) {
                     this.message = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda.';
+                    console.log('Request error:', error.request);
                 } else {
                     this.message = 'Terjadi kesalahan yang tidak terduga. Silakan coba lagi.';
+                    console.log('Error:', error.message);
                 }
             }
+        },
+
+        // Fixed validation method
+        validateForm() {
+            if (!this.form.email.trim()) {
+                this.message = 'Email harus diisi';
+                this.success = false;
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(this.form.email)) {
+                this.message = 'Format email tidak valid';
+                this.success = false;
+                return false;
+            }
+
+            if (this.form.password.length < 8) {
+                this.message = 'Password minimal 8 karakter';
+                this.success = false;
+                return false;
+            }
+
+            if (!this.form.provinsi) {
+                this.message = 'Provinsi harus dipilih';
+                this.success = false;
+                return false;
+            }
+            
+            if (!this.form.aset) {
+                this.message = 'Aset harus dipilih';
+                this.success = false;
+                return false;
+            }
+            
+            if (!this.fotoFile) {
+                this.message = 'Foto harus diupload';
+                this.success = false;
+                return false;
+            }
+
+            return true;
         },
         
         async submitForm() {
@@ -345,7 +343,6 @@ export default {
             this.form = {
                 email: '',
                 password: '',
-                // jenis_pekerja: '',
                 provinsi: '',
                 aset: '',
             };

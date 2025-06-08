@@ -22,6 +22,7 @@
             
             <main class="px-6 py-8">
                 <section class="min-h-screen p-6 bg-gray-100">
+
                     <div class="mb-8">
                         <h1 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang, {{ userData.namaLengkap }}</h1>
                         <p class="text-gray-600">Dashboard Peserta - Kelola informasi dan aktivitas Anda</p>
