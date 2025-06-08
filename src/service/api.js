@@ -40,13 +40,34 @@ export default {
   getParticipants() {
     return API.get('/daftar');
   },  
-    updateParticipantRegistration(id, formData) {
-      return API.put(`/daftar/${id}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-    },
+
+  // TAMBAHAN BARU: Update status peserta untuk verifikasi
+  updateParticipantStatus(participantId, status, reason = null) {
+    const payload = { status };
+    if (reason) {
+      payload.reason = reason;
+    }
+    
+    return API.put(`/daftar/${participantId}/status`, payload, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  },
+
+  // TAMBAHAN BARU: Get detail peserta berdasarkan ID
+  getParticipantById(participantId) {
+    return API.get(`/daftar/${participantId}`);
+  },
+
+  updateParticipantRegistration(id, formData) {
+    return API.put(`/daftar/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+  },
+
   registerPeserta(formData) {
     return API.post('/register', formData, {
       headers: {
