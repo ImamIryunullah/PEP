@@ -18,10 +18,7 @@
         <h1 class="text-lg font-semibold text-[#D71E28]">Verifikasi Peserta</h1>
         <div class="w-8"></div>
       </header>
-
       <main class="px-4 sm:px-6 py-4 sm:py-8 flex-1">
-
-        
         <div v-if="isLoading" class="flex justify-center items-center py-12">
           <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D71E28]"></div>
           <span class="ml-3 text-gray-600">Memuat data peserta...</span>
@@ -32,8 +29,6 @@
             <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 hidden md:block">
               Verifikasi Peserta
             </h1>
-
-            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               <div class="bg-white rounded-lg shadow p-4">
                 <div class="flex items-center">
@@ -46,7 +41,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="bg-white rounded-lg shadow p-4">
                 <div class="flex items-center">
                   <div class="p-2 bg-green-100 rounded-lg">
@@ -58,7 +52,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="bg-white rounded-lg shadow p-4">
                 <div class="flex items-center">
                   <div class="p-2 bg-red-100 rounded-lg">
@@ -84,8 +77,6 @@
               </div>
             </div>
           </div>
-
-          
           <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
             <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -95,7 +86,6 @@
                     class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent w-full sm:w-64">
                   <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                 </div>
-
                 <select v-model="statusFilter"
                   class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
                   <option value="all">Semua Status</option>
@@ -104,7 +94,6 @@
                   <option value="rejected">Ditolak</option>
                 </select>
               </div>
-
               <div class="flex gap-2 w-full sm:w-auto">
                 <button v-if="selectedPeserta.length > 0" @click="verifikasiBulk" :disabled="isProcessing"
                   class="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
@@ -209,7 +198,6 @@
               </table>
             </div>
 
-            
             <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
               <div class="flex items-center justify-between">
                 <div class="text-sm text-gray-700">
@@ -451,7 +439,7 @@
     data() {
       return {
         isSidebarOpen: false,
-        searchTerm: "",
+        searchTerm: "", 
         statusFilter: "all",
         selectedPeserta: [],
         selectAll: false,

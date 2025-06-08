@@ -105,47 +105,47 @@ export default {
     return API.delete(`/berita/${id}`);
   },
 
-  createPesertaFunrun(payload) {
-    return API.post('/funrun/peserta', payload, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  },
+    createPesertaFunrun(payload) {
+      return API.post('/funrun/peserta', payload, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    },
 
-  getAllPesertaFunrun(params = {}) {
-    return API.get('/funrun/peserta', { params });
-  },
+    getAllPesertaFunrun(params = {}) {
+      return API.get('/funrun/peserta', { params });
+    },
 
-  getPesertaFunrunById(id) {
-    return API.get(`/funrun/peserta/${id}`);
-  },
+    getPesertaFunrunById(id) {
+      return API.get(`/funrun/peserta/${id}`);
+    },
 
-  updatePesertaFunrun(id, payload) {
-    return API.put(`/funrun/peserta/${id}`, payload, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  },
+    updatePesertaFunrun(id, payload) {
+      return API.put(`/funrun/peserta/${id}`, payload, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    },
 
-  updatePesertaFunrunStatus(id, status) {
-    return API.put(`/funrun/peserta/${id}/status`, { status }, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  },
+    updatePesertaFunrunStatus(id, status) {
+      return API.put(`/funrun/peserta/${id}/status`, { status }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    },
 
-  deletePesertaFunrun(id) {
-    return API.delete(`/funrun/peserta/${id}`);
-  },
+    deletePesertaFunrun(id) {
+      return API.delete(`/funrun/peserta/${id}`);
+    },
 
-  getPesertaFunrunStats() {
-    return API.get('/funrun/stats');
-  },
+    getPesertaFunrunStats() {
+      return API.get('/funrun/stats');
+    },
 
-  getPesertaFunrunByKontingen(kontingen) {
-    return API.get(`/funrun/kontingen/${kontingen}`);
-  }
-};
+    getPesertaFunrunByKontingen(kontingen) {
+      return API.get(`/funrun/kontingen/${kontingen}`);
+    }
+  };
