@@ -7,7 +7,6 @@
       'flex flex-col justify-between'
     ]"
   >
-    <!-- Header dan navigasi -->
     <div>
       <h2 class="text-2xl font-bold text-[#D71E28]">Admin Panel</h2>
       <nav class="flex flex-col space-y-2 mt-8">
@@ -16,10 +15,9 @@
         <a href="/admin/verifikasi-peserta" class="text-gray-700 hover:text-[#D71E28] font-medium">Verifikasi</a>
         <a href="/admin/kelola-berita" class="text-gray-700 hover:text-[#D71E28] font-medium">Kelola Berita</a>
         <a href="/admin/kelola-skor" class="text-gray-700 hover:text-[#D71E28] font-medium">Skor Pertandingan</a>
+        <a href="/admin/funrun" class="text-gray-700 hover:text-[#D71E28] font-medium">FunRun</a>
       </nav>
     </div>
-
-    <!-- Tombol Logout -->
     <button
       @click="handleLogout"
       class="text-red-600 hover:text-red-800 font-medium text-left"
@@ -40,9 +38,7 @@ export default {
   },
   methods: {
     handleLogout() {
-      // Aksi logout, bisa disesuaikan dengan router atau auth method
       console.log("Logout clicked");
-      // Contoh jika pakai Vue Router:
       this.$router.push("/login");
     },
   },

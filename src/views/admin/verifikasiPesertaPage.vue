@@ -21,7 +21,7 @@
 
       <main class="px-4 sm:px-6 py-4 sm:py-8 flex-1">
 
-        <!-- Loading Indicator -->
+        
         <div v-if="isLoading" class="flex justify-center items-center py-12">
           <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D71E28]"></div>
           <span class="ml-3 text-gray-600">Memuat data peserta...</span>
@@ -33,7 +33,7 @@
               Verifikasi Peserta
             </h1>
 
-            <!-- Statistics Cards - DIPERBAIKI -->
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               <div class="bg-white rounded-lg shadow p-4">
                 <div class="flex items-center">
@@ -85,7 +85,7 @@
             </div>
           </div>
 
-          <!-- Filter dan Search -->
+          
           <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
             <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -122,7 +122,7 @@
             </div>
           </div>
 
-          <!-- Desktop Table -->
+          
           <div class="bg-white rounded-lg shadow overflow-hidden hidden sm:block">
             <div class="overflow-x-auto">
               <table class="min-w-full">
@@ -153,7 +153,7 @@
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                  <!-- DIPERBAIKI: Menggunakan paginatedPeserta -->
+                  
                   <tr v-for="peserta in paginatedPeserta" :key="peserta.id" class="hover:bg-gray-50 transition-colors"
                     :class="{ 'bg-blue-50': selectedPeserta.includes(peserta.id) }">
                     <td class="px-4 py-4 whitespace-nowrap">
@@ -161,7 +161,7 @@
                         class="rounded focus:ring-2 focus:ring-[#D71E28]">
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                      <!-- DIPERBAIKI: Menggunakan nama_lengkap -->
+                      
                       <div class="text-sm font-medium text-gray-900">{{ peserta.nama_lengkap }}</div>
                       <div class="text-sm text-gray-500">{{ peserta.jenis_peserta }}</div>
                     </td>
@@ -190,7 +190,7 @@
                           <i class="fas fa-check mr-1"></i>
                           Verifikasi
                         </button>
-                        <!-- DIPERBAIKI: Tambahkan confirm dialog -->
+                        
                         <button v-if="peserta.status === 'pending'" @click="confirmTolakPeserta(peserta)"
                           :disabled="isProcessing"
                           class="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white px-3 py-1 rounded text-xs transition-colors">
@@ -209,11 +209,11 @@
               </table>
             </div>
 
-            <!-- Pagination -->
+            
             <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
               <div class="flex items-center justify-between">
                 <div class="text-sm text-gray-700">
-                  <!-- DIPERBAIKI: Menampilkan informasi pagination yang benar -->
+                  
                   Menampilkan {{ Math.min(startIndex, filteredPeserta.length) }} sampai {{ Math.min(endIndex,
                   filteredPeserta.length) }} dari {{ filteredPeserta.length }} peserta
                 </div>
@@ -232,16 +232,16 @@
             </div>
           </div>
 
-          <!-- Mobile Cards -->
+          
           <div class="sm:hidden space-y-4">
-            <!-- DIPERBAIKI: Menggunakan paginatedPeserta -->
+            
             <div v-for="peserta in paginatedPeserta" :key="peserta.id" class="bg-white rounded-lg shadow p-4">
               <div class="flex items-start justify-between mb-3">
                 <div class="flex items-center gap-3">
                   <input type="checkbox" :value="peserta.id" v-model="selectedPeserta"
                     class="rounded focus:ring-2 focus:ring-[#D71E28]">
                   <div>
-                    <!-- DIPERBAIKI: Menggunakan nama_lengkap -->
+                    
                     <h3 class="font-semibold text-gray-900">{{ peserta.nama_lengkap }}</h3>
                     <p class="text-sm text-gray-600">{{ peserta.email || peserta.no_telepon }}</p>
                     <p class="text-xs text-gray-500">{{ peserta.cabang_olahraga }} - {{ peserta.jenis_peserta }}</p>
@@ -280,7 +280,6 @@
             </div>
           </div>
 
-          <!-- Empty State -->
           <div v-if="filteredPeserta.length === 0 && !isLoading" class="bg-white rounded-lg shadow p-8 text-center">
             <i class="fas fa-inbox text-4xl text-gray-400 mb-4"></i>
             <h3 class="text-lg font-medium text-gray-900 mb-2">Tidak ada peserta ditemukan</h3>
@@ -290,7 +289,6 @@
       </main>
     </div>
 
-    <!-- Detail Modal - DIPERBAIKI -->
     <div v-if="showDetailModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
       <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div class="sticky top-0 bg-white border-b p-6">
@@ -303,11 +301,11 @@
         </div>
 
         <div v-if="selectedPesertaDetail" class="p-6">
-          <!-- Informasi Peserta -->
+          
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <label class="text-sm font-medium text-gray-600">Nama Lengkap</label>
-              <!-- DIPERBAIKI: Menggunakan nama_lengkap -->
+              
               <p class="text-gray-900 font-medium">{{ selectedPesertaDetail.nama_lengkap }}</p>
             </div>
             <div>
@@ -343,13 +341,13 @@
             </div>
           </div>
 
-          <!-- Catatan -->
+          
           <div v-if="selectedPesertaDetail.catatan" class="mb-6">
             <label class="text-sm font-medium text-gray-600">Catatan</label>
             <p class="text-gray-900 bg-gray-50 p-3 rounded">{{ selectedPesertaDetail.catatan }}</p>
           </div>
 
-          <!-- Dokumen Pendukung - DIPERBAIKI -->
+          
           <div class="mb-6">
             <h4 class="text-md font-semibold text-gray-800 mb-3">Dokumen Pendukung</h4>
             <div class="grid grid-cols-2 gap-3">
@@ -367,7 +365,7 @@
           </div>
         </div>
 
-        <!-- Modal Actions -->
+        
         <div class="sticky bottom-0 bg-white border-t p-6">
           <div class="flex gap-2">
             <button v-if="selectedPesertaDetail && selectedPesertaDetail.status === 'pending'"
@@ -391,7 +389,7 @@
       </div>
     </div>
 
-    <!-- Confirm Reject Modal - BARU -->
+    
     <div v-if="showRejectModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
       <div class="bg-white rounded-lg max-w-md w-full">
         <div class="p-6">
@@ -421,7 +419,7 @@
       </div>
     </div>
 
-    <!-- Toast Notification -->
+    
     <div v-if="showToast"
       class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity"
       :class="{ 'opacity-0': !showToast }">
@@ -431,7 +429,7 @@
       </div>
     </div>
 
-    <!-- Error Toast -->
+    
     <div v-if="showErrorToast"
       class="fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity"
       :class="{ 'opacity-0': !showErrorToast }">

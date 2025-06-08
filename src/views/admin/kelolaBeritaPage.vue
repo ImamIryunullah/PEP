@@ -2,17 +2,12 @@
   <div class="min-h-screen flex bg-gradient-to-br from-gray-50 to-gray-100 relative font-sans">
 
     <Sidebar :isOpen="isSidebarOpen" />
-
-
     <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
       class="fixed inset-0 bg-black bg-opacity-40 z-30 lg:hidden transition-opacity duration-300"></div>
-
-
     <div :class="[
       'flex-1 flex flex-col transition-all duration-300 ease-in-out min-h-screen',
       isSidebarOpen ? 'lg:ml-64' : 'lg:ml-16'
     ]">
-
       <header class="bg-white shadow-sm px-4 py-4 flex justify-between items-center lg:hidden border-b">
         <button @click="toggleSidebar"
           class="text-gray-700 text-xl focus:outline-none hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200">
@@ -23,12 +18,10 @@
       </header>
 
       <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6 lg:py-8 max-w-7xl mx-auto w-full">
-
         <div class="hidden lg:block mb-8">
           <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Kelola Berita</h1>
           <p class="text-gray-600">Tambah, edit, dan kelola berita untuk PEP Olympic 2025</p>
         </div>
-
 
         <transition name="slide-down">
           <div v-if="showMessage" class="mb-6">
@@ -41,7 +34,6 @@
             </div>
           </div>
         </transition>
-
 
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 lg:p-8 mb-8">
           <div class="flex items-center gap-3 mb-6">
@@ -64,13 +56,11 @@
                 required />
             </div>
 
-
             <div class="space-y-2">
               <label for="subtitle" class="block text-sm font-semibold text-gray-700">Sub Judul</label>
               <input id="subtitle" v-model="form.subtitle" type="text" placeholder="Sub judul atau kategori berita..."
                 class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all duration-200 hover:border-gray-400" />
             </div>
-
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
@@ -81,7 +71,6 @@
                   class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#D71E28] focus:border-transparent transition-all duration-200 hover:border-gray-400"
                   required />
               </div>
-
               <div class="space-y-2">
                 <label for="penulis" class="block text-sm font-semibold text-gray-700">
                   Penulis <span class="text-red-500">*</span>
@@ -92,7 +81,6 @@
               </div>
             </div>
 
-
             <div class="space-y-2">
               <label for="isi" class="block text-sm font-semibold text-gray-700">
                 Isi Berita <span class="text-red-500">*</span>
@@ -102,7 +90,6 @@
                 required></textarea>
               <div class="text-sm text-gray-500">{{ form.isi.length }} karakter</div>
             </div>
-
 
             <div class="space-y-3">
               <label class="block text-sm font-semibold text-gray-700">Foto Berita</label>
@@ -123,7 +110,6 @@
                   <p class="text-xs text-gray-400">PNG, JPG, JPEG hingga 5MB</p>
                 </div>
               </div>
-
               <div v-else class="relative">
                 <div class="relative rounded-xl overflow-hidden bg-gray-100">
                   <img :src="form.foto" alt="Preview Foto" class="w-full h-48 sm:h-64 object-cover" />
@@ -138,7 +124,6 @@
                 </div>
               </div>
             </div>
-
 
             <div class="flex flex-col sm:flex-row gap-3 sm:justify-end pt-4 border-t border-gray-200">
               <button type="button" @click="resetForm"
@@ -156,7 +141,6 @@
             </div>
           </form>
         </div>
-
 
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 lg:p-8">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
@@ -181,8 +165,6 @@
               </div>
             </div>
           </div>
-
-
           <div v-if="filteredBerita.length === 0 && searchQuery === ''" class="text-center py-12">
             <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
               <i class="fas fa-newspaper text-gray-400 text-3xl"></i>
@@ -190,8 +172,6 @@
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Belum ada berita</h3>
             <p class="text-gray-600 mb-4">Mulai dengan menambahkan berita pertama Anda</p>
           </div>
-
-
           <div v-else-if="filteredBerita.length === 0 && searchQuery !== ''" class="text-center py-12">
             <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
               <i class="fas fa-search text-gray-400 text-3xl"></i>
@@ -298,19 +278,18 @@
   </div>
 </template>
 
+
 <script>
 import Sidebar from "@/components/Sidebar.vue";
-import API from "@/service/api";
+import API from "@/service/api.js";
 
 export default {
   name: "KelolaBerita",
   components: { Sidebar },
   data() {
     return {
-      // Sidebar state
       isSidebarOpen: false,
-      
-      // Form data
+
       form: {
         judul: '',
         subtitle: '',
@@ -319,77 +298,67 @@ export default {
         isi: '',
         foto: null
       },
-      
-      // UI states
+
       isSubmitting: false,
       editingIndex: null,
       showMessage: false,
       messageText: '',
       messageType: 'success',
-      
-      // Delete modal
+
       showDeleteModal: false,
       deleteIndex: null,
-      
-      // News list
+
       beritas: [],
       searchQuery: '',
-      
-      // File handling
+
       selectedFile: null
     };
   },
-  
+
   computed: {
-    // Filter berita berdasarkan search query
+
     filteredBerita() {
       if (!this.searchQuery) return this.beritas;
-      
+
       const query = this.searchQuery.toLowerCase();
-      return this.beritas.filter(berita => 
+      return this.beritas.filter(berita =>
         berita.judul.toLowerCase().includes(query) ||
         berita.subtitle?.toLowerCase().includes(query) ||
         berita.penulis.toLowerCase().includes(query) ||
         berita.isi.toLowerCase().includes(query)
       );
     },
-    
-    // Dynamic button text
+
     buttonText() {
       if (this.isSubmitting) {
         return this.editingIndex !== null ? 'Memperbarui...' : 'Menyimpan...';
       }
       return this.editingIndex !== null ? 'Perbarui Berita' : 'Simpan Berita';
     },
-    
-    // Dynamic button icon
+
     buttonIcon() {
       return this.editingIndex !== null ? 'fas fa-save' : 'fas fa-plus';
     },
-    
-    // Dynamic form title
+
     formTitle() {
       return 'Daftar Berita';
     },
-    
-    // Count berita
+
     beritaList() {
       return this.beritas.length;
     }
   },
-  
+
   async mounted() {
     await this.loadBerita();
     this.setTodayDate();
   },
-  
+
   methods: {
-    // Toggle sidebar
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
-    
-    // Set today's date as default
+
     setTodayDate() {
       const today = new Date();
       const year = today.getFullYear();
@@ -397,64 +366,120 @@ export default {
       const day = String(today.getDate()).padStart(2, '0');
       this.form.tanggal = `${year}-${month}-${day}`;
     },
-    
-    // Load all berita from API
     async loadBerita() {
       try {
-        const response = await API.get('/berita');
-        this.beritas = response.data.data || [];
+        console.log('Loading berita...');
+        console.log('API Base URL:', API.defaults.baseURL);
+
+        const response = await API.getAllBerita();
+        console.log('Response received:', response);
+
+        if (response && response.data) {
+
+          if (response.data.data && Array.isArray(response.data.data)) {
+            this.beritas = response.data.data;
+            console.log('Beritas loaded:', this.beritas.length, 'items');
+          }
+
+          else if (Array.isArray(response.data)) {
+            this.beritas = response.data;
+            console.log('Beritas loaded:', this.beritas.length, 'items');
+          }
+
+          else {
+            console.warn('Unexpected response structure:', response.data);
+            this.beritas = [];
+            this.showMessageAlert('Data berita kosong atau format tidak valid', 'error');
+          }
+
+        } else {
+          console.error('No response data received'); 
+          this.beritas = [];
+          this.showMessageAlert('Tidak ada data yang diterima dari server', 'error');
+        }
+
       } catch (error) {
-        console.error('Error loading berita:', error);
-        this.showMessageAlert('Gagal memuat data berita', 'error');
+        console.error('Error loading berita:');
+        console.error('- Error object:', error);
+        console.error('- Error message:', error.message);
+
+        if (error.response) {
+          console.error('- Response status:', error.response.status);
+          console.error('- Response data:', error.response.data);
+
+
+          if (error.response.status === 404) {
+            this.showMessageAlert('Endpoint berita tidak ditemukan', 'error');
+          } else if (error.response.status === 500) {
+            this.showMessageAlert('Server error: ' + (error.response.data?.error || 'Internal server error'), 'error');
+          } else {
+            this.showMessageAlert('Error: ' + (error.response.data?.error || error.message), 'error');
+          }
+        } else if (error.request) {
+          console.error('- No response received:', error.request);
+          this.showMessageAlert('Tidak dapat terhubung ke server. Pastikan backend berjalan di http://localhost:8080', 'error');
+        } else {
+          console.error('- Setup error:', error.message);
+          this.showMessageAlert('Error dalam setup request: ' + error.message, 'error');
+        }
+
+        this.beritas = [];
       }
     },
-    
-    // Handle file selection
+
+    async testBeritaEndpoint() {
+      try {
+        // Test with fetch directly
+        const response = await fetch('http://localhost:8080/berita');
+        console.log('Fetch response status:', response.status);
+        console.log('Fetch response ok:', response.ok);
+
+        const data = await response.json();
+        console.log('Fetch response data:', data);
+
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    },
     onFileChange(event) {
       const file = event.target.files[0];
       if (!file) return;
-      
-      // Validate file type
+
       const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
       if (!allowedTypes.includes(file.type)) {
         this.showMessageAlert('Format file tidak didukung. Gunakan JPG, PNG, GIF, atau WebP', 'error');
         this.clearFileInput();
         return;
       }
-      
-      // Validate file size (5MB)
+
       if (file.size > 5 * 1024 * 1024) {
         this.showMessageAlert('Ukuran file terlalu besar. Maksimal 5MB', 'error');
         this.clearFileInput();
         return;
       }
-      
+
       this.selectedFile = file;
-      
-      // Create preview URL
+
       const reader = new FileReader();
       reader.onload = (e) => {
         this.form.foto = e.target.result;
       };
       reader.readAsDataURL(file);
     },
-    
-    // Clear file input
+
     clearFileInput() {
       if (this.$refs.fileInput) {
         this.$refs.fileInput.value = '';
       }
       this.selectedFile = null;
     },
-    
-    // Remove foto
+
     removeFoto() {
       this.form.foto = null;
       this.selectedFile = null;
       this.clearFileInput();
     },
-    
-    // Create FormData for API request
+
     createFormData() {
       const formData = new FormData();
       formData.append('judul', this.form.judul);
@@ -462,52 +487,39 @@ export default {
       formData.append('tanggal', this.form.tanggal);
       formData.append('penulis', this.form.penulis);
       formData.append('isi', this.form.isi);
-      
+
       if (this.selectedFile) {
         formData.append('foto', this.selectedFile);
       }
-      
+
       return formData;
     },
-    
-    // Submit form (create or update)
+
     async submitBerita() {
       if (this.isSubmitting) return;
-      
-      // Validate required fields
+
       if (!this.form.judul || !this.form.tanggal || !this.form.penulis || !this.form.isi) {
         this.showMessageAlert('Silakan lengkapi semua field yang wajib diisi', 'error');
         return;
       }
-      
+
       this.isSubmitting = true;
-      
+
       try {
         const formData = this.createFormData();
-        
+
         if (this.editingIndex !== null) {
-          // Update existing berita
           const beritaId = this.beritas[this.editingIndex].id;
-          await API.put(`/berita/${beritaId}`, formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          });
+          await API.updateBerita(beritaId, formData);
           this.showMessageAlert('Berita berhasil diperbarui', 'success');
         } else {
-          // Create new berita
-          await API.post('/berita/', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          });
+          await API.createBerita(formData);
           this.showMessageAlert('Berita berhasil disimpan', 'success');
         }
-        
-        // Reload data and reset form
+
         await this.loadBerita();
         this.resetForm();
-        
+
       } catch (error) {
         console.error('Error submitting berita:', error);
         const errorMessage = error.response?.data?.error || 'Gagal menyimpan berita';
@@ -516,12 +528,11 @@ export default {
         this.isSubmitting = false;
       }
     },
-    
-    // Edit berita
+
     editBerita(index) {
       const berita = this.beritas[index];
       this.editingIndex = index;
-      
+
       this.form = {
         judul: berita.judul,
         subtitle: berita.subtitle || '',
@@ -530,32 +541,28 @@ export default {
         isi: berita.isi,
         foto: berita.foto ? `/uploads/${berita.foto}` : null
       };
-      
-      // Clear selected file since we're editing
+
       this.selectedFile = null;
       this.clearFileInput();
-      
-      // Scroll to form
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
-    
-    // Show delete confirmation
+
     hapusBerita(index) {
       this.deleteIndex = index;
       this.showDeleteModal = true;
     },
-    
-    // Confirm delete
+
     async confirmDelete() {
       if (this.deleteIndex === null) return;
-      
+
       try {
         const beritaId = this.beritas[this.deleteIndex].id;
-        await API.delete(`/berita/${beritaId}`);
-        
+        await API.deleteBerita(beritaId);
+
         this.showMessageAlert('Berita berhasil dihapus', 'success');
         await this.loadBerita();
-        
+
       } catch (error) {
         console.error('Error deleting berita:', error);
         const errorMessage = error.response?.data?.error || 'Gagal menghapus berita';
@@ -565,8 +572,7 @@ export default {
         this.deleteIndex = null;
       }
     },
-    
-    // Reset form
+
     resetForm() {
       this.form = {
         judul: '',
@@ -581,31 +587,25 @@ export default {
       this.clearFileInput();
       this.setTodayDate();
     },
-    
-    // Show message alert
+
     showMessageAlert(text, type = 'success') {
       this.messageText = text;
       this.messageType = type;
       this.showMessage = true;
-      
-      // Auto hide after 5 seconds
+
       setTimeout(() => {
         this.showMessage = false;
       }, 5000);
     },
-    
-    // Format date for display
     formatDate(dateString) {
-      const options = { 
-        year: 'numeric', 
-        month: 'long', 
+      const options = {
+        year: 'numeric',
+        month: 'long',
         day: 'numeric',
         timeZone: 'Asia/Jakarta'
       };
       return new Date(dateString).toLocaleDateString('id-ID', options);
     },
-    
-    // Format date for input field
     formatDateForInput(dateString) {
       const date = new Date(dateString);
       const year = date.getFullYear();
@@ -613,55 +613,13 @@ export default {
       const day = String(date.getDate()).padStart(2, '0');
       return `${year}-${month}-${day}`;
     },
-    
+
     getOriginalIndex(berita) {
       return this.beritas.findIndex(b => b.id === berita.id);
     }
-  },
-  
-  // Add CSS transitions
-  style: `
-  .slide-down-enter-active, .slide-down-leave-active {
-    transition: all 0.3s ease;
   }
-  .slide-down-enter-from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  .slide-down-leave-to {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  
-  .list-enter-active, .list-leave-active {
-    transition: all 0.3s ease;
-  }
-  .list-enter-from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  .list-leave-to {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  `
 };
 </script>
-
 
 <style scoped>
 .line-clamp-2 {

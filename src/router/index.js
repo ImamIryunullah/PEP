@@ -31,6 +31,8 @@ const basketResult = () => import( '@/views/result/basketResult')
 const syaratPendaftaran = () => import( '@/views/syaratPendaftaran')
 const formulirPendaftaran = () => import( '@/views/peserta/formulirPendaftaran')
 const listTeam = () => import( '@/views/peserta/listTeam')
+const funRunPage = () => import( '@/views/admin/funRunPage')
+
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
@@ -62,6 +64,7 @@ const routes = [
   { path: "/syarat-pendaftaran", name: "syaratPendaftaran", component:syaratPendaftaran},
   { path: "/peserta/formulir-pendaftaran", name: "formulirPendaftaran", component:formulirPendaftaran},
   { path: "/peserta/list-peserta", name: "listTeam", component:listTeam},
+  { path: "/admin/funrun", name: "FunRun", component:funRunPage},
 ]
 
 const router = createRouter({
