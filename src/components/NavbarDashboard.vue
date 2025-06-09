@@ -18,14 +18,14 @@
         </a>
         <a href="https://youtube.com" target="_blank" class="hover:text-red-600 transition-colors duration-200"
           aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
+          <i class="fab fa-youtube">
+          </i>
         </a>
       </div>
     </div>
     <div class="bg-[#a60000] text-white shadow-md z-50 relative">
       <div class="container mx-auto px-2 sm:px-4 py-3 flex items-center justify-between">
         <a href="/"><span class="tex-white font-bold">PEP-Mini Olympic 2025</span></a>
-
         <div class="flex items-center gap-2 sm:gap-4">
           <button @click="toggleMenu"
             class="lg:hidden focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50 rounded p-1"
@@ -75,7 +75,6 @@
               </div>
             </transition>
           </div>
-
           <div class="relative" @mouseenter="showRegDropdown = true" @mouseleave="showRegDropdown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
               REGISTRASI
@@ -95,16 +94,28 @@
               </div>
             </transition>
           </div>
-
-          <router-link to="/list-peserta" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
-            <span class="hidden xl:inline">LIST PESERTA</span>
-            <span class="xl:hidden">PESERTA</span>
-          </router-link>
-
+          <div class="relative" @mouseenter="showRegDropdown = true" @mouseleave="showRegDropdown = false">
+            <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
+              PESERTA
+              <svg class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300"
+                :class="{ 'rotate-180': showRegDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <transition name="dropdown">
+              <div v-if="showRegDropdown"
+                class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
+                <router-link to="/registrasi"
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta Cabor</router-link>
+                <router-link to="/registrasi-funrun-embed"
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta 5K Fun
+                  Run</router-link>
+              </div>
+            </transition>
+          </div>
           <router-link to="/berita" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             BERITA
           </router-link>
-
           <div class="relative" @mouseenter="showAboutsDropdown = true" @mouseleave="showAboutsDropdown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
               ABOUTS
@@ -128,18 +139,15 @@
               </div>
             </transition>
           </div>
-
           <router-link to="/contactUs" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             KONTAK
           </router-link>
-
           <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             <span class="hidden xl:inline">ADDITIONAL</span>
             <span class="xl:hidden">INFO</span>
           </router-link>
         </nav>
       </div>
-
       <transition name="fade">
         <div v-if="isOpen"
           class="lg:hidden bg-[#a60000] px-2 sm:px-4 pb-4 text-sm font-semibold uppercase space-y-2 border-t border-red-700">
@@ -147,7 +155,6 @@
             @click="closeMenu">
             HOME
           </router-link>
-
           <div>
             <button @click="toggleJadwalDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
@@ -186,8 +193,6 @@
               </div>
             </transition>
           </div>
-
-          <!-- Mobile Registration Dropdown -->
           <div>
             <button @click="toggleRegDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
@@ -208,17 +213,30 @@
               </div>
             </transition>
           </div>
-
-          <router-link to="/list-peserta"
-            class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200" @click="closeMenu">
-            LIST PESERTA
-          </router-link>
-
+          <div>
+            <button @click="toggleRegDropdown"
+              class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
+              PESERTA
+              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileRegDropdown }"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <transition name="mobile-dropdown">
+              <div v-if="showMobileRegDropdown" class="ml-4 mt-2 space-y-1 bg-red-800 bg-opacity-50 rounded p-2">
+                <router-link to="/list-peserta"
+                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
+                  @click="closeMenu">Peserta Cabor</router-link>
+                <router-link to="/registrasi-funrun-embed"
+                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
+                  @click="closeMenu">Peserta 5K Fun Run</router-link>
+              </div>
+            </transition>
+          </div>
           <router-link to="/berita" class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200"
             @click="closeMenu">
             BERITA
           </router-link>
-
           <div>
             <button @click="toggleAboutsDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
@@ -242,7 +260,6 @@
               </div>
             </transition>
           </div>
-
           <router-link to="/contactUs"
             class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200" @click="closeMenu">
             KONTAK
@@ -257,7 +274,6 @@
     </div>
   </header>
 </template>
-
 <script>
 export default {
   data() {
@@ -326,7 +342,6 @@ export default {
 </script>
 
 <style scoped>
-/* Dropdown Transitions */
 .dropdown-enter-active,
 .dropdown-leave-active {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -344,7 +359,6 @@ export default {
   transform: translateY(0);
 }
 
-/* Mobile Dropdown Transitions */
 .mobile-dropdown-enter-active,
 .mobile-dropdown-leave-active {
   transition: all 0.3s ease;
@@ -364,7 +378,6 @@ export default {
   transform: translateY(0);
 }
 
-/* Mobile Menu Fade Transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
@@ -375,25 +388,21 @@ export default {
   opacity: 0;
 }
 
-/* Focus styles for accessibility */
 .focus\:ring-2:focus {
   box-shadow: 0 0 0 2px rgba(252, 211, 77, 0.5);
 }
 
-/* Hover animations */
 .hover\:text-yellow-300:hover,
 .hover\:text-yellow-200:hover {
   transition: color 0.2s ease-in-out;
 }
 
-/* Smooth scrolling for mobile menu */
 @media (max-width: 1023px) {
   .space-y-2>*+* {
     margin-top: 0.5rem;
   }
 }
 
-/* Custom scrollbar for mobile menu if needed */
 .lg\:hidden {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
