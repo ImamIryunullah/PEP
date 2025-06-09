@@ -94,18 +94,18 @@
               </div>
             </transition>
           </div>
-          <div class="relative" @mouseenter="showRegDropdown = true" @mouseleave="showRegDropdown = false">
+          <div class="relative" @mouseenter="showPesDropDown = true" @mouseleave="showPesDropDown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
               PESERTA
               <svg class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300"
-                :class="{ 'rotate-180': showRegDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                :class="{ 'rotate-180': showPesDropDown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <transition name="dropdown">
-              <div v-if="showRegDropdown"
+              <div v-if="showPesDropDown"
                 class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
-                <router-link to="/registrasi"
+                <router-link to="/list-peserta"
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta Cabor</router-link>
                 <router-link to="/registrasi-funrun-embed"
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta 5K Fun
@@ -275,6 +275,8 @@
   </header>
 </template>
 <script>
+
+
 export default {
   data() {
     return {
@@ -282,10 +284,12 @@ export default {
 
       showJadwalDropdown: false,
       showRegDropdown: false,
+      showPesDropDown: false,
       showAboutsDropdown: false,
 
       showMobileJadwalDropdown: false,
       showMobileRegDropdown: false,
+      showMobilePesDropdown: false,
       showMobileAboutsDropdown: false,
       currentDate: '',
       currentTime: ''
@@ -317,6 +321,7 @@ export default {
     },
     toggleRegDropdown() {
       this.showMobileRegDropdown = !this.showMobileRegDropdown;
+      this.showMobilePesDropdown = !this.showMobilePesDropdown;
     },
     toggleAboutsDropdown() {
       this.showMobileAboutsDropdown = !this.showMobileAboutsDropdown;
@@ -325,6 +330,7 @@ export default {
       this.showMobileJadwalDropdown = false;
       this.showMobileRegDropdown = false;
       this.showMobileAboutsDropdown = false;
+      this.showMobilePesDropdown = false;
     },
     handleClickOutside(event) {
       if (!event.target.closest('header') && this.isOpen) {

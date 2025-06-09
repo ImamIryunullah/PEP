@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex bg-gray-100 relative">
+    <div class="min-h-screen flex bg-gray-100 relative font-sans">
         
         <SidebarUser :isOpen="isSidebarOpen" @logout="handleLogout" />
         

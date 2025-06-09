@@ -368,79 +368,117 @@ export default {
     },
     async loadBerita() {
       try {
-        console.log('Loading berita...');
-        console.log('API Base URL:', API.defaults.baseURL);
+        console.log('🔄 Loading berita...');
+
+        if (!API) {
+          console.error('❌ API object is undefined');
+          throw new Error('API service tidak dapat diakses');
+        }
+
+        console.log('✅ API object available:', typeof API);
+
+        // Test connection first
+        try {
+          await API.testConnection();
+          console.log('✅ Backend connection successful');
+        } catch (connError) {
+          console.warn('⚠️ Connection test failed, proceeding anyway:', connError.message);
+        }
 
         const response = await API.getAllBerita();
-        console.log('Response received:', response);
+        console.log('📦 Raw response:', response);
 
-        if (response && response.data) {
+        if (!response) {
+          throw new Error('Tidak ada response dari server');
+        }
 
-          if (response.data.data && Array.isArray(response.data.data)) {
-            this.beritas = response.data.data;
-            console.log('Beritas loaded:', this.beritas.length, 'items');
+        let beritaData = [];
+
+        if (response.data) {
+          if (Array.isArray(response.data)) {
+
+            beritaData = response.data;
+            console.log('📋 Direct array format detected');
+          } else if (response.data.data && Array.isArray(response.data.data)) {
+
+            beritaData = response.data.data;
+            console.log('📋 Nested data format detected');
+          } else if (response.data.berita && Array.isArray(response.data.berita)) {
+
+            beritaData = response.data.berita;
+            console.log('📋 Alternative nested format detected');
+          } else {
+            console.warn('⚠️ Unexpected response structure:', response.data);
+            beritaData = [];
           }
+        }
 
-          else if (Array.isArray(response.data)) {
-            this.beritas = response.data;
-            console.log('Beritas loaded:', this.beritas.length, 'items');
-          }
+        this.beritas = beritaData;
+        console.log(`✅ Successfully loaded ${this.beritas.length} berita items`);
 
-          else {
-            console.warn('Unexpected response structure:', response.data);
-            this.beritas = [];
-            this.showMessageAlert('Data berita kosong atau format tidak valid', 'error');
-          }
-
-        } else {
-          console.error('No response data received'); 
-          this.beritas = [];
-          this.showMessageAlert('Tidak ada data yang diterima dari server', 'error');
+        if (this.beritas.length > 0) {
+          console.log('📄 Sample berita item:', this.beritas[0]);
         }
 
       } catch (error) {
-        console.error('Error loading berita:');
-        console.error('- Error object:', error);
+        console.error('💥 Error in loadBerita:');
+        console.error('- Error type:', error.constructor.name);
         console.error('- Error message:', error.message);
-
-        if (error.response) {
-          console.error('- Response status:', error.response.status);
-          console.error('- Response data:', error.response.data);
-
-
-          if (error.response.status === 404) {
-            this.showMessageAlert('Endpoint berita tidak ditemukan', 'error');
-          } else if (error.response.status === 500) {
-            this.showMessageAlert('Server error: ' + (error.response.data?.error || 'Internal server error'), 'error');
-          } else {
-            this.showMessageAlert('Error: ' + (error.response.data?.error || error.message), 'error');
-          }
-        } else if (error.request) {
-          console.error('- No response received:', error.request);
-          this.showMessageAlert('Tidak dapat terhubung ke server. Pastikan backend berjalan di http://localhost:8080', 'error');
-        } else {
-          console.error('- Setup error:', error.message);
-          this.showMessageAlert('Error dalam setup request: ' + error.message, 'error');
-        }
+        console.error('- Full error:', error);
 
         this.beritas = [];
+
+        let userMessage = 'Gagal memuat data berita';
+
+        if (error.message.includes('tidak berjalan')) {
+          userMessage = 'Backend server tidak berjalan. Pastikan server berjalan di http://localhost:8080';
+        } else if (error.message.includes('tidak ditemukan')) {
+          userMessage = 'Endpoint berita tidak ditemukan di server';
+        } else if (error.message.includes('ECONNREFUSED')) {
+          userMessage = 'Tidak dapat terhubung ke server. Pastikan backend berjalan';
+        } else if (error.response?.status === 500) {
+          userMessage = 'Server error: ' + (error.response.data?.error || 'Internal server error');
+        } else if (error.response?.status === 404) {
+          userMessage = 'Endpoint berita tidak ditemukan';
+        }
+
+        this.showMessageAlert(userMessage, 'error');
       }
     },
+    async debugBackend() {
+      console.log('🔍 Starting backend debug...');
 
+      const endpoints = ['/', '/berita', '/api/berita', '/health'];
+
+      for (const endpoint of endpoints) {
+        try {
+          console.log(`🧪 Testing endpoint: ${endpoint}`);
+          const response = await fetch(`http://localhost:8080${endpoint}`);
+          console.log(`✅ ${endpoint}: ${response.status} ${response.statusText}`);
+
+          if (response.ok) {
+            const data = await response.text();
+            console.log(`📦 Response data:`, data.substring(0, 200) + '...');
+          }
+        } catch (error) {
+          console.log(`❌ ${endpoint}: ${error.message}`);
+        }
+      }
+    },
     async testBeritaEndpoint() {
       try {
-        // Test with fetch directly
         const response = await fetch('http://localhost:8080/berita');
         console.log('Fetch response status:', response.status);
         console.log('Fetch response ok:', response.ok);
 
         const data = await response.json();
-        console.log('Fetch response data:', data);
+        console.log('Fetch response data:', data);  
 
       } catch (error) {
         console.error('Fetch error:', error);
       }
     },
+
     onFileChange(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -504,10 +542,8 @@ export default {
       }
 
       this.isSubmitting = true;
-
       try {
         const formData = this.createFormData();
-
         if (this.editingIndex !== null) {
           const beritaId = this.beritas[this.editingIndex].id;
           await API.updateBerita(beritaId, formData);
@@ -528,7 +564,6 @@ export default {
         this.isSubmitting = false;
       }
     },
-
     editBerita(index) {
       const berita = this.beritas[index];
       this.editingIndex = index;
@@ -636,7 +671,6 @@ export default {
   overflow: hidden;
 }
 
-/* Smooth transitions */
 .slide-down-enter-active,
 .slide-down-leave-active {
   transition: all 0.3s ease;

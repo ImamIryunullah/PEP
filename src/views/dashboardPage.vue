@@ -135,7 +135,6 @@
             <span class="font-medium">Play-Off Peringkat 3</span>
             <span>Stadion Panahan</span>
           </div>
-
           <div class="space-y-2 sm:space-y-3 mt-3">
             <div class="flex justify-between items-center">
               <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 3</span>
