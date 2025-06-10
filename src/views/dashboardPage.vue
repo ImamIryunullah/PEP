@@ -38,10 +38,11 @@
           </p>
         </div>
         <div class="mt-8 animate-fade-in-up delay-600">
-          <button
+         
+          <a href="#horizontal-scroll"> <button
             class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-red-500/30">
             Lihat Kompetisi
-          </button>
+          </button></a>
         </div>
       </div>
       <div class="absolute top-0 left-0 w-full h-1 bg-red-600/50"></div>

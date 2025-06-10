@@ -21,7 +21,6 @@ API.interceptors.request.use(
   } 
 );
 
-// Response interceptor
 API.interceptors.response.use(
   (response) => {
     console.log('Response received:', response.status);   

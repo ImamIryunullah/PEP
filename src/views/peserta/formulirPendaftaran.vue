@@ -261,8 +261,10 @@
                                             <option value="Basket">Basket</option>
                                             <option value="Voli">Voli</option>
                                             <option value="Tenis Meja">Tenis Meja</option>
-                                            <option value="Catur">Catur</option>
-                                            <option value="Atletik">Atletik</option>
+                                            <option value="Tenis Lapangan">Tenis Lapangan</option>
+                                            <option value="Lari">Lari</option>
+                                            <option value="eSport">eSport</option>
+                                            <option value="Senam">Senam</option>
                                         </select>
                                     </div>
 

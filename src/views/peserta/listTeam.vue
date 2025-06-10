@@ -296,7 +296,7 @@
                                 >
                                     Sebelumnya
                                 </button>
-                                <button 
+                                <button
                                     @click="nextPage"
                                     :disabled="currentPage === totalPages"
                                     class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
@@ -356,7 +356,6 @@
             </main>
         </div>
 
-        
         <div v-if="showDetailModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
             <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
                 <div class="mt-3">

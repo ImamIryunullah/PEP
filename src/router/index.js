@@ -32,14 +32,15 @@ const syaratPendaftaran = () => import( '@/views/syaratPendaftaran')
 const formulirPendaftaran = () => import( '@/views/peserta/formulirPendaftaran')
 const listTeam = () => import( '@/views/peserta/listTeam')
 const funRunPage = () => import( '@/views/admin/funRunPage')
-
+  
 
 const routes = [
   { path: "/", name: "home", component:dashboardPage},
   { path: "/aboutUs", name: "aboutUs", component:tentangPage},
   { path: "/list-peserta", name: "listPeserta", component:listPesertaPage},
   { path: "/registrasi", name: "Registrasi", component:registrasiPage},
-  { path: "/detail-berita", name: "DetailBerita", component:detailBeritaPage},
+  { path: "/detail-berita/:id", name: "DetailBerita", component: detailBeritaPage },
+
   { path: "/berita", name: "Berita", component:beritaPage},
   { path: "/contactUs", name: "kontak", component:contactUsPage},
   { path: "/informasi-tambahan", name: "Informasi", component:addInformationPage},

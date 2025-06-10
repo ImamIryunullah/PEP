@@ -163,12 +163,9 @@
                 try {
                     console.log('🔄 Fetching berita data...');
                     
-                    // Cek apakah API tersedia
                     if (!API) {
                         throw new Error('API service tidak tersedia');
                     }
-
-                    // Test koneksi terlebih dahulu
                     try {
                         await API.testConnection();
                         console.log('✅ Backend connection successful');
@@ -184,20 +181,18 @@
                         throw new Error('Tidak ada response dari server');
                     }
 
-                    // Handle berbagai format response (sama seperti di admin)
                     let beritaData = [];
 
                     if (response.data) {
                         if (Array.isArray(response.data)) {
-                            // Format: { data: [...] }
+
                             beritaData = response.data;
                             console.log('📋 Direct array format detected');
                         } else if (response.data.data && Array.isArray(response.data.data)) {
-                            // Format: { data: { data: [...] } }
                             beritaData = response.data.data;
                             console.log('📋 Nested data format detected');
                         } else if (response.data.berita && Array.isArray(response.data.berita)) {
-                            // Format: { data: { berita: [...] } }
+
                             beritaData = response.data.berita;
                             console.log('📋 Alternative nested format detected');
                         } else {
@@ -238,14 +233,22 @@
             },
 
             getImageUrl(item) {
-                if (item.foto) {
-                    if (item.foto.startsWith('http') || item.foto.startsWith('/uploads/')) {
-                        return item.foto;
-                    }
-                    return `/uploads/${item.foto}`;
-                }
-                return item.gambar || '/berita/berita.jpg';
-            },
+    const baseURL = 'http://localhost:8080'; 
+
+    if (item.foto) {
+        if (item.foto.startsWith('http')) {
+            return item.foto;
+        }
+        if (item.foto.startsWith('/uploads/')) {
+            return baseURL + item.foto;
+        }
+        return `${baseURL}/uploads/${item.foto}`;
+    }
+
+
+    return item.gambar || '/berita/berita.jpg';
+},
+
 
             handleImageError(event) {
                 event.target.src = '/berita/berita.jpg';

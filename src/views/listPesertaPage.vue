@@ -1,11 +1,9 @@
 <template>
     <div class="min-h-screen bg-[#F7F7F7]">
         <NavbarDashboard />
-
-        <!-- Hero Section -->
         <section
             class="min-h-[60vh] sm:min-h-screen relative bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_rgba(0,0,0,1)_45%)] overflow-hidden">
-            <!-- Decorative Images - Hidden on mobile -->
+            
             <img src="/listpeserta/atas.png" loading="lazy"
                 class="absolute bottom-[60%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
                 alt="border1" />
@@ -14,19 +12,14 @@
                 alt="border2" />
             <img src="/listpeserta/awan.png" alt="Gambar bawah" loading="lazy"
                 class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[15%] sm:h-[20%]" />
-
-            <!-- Sport Image - Always visible, responsive positioning -->
+            
             <img :src="getOlahragaImage(selectedOlahraga)"
                 class="absolute top-[5%] sm:top-[10%] w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] left-[5%] sm:left-[10%] float delay-2 opacity-70 sm:opacity-80 lg:opacity-100 z-5"
                 alt="Maskot" />
-
-            <!-- Background Text - Responsive -->
             <h1
                 class="absolute top-[20%] sm:top-[30%] left-0 text-white opacity-5 text-4xl sm:text-6xl lg:text-8xl font-bold ml-4 sm:ml-8 lg:ml-16 z-0 hidden sm:block">
                 {{ selectedOlahraga.toUpperCase() }}
-            </h1>
-
-            <!-- Main Title - Responsive -->
+            </h1>  
             <div
                 class="absolute inset-0 flex flex-col justify-center items-center sm:items-end sm:justify-center text-center sm:text-right px-4 sm:px-8 lg:px-16">
                 <h1 class="text-white text-3xl sm:text-5xl lg:text-8xl font-bold leading-tight">
@@ -36,15 +29,12 @@
                     Daftar peserta {{ selectedOlahraga }}
                 </p>
             </div>
-
-            <!-- Decorative Flower -->
             <img src="/bunga/hiasan.png" alt="hiasan"
                 class="absolute bottom-[10%] sm:bottom-[20%] left-1/2 transform -translate-x-1/2 w-[100px] sm:w-[150px] py-6 sm:py-12 z-10" />
         </section>
 
-        <!-- Main Content Section -->
         <section class="min-h-screen relative bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 py-6 font-sans">
-            <!-- Background Elements -->
+            
             <div class="absolute inset-0 z-0 pointer-events-none">
                 <img src="/registrasi/hijau.png" alt=""
                     class="absolute top-0 left-0 w-full opacity-5 hidden lg:block" />
@@ -59,7 +49,7 @@
             </div>
 
             <div class="relative z-10 space-y-6 sm:space-y-8 animate-fade-in animate-stagger">
-                <!-- Category Buttons - Responsive Grid -->
+                
                 <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 justify-center">
                     <button
                         v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
@@ -73,7 +63,7 @@
                     </button>
                 </div>
 
-                <!-- Mobile Card View -->
+                
                 <div class="block lg:hidden space-y-4">
                     <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
@@ -117,7 +107,7 @@
                     </template>
                 </div>
 
-                <!-- Desktop Table View -->
+                
                 <div class="hidden lg:block overflow-x-auto">
                     <table
                         class="min-w-full bg-white rounded-xl shadow-xl overflow-hidden text-sm transform transition duration-500 hover:scale-[1.01]">
@@ -158,7 +148,7 @@
                     </table>
                 </div>
 
-                <!-- Empty State -->
+                
                 <div v-if="filteredPeserta.length === 0" class="text-center py-12">
                     <div class="text-gray-400 text-6xl mb-4">🏆</div>
                     <h3 class="text-lg font-semibold text-gray-600 mb-2">Belum Ada Peserta</h3>
