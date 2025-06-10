@@ -33,6 +33,8 @@ const formulirPendaftaran = () => import( '@/views/peserta/formulirPendaftaran')
 const listTeam = () => import( '@/views/peserta/listTeam')
 const funRunPage = () => import( '@/views/admin/funRunPage')
 const funrunListPage = () => import( '@/views/funrunListPage')
+const adminCabor = () => import( '@/views/admin/adminCabor')
+
   
 
 const routes = [
@@ -68,6 +70,7 @@ const routes = [
   { path: "/peserta/list-peserta", name: "listTeam", component:listTeam},
   { path: "/admin/funrun", name: "FunRun", component:funRunPage},
   { path: "/peserta-fun-run", name: "PesertaFunRun", component:funrunListPage},
+  { path: "/admin/kelola-cabang-olahraga", name: "adminCabor", component:adminCabor},
 ]
 
 const router = createRouter({

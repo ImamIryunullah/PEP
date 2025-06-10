@@ -171,7 +171,7 @@
                                                                 {{ participant.nama_lengkap }}
                                                             </div>
                                                             <div class="text-sm text-gray-500">
-                                                                {{ participant.email }}
+                                                                {{ participant.user.email }}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -238,7 +238,7 @@
                                                 </div>
                                                 <div>
                                                     <h3 class="font-medium text-gray-900">{{ participant.nama_lengkap }}</h3>
-                                                    <p class="text-sm text-gray-500">{{ participant.email }}</p>
+                                                    <p class="text-sm text-gray-500">{{ participant.user.email }}</p>
                                                 </div>
                                             </div>
                                             <span class="text-sm text-gray-500">#{{ index + 1 }}</span>
@@ -374,7 +374,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">Email</label>
-                                <p class="mt-1 text-sm text-gray-900">{{ selectedParticipant.email }}</p>
+                                <p class="mt-1 text-sm text-gray-900">{{ selectedParticipant.user.email }}</p>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700">No. Telepon</label>
@@ -446,7 +446,7 @@ export default {
                 const query = this.searchQuery.toLowerCase();
                 filtered = filtered.filter(participant => 
                     participant.nama_lengkap.toLowerCase().includes(query) ||
-                    participant.email.toLowerCase().includes(query)
+                    participant.user.email.toLowerCase().includes(query)
                 );
             }
 
