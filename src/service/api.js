@@ -179,11 +179,11 @@ export default {
   },
 
   createKnockoutMatch(payload) {
-    return API.post('/knockout', payload);
+    return API.post('/knockout/', payload);
   },
 
   getAllKnockoutMatches(params = {}) {
-    return API.get('/knockout', { params });
+    return API.get('/knockout/', { params });
   },
 
   getKnockoutMatchById(id) {
@@ -199,7 +199,7 @@ export default {
   },
 
   getKnockoutStats() {
-    return API.get('/knockout/stats');
+    return API.get('/knockout/stats/');
   },
 
   getKnockoutByKategori(kategori) {

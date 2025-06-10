@@ -316,7 +316,7 @@ export default {
                 hasil: '',
                 tahap: '',
             },
-            // API related states
+
             loading: false,
             saving: false,
             updating: false,
@@ -400,6 +400,7 @@ export default {
                 };
 
                 const response = await API.createKnockoutMatch(payload);
+                console.log('Sending payload:', payload);
 
                 if (response.data.success) {
                     this.showSuccess('Pertandingan berhasil ditambahkan');
