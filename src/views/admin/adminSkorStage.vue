@@ -17,7 +17,7 @@
             </header>
 
             <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-                <!-- Loading Overlay -->
+                
                 <div v-if="loading" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-white p-6 rounded-lg flex items-center gap-3">
                         <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-[#D71E28]"></div>
@@ -31,7 +31,7 @@
                         sub-kategori olahraga</p>
                 </div>
 
-                <!-- Success/Error Messages -->
+                
                 <div v-if="successMessage"
                     class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 flex items-center justify-between">
                     <div class="flex items-center">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
 
-                <!-- Match Input Form -->
+                
                 <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-lg font-semibold text-gray-800">Tambah Pertandingan</h2>
@@ -151,7 +151,7 @@
                     </button>
                 </div>
 
-                <!-- Match Results -->
+                
                 <div class="bg-white rounded-lg shadow-sm">
                     <div class="p-4 sm:p-6 border-b border-gray-200">
                         <div class="flex justify-between items-center">
@@ -186,7 +186,7 @@
                         <div v-else class="space-y-4">
                             <div v-for="(item, index) in daftarHasil" :key="item.id"
                                 class="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200">
-                                <!-- View Mode -->
+                                
                                 <div v-if="editIndex !== index"
                                     class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                                     <div class="flex-1">
@@ -225,7 +225,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Edit Mode -->
+                                
                                 <div v-else class="space-y-4">
                                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                                         <input v-model="editMatch.tim1"
