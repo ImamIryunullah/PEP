@@ -107,7 +107,7 @@
                 class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
                 <router-link to="/list-peserta"
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta Cabor</router-link>
-                <router-link to="/registrasi-funrun-embed"
+                <router-link to="/peserta-fun-run"
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta 5K Fun
                   Run</router-link>
               </div>
@@ -227,7 +227,7 @@
                 <router-link to="/list-peserta"
                   class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
                   @click="closeMenu">Peserta Cabor</router-link>
-                <router-link to="/registrasi-funrun-embed"
+                <router-link to="/peserta-fun-run"
                   class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
                   @click="closeMenu">Peserta 5K Fun Run</router-link>
               </div>

@@ -144,7 +144,6 @@ export default {
     return API.delete(`/berita/${id}`);
   },
 
-  // Fun run endpoints
   createPesertaFunrun(payload) {
     return API.post('/funrun/peserta', payload);
   },
@@ -211,5 +210,8 @@ export default {
 
   getKnockoutStanding(params = {}) {
     return API.get('/knockout/standing', { params });
+  },
+  getFullpath(img){
+    return `http://localhost:8080/uploads/${img}`
   }
 };    

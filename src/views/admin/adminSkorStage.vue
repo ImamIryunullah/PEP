@@ -359,10 +359,11 @@ export default {
             this.loadingMessage = 'Memuat data pertandingan...';
             try {
                 const response = await API.getAllKnockoutMatches({
-                    kategori: this.selectedKategori,
-                    sub_kategori: this.selectedSubKategori
+                kategori: this.selectedKategori,
+                sub_kategori: this.selectedSubKategori,
+                page: 1,
+                limit: 50
                 });
-
                 if (response.data.success) {
                     this.daftarHasil = response.data.data || [];
                 } else {

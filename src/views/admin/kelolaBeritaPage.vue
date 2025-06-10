@@ -178,8 +178,7 @@
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Tidak ada hasil</h3>
             <p class="text-gray-600">Coba kata kunci lain untuk pencarian</p>
-          </div>
-
+          </div>  
 
           <div v-else class="space-y-4">
             <transition-group name="list" tag="div">
@@ -189,15 +188,14 @@
 
                   <div class="flex-shrink-0">
                     <div class="w-full lg:w-32 h-32 lg:h-24 bg-gray-200 rounded-xl overflow-hidden">
-                      <img v-if="berita.foto" :src="`/uploads/${berita.foto}`" :alt="berita.judul"
-                        class="w-full h-full object-cover" />
+                      <img v-if="berita.foto" :src="getFullpath(berita.foto)" :alt="berita.judul"
+                        class="w-full h-full object-cover" /> 
 
                       <div v-else class="w-full h-full flex items-center justify-center">
                         <i class="fas fa-image text-gray-400 text-2xl"></i>
                       </div>
                     </div>
                   </div>
-
 
                   <div class="flex-1 min-w-0">
                     <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
@@ -281,6 +279,7 @@
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
+import api from "@/service/api.js";
 import API from "@/service/api.js";
 
 export default {
@@ -358,7 +357,9 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
-
+getFullpath(img){
+  return api.getFullpath(img);
+},
     setTodayDate() {
       const today = new Date();
       const year = today.getFullYear();
@@ -575,6 +576,7 @@ export default {
         penulis: berita.penulis,
         isi: berita.isi,
         foto: berita.foto ? `/uploads/${berita.foto}` : null
+
       };
 
       this.selectedFile = null;

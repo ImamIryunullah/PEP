@@ -93,7 +93,6 @@
                             <div v-if="item.subtitle" class="text-sm text-gray-600 line-clamp-1">
                                 {{ item.subtitle }}
                             </div>
-
                             <div class="text-gray-500 text-xs sm:text-sm flex items-center gap-2 flex-wrap">
                                 <div class="flex items-center gap-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-4 sm:w-4 text-gray-400"
@@ -147,7 +146,7 @@
             return {
                 berita: [],
                 isLoading: false,
-                error: null
+                error: null,
             };
         },
         
@@ -163,6 +162,7 @@
                 try {
                     console.log('🔄 Fetching berita data...');
                     
+
                     if (!API) {
                         throw new Error('API service tidak tersedia');
                     }
