@@ -69,6 +69,16 @@
                                     </div>
 
                                     <div>
+                                        <label class="block text-gray-700 font-medium mb-2">Jenis Kelamin *</label>
+                                        <select v-model="form.jenis_kelamin"
+                                        @change="resetConditionalFields" required 
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
+                                        <option value="">Pilih Jenis Kelamin</option>
+                                        <option value="Laki-Laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                    </div>
+                                    <div>
                                         <label class="block text-gray-700 font-medium mb-2">Jenis Peserta *</label>
                                         <select v-model="form.jenis_peserta" 
                                                 @change="resetConditionalFields"
@@ -79,6 +89,7 @@
                                             <option value="Mitra">Mitra Kerja</option>
                                         </select>
                                     </div>
+
                                 </div>
                             </div>
                             
@@ -313,6 +324,7 @@ export default {
                 nama_lengkap: '',
                 email: '',
                 no_telepon: '',
+                jenis_kelamin: '',
                 jenis_peserta: '',
                 cabang_olahraga: '',
                 wilayah_kerja: '',
@@ -407,6 +419,11 @@ export default {
 
             if (!this.form.no_telepon.trim()) {
                 this.message = 'No. telepon harus diisi';
+                return false;
+            }
+
+            if (!this.form.jenis_kelamin.trim()) {
+                this.message = 'Jenis Kelamin harus diisi';
                 return false;
             }
 
@@ -514,6 +531,7 @@ export default {
                 nama_lengkap: '',
                 email: '',
                 no_telepon: '',
+                jenis_kelamin: '',
                 jenis_peserta: '',
                 cabang_olahraga: '',
                 wilayah_kerja: '',

@@ -133,7 +133,10 @@
                                                     Peserta
                                                 </th>
                                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Jenis
+                                                    Jenis Peserta
+                                                </th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Jenis Kelamin
                                                 </th>
                                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Cabang Olahraga
@@ -181,6 +184,16 @@
                                                             : 'bg-purple-100 text-purple-800'
                                                     ]">
                                                         {{ participant.jenis_peserta }}
+                                                    </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span :class="[
+                                                        'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium',
+                                                        participant.jenis_kelamin === 'Laki-laki' 
+                                                            ? 'bg-green-100 text-green-800' 
+                                                            : 'bg-purple-100 text-purple-800'
+                                                    ]">
+                                                        {{ participant.jenis_kelamin }}
                                                     </span>
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
