@@ -522,7 +522,6 @@
       async fetchPesertaData() {
         this.isLoading = true;
         this.error = null;
-
         try {
           console.log('Fetching participants for verification...');
 
@@ -541,7 +540,6 @@
               console.warn('Unexpected response structure:', response.data);
             }
 
-            // Transform data untuk admin verification page
             this.pesertaList = participants.map(peserta => ({
               id: peserta.id,
               nama_lengkap: peserta.nama_lengkap,
@@ -557,7 +555,7 @@
               tanggalDaftar: new Date(peserta.created_at || Date.now()),
               created_at: peserta.created_at,
               updated_at: peserta.updated_at,
-              // Dokumen-dokumen (jika ada)
+
               ktp: peserta.ktp,
               id_card: peserta.id_card,
               bpjs: peserta.bpjs,
@@ -750,7 +748,7 @@
             if (peserta) {
               peserta.status = 'rejected';
               peserta.isVerified = false;
-              peserta.catatan = this.rejectReason; // Simpan alasan penolakan
+              peserta.catatan = this.rejectReason;
               this.showToastNotification(`${peserta.nama_lengkap} ditolak`);
             }
           }

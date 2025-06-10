@@ -1,7 +1,6 @@
     <template>
         <NavbarDashboard />
         <section class="bg-[#f7f7f7] min-h-screen pt-8 md:pt-10 fade-in-up font-sans">
-
             <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <img src="/registrasi/hijau.png" alt=""
                     class="absolute top-0 left-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
@@ -9,7 +8,6 @@
                     class="absolute bottom-0 right-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
             </div>
             <div class="relative text-center mb-8 sm:mb-12 md:mb-16 px-4">
-
                 <h1
                     class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] leading-none text-gray-200 font-extrabold absolute inset-0 top-0 z-0 select-none">
                     BERITA
@@ -27,7 +25,6 @@
                 </div>
             </div>
 
-            <!-- Loading State -->
             <div v-if="isLoading" class="bg-white shadow-xl rounded-xl p-8 max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto">
                 <div class="text-center">
                     <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
@@ -35,7 +32,6 @@
                 </div>
             </div>
 
-            <!-- Error State -->
             <div v-else-if="error" class="bg-white shadow-xl rounded-xl p-8 max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto">
                 <div class="text-center">
                     <div class="text-red-500 mb-4">
@@ -52,7 +48,7 @@
                 </div>
             </div>
 
-            <!-- Content -->
+            
             <div v-else class="bg-white shadow-xl rounded-xl p-4 sm:p-6 md:p-8 max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto fade-in-up"
                 style="animation-delay: 0.5s">
 
@@ -62,7 +58,7 @@
                     <p class="text-xs text-gray-400 mt-1">{{ berita.length }} berita tersedia</p>
                 </div>
 
-                <!-- Empty State -->
+                
                 <div v-if="berita.length === 0" class="text-center py-12">
                     <div class="text-gray-400 mb-4">
                         <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +69,7 @@
                     <p class="text-gray-500">Berita akan ditampilkan di sini setelah admin menambahkannya.</p>
                 </div>
 
-                <!-- Berita Grid -->
+                
                 <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     <div v-for="(item, index) in berita" :key="item.id"
                         class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-xl group fade-in-up"
