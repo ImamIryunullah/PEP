@@ -13,6 +13,12 @@ const API = axios.create({
 API.interceptors.request.use(
   (config) => {
     console.log('Making request to:', config.url);
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
     return config;  
   },
   (error) => {
@@ -20,6 +26,7 @@ API.interceptors.request.use(
     return Promise.reject(error);
   } 
 );
+
 
 API.interceptors.response.use(
   (response) => {
