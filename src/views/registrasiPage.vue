@@ -42,17 +42,17 @@
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.aset" required
+                                        <select v-model="form.aset" @change="onAssetChange" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
                                             <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Aset
                                             </option>
-                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">Head Office PEP
+                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">HO Regional 2
                                             </option>
-                                            <option value="Aset1" class="bg-gray-800 text-white">Aset 1</option>
-                                            <option value="Aset2" class="bg-gray-800 text-white">Aset2</option>
-                                            <option value="Aset3" class="bg-gray-800 text-white">Aset3</option>
-                                            <option value="Aset4" class="bg-gray-800 text-white">Aset4</option>
-                                            <option value="Aset5" class="bg-gray-800 text-white">Aset5</option>
+                                            <option value="Aset1" class="bg-gray-800 text-white">Asset 1</option>
+                                            <option value="Aset2" class="bg-gray-800 text-white">Asset 2</option>
+                                            <option value="Aset3" class="bg-gray-800 text-white">Asset 3</option>
+                                            <option value="Aset4" class="bg-gray-800 text-white">Asset 4</option>
+                                            <option value="Aset5" class="bg-gray-800 text-white">Asset 5</option>
                                         </select>
                                         <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
                                             stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -74,20 +74,19 @@
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-gray-700 font-medium mb-1">Provinsi</label>
+                                    <label class="block text-gray-700 font-medium mb-1">Lokasi</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
                                         <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
-                                        <select v-model="form.provinsi" required
+                                        <select v-model="form.provinsi" required :disabled="!form.aset"
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
-                                            <option disabled value="" class="bg-gray-800 text-white">Pilih Provinsi
+                                            <option disabled value="" class="bg-gray-800 text-white">
+                                                {{ form.aset ? 'Pilih Lokasi' : 'Pilih Aset terlebih dahulu' }}
                                             </option>
-                                            <option value="HeadOfficePEP" class="bg-gray-800 text-white">Jawa Timur
+                                            <option v-for="provinsi in availableProvinces" :key="provinsi.value" 
+                                                :value="provinsi.value" class="bg-gray-800 text-white">
+                                                {{ provinsi.label }}
                                             </option>
-                                            <option value="JawaTimur" class="bg-gray-800 text-white">Jawa Timur</option>
-                                            <option value="JawaBarat" class="bg-gray-800 text-white">Jawa Barat</option>
-                                            <option value="JawaTengah" class="bg-gray-800 text-white">JawaTengah</option>
-                                            <option value="Sumatera" class="bg-gray-800 text-white">Sumatera</option>
                                         </select>
                                         <svg class="w-4 h-4 absolute right-4 pointer-events-none" fill="none"
                                             stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -148,7 +147,49 @@ export default {
             message: '',
             success: false,
             loading: false,
-            fileError: ''
+            fileError: '',
+            assetLocationMapping: {
+                'HeadOfficePEP': [
+                    { value: 'ho_regional_2', label: 'HO Regional 2' }
+                ],
+                'Aset1': [
+                    { value: 'jambi_ho', label: 'Jambi HO' },
+                    { value: 'pangkalan_susu', label: 'Pangkalan Susu' },
+                    { value: 'rantau', label: 'Rantau' },
+                    { value: 'lirik', label: 'Lirik' },
+                    { value: 'jambi_field', label: 'Jambi Field' }
+                ],
+                'Aset2': [
+                    { value: 'prabumulih_ho', label: 'Prabumulih HO' },
+                    { value: 'ramba', label: 'Ramba' },
+                    { value: 'limau', label: 'Limau' },
+                    { value: 'pendopo', label: 'Pendopo' },
+                    { value: 'adera', label: 'Adera' },
+                    { value: 'prabumulih_field', label: 'Prabumulih Field' }
+                ],
+                'Aset3': [
+                    { value: 'cirebon_ho', label: 'Cirebon HO' },
+                    { value: 'tambun', label: 'Tambun' },
+                    { value: 'subang', label: 'Subang' },
+                    { value: 'jatibarang_field', label: 'Jatibarang Field' }
+                ],
+                'Aset4': [
+                    { value: 'surabaya_ho', label: 'Surabaya HO' },
+                    { value: 'cepu', label: 'Cepu' },
+                    { value: 'poleng', label: 'Poleng' },
+                    { value: 'sukowati', label: 'Sukowati' },
+                    { value: 'donggi_matindok', label: 'Donggi Matindok' },
+                    { value: 'papua_field', label: 'Papua Field' }
+                ],
+                'Aset5': [
+                    { value: 'balikpapan_ho', label: 'Balikpapan HO' },
+                    { value: 'tarakan', label: 'Tarakan' },
+                    { value: 'sangata', label: 'Sangata' },
+                    { value: 'sanga_sanga', label: 'Sanga-sanga' },
+                    { value: 'bunyu', label: 'Bunyu' },
+                    { value: 'tanjung_field', label: 'Tanjung Field' }
+                ]
+            }
         }
     },
     computed: {
@@ -157,6 +198,10 @@ export default {
                 'bg-green-100 text-green-800 border border-green-300': this.success,
                 'bg-red-100 text-red-800 border border-red-300': !this.success
             }
+        },
+        availableProvinces() {
+            if (!this.form.aset) return [];
+            return this.assetLocationMapping[this.form.aset] || [];
         }
     },
     methods: {
@@ -217,7 +262,6 @@ export default {
             try {
                 const formData = new FormData();
 
-                // Pastikan semua field sesuai dengan yang diharapkan backend
                 formData.append('email', this.form.email.trim());
                 formData.append('password', this.form.password);
                 formData.append('provinsi', this.form.provinsi);
@@ -227,12 +271,10 @@ export default {
                     formData.append('foto', this.fotoFile);
                 }
 
-                // Debug: lihat isi FormData
                 for (let [key, value] of formData.entries()) {
                     console.log(key, value);
                 }
 
-                // Ganti dari registerPekerja ke registerPeserta
                 const response = await API.registerPeserta(formData);
                 console.log('Registration successful:', response.data);
 

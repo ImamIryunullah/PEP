@@ -18,6 +18,9 @@
       <router-link to="/peserta/list-peserta" class="text-gray-700 hover:text-[#D71E28] font-medium">
         List Team  
       </router-link>  
+      <router-link to="/peserta/rundown" class="text-gray-700 hover:text-[#D71E28] font-medium">
+        Rundown (Wajib Baca)  
+      </router-link>  
     </nav>
 
     <div class="absolute bottom-6 left-6">

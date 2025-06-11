@@ -196,7 +196,6 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="flex-1 min-w-0">
                     <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                       <div class="flex-1 min-w-0">

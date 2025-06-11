@@ -2,13 +2,13 @@
   <div class="min-h-screen bg-[#f5f3ef]">
     <NavbarDashboard />
     <section class="relative w-full h-screen min-h-[400px] overflow-hidden bg-gray-900">
-      
+
       <div class="absolute inset-0 opacity-10 pointer-events-none">
         <div class="absolute top-10 left-10 w-72 h-72 bg-red-500 rounded-full blur-3xl opacity-10"></div>
         <div class="absolute bottom-10 right-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-10"></div>
       </div>
 
-      
+
       <div class="absolute top-12 left-1/2 transform -translate-x-1/2 opacity-20">
         <div class="flex space-x-2">
           <div class="w-12 h-12 border-2 border-blue-400 rounded-full "></div>
@@ -38,11 +38,11 @@
           </p>
         </div>
         <div class="mt-8 animate-fade-in-up delay-600">
-         
+
           <a href="#horizontal-scroll"> <button
-            class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-red-500/30">
-            Lihat Kompetisi
-          </button></a>
+              class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all duration-300 shadow-md hover:shadow-red-500/30">
+              Lihat Kompetisi
+            </button></a>
         </div>
       </div>
       <div class="absolute top-0 left-0 w-full h-1 bg-red-600/50"></div>
@@ -50,7 +50,7 @@
     </section>
     <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-[#f5f3ef] w-full min-h-screen overflow-hidden">
       <img src="../assets/kategori/voli.png" loading="lazy"
-        class="absolute bottom-[20%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block z-0"
+        class="absolute bottom-[10%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block z-0"
         alt="Maskot Voli" />
 
       <img src="../assets/kategori/lari.png" loading="lazy"
@@ -77,32 +77,24 @@
       <div class="block md:hidden absolute inset-0 pointer-events-none">
 
         <img src="../assets/kategori/bulutangkis.png" loading="lazy"
-          class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px]  opacity-60"
-          alt="Maskot Bulutangkis" />
+          class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px]  opacity-60" alt="Maskot Bulutangkis" />
         <img src="../assets/kategori/basket.png" loading="lazy"
-          class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px]  opacity-60"
-          alt="Maskot Basket" />
+          class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px]  opacity-60" alt="Maskot Basket" />
         <img src="../assets/kategori/voli.png" loading="lazy"
-          class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px]  opacity-60"
-          alt="Maskot Voli" />
+          class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px]  opacity-60" alt="Maskot Voli" />
         <img src="../assets/kategori/esport.png" loading="lazy"
-          class="absolute bottom-[18%] right-[2%] w-[100px] sm:w-[130px]  opacity-60"
-          alt="Maskot Esport" />
+          class="absolute bottom-[10%] right-[2%] w-[100px] sm:w-[130px]  opacity-60" alt="Maskot Esport" />
 
         <img src="../assets/kategori/lari.png" loading="lazy"
-          class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px]  opacity-50"
-          alt="Maskot Lari" />
+          class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px]  opacity-50" alt="Maskot Lari" />
         <img src="../assets/kategori/bola.png" loading="lazy"
-          class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px]  opacity-50"
-          alt="Maskot Bola" />
+          class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px]  opacity-50" alt="Maskot Bola" />
         <img src="../assets/kategori/tenislap.png" loading="lazy"
-          class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px]  opacity-50"
-          alt="Maskot Tenis" />
+          class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px]  opacity-50" alt="Maskot Tenis" />
         <img src="../assets/kategori/senam.png" loading="lazy"
-          class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px]  opacity-50"
-          alt="Maskot Senam" />
+          class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px]  opacity-50" alt="Maskot Senam" />
       </div>
-      <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-8">
+      <!-- <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-8">
         <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
                 opacity-0 animate-fade-in-up animation-delay-500">
           <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
@@ -187,7 +179,7 @@
             <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full font-medium">LIVE</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
     <section
       class="relative py-8 sm:py-12 lg:py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
@@ -239,6 +231,77 @@
       </div>
 
       <div class="absolute inset-0 bg-black bg-opacity-20 lg:bg-opacity-0 z-5"></div>
+    </section>
+    <section class="relative py-16 lg:py-24 gradient-bg overflow-hidden">
+      <!-- Decorative Elements -->
+      <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full float"></div>
+      <div class="absolute top-32 right-16 w-32 h-32 bg-white/5 rounded-full float delay-1"></div>
+      <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-white/10 rounded-full float delay-2"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-6xl font-bold text-white mb-4">
+            JADWAL PERTANDINGAN
+          </h2>
+          <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Saksikan kompetisi seru dari 9 cabang olahraga di Mini Olympic Pertamina EP 2025
+          </p>
+          <div class="w-24 h-1 bg-white mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <!-- Sports Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div v-for="(sport, index) in sportsData" :key="sport.id" class="glass-effect rounded-2xl p-6 card-hover"
+            :data-aos="'fade-up'" :data-aos-delay="(index + 1) * 100">
+            <div class="sport-icon">{{ sport.icon }}</div>
+            <h3 class="text-2xl font-bold text-white text-center mb-4">{{ sport.name }}</h3>
+            <div class="space-y-3 text-white/90">
+              <div class="flex justify-between">
+                <span class="font-semibold">Venue:</span>
+                <span class="text-right text-sm">{{ sport.venue }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-semibold">Tanggal:</span>
+                <span class="text-right text-sm">{{ sport.date }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-semibold">Waktu:</span>
+                <span class="text-right text-sm">{{ sport.time }}</span>
+              </div>
+              <div class="bg-white/20 rounded-lg p-2 text-center text-sm">
+                <span class="font-semibold">{{ sport.description }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special Event Highlight -->
+        <div class="glass-effect rounded-3xl p-8 text-center" data-aos="fade-up" data-aos-delay="1000">
+          <div class="mb-6">
+            <div
+              class="inline-flex items-center justify-center w-20 h-20 bg-yellow-400 rounded-full text-4xl mb-4 pulse-scale">
+              🏃‍♂️
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-2">SPECIAL EVENT</h3>
+            <h4 class="text-5xl font-bold text-yellow-300 mb-4">FUN RUN 5K</h4>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+            <div v-for="detail in funRunDetails" :key="detail.id" class="bg-white/20 rounded-xl p-4">
+              <div class="text-2xl font-bold mb-2">{{ detail.icon }}</div>
+              <p class="font-semibold">{{ detail.text }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="1100">
+          <button @click="downloadSchedule"
+            class="bg-white text-gray-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+            Download Lebih Lengkap
+          </button>
+        </div>
+      </div>
     </section>
     <section class="relative w-full min-h-screen overflow-hidden">
       <div class="flex flex-col lg:flex-row min-h-screen w-full">
@@ -368,6 +431,7 @@
         </div>
       </div>
     </section>
+
     <div id="scroll-container" class="h-screen snap-y snap-mandatory">
       <section id="horizontal-scroll" ref="horizontalSection"
         class="relative w-full h-screen snap-start overflow-hidden">
@@ -402,7 +466,8 @@
                   <img src="../assets/bunga/hiasan.png" alt="hiasan" loading="lazy"
                     class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
                 </div>
-                <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
+                <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                  loading="lazy" />
               </div>
               <img src="../assets/kategori/voli.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
@@ -430,7 +495,7 @@
                   <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               <img src="../assets/kategori/bola.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[5%] w-40 sm:w-52 md:w-64 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
@@ -454,7 +519,8 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
@@ -481,10 +547,11 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               <img src="../assets/kategori/lari.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[350px] transition-transform hover:scale-105"
                 alt="Maskot" />
@@ -506,7 +573,8 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
               <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
@@ -533,10 +601,11 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               <img src="../assets/kategori/tenismeja.png" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
@@ -560,10 +629,11 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               <img src="../assets/kategori/senam.png" loading="lazy"
                 class="absolute bottom-[10%] sm:bottom-[10%] md:bottom-[30%] left-[2%] w-56 sm:w-64 md:w-72 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
@@ -586,12 +656,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" loading="lazy">
+                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                    loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy"/>
+              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
               <img src="../assets/kategori/esport.png" loading="lazy"
-                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-42 sm:w-62 md:w-70 lg:w-[300px] transition-transform hover:scale-105"
+                class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-32 sm:w-36 md:w-40 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
           </div>
@@ -805,9 +876,11 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, onMounted, onUnmounted } from 'vue';
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
   name: "MiniOlympicPage",
@@ -816,6 +889,7 @@ export default {
     FooterDashboard,
   },
   setup() {
+    // Horizontal scroll functionality from first script
     const horizontalSection = ref(null);
     const horizontalWrapper = ref(null);
     const currentSlide = ref(0);
@@ -836,6 +910,107 @@ export default {
       { nama: 'Tenis Lapangan', gambar: '../assets/assets/berita/tenislap.jpg', grid: 'col-span-1 row-span-1' },
     ];
 
+    // Schedule data from second script
+    const sportsData = reactive([
+      {
+        id: 1,
+        name: 'TENIS LAPANGAN',
+        icon: '🎾',
+        venue: 'GOR Tenis Jakabaring',
+        date: '30-31 Agustus 2025',
+        time: '07.00 - 18.00',
+        description: 'Penyisihan & Final',
+        duration: 2
+      },
+      {
+        id: 2,
+        name: 'SEPAK BOLA',
+        icon: '⚽',
+        venue: 'Stadion Panahan Jakabaring',
+        date: '30-31 Agustus 2025',
+        time: '07.00 - 10.00',
+        description: 'Penyisihan & Final',
+        duration: 2
+      },
+      {
+        id: 3,
+        name: 'SENAM',
+        icon: '🤸',
+        venue: 'Glora Stadion Jakabaring',
+        date: '30 Agustus 2025',
+        time: '06.30 - 18.00',
+        description: 'Pertandingan',
+        duration: 1
+      },
+      {
+        id: 4,
+        name: 'BADMINTON',
+        icon: '🏸',
+        venue: 'GOR Ranau Jakabaring',
+        date: '29-31 Agustus 2025',
+        time: '07.00 - 18.00',
+        description: 'Persiapan, Penyisihan & Final',
+        duration: 3
+      },
+      {
+        id: 5,
+        name: 'TENIS MEJA',
+        icon: '🏓',
+        venue: 'GOR Dempo Jakabaring',
+        date: '29-31 Agustus 2025',
+        time: '07.00 - 18.00',
+        description: 'Persiapan, Penyisihan & Final',
+        duration: 3
+      },
+      {
+        id: 6,
+        name: 'BASKET',
+        icon: '🏀',
+        venue: 'GOR Ranau Jakabaring',
+        date: '29-31 Agustus 2025',
+        time: '13.00 - 18.00',
+        description: 'Persiapan, Penyisihan & Final',
+        duration: 3
+      },
+      {
+        id: 7,
+        name: 'VOLLY',
+        icon: '🏐',
+        venue: 'GOR Aneka RU3 Plaju',
+        date: '29-31 Agustus 2025',
+        time: '07.00 - 18.00',
+        description: 'Persiapan, Penyisihan & Final',
+        duration: 3
+      },
+      {
+        id: 8,
+        name: 'eSPORT',
+        icon: '🎮',
+        venue: 'Ballroom 2 Wyndam Hotel',
+        date: '29 Agustus 2025',
+        time: '08.00 - 12.00',
+        description: 'Pertandingan',
+        duration: 1
+      },
+      {
+        id: 9,
+        name: 'LARI',
+        icon: '🏃',
+        venue: 'Stadion Atletik Jakabaring',
+        date: '29-31 Agustus 2025',
+        time: '07.00 - 13.00',
+        description: 'Penyisihan & Final',
+        duration: 3
+      }
+    ]);
+
+    const funRunDetails = reactive([
+      { id: 1, icon: '📅', text: '31 Agustus 2025' },
+      { id: 2, icon: '📍', text: 'Stadion Atletik Jakabaring' },
+      { id: 3, icon: '🕐', text: 'Pagi Hari' }
+    ]);
+
+    // Horizontal scroll functions
     const isInHorizontalSection = () => {
       const section = horizontalSection.value;
       if (!section) return false;
@@ -904,12 +1079,10 @@ export default {
             wheelAccumulator.value = 0;
           }, 100);
         } else {
-
           wheelAccumulator.value = 0;
 
           debounceTimeout.value = setTimeout(() => {
             if (direction > 0 && currentSlide.value === slideCount - 1) {
-
               const section = horizontalSection.value;
               if (section) {
                 window.scrollTo({
@@ -918,7 +1091,6 @@ export default {
                 });
               }
             } else if (direction < 0 && currentSlide.value === 0) {
-
               const section = horizontalSection.value;
               if (section) {
                 window.scrollTo({
@@ -932,6 +1104,7 @@ export default {
       }
     };
 
+    // Touch event handlers
     let touchStartX = 0;
     let touchEndX = 0;
     let touchStartY = 0;
@@ -984,6 +1157,7 @@ export default {
       }
     };
 
+    // Auto play functionality
     const autoPlay = ref(false);
     const autoPlayInterval = ref(null);
 
@@ -1005,7 +1179,23 @@ export default {
       }
     };
 
+    const downloadSchedule = () => {
+      const link = document.createElement('a');
+      link.href = '/dokumen/teknikalmeeting.pdf'; 
+      link.download = 'teknikalmeeting.pdf';
+      link.click();
+    };
+
+
     onMounted(() => {
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+
+      // Event listeners for horizontal scroll
       document.addEventListener('wheel', handleWheel, { passive: false });
       document.addEventListener('touchstart', handleTouchStart, { passive: true });
       document.addEventListener('touchend', handleTouchEnd, { passive: true });
@@ -1019,8 +1209,8 @@ export default {
         });
       }
 
+      // Video autoplay handler
       const video = document.querySelector("video");
-
       if (video) {
         const observer = new IntersectionObserver(
           ([entry]) => {
@@ -1037,9 +1227,21 @@ export default {
 
         observer.observe(video);
       }
+
+      // Add interactive hover effects for cards
+      const cards = document.querySelectorAll('.card-hover');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function () {
+          this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', function () {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
     });
 
     onUnmounted(() => {
+      // Cleanup event listeners
       document.removeEventListener('wheel', handleWheel);
       document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchend', handleTouchEnd);
@@ -1053,6 +1255,7 @@ export default {
     });
 
     return {
+      // Horizontal scroll properties
       horizontalSection,
       horizontalWrapper,
       currentSlide,
@@ -1065,7 +1268,12 @@ export default {
       scrollToNext,
       autoPlay,
       startAutoPlay,
-      stopAutoPlay
+      stopAutoPlay,
+
+      // Schedule properties
+      sportsData,
+      funRunDetails,
+      downloadSchedule
     };
   }
 };
@@ -1737,5 +1945,94 @@ button,
   img[class*="absolute"] {
     transform: scale(0.8);
   }
+}
+</style>
+
+<style scoped>
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-scale {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+
+.delay-2 {
+  animation-delay: 2s;
+}
+
+.pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.gradient-bg {
+  background: black;
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sport-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #03236f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 1rem;
 }
 </style>

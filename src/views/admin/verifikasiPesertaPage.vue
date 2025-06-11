@@ -155,7 +155,7 @@
                       <div class="text-sm text-gray-500">{{ peserta.jenis_peserta }}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                      <div class="text-sm text-gray-600">{{ peserta.user.email }}</div>
+                      <div class="text-sm text-gray-600">{{ peserta.email || '-' }}</div>
                       <div class="text-sm text-gray-500">{{ peserta.no_telepon }}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
@@ -231,7 +231,7 @@
                   <div>
 
                     <h3 class="font-semibold text-gray-900">{{ peserta.nama_lengkap }}</h3>
-                    <p class="text-sm text-gray-600">{{ peserta.user.email || peserta.no_telepon }}</p>
+                    <p class="text-sm text-gray-600">{{ peserta.email || peserta.no_telepon }}</p>
                     <p class="text-xs text-gray-500">{{ peserta.cabang_olahraga }} - {{ peserta.jenis_peserta }}</p>
                   </div>
                 </div>
@@ -302,7 +302,7 @@
             </div>
             <div>
               <label class="text-sm font-medium text-gray-600">Email</label>
-              <p class="text-gray-900">{{ selectedPesertaDetail.user.email }}</p>
+              <p class="text-gray-900">{{ selectedPesertaDetail.email || '-' }}</p>
             </div>
             <div>
               <label class="text-sm font-medium text-gray-600">No. Telepon</label>
@@ -472,7 +472,7 @@ export default {
         const term = this.searchTerm.toLowerCase();
         filtered = filtered.filter(peserta =>
           (peserta.nama_lengkap && peserta.nama_lengkap.toLowerCase().includes(term)) ||
-          (peserta.user.email && peserta.user.email.toLowerCase().includes(term)) ||
+          (peserta.email && peserta.email.toLowerCase().includes(term)) ||
           (peserta.no_telepon && peserta.no_telepon.toLowerCase().includes(term))
         );
       }

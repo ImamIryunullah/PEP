@@ -142,10 +142,26 @@
           <router-link to="/contactUs" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             KONTAK
           </router-link>
-          <router-link to="/informasi-tambahan" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
-            <span class="hidden xl:inline">ADDITIONAL</span>
-            <span class="xl:hidden">INFO</span>
-          </router-link>
+          <div class="relative" @mouseenter="showAdditionalDropdown = true" @mouseleave="showAdditionalDropdown = false">
+            <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
+              <span class="hidden xl:inline">ADDITIONAL</span>
+              <span class="xl:hidden">INFO</span>
+              <svg class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300"
+                :class="{ 'rotate-180': showAdditionalDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <transition name="dropdown">
+              <div v-if="showAdditionalDropdown"
+                class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
+                <router-link to="/informasi-tambahan"
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Informasi
+                  Tambahan</router-link>
+                <router-link to="/akomodasi-dan-hotel"
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Hotel & Akomodasi</router-link>
+              </div>
+            </transition>
+          </div>
         </nav>
       </div>
       <transition name="fade">
@@ -214,16 +230,16 @@
             </transition>
           </div>
           <div>
-            <button @click="toggleRegDropdown"
+            <button @click="togglePesDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
               PESERTA
-              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileRegDropdown }"
+              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobilePesDropdown }"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             <transition name="mobile-dropdown">
-              <div v-if="showMobileRegDropdown" class="ml-4 mt-2 space-y-1 bg-red-800 bg-opacity-50 rounded p-2">
+              <div v-if="showMobilePesDropdown" class="ml-4 mt-2 space-y-1 bg-red-800 bg-opacity-50 rounded p-2">
                 <router-link to="/list-peserta"
                   class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
                   @click="closeMenu">Peserta Cabor</router-link>
@@ -264,18 +280,32 @@
             class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200" @click="closeMenu">
             KONTAK
           </router-link>
-
-          <router-link to="/informasi-tambahan"
-            class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200" @click="closeMenu">
-            ADDITIONAL INFO
-          </router-link>
+          <div>
+            <button @click="toggleAdditionalDropdown"
+              class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
+              ADDITIONAL INFO
+              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileAdditionalDropdown }"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <transition name="mobile-dropdown">
+              <div v-if="showMobileAdditionalDropdown" class="ml-4 mt-2 space-y-1 bg-red-800 bg-opacity-50 rounded p-2">
+                <router-link to="/informasi-tambahan"
+                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
+                  @click="closeMenu">Informasi Tambahan</router-link>
+                <router-link to="/akomodasi-dan-hotel"
+                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
+                  @click="closeMenu">Hotel & Akomodasi</router-link>
+              </div>
+            </transition>
+          </div>
         </div>
       </transition>
     </div>
   </header>
 </template>
 <script>
-
 
 export default {
   data() {
@@ -286,11 +316,13 @@ export default {
       showRegDropdown: false,
       showPesDropDown: false,
       showAboutsDropdown: false,
+      showAdditionalDropdown: false,
 
       showMobileJadwalDropdown: false,
       showMobileRegDropdown: false,
       showMobilePesDropdown: false,
       showMobileAboutsDropdown: false,
+      showMobileAdditionalDropdown: false,
       currentDate: '',
       currentTime: ''
     };
@@ -321,16 +353,22 @@ export default {
     },
     toggleRegDropdown() {
       this.showMobileRegDropdown = !this.showMobileRegDropdown;
+    },
+    togglePesDropdown() {
       this.showMobilePesDropdown = !this.showMobilePesDropdown;
     },
     toggleAboutsDropdown() {
       this.showMobileAboutsDropdown = !this.showMobileAboutsDropdown;
+    },
+    toggleAdditionalDropdown() {
+      this.showMobileAdditionalDropdown = !this.showMobileAdditionalDropdown;
     },
     closeAllMobileDropdowns() {
       this.showMobileJadwalDropdown = false;
       this.showMobileRegDropdown = false;
       this.showMobileAboutsDropdown = false;
       this.showMobilePesDropdown = false;
+      this.showMobileAdditionalDropdown = false;
     },
     handleClickOutside(event) {
       if (!event.target.closest('header') && this.isOpen) {
@@ -339,7 +377,7 @@ export default {
     },
     updateDateTime() {
       const now = new Date();
-      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };  
       this.currentDate = now.toLocaleDateString('id-ID', options);
       this.currentTime = now.toLocaleTimeString('id-ID', { hour12: false });
     }

@@ -45,14 +45,12 @@
                         </button>
                     </div>
 
-                    
                     <div v-else>
                         <div class="mb-8">
                             <h1 class="text-3xl font-bold text-gray-800 mb-2">Selamat Datang, {{ userData.namaLengkap || 'Pengguna' }}</h1>
                             <p class="text-gray-600">Dashboard Peserta - Kelola informasi dan aktivitas Anda</p>
                         </div>
 
-                        
                         <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
                             <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
                                 <div class="flex-shrink-0">
@@ -83,11 +81,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        
+                    
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                            
-                            
+                        
                             <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-[#D71E28] bg-opacity-10 rounded-lg flex items-center justify-center mr-4">
@@ -101,7 +97,6 @@
                                 <p class="text-2xl font-bold text-[#D71E28]">{{ userData.cabangOlahraga || '-' }}</p>
                             </div>
 
-                            
                             <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
@@ -120,7 +115,6 @@
                                 </p>
                             </div>
 
-                            
                             <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
@@ -135,10 +129,8 @@
                             </div>
 
                         </div>
-
-                        
+                       
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                            
                             
                             <div class="bg-white rounded-xl shadow-lg p-6">
                                 <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
@@ -165,7 +157,6 @@
                                 </div>
                             </div>
 
-                            
                             <div class="bg-white rounded-xl shadow-lg p-6">
                                 <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                                     <i class="fas fa-chart-line text-[#D71E28] mr-2"></i>
@@ -190,11 +181,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-                        
-                        <div class="bg-white rounded-xl shadow-lg p-6">
+       
+                        <!-- <div class="bg-white rounded-xl shadow-lg p-6">
                             <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
                                 <i class="fas fa-bolt text-[#D71E28] mr-2"></i>
                                 Aksi Cepat
@@ -220,7 +209,7 @@
                                     </div>
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             </main>

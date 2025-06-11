@@ -34,6 +34,8 @@ const listTeam = () => import( '@/views/peserta/listTeam')
 const funRunPage = () => import( '@/views/admin/funRunPage')
 const funrunListPage = () => import( '@/views/funrunListPage')
 const adminCabor = () => import( '@/views/admin/adminCabor')
+const akomodasiHotelPage = () => import( '@/views/akomodasiHotelPage')
+const infoJadwalUser = () =>  import( '@/views/peserta/infoJadwalUser')
 
   
 
@@ -71,6 +73,9 @@ const routes = [
   { path: "/admin/funrun", name: "FunRun", component:funRunPage},
   { path: "/peserta-fun-run", name: "PesertaFunRun", component:funrunListPage},
   { path: "/admin/kelola-cabang-olahraga", name: "adminCabor", component:adminCabor},
+  { path: "/akomodasi-dan-hotel", name: "akomodasiHotel", component:akomodasiHotelPage},
+  { path: "/peserta/rundown", name: "pesertaRundown", component:infoJadwalUser},
+
 ]
 
 const router = createRouter({

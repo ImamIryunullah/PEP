@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 text-left transform hover:scale-[1.01] transition-all duration-500">
   
           
-          <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 animate-fade-in">
+          <!-- <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 animate-fade-in">
             <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-2 rounded-full border-2 sm:border-4 border-[#D71E28] flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
               <img src="/logo-mini-olympic-2025.png" alt="Logo"
                 class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain rounded-full" />
@@ -21,7 +21,7 @@
             <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#D71E28] text-center sm:text-left bg-gradient-to-r from-[#D71E28] to-[#ff4757] bg-clip-text text-transparent">
               About Us
             </h2>
-          </div>
+          </div> -->
           <div class="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8">
             <button 
               v-for="(tab, index) in tabs" 

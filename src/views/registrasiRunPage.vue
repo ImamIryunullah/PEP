@@ -2,7 +2,7 @@
   <NavbarDashboard />
   <section class="min-h-screen bg-[#F7F7F7] flex flex-col items-center py-8 sm:py-12 px-4 relative">
     
-    <!-- Background decorations -->
+    
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
       <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full h-full object-cover opacity-5" />
       <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full h-full object-cover opacity-5" />
@@ -13,19 +13,49 @@
       </div>
     </div>
 
-    <!-- T-shirt image -->
-    <img src="/registrasi/baju.png" alt="Baju Funrun"   
-         class="w-48 sm:w-60 md:w-72 lg:w-80 xl:w-96 mb-6 sm:mb-8 md:mb-12 z-10" />
     
-    <!-- Loading overlay -->
+    <div class="w-full max-w-5xl bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg z-10 mb-6">
+      <div class="text-center mb-6">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 mb-2">5K FUN RUN</h1>
+        <p class="text-sm sm:text-base md:text-lg text-gray-700 font-medium">
+          PRE REGISTER EVENT PENDAFTARAN MELALUI WEBSITE – PESERTA MINOL ONLY
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        
+        <div class="flex flex-col items-center">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Jersey Funrun</h3>
+          <img src="/registrasi/baju.png" alt="Baju Funrun"   
+               class="w-48 sm:w-60 md:w-72 rounded-lg shadow-md" />
+        </div>
+
+        
+        <div class="flex flex-col items-center">
+          <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Rute Lari</h3>
+          <img src="../assets/informasicabor/funrunvenue.png" alt="Map Rute Lari"   
+               class="w-full max-w-md rounded-lg shadow-md border border-gray-200" />
+          <div class="mt-4 text-center">
+            <div class="bg-red-50 p-3 sm:p-4 rounded-lg border border-red-200">
+              <p class="text-sm sm:text-base text-red-800 font-medium">
+                <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>
+                <strong>START:</strong> Stadion Gelora Sriwijaya Jakabaring
+              </p>
+              <p class="text-sm sm:text-base text-red-800 font-medium mt-2">
+                <i class="fas fa-flag-checkered text-red-600 mr-2"></i>
+                <strong>FINISH:</strong> Stadion Gelora Sriwijaya Jakabaring
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div v-if="isLoading" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div class="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4">
         <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
         <span class="text-gray-800 font-medium">{{ loadingMessage }}</span>
       </div>
-    </div>
-
-    <!-- Success/Error Messages -->
+    </div> 
     <div v-if="successMessage" class="w-full max-w-5xl mb-4">
       <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative">
         <strong class="font-bold">Berhasil!</strong>
@@ -47,8 +77,7 @@
         </button>
       </div>
     </div>
-    
-    <!-- Main form -->
+
     <div class="w-full max-w-5xl bg-white p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl shadow-lg z-10">
       <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center text-gray-800 mb-6 sm:mb-8">
         Form Registrasi Peserta Funrun
@@ -59,20 +88,20 @@
           <div v-for="(peserta, index) in pesertaList" :key="peserta.id"
                class="relative border border-gray-200 rounded-xl p-4 sm:p-5 md:p-6 bg-gray-50 shadow-sm space-y-3 sm:space-y-4">
 
-            <!-- Delete button -->
+            
             <button v-if="pesertaList.length > 1" @click.prevent="hapusPeserta(index)"
                     class="absolute top-2 sm:top-3 right-2 sm:right-3 text-red-500 hover:text-red-700 text-base sm:text-lg transform transition-transform duration-200 hover:scale-125 p-1">
               <i class="fas fa-trash"></i>
             </button>
 
-            <!-- Participant header -->
+            
             <div class="mb-3 sm:mb-4">
               <h3 class="text-base sm:text-lg font-semibold text-gray-700 border-b border-gray-300 pb-2">
                 Peserta {{ index + 1 }}
               </h3>
             </div>
 
-            <!-- Form fields -->
+            
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
               
               <div class="lg:col-span-1">
@@ -148,7 +177,7 @@
           </div>
         </transition-group>
 
-        <!-- Add participant button -->
+        
         <div class="flex justify-center pt-4 sm:pt-6">
           <button type="button" @click="tambahPeserta" :disabled="isLoading"
                   class="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 text-sm sm:text-base rounded-full shadow-md transition transform hover:scale-105 duration-300 flex items-center gap-2">
@@ -157,7 +186,7 @@
           </button>
         </div>
 
-        <!-- Submit button -->
+        
         <div class="flex justify-center pt-4 sm:pt-6">
           <button type="submit" :disabled="isLoading"
                   class="bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white font-bold py-3 sm:py-4 px-8 sm:px-12 text-sm sm:text-base rounded-full shadow-lg transition duration-300 transform hover:scale-105 w-full sm:w-auto max-w-xs flex items-center justify-center gap-2">
@@ -167,7 +196,7 @@
         </div>
       </form>
 
-      <!-- Participant summary -->
+      
       <div class="mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
         <div class="text-center">
           <p class="text-sm sm:text-base text-blue-800 font-medium">
@@ -184,7 +213,6 @@
   </section>
   <FooterDashboard />
 </template>
-
 <script>
 import NavbarDashboard from '@/components/NavbarDashboard.vue'
 import FooterDashboard from '@/components/FooterDashboard.vue'
