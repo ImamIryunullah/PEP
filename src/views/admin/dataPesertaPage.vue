@@ -20,7 +20,7 @@
       </header>
 
       <main class="flex-1 p-4 lg:p-8">
-        <!-- Loading State -->
+        
         <div v-if="isLoading" class="flex justify-center items-center py-8">
           <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-[#D71E28]"></div>
           <span class="ml-2 text-gray-600">Memuat data...</span>
@@ -55,7 +55,7 @@
             </button>
           </div>
 
-          <!-- Search and Filter -->
+          
           <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
             <div class="flex flex-col lg:flex-row gap-4">
               <div class="flex-1">
@@ -91,7 +91,7 @@
             </div>
           </div>
 
-          <!-- Statistics Cards -->
+          
           <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <div class="bg-white p-4 rounded-xl shadow-sm">
               <div class="flex items-center">
@@ -150,7 +150,7 @@
             </div>
           </div>
 
-          <!-- Desktop Table -->
+          
           <div class="hidden lg:block bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="overflow-x-auto">
               <table class="min-w-full divide-y divide-gray-200">
@@ -181,7 +181,7 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                       <div class="flex items-center">
                         <div class="flex-shrink-0 h-12 w-12">
-                          <img v-if="peserta.pas_foto" :src="getImageUrl(peserta.pas_foto)" :alt="peserta.nama_lengkap"
+                          <img v-if="peserta.pas_foto" :src="getFullpath(peserta.pas_foto)" :alt="peserta.nama_lengkap"
                             class="h-12 w-12 rounded-full object-cover border-2 border-gray-200">
                           <div v-else class="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center">
                             <i class="fas fa-user text-gray-500"></i>
@@ -224,13 +224,13 @@
             </div>
           </div>
 
-          <!-- Mobile Cards -->
+          
           <div class="lg:hidden space-y-4">
             <div v-for="peserta in paginatedPeserta" :key="peserta.id" class="bg-white rounded-xl shadow-sm p-4">
               <div class="flex items-start justify-between">
                 <div class="flex items-center flex-1">
                   <div class="flex-shrink-0">
-                    <img v-if="peserta.pas_foto" :src="getImageUrl(peserta.pas_foto)" :alt="peserta.nama_lengkap"
+                    <img v-if="peserta.pas_foto" :src="getFullpath(peserta.pas_foto)" :alt="peserta.nama_lengkap"
                       class="h-12 w-12 rounded-full object-cover border-2 border-gray-200">
                     <div v-else class="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center">
                       <i class="fas fa-user text-gray-500"></i>
@@ -272,7 +272,7 @@
             </div>
           </div>
 
-          <!-- Pagination -->
+          
           <div v-if="totalPages > 1" class="mt-6 flex justify-center">
             <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
               <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
@@ -299,7 +299,7 @@
       </main>
     </div>
 
-    <!-- Detail Modal -->
+    
     <div v-if="selectedPeserta"
       class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center p-4">
       <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-screen overflow-y-auto">
@@ -310,7 +310,7 @@
           </button>
         </div>
         <div class="px-6 py-4">
-          <!-- Detail content here -->
+          
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h4 class="font-semibold text-gray-800 mb-3">Informasi Peserta</h4>
@@ -362,6 +362,7 @@
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
+import api from "@/service/api.js";
 import API from "@/service/api.js"; 
 
 export default {
@@ -492,9 +493,8 @@ export default {
       console.log('Downloading documents for:', peserta.nama_lengkap);
       this.showSuccessMessage('Download dimulai!');
     },
-    getImageUrl(filename) {
-      // Adjust this URL based on your backend setup
-      return `${process.env.VUE_APP_API_BASE_URL}/uploads/${filename}`;
+    getFullpath(img) {
+      return api.getFullpath(img);
     },
     getStatusClass(status) {
       const classes = {

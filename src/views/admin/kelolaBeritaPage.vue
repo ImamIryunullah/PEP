@@ -178,7 +178,7 @@
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Tidak ada hasil</h3>
             <p class="text-gray-600">Coba kata kunci lain untuk pencarian</p>
-          </div>  
+          </div>
 
           <div v-else class="space-y-4">
             <transition-group name="list" tag="div">
@@ -189,7 +189,7 @@
                   <div class="flex-shrink-0">
                     <div class="w-full lg:w-32 h-32 lg:h-24 bg-gray-200 rounded-xl overflow-hidden">
                       <img v-if="berita.foto" :src="getFullpath(berita.foto)" :alt="berita.judul"
-                        class="w-full h-full object-cover" /> 
+                        class="w-full h-full object-cover" />
 
                       <div v-else class="w-full h-full flex items-center justify-center">
                         <i class="fas fa-image text-gray-400 text-2xl"></i>
@@ -222,8 +222,6 @@
                           {{ berita.isi }}
                         </p>
                       </div>
-
-
                       <div class="flex gap-2 flex-shrink-0">
                         <button @click="editBerita(getOriginalIndex(berita, index))"
                           class="flex items-center gap-2 px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 font-medium"
@@ -247,8 +245,6 @@
         </div>
       </main>
     </div>
-
-
     <div v-if="showDeleteModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
         <div class="text-center">
@@ -274,7 +270,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import Sidebar from "@/components/Sidebar.vue";
@@ -356,9 +351,9 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
-getFullpath(img){
-  return api.getFullpath(img);
-},
+    getFullpath(img) {
+      return api.getFullpath(img);
+    },
     setTodayDate() {
       const today = new Date();
       const year = today.getFullYear();
@@ -472,7 +467,7 @@ getFullpath(img){
         console.log('Fetch response ok:', response.ok);
 
         const data = await response.json();
-        console.log('Fetch response data:', data);  
+        console.log('Fetch response data:', data);
 
       } catch (error) {
         console.error('Fetch error:', error);

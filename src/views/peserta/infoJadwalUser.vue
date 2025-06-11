@@ -4,7 +4,6 @@
         
         <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
             class="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"></div>
-      
         <div :class="[
             'flex-1 flex flex-col transition-margin duration-300 ease-in-out min-h-screen',
             isSidebarOpen ? 'md:ml-64' : 'md:ml-16'
@@ -28,9 +27,7 @@
                                     <div class="w-16 sm:w-20 md:w-24 h-1 bg-[#D71E28] rounded"></div>
                                 </div>
                             </div>
-                        </div>
-
-                        
+                        </div>                        
                         <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 mb-4 sm:mb-6">
                             <div class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-2">
                                 <button 
@@ -50,10 +47,7 @@
                                 </button>
                             </div>
                         </div>
-
-                        
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            
                             <div v-if="selectedDay === 1" class="p-3 sm:p-4 md:p-6">
                                 <div class="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
                                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#D71E28] rounded-full flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 mx-auto sm:mx-0">
@@ -64,8 +58,6 @@
                                         <p class="text-sm sm:text-base text-gray-600">29 Agustus 2025</p>
                                     </div>
                                 </div>
-
-                                
                                 <div class="block sm:hidden space-y-3">
                                     <div v-for="(event, index) in day1Events" :key="index" 
                                          class="bg-gray-50 rounded-lg p-4 border border-gray-200">
@@ -81,9 +73,7 @@
                                         <div class="text-sm font-medium text-gray-900 mb-1">{{ event.activity }}</div>
                                         <div class="text-xs text-gray-700">{{ event.remarks }}</div>
                                     </div>
-                                </div>
-
-                                
+                                </div> 
                                 <div class="hidden sm:block overflow-x-auto">
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
@@ -117,9 +107,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-
-                            
+                            </div>                         
                             <div v-if="selectedDay === 2" class="p-3 sm:p-4 md:p-6">
                                 <div class="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
                                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#D71E28] rounded-full flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 mx-auto sm:mx-0">
@@ -143,8 +131,6 @@
                                         </div>
                                         <p class="text-sm sm:text-base text-green-700 text-center sm:text-left">Jakabaring Sport Center & Sarapan Pagi</p>
                                     </div>
-
-                                    
                                     <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200">
                                         <div class="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4">
                                             <i class="fas fa-medal text-blue-600 text-xl sm:text-2xl mb-2 sm:mb-0 sm:mr-3 text-center"></i>
@@ -173,9 +159,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            
+                            </div> 
                             <div v-if="selectedDay === 3" class="p-3 sm:p-4 md:p-6">
                                 <div class="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
                                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#D71E28] rounded-full flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 mx-auto sm:mx-0">
@@ -185,9 +169,7 @@
                                         <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">DAY 3 - Final & Closing Ceremony</h2>
                                         <p class="text-sm sm:text-base text-gray-600">31 Agustus 2025</p>
                                     </div>
-                                </div>
-
-                                
+                                </div>       
                                 <div class="block sm:hidden space-y-3">
                                     <div v-for="(event, index) in day3Events" :key="index" 
                                          class="bg-gray-50 rounded-lg p-4 border border-gray-200">
@@ -204,8 +186,6 @@
                                         <div class="text-xs text-gray-700">{{ event.remarks }}</div>
                                     </div>
                                 </div>
-
-                                
                                 <div class="hidden sm:block overflow-x-auto">
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
@@ -239,8 +219,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-                                
                                 <div class="mt-4 sm:mt-6 bg-gradient-to-r from-red-50 to-pink-50 p-4 sm:p-6 rounded-lg border border-red-200">
                                     <div class="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4">
                                         <i class="fas fa-fire text-red-600 text-xl sm:text-2xl mb-2 sm:mb-0 sm:mr-3 text-center"></i>
@@ -250,8 +228,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        
                         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 sm:p-6 mt-4 sm:mt-6">
                             <div class="flex flex-col sm:flex-row sm:items-start">
                                 <i class="fas fa-exclamation-triangle text-yellow-600 text-lg sm:text-xl mb-2 sm:mb-0 sm:mr-3 sm:mt-1 text-center"></i>
