@@ -20,7 +20,7 @@
       </div>
       <div class="absolute inset-0 flex flex-col items-center justify-center text-center z-10 p-4">
         <div class="mb-6 animate-fade-in-up">
-          <img src="../assets/logo-mini-olympic-2025.png" alt="Mini Olympic 2025"
+          <img v-lazy="getfullpathasset('logo-mini-olympic-2025.png')" alt="Mini Olympic 2025"
             class="w-40 md:w-48 lg:w-56 xl:w-64 h-auto mx-auto drop-shadow-md">
         </div>
         <div class="space-y-2 animate-fade-in-up delay-200">
@@ -49,137 +49,51 @@
       <div class="absolute bottom-0 left-0 w-full h-1 bg-red-600/50"></div>
     </section>
     <section class="relative py-8 sm:py-12 lg:py-16 px-4 bg-[#f5f3ef] w-full min-h-screen overflow-hidden">
-      <img src="../assets/kategori/voli.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/voli.png')" loading="lazy"
         class="absolute bottom-[10%] left-[2%] w-[350px] lg:w-[450px] xl:w-[550px] hidden md:block z-0"
         alt="Maskot Voli" />
 
-      <img src="../assets/kategori/lari.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/lari.png')" loading="lazy"
         class="absolute top-[47%] left-[25%] lg:left-[30%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block  z-0"
         alt="Maskot Lari" />
-      <img src="../assets/kategori/basket.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/basket.png')" loading="lazy"
         class="absolute top-[43%] left-[12%] lg:left-[15%] w-[180px] lg:w-[220px] xl:w-[260px] hidden md:block  z-0"
         alt="Maskot Basket" />
-      <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/bulutangkis.png')" loading="lazy"
         class="absolute top-[48%] left-0 w-[250px] lg:w-[300px] xl:w-[350px] hidden md:block  z-0"
         alt="Maskot Bulutangkis" />
-      <img src="../assets/kategori/esport.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/esport.png')" loading="lazy"
         class="absolute bottom-[25%] right-[2%] w-[280px] lg:w-[350px] xl:w-[400px] hidden md:block  z-0"
         alt="Maskot Esport" />
-      <img src="../assets/kategori/bola.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/bola.png')" loading="lazy"
         class="absolute top-[47%] right-[12%] lg:right-[14%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Bola" />
-      <img src="../assets/kategori/tenislap.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/tenislap.png')" loading="lazy"
         class="absolute top-[47%] right-[22%] lg:right-[25%] w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Tenis" />
-      <img src="../assets/kategori/senam.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/kategori/senam.png')" loading="lazy"
         class="absolute top-[47%] right-0 w-[180px] lg:w-[220px] xl:w-[250px] hidden md:block  z-0"
         alt="Maskot Senam" />
       <div class="block md:hidden absolute inset-0 pointer-events-none">
 
-        <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/bulutangkis.png')" loading="lazy"
           class="absolute top-[15%] left-[5%] w-[80px] sm:w-[100px]  opacity-60" alt="Maskot Bulutangkis" />
-        <img src="../assets/kategori/basket.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/basket.png')" loading="lazy"
           class="absolute top-[12%] right-[5%] w-[70px] sm:w-[90px]  opacity-60" alt="Maskot Basket" />
-        <img src="../assets/kategori/voli.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/voli.png')" loading="lazy"
           class="absolute bottom-[15%] left-[2%] w-[120px] sm:w-[150px]  opacity-60" alt="Maskot Voli" />
-        <img src="../assets/kategori/esport.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/esport.png')" loading="lazy"
           class="absolute bottom-[10%] right-[2%] w-[100px] sm:w-[130px]  opacity-60" alt="Maskot Esport" />
 
-        <img src="../assets/kategori/lari.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/lari.png')" loading="lazy"
           class="absolute top-[25%] left-[15%] w-[60px] sm:w-[80px]  opacity-50" alt="Maskot Lari" />
-        <img src="../assets/kategori/bola.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/bola.png')" loading="lazy"
           class="absolute top-[30%] right-[15%] w-[60px] sm:w-[80px]  opacity-50" alt="Maskot Bola" />
-        <img src="../assets/kategori/tenislap.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/tenislap.png')" loading="lazy"
           class="absolute bottom-[35%] left-[25%] w-[55px] sm:w-[75px]  opacity-50" alt="Maskot Tenis" />
-        <img src="../assets/kategori/senam.png" loading="lazy"
+        <img v-lazy="getfullpathasset('/kategori/senam.png')" loading="lazy"
           class="absolute bottom-[40%] right-[25%] w-[55px] sm:w-[75px]  opacity-50" alt="Maskot Senam" />
       </div>
-      <!-- <div class="relative z-10 flex flex-col items-center justify-center min-h-screen py-8">
-        <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
-                opacity-0 animate-fade-in-up animation-delay-500">
-          <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
-            <span class="font-medium">Final</span>
-            <span>18 Des 2024</span>
-          </div>
-          <div class="text-xs sm:text-sm text-gray-600 mb-3">Lusail Stadium</div>
-          <div class="space-y-2 sm:space-y-3">
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 1</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
-                <div class="text-xs text-gray-700">(4)</div>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 2</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
-                <div class="text-xs text-gray-700">(2)</div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 sm:mt-4">
-            <span class="inline-block px-3 py-1 bg-purple-900 text-white text-xs rounded-full font-medium">FT</span>
-          </div>
-        </div>
-        <div class="max-w-sm sm:max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 
-                opacity-0 animate-fade-in-up animation-delay-[700ms]">
-          <div class="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
-            <span class="font-medium">Play-Off Peringkat 3</span>
-            <span>Stadion Panahan</span>
-          </div>
-          <div class="space-y-2 sm:space-y-3 mt-3">
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 3</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
-                <div class="text-xs text-gray-700">(4)</div>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm sm:text-base">TIM 4</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg sm:text-xl font-bold text-gray-900">3</span>
-                <div class="text-xs text-gray-700">(2)</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-3 sm:mt-4">
-            <span class="inline-block px-3 py-1 bg-purple-900 text-white text-xs rounded-full font-medium">FT</span>
-          </div>
-        </div>
-
-        <div class="block sm:hidden max-w-sm w-full mx-auto bg-white rounded-xl shadow-lg p-4 mb-6 
-                opacity-0 animate-fade-in-up animation-delay-[900ms]">
-          <div class="flex justify-between text-xs text-gray-600 mb-2">
-            <span class="font-medium">Semi Final</span>
-            <span>19 Des 2024</span>
-          </div>
-          <div class="text-xs text-gray-600 mb-3">Arena Olahraga</div>
-
-          <div class="space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm">TIM A</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg font-bold text-gray-900">2</span>
-                <div class="text-xs text-gray-700">(3)</div>
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <span class="font-semibold text-gray-900 text-sm">TIM B</span>
-              <div class="text-center leading-tight">
-                <span class="text-lg font-bold text-gray-900">1</span>
-                <div class="text-xs text-gray-700">(1)</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-3">
-            <span class="inline-block px-3 py-1 bg-green-600 text-white text-xs rounded-full font-medium">LIVE</span>
-          </div>
-        </div>
-      </div> -->
     </section>
     <section
       class="relative py-8 sm:py-12 lg:py-16 px-4 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-hidden"
@@ -191,7 +105,7 @@
       </svg>
 
 
-      <img src="../assets/assets/obor.png" loading="lazy"
+      <img v-lazy="getfullpathasset('/assets/obor.png')" loading="lazy"
         class="absolute bottom-[5%] sm:bottom-[8%] lg:bottom-[10%] left-[0%] w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] hidden md:block float animate-float delay-1 z-0"
         alt="Maskot Kiri" />
 
@@ -309,7 +223,7 @@
 
         <div class="w-full lg:w-1/2 h-auto relative overflow-hidden bg-[#C1CF35] min-h-[60vh] lg:min-h-screen">
 
-          <img src="/bunga/svg.png" alt="Background Pattern"
+          <img v-lazy="'/bunga/svg.png'" alt="Background Pattern"
             class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" />
 
 
@@ -395,31 +309,33 @@
         </div>
         <div
           class="w-full lg:w-1/2 bg-[#f5f3ef] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 relative overflow-hidden min-h-[40vh] lg:min-h-screen">
-          <img src="/bunga/timeline.png" alt="Background Decoration" class="absolute top-[15%] sm:top-[20%] left-[50%] sm:left-[60%] transform -translate-x-1/2 -translate-y-1/2 
+          <img v-lazy="'/bunga/timeline.png'" alt="Background Decoration" class="absolute top-[15%] sm:top-[20%] left-[50%] sm:left-[60%] transform -translate-x-1/2 -translate-y-1/2 
                               w-[200px] sm:w-[300px] lg:w-[400px] opacity-40 pointer-events-none animate-float" />
           <div class="w-full max-w-xs sm:max-w-sm lg:max-w-lg mb-6 sm:mb-8 lg:mb-12 animate-slide-right delay-200">
-            <img src="/kategori/jsc.png" alt="Maskot JSC" class="w-[300px] h-auto animate-pulse-scale" />
+            <img v-lazy="'/kategori/jsc.png'" alt="Maskot JSC" class="w-[300px] h-auto animate-pulse-scale" />
           </div>
           <div
             class="w-full overflow-hidden whitespace-nowrap bg-white/50 rounded-2xl py-3 sm:py-4 lg:py-6 animate-slide-right delay-400">
             <div class="inline-block animate-marquee space-x-8 sm:space-x-12 lg:space-x-24 px-4">
-              <img src="../assets/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas"
+              <img v-lazy="getfullpathasset('/addinfo/asean.png')" alt="ASEAN"
                 class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/pertaminaEP.png" alt="Pertamina EP"
+              <img v-lazy="getfullpathasset('/addinfo/skkmigas.png')" alt="SKK Migas"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img v-lazy="getfullpathasset('/addinfo/iog.png')" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img v-lazy="getfullpathasset('/addinfo/pertaminaEP.png')" alt="Pertamina EP"
                 class="inline h-12 sm:h-16 lg:h-20 object-contain" />
-              <img src="../assets/addinfo/pertamedika.png" alt="Pertamedika"
+              <img v-lazy="getfullpathasset('/addinfo/pertamedika.png')" alt="Pertamedika"
                 class="inline h-10 sm:h-12 lg:h-16 object-contain" />
 
 
-              <img src="../assets/addinfo/asean.png" alt="ASEAN" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/skkmigas.png" alt="SKK Migas"
+              <img v-lazy="getfullpathasset('/addinfo/asean.png')" alt="ASEAN"
                 class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/iog.png" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
-              <img src="../assets/addinfo/pertaminaEP.png" alt="Pertamina EP"
+              <img v-lazy="getfullpathasset('/addinfo/skkmigas.png')" alt="SKK Migas"
+                class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img v-lazy="getfullpathasset('/addinfo/iog.png')" alt="IOG" class="inline h-10 sm:h-12 lg:h-16 object-contain" />
+              <img v-lazy="getfullpathasset('/addinfo/pertaminaEP.png')" alt="Pertamina EP"
                 class="inline h-12 sm:h-16 lg:h-20 object-contain" />
-              <img src="../assets/addinfo/pertamedika.png" alt="Pertamedika"
+              <img v-lazy="getfullpathasset('/addinfo/pertamedika.png')" alt="Pertamedika"
                 class="inline h-10 sm:h-12 lg:h-16 object-contain" />
             </div>
           </div>
@@ -463,13 +379,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="../assets/bunga/hiasan.png" alt="hiasan" loading="lazy"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" loading="lazy"
                     class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12" />
                 </div>
-                <img src="../assets/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
                   loading="lazy" />
               </div>
-              <img src="../assets/kategori/voli.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/kategori/voli.png')" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-48 sm:w-64 md:w-80 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -492,11 +408,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan"
+                    class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/bola.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/bola.png')" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[5%] w-40 sm:w-52 md:w-64 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -519,12 +437,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/basket.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/basket.png')" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[320px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -547,12 +466,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="'/bunga/hiasan.png'" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/lari.png" loading="lazy"
+              <img v-lazy="'/listpeserta/awan.png'" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="'/kategori/lari.png'" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-72 md:w-80 lg:w-[350px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -573,12 +493,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/bulutangkis.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/bulutangkis.png')" loading="lazy"
                 class="absolute bottom-[12%] sm:bottom-[15%] md:bottom-[20%] left-[2%] w-44 sm:w-60 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -601,12 +522,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/tenismeja.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/tenismeja.png')" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[18%] md:bottom-[20%] left-[2%] w-52 sm:w-64 md:w-72 lg:w-[400px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -629,12 +551,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/senam.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/senam.png')" loading="lazy"
                 class="absolute bottom-[10%] sm:bottom-[10%] md:bottom-[30%] left-[2%] w-56 sm:w-64 md:w-72 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -656,12 +579,13 @@
                       Registrasi
                     </button>
                   </router-link>
-                  <img src="/bunga/hiasan.png" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
+                  <img v-lazy="getfullpathasset('/bunga/hiasan.png')" alt="hiasan" class="w-24 sm:w-32 md:w-[150px] py-6 sm:py-8 md:py-12"
                     loading="lazy">
                 </div>
               </div>
-              <img src="/listpeserta/awan.png" alt="awan" class="absolute bottom-0 left-0 w-full z-0" loading="lazy" />
-              <img src="../assets/kategori/esport.png" loading="lazy"
+              <img v-lazy="getfullpathasset('/listpeserta/awan.png')" alt="awan" class="absolute bottom-0 left-0 w-full z-0"
+                loading="lazy" />
+              <img v-lazy="getfullpathasset('/kategori/esport.png')" loading="lazy"
                 class="absolute bottom-[15%] sm:bottom-[20%] md:bottom-[20%] left-[2%] w-32 sm:w-36 md:w-40 lg:w-[300px] transition-transform hover:scale-105"
                 alt="Maskot" />
             </div>
@@ -732,7 +656,7 @@
               class="absolute -inset-4 bg-gradient-to-r from-[#E91717] to-red-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500">
             </div>
             <div class="relative overflow-hidden rounded-3xl shadow-2xl">
-              <img src="../assets/opening/obor.png" alt="Obor Ceremony"
+              <img v-lazy="getfullpathasset('/opening/obor.png')" alt="Obor Ceremony"
                 class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
@@ -742,7 +666,7 @@
                     🔥 Obor Ceremony
                   </h3>
                   <p class="text-white/90 text-sm sm:text-base lg:text-lg max-w-2xl">
-                    The grand../assets opening torch ceremony that lights up the spirit of our celebration
+                    The grand opening torch ceremony that lights up the spirit of our celebration
                   </p>
                   <div class="flex items-center mt-4">
                     <div class="w-2 h-2 bg-[#E91717] rounded-full animate-pulse"></div>
@@ -760,7 +684,7 @@
           <div class="group card-hover animate-slide-left">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
               <div class="relative h-64 sm:h-72 overflow-hidden">
-                <img src="../assets/opening/kopraljono.png" alt="Kopral Jono"
+                <img v-lazy="getfullpathasset('/opening/kopraljono.png')" alt="Kopral Jono"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -793,7 +717,7 @@
           <div class="group card-hover animate-slide-up" style="animation-delay: 0.2s;">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
               <div class="relative h-64 sm:h-72 overflow-hidden">
-                <img src="../assets/opening/marchingband.png" alt="Marching Band"
+                <img v-lazy="getfullpathasset('/opening/marchingband.png')" alt="Marching Band"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -826,7 +750,7 @@
           <div class="group card-hover animate-slide-right md:col-span-2 lg:col-span-1" style="animation-delay: 0.4s;">
             <div class="relative overflow-hidden rounded-2xl bg-white shadow-xl">
               <div class="relative h-64 sm:h-72 overflow-hidden">
-                <img src="../assets/opening/tarikolosal.png" alt="Tari Kolosal"
+                <img v-lazy="getfullpathasset('/opening/tarikolosal.png')" alt="Tari Kolosal"
                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 <div
                   class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -881,12 +805,17 @@ import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import api from '@/service/api';
 export default {
   name: "MiniOlympicPage",
   components: {
     NavbarDashboard,
     FooterDashboard,
+  },
+  methods:{
+getfullpathasset(img){
+return api.getFullpathAssets(img)
+},
   },
   setup() {
     // Horizontal scroll functionality from first script
@@ -1181,7 +1110,7 @@ export default {
 
     const downloadSchedule = () => {
       const link = document.createElement('a');
-      link.href = '/dokumen/teknikalmeeting.pdf'; 
+      link.href = '/dokumen/teknikalmeeting.pdf';
       link.download = 'teknikalmeeting.pdf';
       link.click();
     };

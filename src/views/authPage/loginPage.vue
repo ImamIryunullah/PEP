@@ -121,7 +121,8 @@
 <script>
 import NavbarDashboard from '@/components/NavbarDashboard.vue';
 import FooterDashboard from '@/components/FooterDashboard.vue';
-import API from '@/service/api';
+import Swal from 'sweetalert2';
+// import API from '@/service/api';
 
 export default {
   name: 'LoginPage',
@@ -139,6 +140,13 @@ export default {
     }
   },
   computed: {
+    isUserLoggedIn() {
+      return this.$store.state.stores.UserIsLoggedIn;
+    },
+    userRole() {
+      return this.$store.state.stores.userRole;
+    }
+    ,
     messageClass() {
       return {
         'bg-green-100 text-green-800 border border-green-300': this.success,
@@ -148,51 +156,44 @@ export default {
   },
   methods: {
     async submitLogin() {
-  if (this.loading) return;
-  this.message = '';
-  this.success = false;
-  this.loading = true;
+      try {
+        // Dispatch login action to Vuex store
+        this.isLoading = true
+        await this.$store.dispatch("stores/login", { email: this.email, password: this.password });
+        console.log(this.isUserLoggedIn)
 
-  try {
-    const response = await API.login({
-      email: this.email,
-      password: this.password,
-    });
+        // Check if the user is logged in
+        if (this.isUserLoggedIn) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil Login',
+            text: 'Selamat datang kembali!',
+            timer: 1500,
+            showConfirmButton: false,
+          });
+          if (this.userRole === 'user') {
+            const redirectPath = '/peserta/dashboard';
+            setTimeout(() => {
+              this.$router.push(redirectPath);
+            }, 1000);
+          } else if (this.userRole === 'admin') {
+            const redirectPath = '/admin/dashboard';
+            setTimeout(() => {
+              this.$router.push(redirectPath);
+            }, 1000);
+          }
 
-    console.log('Login berhasil:', response.data);
-    this.success = true;
-    this.message = 'Login berhasil! Mengarahkan...';
-
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-    }
-    if (response.data.user) {
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-    }
-
-    const redirectPath = response.data.redirect_to || '/peserta/dashboard';
-    setTimeout(() => {
-      this.$router.push(redirectPath);
-    }, 1000);
-
-  } catch (error) {
-    this.success = false;
-    if (error.response) {
-      if (error.response.status === 401) {
-        this.message = 'Email atau password salah.';
-      } else {
-        this.message = error.response.data.message || 'Terjadi kesalahan saat login.';
+        }
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal Login',
+          text: `${error}`,
+          timer: 1500,
+          showConfirmButton: false,
+        })
       }
-    } else if (error.request) {
-      this.message = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda.';
-    } else {
-      this.message = 'Terjadi kesalahan yang tidak terduga.';
     }
-  } finally {
-    this.loading = false;
-  }
-}
-
   },
   mounted() {
     const card = document.querySelector('.bg-white');

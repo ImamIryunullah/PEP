@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex bg-gray-100 relative font-sans">
+  <div class="min-h-screen flex bg-gray-100 relative">
     <Sidebar :isOpen="isSidebarOpen" />
     <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
       class="fixed inset-0 bg-black bg-opacity-30 z-30 lg:hidden"></div>
@@ -16,16 +16,12 @@
         <h1 class="text-lg font-semibold text-[#D71E28]">Dashboard Admin</h1>
         <div class="w-8"></div>
       </header>
-
-      
       <div v-if="isLoading" class="flex items-center justify-center min-h-screen">
         <div class="text-center">
           <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#D71E28]"></div>
           <p class="mt-2 text-gray-600">Memuat data dashboard...</p>
         </div>
       </div>
-
-      
       <div v-else-if="error" class="flex items-center justify-center min-h-screen">
         <div class="text-center">
           <i class="fas fa-exclamation-triangle text-red-500 text-4xl mb-4"></i>
@@ -35,7 +31,6 @@
           </button>
         </div>
       </div>
-
       <main v-else class="px-4 sm:px-6 py-4 sm:py-8 flex-1">
         <div class="flex justify-between items-center mb-4 sm:mb-6">
           <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 hidden lg:block">Dashboard Admin</h1>
@@ -45,8 +40,6 @@
             {{ isRefreshing ? 'Memperbarui...' : 'Refresh Data' }}
           </button>
         </div>
-
-        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-10">
           <div
             class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6 flex items-center gap-3 sm:gap-4">
@@ -90,25 +83,25 @@
           </div>
         </div>
 
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 sm:mb-10">
-          
+
           <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
             <h2 class="text-base sm:text-lg font-bold text-gray-800 mb-4">Status Verifikasi</h2>
             <div class="relative h-64 flex items-center justify-center">
-              
+
               <div class="relative w-48 h-48">
                 <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  
+
                   <circle cx="50" cy="50" r="40" fill="none" stroke="#f3f4f6" stroke-width="8" />
-                  
+
                   <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="8"
                     :stroke-dasharray="`${verifikasiPercentage * 2.51} 251`" stroke-linecap="round" />
-                  
+
                   <circle cx="50" cy="50" r="40" fill="none" stroke="#f59e0b" stroke-width="8"
                     :stroke-dasharray="`${pendingPercentage * 2.51} 251`"
                     :stroke-dashoffset="`-${verifikasiPercentage * 2.51}`" stroke-linecap="round" />
-                  
+
                   <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="8"
                     :stroke-dasharray="`${ditolakPercentage * 2.51} 251`"
                     :stroke-dashoffset="`-${(verifikasiPercentage + pendingPercentage) * 2.51}`"
@@ -120,7 +113,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="flex flex-col sm:flex-row justify-center gap-4 mt-4">
               <div class="flex items-center gap-2">
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -137,12 +130,12 @@
             </div>
           </div>
 
-          
+
           <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
             <h2 class="text-base sm:text-lg font-bold text-gray-800 mb-4">Trend Registrasi (7 Hari Terakhir)</h2>
             <div class="relative h-64">
               <svg class="w-full h-full" viewBox="0 0 300 200">
-                
+
                 <defs>
                   <pattern id="grid" width="30" height="25" patternUnits="userSpaceOnUse">
                     <path d="M 30 0 L 0 0 0 25" fill="none" stroke="#f3f4f6" stroke-width="1" />
@@ -150,17 +143,16 @@
                 </defs>
                 <rect width="100%" height="100%" fill="url(#grid)" opacity="0.5" />
 
-                
+
                 <polyline :points="chartPoints" fill="none" stroke="#D71E28" stroke-width="3" stroke-linecap="round"
                   stroke-linejoin="round" />
 
-                
+
                 <circle v-for="(point, index) in registrationTrendData" :key="index" :cx="(index * 40) + 30"
-                  :cy="200 - (point.value * 4)" r="4" fill="#D71E28"
-                  class="hover:r-6 transition-all cursor-pointer" />
+                  :cy="200 - (point.value * 4)" r="4" fill="#D71E28" class="hover:r-6 transition-all cursor-pointer" />
               </svg>
 
-              
+
               <div class="flex justify-between mt-2 px-6">
                 <span v-for="day in registrationTrendData" :key="day.day" class="text-xs text-gray-500">
                   {{ day.day }}
@@ -170,7 +162,7 @@
           </div>
         </div>
 
-        
+
         <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-6 sm:mb-10">
           <h2 class="text-base sm:text-lg font-bold text-gray-800 mb-4">Progress Cabang Olahraga</h2>
           <div class="space-y-4">
@@ -186,7 +178,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="bg-white rounded-xl shadow-sm">
           <div class="p-4 sm:p-6 border-b border-gray-200">
             <div class="flex justify-between items-center">
@@ -196,7 +188,7 @@
               </router-link>
             </div>
           </div>
-          
+
           <div class="block sm:hidden">
             <div v-for="peserta in recentParticipants" :key="peserta.id"
               class="border-b border-gray-200 last:border-b-0 p-4">
@@ -221,7 +213,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="hidden sm:block overflow-x-auto">
             <table class="min-w-full table-auto text-sm text-gray-700">
               <thead class="bg-[#D71E28] text-white">
@@ -234,8 +226,7 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
-                <tr v-for="peserta in recentParticipants" :key="peserta.id"
-                  class="hover:bg-gray-50 transition-colors">
+                <tr v-for="peserta in recentParticipants" :key="peserta.id" class="hover:bg-gray-50 transition-colors">
                   <td class="px-4 py-3 font-medium">{{ peserta.nama_lengkap }}</td>
                   <td class="px-4 py-3">{{ peserta.email }}</td>
                   <td class="px-4 py-3">{{ peserta.cabang_olahraga || '-' }}</td>
@@ -252,9 +243,8 @@
         </div>
       </main>
 
-      
-      <div v-if="showToast"
-        class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+
+      <div v-if="showToast" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
         <i class="fas fa-check-circle mr-2"></i>
         {{ toastMessage }}
       </div>
@@ -273,270 +263,269 @@ import Sidebar from '@/components/Sidebar.vue';
 import API from '@/service/api';
 
 export default {
-name: "AdminDashboard",
-components: { Sidebar },
-data() {
-  return {
-    isSidebarOpen: false,
-    isLoading: false,
-    isRefreshing: false,
-    error: null,
-    showToast: false,
-    toastMessage: "",
-    showErrorToast: false,
-    errorMessage: "",
+  name: "AdminDashboard",
+  components: { Sidebar },
+  data() {
+    return {
+      isSidebarOpen: false,
+      isLoading: false,
+      isRefreshing: false,
+      error: null,
+      showToast: false,
+      toastMessage: "",
+      showErrorToast: false,
+      errorMessage: "",
 
-    pesertaList: [],
-    totalPeserta: 0,
+      pesertaList: [],
+      totalPeserta: 0,
 
-    registrationTrendData: [],
+      registrationTrendData: [],
 
-    availableCabangOlahraga: [
-      'Sepak Bola', 'Basket', 'Voli', 'Badminton', 'Tenis Meja', 'Tenis Lapangan',
-      'Futsal', 'Lari', 'Bulutangkis'
-    ]
-  };
-},
-
-async mounted() {
-  await this.fetchDashboardData();
-},
-
-computed: {
-  pesertaTerverifikasi() {
-    return this.pesertaList.filter(p => p.status === "approved").length;
+      availableCabangOlahraga: [
+        'Sepak Bola', 'Basket', 'Voli', 'Badminton', 'Tenis Meja', 'Tenis Lapangan',
+        'Futsal', 'Lari', 'Bulutangkis', 'eSport'
+      ]
+    };
   },
 
-  pesertaBelumVerifikasi() {
-    return this.pesertaList.filter(p => p.status === "pending").length;
+  async mounted() {
+    await this.fetchDashboardData();
   },
 
-  pesertaDitolak() {
-    return this.pesertaList.filter(p => p.status === "rejected").length;
-  },
+  computed: {
+    pesertaTerverifikasi() {
+      return this.pesertaList.filter(p => p.status === "approved").length;
+    },
 
-  verifikasiPercentage() {
-    if (this.totalPeserta === 0) return 0;
-    return (this.pesertaTerverifikasi / this.totalPeserta) * 100;
-  },
+    pesertaBelumVerifikasi() {
+      return this.pesertaList.filter(p => p.status === "pending").length;
+    },
 
-  pendingPercentage() {
-    if (this.totalPeserta === 0) return 0;
-    return (this.pesertaBelumVerifikasi / this.totalPeserta) * 100;
-  },
+    pesertaDitolak() {
+      return this.pesertaList.filter(p => p.status === "rejected").length;
+    },
 
-  ditolakPercentage() {
-    if (this.totalPeserta === 0) return 0;
-    return (this.pesertaDitolak / this.totalPeserta) * 100;
-  },
+    verifikasiPercentage() {
+      if (this.totalPeserta === 0) return 0;
+      return (this.pesertaTerverifikasi / this.totalPeserta) * 100;
+    },
 
-  chartPoints() {
-    return this.registrationTrendData.map((point, index) =>
-      `${(index * 40) + 30},${200 - (point.value * 4)}`
-    ).join(' ');
-  },
+    pendingPercentage() {
+      if (this.totalPeserta === 0) return 0;
+      return (this.pesertaBelumVerifikasi / this.totalPeserta) * 100;
+    },
 
-  cabangOlahragaStats() {
-    const stats = {};
+    ditolakPercentage() {
+      if (this.totalPeserta === 0) return 0;
+      return (this.pesertaDitolak / this.totalPeserta) * 100;
+    },
 
-    this.availableCabangOlahraga.forEach(cabang => {
-      stats[cabang] = { nama: cabang, peserta: 0 };
-    });
+    chartPoints() {
+      return this.registrationTrendData.map((point, index) =>
+        `${(index * 40) + 30},${200 - (point.value * 4)}`
+      ).join(' ');
+    },
 
-    this.pesertaList.forEach(peserta => {
-      const cabang = peserta.cabang_olahraga;
-      if (cabang && stats[cabang]) {
-        stats[cabang].peserta++;
-      }
-    });
+    cabangOlahragaStats() {
+      const stats = {};
 
-    return Object.values(stats).sort((a, b) => b.peserta - a.peserta);
-  },
+      this.availableCabangOlahraga.forEach(cabang => {
+        stats[cabang] = { nama: cabang, peserta: 0 };
+      });
 
-  recentParticipants() {
-    return [...this.pesertaList]
-      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-      .slice(0, 10);
-  }
-},
-
-methods: {
-  async fetchDashboardData() {
-    this.isLoading = true;
-    this.error = null;
-
-    try {
-      console.log('Fetching dashboard data...');
-
-      const response = await API.getParticipants();
-
-      if (response.data) {
-        let participants = [];
-
-        if (response.data.data) {
-          participants = response.data.data;
-        } else if (Array.isArray(response.data)) {
-          participants = response.data;
+      this.pesertaList.forEach(peserta => {
+        const cabang = peserta.cabang_olahraga;
+        if (cabang && stats[cabang]) {
+          stats[cabang].peserta++;
         }
+      });
 
-        this.pesertaList = participants.map(peserta => ({
-          id: peserta.id,
-          nama_lengkap: peserta.nama_lengkap,
-          email: peserta.email,
-          no_telepon: peserta.no_telepon,
-          jenis_peserta: peserta.jenis_peserta,
-          cabang_olahraga: peserta.cabang_olahraga,
-          wilayah_kerja: peserta.wilayah_kerja,
-          status: peserta.status || 'pending',
-          created_at: peserta.created_at,
-          updated_at: peserta.updated_at
-        }));
+      return Object.values(stats).sort((a, b) => b.peserta - a.peserta);
+    },
 
-        this.totalPeserta = this.pesertaList.length;
+    recentParticipants() {
+      return [...this.pesertaList]
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+        .slice(0, 10);
+    }
+  },
 
-        this.generateRegistrationTrend();
+  methods: {
+    async fetchDashboardData() {
+      this.isLoading = true;
+      this.error = null;
 
-        console.log('Dashboard data loaded successfully:', this.pesertaList.length, 'participants');
-      } else {
+      try {
+        console.log('Fetching dashboard data...');
+
+        const response = await API.getParticipantsadmin();
+
+        if (response.data) {
+          let participants = [];
+
+          if (response.data.data) {
+            participants = response.data.data;
+          } else if (Array.isArray(response.data)) {
+            participants = response.data;
+          }
+
+          this.pesertaList = participants.map(peserta => ({
+            id: peserta.id,
+            nama_lengkap: peserta.nama_lengkap,
+            email: peserta.email,
+            no_telepon: peserta.no_telepon,
+            jenis_peserta: peserta.jenis_peserta,
+            cabang_olahraga: peserta.cabang_olahraga,
+            wilayah_kerja: peserta.wilayah_kerja,
+            status: peserta.status || 'pending',
+            created_at: peserta.created_at,
+            updated_at: peserta.updated_at
+          }));
+
+          this.totalPeserta = this.pesertaList.length;
+
+          this.generateRegistrationTrend();
+
+          console.log('Dashboard data loaded successfully:', this.pesertaList.length, 'participants');
+        } else {
+          this.pesertaList = [];
+          this.totalPeserta = 0;
+        }
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+        this.error = 'Gagal memuat data dashboard';
         this.pesertaList = [];
         this.totalPeserta = 0;
+
+        this.showErrorToast = true;
+        this.errorMessage = this.error;
+        setTimeout(() => {
+          this.showErrorToast = false;
+        }, 5000);
+      } finally {
+        this.isLoading = false;
       }
-    } catch (error) {
-      console.error('Error fetching dashboard data:', error);
-      this.error = 'Gagal memuat data dashboard';
-      this.pesertaList = [];
-      this.totalPeserta = 0;
+    },
 
-      this.showErrorToast = true;
-      this.errorMessage = this.error;
+    generateRegistrationTrend() {
+      const today = new Date();
+      const trendData = [];
+
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - i);
+
+        const dayStr = date.toLocaleDateString('id-ID', {
+          day: '2-digit',
+          month: '2-digit'
+        });
+
+        const registrationsCount = this.pesertaList.filter(peserta => {
+          const pesertaDate = new Date(peserta.created_at);
+          return pesertaDate.toDateString() === date.toDateString();
+        }).length;
+
+        trendData.push({
+          day: dayStr,
+          value: Math.max(registrationsCount, 1)
+        });
+      }
+
+      this.registrationTrendData = trendData;
+    },
+
+    async refreshDashboard() {
+      this.isRefreshing = true;
+      await this.fetchDashboardData();
+      this.isRefreshing = false;
+
+      this.showToastNotification("Data dashboard berhasil diperbarui");
+    },
+
+    toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    },
+
+    showToastNotification(message) {
+      this.toastMessage = message;
+      this.showToast = true;
       setTimeout(() => {
-        this.showErrorToast = false;
-      }, 5000);
-    } finally {
-      this.isLoading = false;
+        this.showToast = false;
+      }, 3000);
+    },
+
+    formatDate(date) {
+      if (!date) return '-';
+      return new Intl.DateTimeFormat('id-ID', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(new Date(date));
+    },
+
+    getStatusText(status) {
+      const statusMap = {
+        pending: 'Menunggu',
+        approved: 'Terverifikasi',
+        rejected: 'Ditolak'
+      };
+      return statusMap[status] || status;
+    },
+
+    getStatusClass(status) {
+      const classMap = {
+        pending: 'bg-yellow-100 text-yellow-800',
+        approved: 'bg-green-100 text-green-800',
+        rejected: 'bg-red-100 text-red-800'
+      };
+      return classMap[status] || 'bg-gray-100 text-gray-800';
+    },
+
+    getProgressBarColor(count) {
+      if (count >= 30) return 'bg-green-500';
+      if (count >= 15) return 'bg-yellow-500';
+      return 'bg-red-500';
+    },
+
+    getProgressPercentage(count) {
+      const maxExpected = 50;
+      return Math.min((count / maxExpected) * 100, 100);
     }
-  },
-
-  generateRegistrationTrend() {
-    const today = new Date();
-    const trendData = [];
-
-    for (let i = 6; i >= 0; i--) {
-      const date = new Date(today);
-      date.setDate(today.getDate() - i);
-
-      const dayStr = date.toLocaleDateString('id-ID', {
-        day: '2-digit',
-        month: '2-digit'
-      });
-
-      const registrationsCount = this.pesertaList.filter(peserta => {
-        const pesertaDate = new Date(peserta.created_at);
-        return pesertaDate.toDateString() === date.toDateString();
-      }).length;
-
-      trendData.push({
-        day: dayStr,
-        value: Math.max(registrationsCount, 1) 
-      });
-    }
-
-    this.registrationTrendData = trendData;
-  },
-
-  async refreshDashboard() {
-    this.isRefreshing = true;
-    await this.fetchDashboardData();
-    this.isRefreshing = false;
-
-    this.showToastNotification("Data dashboard berhasil diperbarui");
-  },
-
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  },
-
-  showToastNotification(message) {
-    this.toastMessage = message;
-    this.showToast = true;
-    setTimeout(() => {
-      this.showToast = false;
-    }, 3000);
-  },
-
-  formatDate(date) {
-    if (!date) return '-';
-    return new Intl.DateTimeFormat('id-ID', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).format(new Date(date));
-  },
-
-  getStatusText(status) {
-    const statusMap = {
-      pending: 'Menunggu',
-      approved: 'Terverifikasi',
-      rejected: 'Ditolak'
-    };
-    return statusMap[status] || status;
-  },
-
-  getStatusClass(status) {
-    const classMap = {
-      pending: 'bg-yellow-100 text-yellow-800',
-      approved: 'bg-green-100 text-green-800',
-      rejected: 'bg-red-100 text-red-800'
-    };
-    return classMap[status] || 'bg-gray-100 text-gray-800';
-  },
-
-  getProgressBarColor(count) {
-    if (count >= 30) return 'bg-green-500';
-    if (count >= 15) return 'bg-yellow-500';
-    return 'bg-red-500';
-  },
-
-  getProgressPercentage(count) {
-    const maxExpected = 50; 
-    return Math.min((count / maxExpected) * 100, 100);
   }
-}
 };
 </script>
 
 <style scoped>
-
 circle,
 polyline {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .progress-bar {
-animation: progressAnimation 1s ease-out;
+  animation: progressAnimation 1s ease-out;
 }
 
 @keyframes progressAnimation {
-from {
-  width: 0%;
-}
+  from {
+    width: 0%;
+  }
 }
 
 /* Hover effects for interactive elements */
 .hover\:r-6:hover {
-r: 6;
+  r: 6;
 }
 
 /* Loading animation */
 @keyframes spin {
-to {
-  transform: rotate(360deg);
-}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin {
-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 </style>

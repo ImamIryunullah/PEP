@@ -5,7 +5,6 @@
     <div
       class="flex flex-col md:flex-row justify-between items-start md:items-start border-b border-white/40 pb-6 gap-10">
 
-      <!-- MINI OLYMPIC -->
       <div class="max-w-md">
         <h2 class="text-lg font-semibold mb-2">Mini Olympic Pertamina EP</h2>
         <p class="text-sm text-white/90 mb-2">
@@ -19,7 +18,6 @@
         </p>
       </div>
 
-      <!-- PORTAL INDONESIA -->
       <div class="max-w-md">
         <h2 class="text-lg font-semibold mb-2">Portal Indonesia</h2>
         <ul class="text-sm space-y-1">
@@ -35,13 +33,14 @@
         </ul>
       </div>
 
-      <!-- MENU + SOSMED -->
       <div class="flex flex-col md:items-end w-full md:w-auto">
         <ul class="flex flex-wrap gap-6 text-sm font-medium mb-4 md:mb-2">
-          <li><a href="#">JADWAL & HASIL</a></li>
-          <li><a href="#">REGISTRASI</a></li>
-          <li><a href="#">LIST PESERTA</a></li>
-          <li><a href="#">BERITA</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a href="/result-pertandingan-cabang-olahraga">JADWAL & HASIL</a></li>
+          <li><a href="/registrasi">REGISTRASI</a></li>
+          <li><a href="/login">LOGIN</a></li>
+          <li><a href="/berita">BERITA</a></li>
+          <li><a href="/contactUs">KONTAK</a></li>
         </ul>
 
         <div class="flex gap-4 mt-6 flex-wrap">
@@ -88,9 +87,11 @@ export default {
 footer {
   transform: translateY(24px);
 }
+
 footer.opacity-100 {
   transform: translateY(0);
 }
+
 a:hover {
   transition: all 0.3s ease;
   opacity: 0.85;

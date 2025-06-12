@@ -41,40 +41,7 @@
           <router-link to="/" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             HOME
           </router-link>
-          <div class="relative" @mouseenter="showJadwalDropdown = true" @mouseleave="showJadwalDropdown = false">
-            <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
-              <span class="hidden xl:inline">JADWAL & HASIL</span>
-              <span class="xl:hidden">JADWAL</span>
-              <svg class="w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-300"
-                :class="{ 'rotate-180': showJadwalDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <transition name="dropdown">
-              <div v-if="showJadwalDropdown"
-                class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
-                <router-link to="/jadwal-dan-hasil/sepak-bola"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Sepak
-                  Bola</router-link>
-                <router-link to="/jadwal-dan-hasil/bola-volly"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Volley</router-link>
-                <router-link to="/jadwal-dan-hasil/tenis-meja"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Tenis
-                  Meja</router-link>
-                <router-link to="/jadwal-dan-hasil/tenis-lapangan"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Tenis
-                  Lapangan</router-link>
-                <router-link to="/jadwal-dan-hasil/esport"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Esport</router-link>
-                <router-link to="/jadwal-dan-hasil/badminton"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Badminton</router-link>
-                <router-link to="/jadwal-dan-hasil/lari"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Lari</router-link>
-                <router-link to="/jadwal-dan-hasil/basket"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Basket</router-link>
-              </div>
-            </transition>
-          </div>
+
           <div class="relative" @mouseenter="showRegDropdown = true" @mouseleave="showRegDropdown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
               REGISTRASI
@@ -91,6 +58,8 @@
                 <router-link to="/registrasi-funrun-embed"
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">5K Fun
                   Run</router-link>
+                <router-link to="/login"
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Login</router-link>
               </div>
             </transition>
           </div>
@@ -106,9 +75,11 @@
               <div v-if="showPesDropDown"
                 class="absolute left-0 mt-3 bg-white text-black rounded-xl shadow-xl w-48 xl:w-52 py-2 z-50 border">
                 <router-link to="/list-peserta"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta Cabor</router-link>
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta
+                  Cabor</router-link>
                 <router-link to="/peserta-fun-run"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta 5K Fun
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Peserta 5K
+                  Fun
                   Run</router-link>
               </div>
             </transition>
@@ -142,7 +113,8 @@
           <router-link to="/contactUs" class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
             KONTAK
           </router-link>
-          <div class="relative" @mouseenter="showAdditionalDropdown = true" @mouseleave="showAdditionalDropdown = false">
+          <div class="relative" @mouseenter="showAdditionalDropdown = true"
+            @mouseleave="showAdditionalDropdown = false">
             <button class="hover:text-yellow-300 transition-colors duration-300 flex items-center gap-1 px-2 py-1">
               <span class="hidden xl:inline">ADDITIONAL</span>
               <span class="xl:hidden">INFO</span>
@@ -158,10 +130,15 @@
                   class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Informasi
                   Tambahan</router-link>
                 <router-link to="/akomodasi-dan-hotel"
-                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Hotel & Akomodasi</router-link>
+                  class="block px-4 xl:px-5 py-2 hover:bg-gray-100 text-sm transition-colors duration-200">Hotel &
+                  Akomodasi</router-link>
               </div>
             </transition>
           </div>
+          <router-link to="/result-pertandingan-cabang-olahraga"
+            class="hover:text-yellow-300 transition-colors duration-300 px-2 py-1">
+            Hasil Pertandingan
+          </router-link>
         </nav>
       </div>
       <transition name="fade">
@@ -171,44 +148,6 @@
             @click="closeMenu">
             HOME
           </router-link>
-          <div>
-            <button @click="toggleJadwalDropdown"
-              class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
-              JADWAL & HASIL
-              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileJadwalDropdown }"
-                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <transition name="mobile-dropdown">
-              <div v-if="showMobileJadwalDropdown" class="ml-4 mt-2 space-y-1 bg-red-800 bg-opacity-50 rounded p-2">
-                <router-link to="/jadwal-dan-hasil/sepak-bola"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Sepak Bola</router-link>
-                <router-link to="/jadwal-dan-hasil/bola-volly"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Volley</router-link>
-                <router-link to="/jadwal-dan-hasil/tenis-meja"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Tenis Meja</router-link>
-                <router-link to="/jadwal-dan-hasil/tenis-lapangan"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Tenis Lapangan</router-link>
-                <router-link to="/jadwal-dan-hasil/esport"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Esport</router-link>
-                <router-link to="/jadwal-dan-hasil/badminton"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Badminton</router-link>
-                <router-link to="/jadwal-dan-hasil/lari"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Lari</router-link>
-                <router-link to="/jadwal-dan-hasil/basket"
-                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
-                  @click="closeMenu">Basket</router-link>
-              </div>
-            </transition>
-          </div>
           <div>
             <button @click="toggleRegDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
@@ -226,6 +165,9 @@
                 <router-link to="/registrasi-funrun-embed"
                   class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
                   @click="closeMenu">5K Fun Run</router-link>
+                <router-link to="/login"
+                  class="block hover:text-yellow-200 py-1 px-2 rounded text-sm transition-colors duration-200"
+                  @click="closeMenu">Login</router-link>
               </div>
             </transition>
           </div>
@@ -284,8 +226,9 @@
             <button @click="toggleAdditionalDropdown"
               class="w-full flex justify-between items-center hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200">
               ADDITIONAL INFO
-              <svg class="w-4 h-4 transition-transform duration-300" :class="{ 'rotate-180': showMobileAdditionalDropdown }"
-                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 transition-transform duration-300"
+                :class="{ 'rotate-180': showMobileAdditionalDropdown }" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
@@ -300,6 +243,10 @@
               </div>
             </transition>
           </div>
+          <router-link to="/result-pertandingan-cabang-olahraga"
+            class="block hover:text-yellow-200 py-2 px-2 rounded transition-colors duration-200" @click="closeMenu">
+            Hasil Pertandingan
+          </router-link>
         </div>
       </transition>
     </div>
@@ -377,7 +324,7 @@ export default {
     },
     updateDateTime() {
       const now = new Date();
-      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };  
+      const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
       this.currentDate = now.toLocaleDateString('id-ID', options);
       this.currentTime = now.toLocaleTimeString('id-ID', { hour12: false });
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex bg-gray-100 relative font-sans">
+  <div class="min-h-screen flex bg-gray-100 relative">
 
     <Sidebar :isOpen="isSidebarOpen" />
 
@@ -522,7 +522,7 @@ export default {
       try {
         console.log('Fetching participants for verification...');
 
-        const response = await API.getParticipants();
+        const response = await API.getParticipantsadmin();
 
         console.log('API Response:', response);
 
@@ -540,7 +540,7 @@ export default {
           this.pesertaList = participants.map(peserta => ({
             id: peserta.id,
             nama_lengkap: peserta.nama_lengkap,
-            email: peserta.user.email,
+            email: peserta.email,
             no_telepon: peserta.no_telepon,
             jenis_peserta: peserta.jenis_peserta,
             cabang_olahraga: peserta.cabang_olahraga,
@@ -812,7 +812,7 @@ export default {
         return filename;
       }
 
-      const baseUrl = process.env.VUE_APP_API_BASE_URL || 'http://localhost:8080';
+      const baseUrl = 'http://192.168.1.53:3000';
       return `${baseUrl}/uploads/${filename}`;
     },
 

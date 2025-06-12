@@ -1,311 +1,499 @@
 <template>
-    <div class="min-h-screen bg-[#F7F7F7]">
-        <NavbarDashboard />
-        <section
-            class="min-h-[60vh] sm:min-h-screen relative bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_rgba(0,0,0,1)_45%)] overflow-hidden">
+    <NavbarDashboard />
+    <div class="min-h-screen bg-gray-100 p-4 sm:p-6">
+        <div class="max-w-7xl mx-auto">
             
-            <img src="/listpeserta/atas.png" loading="lazy"
-                class="absolute bottom-[60%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
-                alt="border1" />
-            <img src="/listpeserta/bawah.png" loading="lazy"
-                class="absolute bottom-[20%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
-                alt="border2" />
-            <img src="/listpeserta/awan.png" alt="Gambar bawah" loading="lazy"
-                class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[15%] sm:h-[20%]" />
-            
-            <img :src="getOlahragaImage(selectedOlahraga)"
-                class="absolute top-[5%] sm:top-[10%] w-[150px] sm:w-[200px] md:w-[300px] lg:w-[400px] left-[5%] sm:left-[10%] float delay-2 opacity-70 sm:opacity-80 lg:opacity-100 z-5"
-                alt="Maskot" />
-            <h1
-                class="absolute top-[20%] sm:top-[30%] left-0 text-white opacity-5 text-4xl sm:text-6xl lg:text-8xl font-bold ml-4 sm:ml-8 lg:ml-16 z-0 hidden sm:block">
-                {{ selectedOlahraga.toUpperCase() }}
-            </h1>  
-            <div
-                class="absolute inset-0 flex flex-col justify-center items-center sm:items-end sm:justify-center text-center sm:text-right px-4 sm:px-8 lg:px-16">
-                <h1 class="text-white text-3xl sm:text-5xl lg:text-8xl font-bold leading-tight">
-                    LIST PESERTA
-                </h1>
-                <p class="text-white/80 text-sm sm:text-base mt-2 sm:mt-4 max-w-md sm:hidden">
-                    Daftar peserta {{ selectedOlahraga }}
-                </p>
-            </div>
-            <img src="/bunga/hiasan.png" alt="hiasan"
-                class="absolute bottom-[10%] sm:bottom-[20%] left-1/2 transform -translate-x-1/2 w-[100px] sm:w-[150px] py-6 sm:py-12 z-10" />
-        </section>
-
-        <section class="min-h-screen relative bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 py-6 font-sans">
-            
-            <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="/registrasi/hijau.png" alt=""
-                    class="absolute top-0 left-0 w-full opacity-5 hidden lg:block" />
-                <img src="/registrasi/biru.png" alt=""
-                    class="absolute bottom-0 right-0 w-full opacity-5 hidden lg:block" />
-                <h1
-                    class="absolute top-10 sm:top-20 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">
-                    LIST</h1>
-                <h1
-                    class="absolute top-20 sm:top-52 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">
-                    PESERTA</h1>
+            <div v-if="isLoading" class="flex justify-center items-center py-12">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <span class="ml-3 text-gray-600">Memuat data peserta...</span>
             </div>
 
-            <div class="relative z-10 space-y-6 sm:space-y-8 animate-fade-in animate-stagger">
-                
-                <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 justify-center">
-                    <button
-                        v-for="kategori in ['Sepak Bola', 'Volley', 'Tenis Meja', 'Badminton', 'Lari', 'Senam', 'Tenis Lapangan', 'Basket', 'Esport']"
-                        :key="kategori" @click="selectedOlahraga = kategori" :class="[
-                            'px-3 sm:px-5 py-2 rounded-lg font-medium transition duration-300 shadow-sm text-xs sm:text-sm',
-                            selectedOlahraga === kategori
-                                ? 'bg-[#D71E28] text-white shadow-md scale-105'
-                                : 'bg-white border border-[#D71E28] text-[#D71E28] hover:bg-[#D71E28] hover:text-white'
-                        ]">
-                        {{ kategori }}
-                    </button>
+            <div v-else>
+
+                <div class="mb-6">
+                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+                        Daftar Peserta
+                    </h1>
                 </div>
 
                 
-                <div class="block lg:hidden space-y-4">
-                    <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                            <div class="bg-[#D71E28] text-white px-4 py-3">
-                                <h3 class="font-bold text-lg">{{ kontingen.kontingen }}</h3>
+                <div class="bg-white rounded-lg shadow p-4 sm:p-6 mb-6">
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                            
+                            <div class="relative">
+                                <input v-model="searchTerm" type="text" placeholder="Cari nama..."
+                                    class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-64">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                             </div>
-                            <div class="divide-y divide-gray-200">
-                                <div v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
-                                    class="p-4 hover:bg-gray-50 transition duration-200">
-                                    <div class="space-y-2">
-                                        <div class="flex justify-between items-start">
-                                            <h4 class="font-semibold text-gray-800">{{ pemain.nama }}</h4>
-                                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">
-                                                #{{ i + j + 1 }}
-                                            </span>
-                                        </div>
-                                        <div class="grid grid-cols-2 gap-2 text-sm">
-                                            <div>
-                                                <span class="text-gray-500">Status:</span>
-                                                <span class="ml-1 font-medium">{{ pemain.status }}</span>
-                                            </div>
-                                            <div>
-                                                <span class="text-gray-500">Peran:</span>
-                                                <span class="ml-1 font-medium">{{ pemain.peran }}</span>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-between items-center pt-2">
-                                            <span class="text-sm text-gray-500">Verifikasi:</span>
-                                            <span :class="{
-                                                'text-green-600 font-bold bg-green-50 px-2 py-1 rounded-full text-xs': pemain.verifikasi === 'Terverifikasi' || pemain.verifikasi === 'Lulus',
-                                                'text-yellow-600 bg-yellow-50 px-2 py-1 rounded-full text-xs': pemain.verifikasi === 'Menunggu',
-                                                'text-red-600 font-semibold bg-red-50 px-2 py-1 rounded-full text-xs': pemain.verifikasi === 'Ditolak'
-                                            }">
-                                                {{ pemain.verifikasi }}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            
+                            <select v-model="statusFilter"
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="all">Semua Status</option>
+                                <option value="verified">Terverifikasi</option>
+                                <option value="unverified">Menunggu Verifikasi</option>
+                                <option value="rejected">Ditolak</option>
+                            </select>
+
+                            
+                            <select v-model="sportFilter"
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="all">Semua Cabang Olahraga</option>
+                                <option v-for="sport in uniqueSports" :key="sport" :value="sport">
+                                    {{ sport }}
+                                </option>
+                            </select>
                         </div>
-                    </template>
+
+                        <div class="flex gap-2 w-full sm:w-auto">
+                            <button @click="refreshData" :disabled="isProcessing"
+                                class="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                                <i class="fas fa-sync-alt" :class="{ 'animate-spin': isProcessing }"></i>
+                                <span class="hidden sm:inline">Refresh</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 
-                <div class="hidden lg:block overflow-x-auto">
-                    <table
-                        class="min-w-full bg-white rounded-xl shadow-xl overflow-hidden text-sm transform transition duration-500 hover:scale-[1.01]">
-                        <thead class="bg-[#D71E28] text-white uppercase text-xs">
-                            <tr>
-                                <th class="px-6 py-4 text-left font-bold">No</th>
-                                <th class="px-6 py-4 text-left font-bold">Kontingen</th>
-                                <th class="px-6 py-4 text-left font-bold">Nama</th>
-                                <th class="px-6 py-4 text-left font-bold">Status</th>
-                                <th class="px-6 py-4 text-left font-bold">Pemain/Official</th>
-                                <th class="px-6 py-4 text-left font-bold">Verifikasi</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-800 divide-y divide-gray-200">
-                            <template v-for="(kontingen, i) in filteredPeserta" :key="kontingen.kontingen">
-                                <tr v-for="(pemain, j) in kontingen.peserta" :key="pemain.nama"
-                                    class="hover:bg-gray-100 transition duration-200 animate-fade-in">
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ i + j + 1 }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap" v-if="j === 0"
-                                        :rowspan="kontingen.peserta.length">
-                                        <span class="font-semibold">{{ kontingen.kontingen }}</span>
+                <div class="bg-white rounded-lg shadow overflow-hidden hidden sm:block">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-red-700 text-white">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        No
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        Nama Lengkap
+                                    </th>
+                                 
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        Cabang Olahraga
+                                    </th>
+                                             
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        Aset
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        Tanggal Daftar
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr v-for="(peserta, index) in paginatedPeserta" :key="peserta.id"
+                                    class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ startIndex + index + 1 }}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.nama }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.status }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ pemain.peran }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <span :class="{
-                                            'text-green-600 font-bold': pemain.verifikasi === 'Terverifikasi' || pemain.verifikasi === 'Lulus',
-                                            'text-yellow-600': pemain.verifikasi === 'Menunggu',
-                                            'text-red-600 font-semibold': pemain.verifikasi === 'Ditolak'
-                                        }">
-                                            {{ pemain.verifikasi }}
+                                        <div class="text-sm font-medium text-gray-900">{{ peserta.nama_lengkap }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-600">{{ peserta.cabang_olahraga }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-600">{{ peserta.aset }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-600">{{ formatDate(peserta.tanggalDaftar) }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span :class="getStatusClass(peserta.status)"
+                                            class="inline-flex px-2 py-1 text-xs font-semibold rounded-full">
+                                            {{ getStatusText(peserta.status) }}
                                         </span>
                                     </td>
+                                    
                                 </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                    <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm text-gray-700">
+                                Menampilkan {{ Math.min(startIndex + 1, filteredPeserta.length) }} sampai {{
+                                    Math.min(endIndex, filteredPeserta.length) }} dari {{ filteredPeserta.length }} peserta
+                            </div>
+                            <div class="flex gap-2">
+                                <button @click="previousPage" :disabled="currentPage === 1"
+                                    class="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="px-3 py-1 text-sm">{{ currentPage }} / {{ totalPages }}</span>
+                                <button @click="nextPage" :disabled="currentPage === totalPages"
+                                    class="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 
-                <div v-if="filteredPeserta.length === 0" class="text-center py-12">
-                    <div class="text-gray-400 text-6xl mb-4">🏆</div>
-                    <h3 class="text-lg font-semibold text-gray-600 mb-2">Belum Ada Peserta</h3>
-                    <p class="text-gray-500">Peserta untuk kategori {{ selectedOlahraga }} belum tersedia.</p>
+                <div class="sm:hidden space-y-4">
+                    <div v-for="(peserta, index) in paginatedPeserta" :key="peserta.id"
+                        class="bg-white rounded-lg shadow p-4">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-xs font-semibold text-blue-600">{{ startIndex + index + 1
+                                    }}</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">{{ peserta.nama_lengkap }}</h3>
+                                    <p class="text-xs text-gray-500">{{ peserta.cabang_olahraga }} - {{
+                                        peserta.jenis_peserta }}</p>
+                                </div>
+                            </div>
+                            <span :class="getStatusClass(peserta.status)"
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full">
+                                {{ getStatusText(peserta.status) }}
+                            </span>
+                        </div>
+
+                        <div class="text-sm text-gray-600 mb-3">
+                            <i class="fas fa-calendar mr-2"></i>
+                            {{ formatDate(peserta.tanggalDaftar) }}
+                        </div>
+
+                       
+                    </div>
+                </div>
+
+                
+                <div v-if="filteredPeserta.length === 0 && !isLoading"
+                    class="bg-white rounded-lg shadow p-8 text-center">
+                    <i class="fas fa-inbox text-4xl text-gray-400 mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Tidak ada peserta ditemukan</h3>
+                    <p class="text-gray-600">Coba ubah filter pencarian atau refresh data.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <FooterDashboard />
+        
+        <div v-if="showDetailModal"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white border-b p-6">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">Detail Peserta</h3>
+                        <button @click="closeDetailModal" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div v-if="selectedPesertaDetail" class="p-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Nama Lengkap</label>
+                            <p class="text-gray-900 font-medium">{{ selectedPesertaDetail.nama_lengkap }}</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Jenis Peserta</label>
+                            <p class="text-gray-900">{{ selectedPesertaDetail.jenis_peserta }}</p>
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Cabang Olahraga</label>
+                            <p class="text-gray-900">{{ selectedPesertaDetail.cabang_olahraga }}</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Wilayah Kerja</label>
+                            <p class="text-gray-900">{{ selectedPesertaDetail.wilayah_kerja }}</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Tanggal Daftar</label>
+                            <p class="text-gray-900">{{ formatDate(selectedPesertaDetail.tanggalDaftar) }}</p>
+                        </div>
+                        <div>
+                            <label class="text-sm font-medium text-gray-600">Status</label>
+                            <span :class="getStatusClass(selectedPesertaDetail.status)"
+                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full">
+                                {{ getStatusText(selectedPesertaDetail.status) }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div v-if="showToast"
+            class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity"
+            :class="{ 'opacity-0': !showToast }">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle"></i>
+                <span>{{ toastMessage }}</span>
+            </div>
+        </div>
+
+        <div v-if="showErrorToast"
+            class="fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-opacity"
+            :class="{ 'opacity-0': !showErrorToast }">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>{{ errorMessage }}</span>
+            </div>
+        </div>
     </div>
+    <FooterDashboard />
 </template>
 
 <script>
-import FooterDashboard from '@/components/FooterDashboard.vue';
-import NavbarDashboard from '@/components/NavbarDashboard.vue';
-
+import FooterDashboard from "@/components/FooterDashboard.vue";
+import NavbarDashboard from "@/components/NavbarDashboard.vue";
+import API from "@/service/api";
 
 export default {
     components: {
         NavbarDashboard,
         FooterDashboard
     },
+    name: "DaftarPeserta",
     data() {
         return {
-
-            selectedOlahraga: 'Volley',
-            pesertaData: [
-                {
-                    olahraga: 'Volley',
-                    kontingen: 'Asset 1',
-                    peserta: [
-                        { nama: 'Dimas Realdi', status: 'Pekerja', peran: 'Pemain', verifikasi: 'Lulus' },
-                        { nama: 'Ahmad Yusuf', status: 'Pekerja', peran: 'Pemain', verifikasi: 'Lulus' }
-                    ]
-                },
-                {
-                    olahraga: 'Sepak Bola',
-                    kontingen: 'Asset 2',
-                    peserta: [
-                        { nama: 'Budi Santoso', status: 'Pekerja', peran: 'Official', verifikasi: 'Lulus' }
-                    ]
-                }
-            ]
+            searchTerm: "",
+            statusFilter: "all",
+            sportFilter: "all",
+            isProcessing: false,
+            isLoading: false,
+            showDetailModal: false,
+            selectedPesertaDetail: null,
+            showToast: false,
+            toastMessage: "",
+            showErrorToast: false,
+            errorMessage: "",
+            currentPage: 1,
+            itemsPerPage: 10,
+            pesertaList: [],
+            totalPeserta: 0,
+            error: null,
         };
+    },
+    async mounted() {
+        await this.fetchPesertaData();
     },
     computed: {
         filteredPeserta() {
-            return this.pesertaData.filter(p => p.olahraga === this.selectedOlahraga);
+            let filtered = this.pesertaList;
+
+            // Filter by search term
+            if (this.searchTerm) {
+                const term = this.searchTerm.toLowerCase();
+                filtered = filtered.filter(peserta =>
+                    (peserta.nama_lengkap && peserta.nama_lengkap.toLowerCase().includes(term))
+                 
+                );
+            }
+
+            // Filter by status
+            if (this.statusFilter === "verified") {
+                filtered = filtered.filter(peserta => peserta.status === "approved");
+            } else if (this.statusFilter === "unverified") {
+                filtered = filtered.filter(peserta => peserta.status === "pending");
+            } else if (this.statusFilter === "rejected") {
+                filtered = filtered.filter(peserta => peserta.status === "rejected");
+            }
+
+            // Filter by sport
+            if (this.sportFilter !== "all") {
+                filtered = filtered.filter(peserta => peserta.cabang_olahraga === this.sportFilter);
+            }
+
+            return filtered;
+        },
+        paginatedPeserta() {
+            const start = (this.currentPage - 1) * this.itemsPerPage;
+            const end = start + this.itemsPerPage;
+            return this.filteredPeserta.slice(start, end);
+        },
+        pesertaTerverifikasi() {
+            return this.pesertaList.filter(p => p.status === "approved").length;
+        },
+        pesertaBelumVerifikasi() {
+            return this.pesertaList.filter(p => p.status === "pending").length;
+        },
+        pesertaDitolak() {
+            return this.pesertaList.filter(p => p.status === "rejected").length;
+        },
+        totalPages() {
+            return Math.ceil(this.filteredPeserta.length / this.itemsPerPage);
+        },
+        startIndex() {
+            return (this.currentPage - 1) * this.itemsPerPage;
+        },
+        endIndex() {
+            return Math.min(this.currentPage * this.itemsPerPage, this.filteredPeserta.length);
+        },
+        uniqueSports() {
+            const sports = [...new Set(this.pesertaList.map(p => p.cabang_olahraga).filter(Boolean))];
+            return sports.sort();
         }
     },
     methods: {
-        getOlahragaImage(olahraga) {
-            const imgMap = {
-                'Volley': 'voli.png',
-                'Sepak Bola': 'bola.png',
-                'Tenis Meja': 'tenismeja.png',
-                'Badminton': 'bulutangkis.png',
-                'Lari': 'lari.png',
-                'Senam': 'senam.png',
-                'Tenis Lapangan': 'tenislap.png',
-                'Basket': 'basket.png',
-                'Esport': 'esport.png'
-            };
+        async fetchPesertaData() {
+            this.isLoading = true;
+            this.error = null;
+            try {
+                console.log('Fetching participants data...');
 
-            const filename = imgMap[olahraga];
-            return filename ? require(`@/assets/kategori/${filename}`) : '';
+                const response = await API.getParticipantlist();
+
+                console.log('API Response:', response);
+
+                if (response.data) {
+                    let participants = [];
+
+                    if (response.data.data) {
+                        participants = response.data.data;
+                    } else if (Array.isArray(response.data)) {
+                        participants = response.data;
+                    } else {
+                        console.warn('Unexpected response structure:', response.data);
+                    }
+
+                    this.pesertaList = participants.map(peserta => ({
+                        id: peserta.id,
+                        nama_lengkap: peserta.nama_lengkap,
+                   
+                        jenis_peserta: peserta.jenis_peserta,
+                        cabang_olahraga: peserta.cabang_olahraga,
+                        wilayah_kerja: peserta.wilayah_kerja,
+                        catatan: peserta.catatan,
+                        aset: peserta.user.aset,
+                        media_sosial: peserta.media_sosial,
+                        status: peserta.status || 'pending',
+                        tanggalDaftar: new Date(peserta.created_at || Date.now()),
+                        created_at: peserta.created_at,
+                        updated_at: peserta.updated_at,
+                    }));
+
+                    this.totalPeserta = this.pesertaList.length;
+                    console.log('Participants loaded:', this.pesertaList.length);
+                } else {
+                    this.pesertaList = [];
+                    this.totalPeserta = 0;
+                }
+            } catch (error) {
+                console.error('Error fetching peserta data:', error);
+                this.error = 'Gagal memuat data peserta';
+                this.pesertaList = [];
+                this.totalPeserta = 0;
+
+                if (error.response) {
+                    console.error('Error Response:', {
+                        status: error.response.status,
+                        data: error.response.data
+                    });
+
+                    switch (error.response.status) {
+                        case 500:
+                            this.error = 'Server sedang mengalami masalah. Silakan coba lagi nanti.';
+                            break;
+                        case 404:
+                            this.error = 'Endpoint tidak ditemukan.';
+                            break;
+                        case 403:
+                            this.error = 'Akses ditolak. Periksa token autentikasi.';
+                            break;
+                        default:
+                            this.error = `Error: ${error.response.status} - ${error.response.statusText}`;
+                    }
+                } else if (error.request) {
+                    this.error = 'Tidak dapat terhubung ke server. Periksa koneksi internet.';
+                }
+
+                this.showErrorToast = true;
+                this.errorMessage = this.error;
+                setTimeout(() => {
+                    this.showErrorToast = false;
+                }, 5000);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+
+
+        closeDetailModal() {
+            this.showDetailModal = false;
+            this.selectedPesertaDetail = null;
+        },
+
+        async refreshData() {
+            await this.fetchPesertaData();
+            this.showToastNotification("Data berhasil diperbarui");
+        },
+
+        showToastNotification(message) {
+            this.toastMessage = message;
+            this.showToast = true;
+
+            setTimeout(() => {
+                this.showToast = false;
+            }, 3000);
+        },
+
+        formatDate(date) {
+            if (!date) return '-';
+            return new Intl.DateTimeFormat('id-ID', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }).format(new Date(date));
+        },
+
+        getStatusText(status) {
+            const statusMap = {
+                pending: 'Menunggu Verifikasi',
+                approved: 'Terverifikasi',
+                rejected: 'Ditolak'
+            };
+            return statusMap[status] || status;
+        },
+
+        getStatusClass(status) {
+            const classMap = {
+                pending: 'bg-yellow-100 text-yellow-800',
+                approved: 'bg-green-100 text-green-800',
+                rejected: 'bg-red-100 text-red-800'
+            };
+            return classMap[status] || 'bg-gray-100 text-gray-800';
+        },
+
+        nextPage() {
+            if (this.currentPage < this.totalPages) {
+                this.currentPage++;
+            }
+        },
+
+        previousPage() {
+            if (this.currentPage > 1) {
+                this.currentPage--;
+            }
+        }
+    },
+
+    watch: {
+        searchTerm() {
+            this.currentPage = 1;
+        },
+        statusFilter() {
+            this.currentPage = 1;
+        },
+        sportFilter() {
+            this.currentPage = 1;
         }
     }
-
-}
+};
 </script>
-
-<style scoped>
-/* Animations */
-.animate-fade-in {
-    opacity: 0;
-    transform: translateY(0.75rem);
-    transition: all 0.5s ease-out;
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.animate-stagger>* {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-stagger>*:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.animate-stagger>*:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.animate-stagger>*:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-/* Float animation for sport image */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-.float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.delay-2 {
-    animation-delay: 2s;
-}
-
-/* Responsive utilities */
-@media (max-width: 640px) {
-    .grid-cols-2>button {
-        min-height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/* Smooth transitions */
-* {
-    transition-property: transform, opacity, background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-}
-</style>

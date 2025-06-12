@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex bg-gray-50 relative font-sans">
+    <div class="min-h-screen flex bg-gray-50 relative">
         <Sidebar :isOpen="isSidebarOpen" />
         <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
             class="fixed inset-0 bg-black bg-opacity-30 z-30 lg:hidden"></div>
@@ -17,7 +17,7 @@
             </header>
 
             <main class="flex-1 px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-                
+
                 <div v-if="loading" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div class="bg-white p-6 rounded-lg flex items-center gap-3">
                         <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-[#D71E28]"></div>
@@ -30,7 +30,7 @@
                     <p class="text-gray-600 mt-2">Kelola cabang olahraga dan sub-kategori yang tersedia dalam sistem</p>
                 </div>
 
-                
+
                 <div v-if="successMessage"
                     class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 flex items-center justify-between">
                     <div class="flex items-center">
@@ -53,9 +53,9 @@
                     </button>
                 </div>
 
-                
+
                 <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
-                    
+
                     <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                             <i class="fas fa-plus-circle text-[#D71E28] mr-2"></i>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                             <i class="fas fa-list text-blue-600 mr-2"></i>
@@ -100,7 +100,8 @@
                         </h3>
                         <div class="space-y-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Cabang Olahraga</label>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Cabang
+                                    Olahraga</label>
                                 <select v-model="newSubKategori.cabor_id"
                                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent">
                                     <option value="">Pilih Cabor</option>
@@ -126,7 +127,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan (Opsional)</label>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Keterangan
+                                    (Opsional)</label>
                                 <input v-model="newSubKategori.keterangan"
                                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D71E28] focus:border-transparent"
                                     placeholder="Contoh: Men's Single, Double Mix, dll" />
@@ -144,7 +146,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="bg-white rounded-lg shadow-sm mb-6">
                     <div class="p-4 sm:p-6 border-b border-gray-200">
                         <div class="flex justify-between items-center">
@@ -170,18 +172,20 @@
                         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             <div v-for="(cabor) in daftarCabor" :key="cabor.id"
                                 class="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200">
-                                
+
                                 <div v-if="editCaborIndex !== index">
                                     <div class="flex items-center justify-between mb-3">
                                         <div class="flex items-center gap-3">
-                                            <i :class="cabor.icon || 'fas fa-trophy'" class="text-[#D71E28] text-xl"></i>
+                                            <i :class="cabor.icon || 'fas fa-trophy'"
+                                                class="text-[#D71E28] text-xl"></i>
                                             <h3 class="font-semibold text-gray-800">{{ cabor.nama }}</h3>
                                         </div>
                                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
                                             {{ cabor.sub_kategoris?.length || 0 }} sub
                                         </span>
                                     </div>
-                                    <p v-if="cabor.deskripsi" class="text-sm text-gray-600 mb-3">{{ cabor.deskripsi }}</p>
+                                    <p v-if="cabor.deskripsi" class="text-sm text-gray-600 mb-3">{{ cabor.deskripsi }}
+                                    </p>
                                     <div class="flex gap-2">
                                         <button @click="mulaiEditCabor(index)"
                                             class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-3 py-2 rounded text-sm font-medium transition-colors flex items-center gap-1 flex-1">
@@ -190,13 +194,14 @@
                                         </button>
                                         <button @click="hapusCabor(cabor.id, index)" :disabled="deleting"
                                             class="bg-red-50 text-red-600 hover:bg-red-100 px-3 py-2 rounded text-sm font-medium transition-colors flex items-center gap-1 flex-1 disabled:opacity-50">
-                                            <i :class="deleting ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-trash text-xs'"></i>
+                                            <i
+                                                :class="deleting ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-trash text-xs'"></i>
                                             Hapus
                                         </button>
                                     </div>
                                 </div>
 
-                                
+
                                 <div v-else class="space-y-3">
                                     <input v-model="editCabor.nama"
                                         class="w-full p-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-[#D71E28] focus:border-transparent"
@@ -210,7 +215,8 @@
                                     <div class="flex gap-2">
                                         <button @click="simpanEditCabor(cabor.id, index)" :disabled="updating"
                                             class="bg-green-600 text-white px-3 py-2 rounded text-sm hover:bg-green-700 transition-colors flex items-center gap-1 flex-1 disabled:opacity-50">
-                                            <i :class="updating ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-check text-xs'"></i>
+                                            <i
+                                                :class="updating ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-check text-xs'"></i>
                                             Simpan
                                         </button>
                                         <button @click="batalEditCabor"
@@ -225,7 +231,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="bg-white rounded-lg shadow-sm">
                     <div class="p-4 sm:p-6 border-b border-gray-200">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -260,24 +266,27 @@
                         <div v-else class="space-y-3">
                             <div v-for="(subKat, index) in filteredSubKategori" :key="subKat.id"
                                 class="bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-lg p-4 hover:shadow-sm transition-all duration-200">
-                                
-                                <div v-if="editSubIndex !== index" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+
+                                <div v-if="editSubIndex !== index"
+                                    class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                     <div class="flex-1">
                                         <div class="flex flex-wrap items-center gap-2 mb-2">
-                                            <span class="bg-[#D71E28] text-white text-xs px-2 py-1 rounded-full font-medium">
+                                            <span
+                                                class="bg-[#D71E28] text-white text-xs px-2 py-1 rounded-full font-medium">
                                                 {{ getCaborName(subKat.cabor_id) }}
                                             </span>
                                             <span :class="[
                                                 'text-xs px-2 py-1 rounded-full font-medium',
                                                 subKat.jenis_kelamin === 'Putra' ? 'bg-blue-100 text-blue-800' :
-                                                subKat.jenis_kelamin === 'Putri' ? 'bg-pink-100 text-pink-800' :
-                                                'bg-green-100 text-green-800'
+                                                    subKat.jenis_kelamin === 'Putri' ? 'bg-pink-100 text-pink-800' :
+                                                        'bg-green-100 text-green-800'
                                             ]">
                                                 {{ subKat.jenis_kelamin }}
                                             </span>
                                         </div>
                                         <div class="font-semibold text-gray-800">{{ subKat.nama }}</div>
-                                        <div v-if="subKat.keterangan" class="text-sm text-gray-600 mt-1">{{ subKat.keterangan }}</div>
+                                        <div v-if="subKat.keterangan" class="text-sm text-gray-600 mt-1">{{
+                                            subKat.keterangan }}</div>
                                     </div>
                                     <div class="flex gap-2">
                                         <button @click="mulaiEditSub(index)"
@@ -287,13 +296,14 @@
                                         </button>
                                         <button @click="hapusSubKategori(subKat.id, index)" :disabled="deleting"
                                             class="bg-red-50 text-red-600 hover:bg-red-100 px-3 py-2 rounded text-sm font-medium transition-colors flex items-center gap-1 disabled:opacity-50">
-                                            <i :class="deleting ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-trash text-xs'"></i>
+                                            <i
+                                                :class="deleting ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-trash text-xs'"></i>
                                             Hapus
                                         </button>
                                     </div>
                                 </div>
 
-                                
+
                                 <div v-else class="space-y-3">
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         <select v-model="editSub.cabor_id"
@@ -318,7 +328,8 @@
                                     <div class="flex gap-2">
                                         <button @click="simpanEditSub(subKat.id, index)" :disabled="updating"
                                             class="bg-green-600 text-white px-3 py-2 rounded text-sm hover:bg-green-700 transition-colors flex items-center gap-1 flex-1 disabled:opacity-50">
-                                            <i :class="updating ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-check text-xs'"></i>
+                                            <i
+                                                :class="updating ? 'fas fa-spinner fa-spin text-xs' : 'fas fa-check text-xs'"></i>
                                             Simpan
                                         </button>
                                         <button @click="batalEditSub"
@@ -347,7 +358,7 @@ export default {
     data() {
         return {
             isSidebarOpen: false,
-            
+
             // Data cabor
             daftarCabor: [],
             newCabor: {
@@ -667,10 +678,13 @@ export default {
 
 <style scoped>
 /* Custom styles jika diperlukan */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
     transition: opacity 0.3s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
 }
 
@@ -683,8 +697,13 @@ export default {
 
 /* Loading spinner animation */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .fa-spin {
@@ -692,7 +711,9 @@ export default {
 }
 
 /* Focus states */
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(215, 30, 40, 0.1);
 }

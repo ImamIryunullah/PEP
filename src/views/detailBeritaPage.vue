@@ -15,7 +15,8 @@
                     <div class="flex items-start gap-2 sm:gap-3">
                         <span class="text-red-600 font-bold text-xs flex-shrink-0 mt-0.5">{{ index + 1 }}.</span>
                         <div class="min-w-0 flex-1">
-                            <p class="font-semibold text-gray-700 line-clamp-2 hover:text-red-600 transition-colors text-xs sm:text-sm">
+                            <p
+                                class="font-semibold text-gray-700 line-clamp-2 hover:text-red-600 transition-colors text-xs sm:text-sm">
                                 {{ news.judul }}
                             </p>
                             <p class="text-xs text-gray-500 mt-1">
@@ -30,10 +31,11 @@
         <!-- Main Content (Desktop: right side, Mobile: above sidebar) -->
         <div
             class="relative bg-white rounded-xl shadow-lg w-full max-w-none sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-3xl 2xl:max-w-4xl min-h-[70vh] sm:min-h-[80vh] border-2 border-purple-100 order-1 xl:order-2">
-            
+
             <!-- Loading State -->
             <div v-if="loading" class="p-6 sm:p-8 text-center">
-                <div class="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+                <div class="animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-b-2 border-red-600 mx-auto mb-4">
+                </div>
                 <p class="text-gray-600 text-sm sm:text-base">Memuat berita...</p>
             </div>
 
@@ -65,17 +67,20 @@
                     </div>
 
                     <!-- Title -->
-                    <h1 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
+                    <h1
+                        class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                         {{ currentNews.judul }}
                     </h1>
 
                     <!-- Subtitle -->
-                    <h2 v-if="currentNews.subtitle" class="text-base sm:text-lg lg:text-xl text-gray-600 mb-3 sm:mb-4 font-medium leading-relaxed">
+                    <h2 v-if="currentNews.subtitle"
+                        class="text-base sm:text-lg lg:text-xl text-gray-600 mb-3 sm:mb-4 font-medium leading-relaxed">
                         {{ currentNews.subtitle }}
                     </h2>
 
                     <!-- Meta Information -->
-                    <div class="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500 border-b border-gray-200 pb-3 sm:pb-4">
+                    <div
+                        class="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500 border-b border-gray-200 pb-3 sm:pb-4">
                         <div class="flex items-center">
                             <i class="far fa-user mr-1 sm:mr-2 text-red-600"></i>
                             <span class="font-medium">{{ currentNews.penulis }}</span>
@@ -103,8 +108,8 @@
 
                 <!-- Article Content -->
                 <div class="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
-                    <div v-html="formatContent(currentNews.isi)" 
-                         class="text-gray-800 leading-relaxed text-sm sm:text-base lg:text-lg"></div>
+                    <div v-html="formatContent(currentNews.isi)"
+                        class="text-gray-800 leading-relaxed text-sm sm:text-base lg:text-lg"></div>
                 </div>
 
                 <!-- Share Section -->
@@ -255,15 +260,7 @@ export default {
             return content.replace(/\n/g, '<br>');
         },
         getImageUrl(foto) {
-            if (!foto) return '';
-            if (foto.startsWith('http')) {
-                return foto;
-            }
-            const finalPath = foto.startsWith('/uploads/')
-                ? foto
-                : `/uploads/${foto}`;
-
-            return `http://localhost:8080${finalPath}`;
+            return API.getFullpath(`uploads/${foto}`)
         },
 
         handleImageError(event) {

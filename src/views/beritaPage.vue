@@ -36,60 +36,65 @@
                 <div class="text-center">
                     <div class="text-red-500 mb-4">
                         <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Gagal Memuat Berita</h3>
                     <p class="text-gray-600 mb-4">{{ error }}</p>
-                    <button @click="fetchBerita" 
-                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors">
+                    <button @click="fetchBerita"
+                        class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors">
                         Coba Lagi
                     </button>
                 </div>
             </div>
 
-            
-            <div v-else class="bg-white shadow-xl rounded-xl p-4 sm:p-6 md:p-8 max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto fade-in-up"
+
+            <div v-else
+                class="bg-white shadow-xl rounded-xl p-4 sm:p-6 md:p-8 max-w-7xl mx-4 sm:mx-6 md:mx-8 lg:mx-auto fade-in-up"
                 style="animation-delay: 0.5s">
 
                 <div class="mb-8 sm:mb-10 md:mb-12 text-left">
                     <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">Berita Terbaru</h2>
-                    <p class="text-sm sm:text-base text-gray-500">Kumpulan informasi terkini seputar Mini Olympic PEP 2025.</p>
+                    <p class="text-sm sm:text-base text-gray-500">Kumpulan informasi terkini seputar Mini Olympic PEP
+                        2025.</p>
                     <p class="text-xs text-gray-400 mt-1">{{ berita.length }} berita tersedia</p>
                 </div>
 
-                
+
                 <div v-if="berita.length === 0" class="text-center py-12">
                     <div class="text-gray-400 mb-4">
                         <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-600 mb-2">Belum Ada Berita</h3>
                     <p class="text-gray-500">Berita akan ditampilkan di sini setelah admin menambahkannya.</p>
                 </div>
 
-                
+
                 <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     <div v-for="(item, index) in berita" :key="item.id"
                         class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-xl group fade-in-up"
                         :style="`animation-delay: ${index * 0.1 + 0.6}s`">
 
                         <div class="relative">
-                            <img :src="getImageUrl(item)" 
-                                :alt="item.judul"
-                                @error="handleImageError"
+                            <img :src="getImageUrl(item.foto)" :alt="item.judul"
                                 class="w-full h-40 sm:h-44 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                            <div class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
+                            <div
+                                class="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
                                 {{ item.kategori || 'Berita' }}
                             </div>
                         </div>
 
                         <div class="p-3 sm:p-4 space-y-2 sm:space-y-3">
-                            <h4 class="font-bold text-base sm:text-lg text-gray-800 group-hover:text-red-600 transition-colors line-clamp-2">
+                            <h4
+                                class="font-bold text-base sm:text-lg text-gray-800 group-hover:text-red-600 transition-colors line-clamp-2">
                                 {{ item.judul }}
                             </h4>
-                            
+
                             <div v-if="item.subtitle" class="text-sm text-gray-600 line-clamp-1">
                                 {{ item.subtitle }}
                             </div>
@@ -106,11 +111,11 @@
                                 <span class="hidden sm:inline mx-1">•</span>
                                 <span class="text-xs sm:text-sm">{{ item.penulis }}</span>
                             </div>
-                            
+
                             <p class="text-gray-600 text-xs sm:text-sm line-clamp-3 leading-relaxed">
-                                {{ item.isi ? item.isi.substring(0, 150) + '...' : item.deskripsi || 'Tidak ada deskripsi tersedia.' }}
+                                {{ item.isi ? item.isi.substring(0, 150) + '...' : item.deskripsi }}
                             </p>
-                            
+
                             <button @click="goToDetailBerita(item)"
                                 class="inline-block text-red-600 text-xs sm:text-sm font-semibold mt-2 hover:underline hover:text-red-800 transition-colors">
                                 Baca Selengkapnya →
@@ -132,226 +137,214 @@
         <FooterDashboard />
     </template>
 
-    <script>
-    import NavbarDashboard from '@/components/NavbarDashboard.vue';
-    import FooterDashboard from '@/components/FooterDashboard.vue'
-    import API from '@/service/api';
+<script>
+import NavbarDashboard from '@/components/NavbarDashboard.vue';
+import FooterDashboard from '@/components/FooterDashboard.vue'
+import API from '@/service/api';
+import api from '@/service/api';
 
-    export default {
-        components: {
-            NavbarDashboard,
-            FooterDashboard
-        },
-        data() {
-            return {
-                berita: [],
-                isLoading: false,
-                error: null,
-            };
-        },
-        
-        async mounted() {
-            await this.fetchBerita();
-        },
+export default {
+    components: {
+        NavbarDashboard,
+        FooterDashboard
+    },
+    data() {
+        return {
+            berita: [],
+            isLoading: false,
+            error: null,
+        };
+    },
 
-        methods: {
-            async fetchBerita() {
-                this.isLoading = true;
-                this.error = null;
-                
+    async mounted() {
+        await this.fetchBerita();
+    },
+
+    methods: {
+        async fetchBerita() {
+            this.isLoading = true;
+            this.error = null;
+
+            try {
+                console.log('🔄 Fetching berita data...');
+
+
+                if (!API) {
+                    throw new Error('API service tidak tersedia');
+                }
                 try {
-                    console.log('🔄 Fetching berita data...');
-                    
+                    await API.testConnection();
+                    console.log('✅ Backend connection successful');
+                } catch (connError) {
+                    console.warn('⚠️ Connection test failed:', connError.message);
 
-                    if (!API) {
-                        throw new Error('API service tidak tersedia');
-                    }
-                    try {
-                        await API.testConnection();
-                        console.log('✅ Backend connection successful');
-                    } catch (connError) {
-                        console.warn('⚠️ Connection test failed:', connError.message);
+                }
 
-                    }
+                const response = await API.getAllBerita();
+                console.log('📦 Raw API response:', response);
 
-                    const response = await API.getAllBerita();
-                    console.log('📦 Raw API response:', response);
+                if (!response) {
+                    throw new Error('Tidak ada response dari server');
+                }
 
-                    if (!response) {
-                        throw new Error('Tidak ada response dari server');
-                    }
+                let beritaData = [];
 
-                    let beritaData = [];
+                if (response.data) {
+                    if (Array.isArray(response.data)) {
 
-                    if (response.data) {
-                        if (Array.isArray(response.data)) {
+                        beritaData = response.data;
+                        console.log('📋 Direct array format detected');
+                    } else if (response.data.data && Array.isArray(response.data.data)) {
+                        beritaData = response.data.data;
+                        console.log('📋 Nested data format detected');
+                    } else if (response.data.berita && Array.isArray(response.data.berita)) {
 
-                            beritaData = response.data;
-                            console.log('📋 Direct array format detected');
-                        } else if (response.data.data && Array.isArray(response.data.data)) {
-                            beritaData = response.data.data;
-                            console.log('📋 Nested data format detected');
-                        } else if (response.data.berita && Array.isArray(response.data.berita)) {
-
-                            beritaData = response.data.berita;
-                            console.log('📋 Alternative nested format detected');
-                        } else {
-                            console.warn('⚠️ Unexpected response structure:', response.data);
-                            beritaData = [];
-                        }
-                    } else if (Array.isArray(response)) {
-                        beritaData = response;
-                        console.log('📋 Direct response array format detected');
-                    }
-
-                    this.berita = beritaData;
-                    console.log(`✅ Successfully loaded ${this.berita.length} berita items`);
-
-                    if (this.berita.length > 0) {
-                        console.log('📄 Sample berita item:', this.berita[0]);
-                    }
-
-                } catch (error) {
-                    console.error('💥 Error fetching berita:', error);
-                    
-                    if (error.message.includes('tidak berjalan') || error.message.includes('ECONNREFUSED')) {
-                        this.error = 'Server tidak dapat diakses. Pastikan backend berjalan di http://localhost:8080';
-                    } else if (error.message.includes('tidak ditemukan') || error.response?.status === 404) {
-                        this.error = 'Endpoint berita tidak ditemukan di server';
-                    } else if (error.response?.status === 500) {
-                        this.error = 'Terjadi kesalahan pada server: ' + (error.response.data?.error || 'Internal server error');
-                    } else if (error.message.includes('Network Error')) {
-                        this.error = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda.';
+                        beritaData = response.data.berita;
+                        console.log('📋 Alternative nested format detected');
                     } else {
-                        this.error = error.message || 'Gagal memuat data berita';
+                        console.warn('⚠️ Unexpected response structure:', response.data);
+                        beritaData = [];
                     }
-
-                    this.berita = [];
-                } finally {
-                    this.isLoading = false;
+                } else if (Array.isArray(response)) {
+                    beritaData = response;
+                    console.log('📋 Direct response array format detected');
                 }
-            },
 
-            getImageUrl(item) {
-    const baseURL = 'http://localhost:8080'; 
+                this.berita = beritaData;
+                console.log(`✅ Successfully loaded ${this.berita.length} berita items`);
 
-    if (item.foto) {
-        if (item.foto.startsWith('http')) {
-            return item.foto;
-        }
-        if (item.foto.startsWith('/uploads/')) {
-            return baseURL + item.foto;
-        }
-        return `${baseURL}/uploads/${item.foto}`;
-    }
-
-
-    return item.gambar || '/berita/berita.jpg';
-},
-
-
-            handleImageError(event) {
-                event.target.src = '/berita/berita.jpg';
-            },
-
-            formatDate(dateString) {
-                if (!dateString) return 'Tanggal tidak tersedia';
-                
-                try {
-                    const options = {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        timeZone: 'Asia/Jakarta'
-                    };
-                    return new Date(dateString).toLocaleDateString('id-ID', options);
-                } catch (error) {
-                    console.error('Error formatting date:', error);
-                    return dateString; 
+                if (this.berita.length > 0) {
+                    console.log('📄 Sample berita item:', this.berita[0]);
                 }
-            },
 
-            goToDetailBerita(newsItem) {
-                this.$router.push({
-                    name: 'DetailBerita',
-                    params: { id: newsItem.id },
-                    query: { category: newsItem.kategori }
-                }).then(() => {
-                    this.$nextTick(() => {
-                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                    });
-                }).catch(error => {
-                    console.error('Navigation error:', error);
-                    alert('Gagal membuka detail berita');
-                });
+            } catch (error) {
+                console.error('💥 Error fetching berita:', error);
+
+                if (error.message.includes('tidak berjalan') || error.message.includes('ECONNREFUSED')) {
+                    this.error = 'Server tidak dapat diakses. Pastikan backend berjalan di http://localhost:8080';
+                } else if (error.message.includes('tidak ditemukan') || error.response?.status === 404) {
+                    this.error = 'Endpoint berita tidak ditemukan di server';
+                } else if (error.response?.status === 500) {
+                    this.error = 'Terjadi kesalahan pada server: ' + (error.response.data?.error || 'Internal server error');
+                } else if (error.message.includes('Network Error')) {
+                    this.error = 'Tidak dapat terhubung ke server. Periksa koneksi internet Anda.';
+                } else {
+                    this.error = error.message || 'Gagal memuat data berita';
+                }
+
+                this.berita = [];
+            } finally {
+                this.isLoading = false;
             }
+        },
+
+        getImageUrl(item) {
+            return api.getFullpath(`uploads/${item}`)
+        },
+
+
+        handleImageError(event) {
+            event.target.src = '/berita/berita.jpg';
+        },
+
+        formatDate(dateString) {
+            if (!dateString) return 'Tanggal tidak tersedia';
+
+            try {
+                const options = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'Asia/Jakarta'
+                };
+                return new Date(dateString).toLocaleDateString('id-ID', options);
+            } catch (error) {
+                console.error('Error formatting date:', error);
+                return dateString;
+            }
+        },
+
+        goToDetailBerita(newsItem) {
+            this.$router.push({
+                name: 'DetailBerita',
+                params: { id: newsItem.id },
+                query: { category: newsItem.kategori }
+            }).then(() => {
+                this.$nextTick(() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                });
+            }).catch(error => {
+                console.error('Navigation error:', error);
+                alert('Gagal membuka detail berita');
+            });
         }
     }
-    </script>
+}
+</script>
 
-    <style>
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
     }
 
-    @keyframes zoomIn {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
     }
 
-    .fade-in-up {
-        animation: fadeInUp 0.8s ease-out both;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
+}
 
-    .zoom-in {
-        animation: zoomIn 0.6s ease-out both;
-    }
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+}
 
-    .line-clamp-1 {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+.zoom-in {
+    animation: zoomIn 0.6s ease-out both;
+}
 
-    .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-    .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-    @media (max-width: 640px) {
-        .grid {
-            gap: 1rem;
-        }
-    }
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-    @media (min-width: 1024px) {
-        .max-w-7xl {
-            max-width: 80rem;
-        }
+@media (max-width: 640px) {
+    .grid {
+        gap: 1rem;
     }
-    </style>
+}
+
+@media (min-width: 1024px) {
+    .max-w-7xl {
+        max-width: 80rem;
+    }
+}
+</style>

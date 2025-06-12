@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex bg-gradient-to-br from-gray-50 to-gray-100 relative font-sans">
+  <div class="min-h-screen flex bg-gradient-to-br from-gray-50 to-gray-100 relative">
 
     <Sidebar :isOpen="isSidebarOpen" />
     <div v-if="isSidebarOpen" @click="isSidebarOpen = false"
@@ -352,7 +352,7 @@ export default {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
     getFullpath(img) {
-      return api.getFullpath(img);
+      return api.getFullpath(`uploads/${img}`);
     },
     setTodayDate() {
       const today = new Date();
