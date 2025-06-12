@@ -4,8 +4,8 @@
     
     
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-      <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full h-full object-cover opacity-5" />
-      <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full h-full object-cover opacity-5" />
+      <img src="/registrasi/hijau.webp" alt="" class="absolute top-0 left-0 w-full h-full object-cover opacity-5" />
+      <img src="/registrasi/biru.webp" alt="" class="absolute bottom-0 right-0 w-full h-full object-cover opacity-5" />
       
       <div class="hidden lg:block">
         <h1 class="absolute top-16 md:top-20 left-4 md:left-20 text-gray-600 opacity-5 text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold">REGIS</h1>
@@ -26,14 +26,14 @@
         
         <div class="flex flex-col items-center">
           <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Jersey Funrun</h3>
-          <img src="/registrasi/baju.png" alt="Baju Funrun"   
+          <img src="/registrasi/baju.webp" alt="Baju Funrun"   
                class="w-48 sm:w-60 md:w-72 rounded-lg shadow-md" />
         </div>
 
         
         <div class="flex flex-col items-center">
           <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Rute Lari</h3>
-          <img src="../assets/informasicabor/funrunvenue.png" alt="Map Rute Lari"   
+          <img src="../assets/informasicabor/funrunvenue.webp" alt="Map Rute Lari"   
                class="w-full max-w-md rounded-lg shadow-md border border-gray-200" />
           <div class="mt-4 text-center">
             <div class="bg-red-50 p-3 sm:p-4 rounded-lg border border-red-200">

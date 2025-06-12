@@ -439,7 +439,7 @@ export default {
         },
 
         getFullpath(img) {
-            return API.getFullpath(img);
+            return API.getFullpath(`uploads/${img}`);
         }
     }
 };

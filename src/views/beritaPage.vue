@@ -2,9 +2,9 @@
         <NavbarDashboard />
         <section class="bg-[#f7f7f7] min-h-screen pt-8 md:pt-10 fade-in-up font-sans">
             <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                <img src="/registrasi/hijau.png" alt=""
+                <img src="/registrasi/hijau.webp" alt=""
                     class="absolute top-0 left-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
-                <img src="/registrasi/biru.png" alt=""
+                <img src="/registrasi/biru.webp" alt=""
                     class="absolute bottom-0 right-0 w-full h-full sm:w-3/4 md:w-full opacity-5 object-cover" />
             </div>
             <div class="relative text-center mb-8 sm:mb-12 md:mb-16 px-4">
@@ -19,7 +19,7 @@
                     </h3>
                 </div>
                 <div class="relative z-20">
-                    <img src="/berita/api.png" alt="Api"
+                    <img src="/berita/api.webp" alt="Api"
                         class="mx-auto w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 mt-[-12px] sm:mt-[-14px] md:mt-[-16px] fade-in-up"
                         style="animation-delay: 0.3s" />
                 </div>
@@ -76,8 +76,8 @@
 
 
                 <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                    <div v-for="(item, index) in berita" :key="item.id"
-                        class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-xl group fade-in-up"
+                    <div v-for="(item, index) in berita" :key="item.id" @click="goToDetailBerita(item)" 
+                        class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-xl group fade-in-up hover:cursor-pointer"
                         :style="`animation-delay: ${index * 0.1 + 0.6}s`">
 
                         <div class="relative">
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="p-3 sm:p-4 space-y-2 sm:space-y-3">
-                            <h4
+                            <h4 
                                 class="font-bold text-base sm:text-lg text-gray-800 group-hover:text-red-600 transition-colors line-clamp-2">
                                 {{ item.judul }}
                             </h4>
@@ -239,12 +239,12 @@ export default {
         },
 
         getImageUrl(item) {
-            return api.getFullpath(`uploads/${item}`)
+            return api.getFullpath(`berita/${item}`)
         },
 
 
         handleImageError(event) {
-            event.target.src = '/berita/berita.jpg';
+            event.target.src = '/berita/berita.webp';
         },
 
         formatDate(dateString) {

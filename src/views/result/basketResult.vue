@@ -3,7 +3,7 @@
         <NavbarDashboard />
         <section class="relative py-8 md:py-16 px-4 bg-gradient-to-br from-orange-50 to-amber-50 overflow-hidden">
             <div class="absolute inset-0">
-                <img src="/jadwaldanhasil/basketball-bg.png" alt="Basketball Background" class="w-full h-full object-cover opacity-5" />
+                <img src="/jadwaldanhasil/basketball-bg.webp" alt="Basketball Background" class="w-full h-full object-cover opacity-5" />
             </div>
             <div class="max-w-7xl mx-auto z-10 relative">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-orange-800">Basketball Knockout Stage</h2>

@@ -3,8 +3,8 @@
   <section class="min-h-screen relative bg-[#F7F7F7] w-full overflow-hidden">
 
     <div class="absolute inset-0 z-0 pointer-events-none">
-      <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full h-auto opacity-80" />
-      <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full h-auto opacity-80" />
+      <img src="/registrasi/hijau.webp" alt="" class="absolute top-0 left-0 w-full h-auto opacity-80" />
+      <img src="/registrasi/biru.webp" alt="" class="absolute bottom-0 right-0 w-full h-auto opacity-80" />
 
       <div class="hidden lg:block">
         <h1 class="absolute top-16 xl:top-20 left-12 xl:left-20 text-gray-600 opacity-5 text-7xl xl:text-9xl font-bold">
@@ -42,7 +42,7 @@
                 <div class="relative">
                   <div
                     class="flex items-center bg-[#a60000] text-white px-3 sm:px-4 py-3 sm:py-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <img src="/registrasi/bunga.png" alt="Email Icon"
+                    <img src="/registrasi/bunga.webp" alt="Email Icon"
                       class="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
                     <input v-model="email" type="email" placeholder="Masukkan email Anda"
                       class="bg-transparent w-full focus:outline-none placeholder-white placeholder-opacity-80 text-sm sm:text-base"
@@ -58,7 +58,7 @@
                 <div class="relative">
                   <div
                     class="flex items-center bg-[#a60000] text-white px-3 sm:px-4 py-3 sm:py-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                    <img src="/registrasi/bunga.png" alt="Password Icon"
+                    <img src="/registrasi/bunga.webp" alt="Password Icon"
                       class="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0" />
                     <input v-model="password" type="password" placeholder="Masukkan password"
                       class="bg-transparent w-full focus:outline-none placeholder-white placeholder-opacity-80 text-sm sm:text-base"

@@ -5,7 +5,7 @@
         <!-- Tournament Bracket Section -->
         <section class="relative py-8 md:py-16 px-4 bg-[#f5f5ed] overflow-hidden">
             <div class="absolute inset-0">
-                <img src="/jadwaldanhasil/bg.png" alt="Background" class="w-full h-full object-cover opacity-5" />
+                <img src="/jadwaldanhasil/bg.webp" alt="Background" class="w-full h-full object-cover opacity-5" />
             </div>
             <div class="max-w-full mx-auto relative z-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-10 text-gray-800">

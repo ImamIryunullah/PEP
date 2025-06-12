@@ -34,7 +34,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <img src="../assets/logo-mini-olympic-2025.png" alt="Logo" class="h-8 sm:h-10 w-auto" />
+          <img src="../assets/logo-mini-olympic-2025.webp" alt="Logo" class="h-8 sm:h-10 w-auto" />
         </div>
         <nav
           class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-semibold tracking-wide uppercase">

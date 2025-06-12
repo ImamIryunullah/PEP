@@ -6,10 +6,10 @@
         
         <div class="absolute inset-0 z-0 pointer-events-none">
 
-        <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full opacity-5" />
+        <img src="/registrasi/hijau.webp" alt="" class="absolute top-0 left-0 w-full opacity-5" />
 
 
-        <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full opacity-5    " />
+        <img src="/registrasi/biru.webp" alt="" class="absolute bottom-0 right-0 w-full opacity-5    " />
         </div>
         <!-- Background Text -->
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -215,7 +215,7 @@
           
           <!-- Decorative Image -->
           <!-- <div class="mt-8 sm:mt-12 flex justify-center">
-            <img src="/bunga/hiasan2.png"
+            <img src="/bunga/hiasan2.webp"
               class="w-16 sm:w-20 md:w-24 lg:w-32 opacity-80 hover:opacity-100 transition-opacity duration-300" alt="Motif" />
           </div> -->
         </div>

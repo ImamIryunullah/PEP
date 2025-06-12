@@ -12,7 +12,7 @@
         <section class="relative z-10 flex items-center justify-center py-10 md:py-20 px-4">
             <div class="bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 max-w-6xl w-full transition hover:scale-105 duration-300"
                 v-intersect="'fade-slide-up'">
-                <img src="/addinfo/header.png" alt="header" class="w-full mb-4" />
+                <img src="/addinfo/header.webp" alt="header" class="w-full mb-4" />
                 <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 text-center">PEMBAGIAN HOTEL</h2>
                 <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mb-6 md:mb-8 text-center">MINI OLYMPIC PEP 2025</h3>
 
@@ -23,7 +23,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/arista.jpg" alt="Arista Hotel" 
+                                <img src="../assets/hotel/arista.webp" alt="Arista Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -40,7 +40,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/thezuri.jpg" alt="The Zuri Hotel" 
+                                <img src="../assets/hotel/thezuri.webp" alt="The Zuri Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -56,7 +56,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/harper.jpg" alt="Harper Hotel" 
+                                <img src="../assets/hotel/harper.webp" alt="Harper Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -73,7 +73,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/wyndham.jpg" alt="Wyndham Hotel" 
+                                <img src="../assets/hotel/wyndham.webp" alt="Wyndham Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -90,7 +90,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/aryaduta.jpg" alt="Aryaduta Hotel" 
+                                <img src="../assets/hotel/aryaduta.webp" alt="Aryaduta Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -107,7 +107,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/novotel.jpg" alt="Novotel Hotel" 
+                                <img src="../assets/hotel/novotel.webp" alt="Novotel Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -124,7 +124,7 @@
                         <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center">
                             
                             <div class="w-full h-32 mb-4 rounded-lg overflow-hidden">
-                                <img src="../assets/hotel/excelton.jpg" alt="Excelton Hotel" 
+                                <img src="../assets/hotel/excelton.webp" alt="Excelton Hotel" 
                                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                             </div>
                             <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -146,7 +146,7 @@
             </div>
             <div class="bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 max-w-5xl w-full transition hover:scale-105 duration-300"
                 v-intersect="'fade-slide-up'">
-                <img src="/addinfo/header.png" alt="header" class="w-full mb-4" />
+                <img src="/addinfo/header.webp" alt="header" class="w-full mb-4" />
                 <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">INFORMASI PENTING</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -210,11 +210,11 @@
         <section class="relative z-10 py-8 md:py-16">
             <div class="overflow-hidden whitespace-nowrap">
                 <div class="inline-block animate-marquee space-x-8 sm:space-x-12 md:space-x-24 px-4">
-                    <img src="/addinfo/asean.png" alt="Sponsor 1" class="inline h-12 sm:h-14 md:h-16 object-contain" />
-                    <img src="/addinfo/skkmigas.png" alt="Sponsor 2" class="inline h-12 sm:h-14 md:h-16 object-contain" />
-                    <img src="/addinfo/iog.png" alt="Sponsor 3" class="inline h-12 sm:h-14 md:h-16 object-contain" />
-                    <img src="/addinfo/pertaminaEP.png" alt="Sponsor 4" class="inline h-14 sm:h-16 md:h-20 object-contain" />
-                    <img src="/addinfo/pertamedika.png" alt="Sponsor 5" class="inline h-12 sm:h-14 md:h-16 object-contain" />
+                    <img src="/addinfo/asean.webp" alt="Sponsor 1" class="inline h-12 sm:h-14 md:h-16 object-contain" />
+                    <img src="/addinfo/skkmigas.webp" alt="Sponsor 2" class="inline h-12 sm:h-14 md:h-16 object-contain" />
+                    <img src="/addinfo/iog.webp" alt="Sponsor 3" class="inline h-12 sm:h-14 md:h-16 object-contain" />
+                    <img src="/addinfo/pertaminaEP.webp" alt="Sponsor 4" class="inline h-14 sm:h-16 md:h-20 object-contain" />
+                    <img src="/addinfo/pertamedika.webp" alt="Sponsor 5" class="inline h-12 sm:h-14 md:h-16 object-contain" />
                 </div>
             </div>
         </section>
@@ -227,7 +227,7 @@
             </div>
             <div class="bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-6 max-w-5xl w-full transition hover:scale-105 duration-300"
                 v-intersect="'fade-slide-up'">
-                <img src="/addinfo/header.png" alt="header" class="w-full mb-4" />
+                <img src="/addinfo/header.webp" alt="header" class="w-full mb-4" />
                 <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">FASILITAS HOTEL</h2>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">

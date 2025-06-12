@@ -260,7 +260,7 @@ export default {
             return content.replace(/\n/g, '<br>');
         },
         getImageUrl(foto) {
-            return API.getFullpath(`uploads/${foto}`)
+            return API.getFullpath(`berita/${foto}`)
         },
 
         handleImageError(event) {

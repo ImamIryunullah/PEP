@@ -352,7 +352,7 @@ export default {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
     getFullpath(img) {
-      return api.getFullpath(`uploads/${img}`);
+      return api.getFullpath(`berita/${img}`);
     },
     setTodayDate() {
       const today = new Date();

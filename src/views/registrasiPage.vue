@@ -3,8 +3,8 @@
         <NavbarDashboard />
         <section class="min-h-screen relative bg-[#F7F7F7] w-full overflow-hidden">
             <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="/registrasi/hijau.png" alt="" class="absolute top-0 left-0 w-full" />
-                <img src="/registrasi/biru.png" alt="" class="absolute bottom-0 right-0 w-full" />
+                <img src="/registrasi/hijau.webp" alt="" class="absolute top-0 left-0 w-full" />
+                <img src="/registrasi/biru.webp" alt="" class="absolute bottom-0 right-0 w-full" />
                 <h1 class="absolute top-20 left-20 text-gray-600 opacity-5 text-9xl font-bold">REGIS</h1>
                 <h1 class="absolute top-52 left-20 text-gray-600 opacity-5 text-9xl font-bold">TRASI</h1>
             </div>
@@ -22,7 +22,7 @@
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Email</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-msd">
-                                    <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                    <img src="/registrasi/bunga.webp" alt="Icon" class="w-5 h-5 mr-2" />
                                     <input type="email" placeholder="Email (harus valid)" v-model="form.email" required
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
                                 </div>
@@ -30,7 +30,7 @@
                             <div>
                                 <label class="block text-gray-700 font-medium mb-1">Password</label>
                                 <div class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
-                                    <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                    <img src="/registrasi/bunga.webp" alt="Icon" class="w-5 h-5 mr-2" />
                                     <input type="password" placeholder="Minimal 8 karakter" v-model="form.password"
                                         required minlength="8"
                                         class="bg-transparent w-full focus:outline-none placeholder-white" />
@@ -41,7 +41,7 @@
                                     <label class="block text-gray-700 font-medium mb-1">Aset</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                        <img src="/registrasi/bunga.webp" alt="Icon" class="w-5 h-5 mr-2" />
                                         <select v-model="form.aset" @change="onAssetChange" required
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
                                             <option disabled value="" class="bg-gray-800 text-white">Pilih Jenis Aset
@@ -64,7 +64,7 @@
                                     <label class="block text-gray-700 font-medium mb-1">Upload Foto</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                        <img src="/registrasi/bunga.webp" alt="Icon" class="w-5 h-5 mr-2" />
                                         <input type="file" @change="handleFileUpload" accept="image/*" required
                                             ref="fileInput"
                                             class="text-white file:bg-white file:text-[#a60000] file:rounded-full file:px-4 file:py-1 file:border-0 file:mr-2 bg-transparent w-full focus:outline-none" />
@@ -77,7 +77,7 @@
                                     <label class="block text-gray-700 font-medium mb-1">Lokasi</label>
                                     <div
                                         class="flex items-center bg-[#a60000] text-white px-4 py-3 rounded-lg shadow-md relative">
-                                        <img src="/registrasi/bunga.png" alt="Icon" class="w-5 h-5 mr-2" />
+                                        <img src="/registrasi/bunga.webp" alt="Icon" class="w-5 h-5 mr-2" />
                                         <select v-model="form.provinsi" required :disabled="!form.aset"
                                             class="bg-transparent w-full focus:outline-none text-white appearance-none">
                                             <option disabled value="" class="bg-gray-800 text-white">

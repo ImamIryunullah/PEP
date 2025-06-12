@@ -4,13 +4,13 @@
         <section
             class="min-h-[60vh] sm:min-h-screen relative bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15)_0%,_rgba(0,0,0,1)_45%)] overflow-hidden">
             
-            <img src="/listpeserta/atas.png" loading="lazy"
+            <img src="/listpeserta/atas.webp" loading="lazy"
                 class="absolute bottom-[60%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
                 alt="border1" />
-            <img src="/listpeserta/bawah.png" loading="lazy"
+            <img src="/listpeserta/bawah.webp" loading="lazy"
                 class="absolute bottom-[20%] right-0 w-[15%] sm:w-[20%] pointer-events-none hidden sm:block"
                 alt="border2" />
-            <img src="/listpeserta/awan.png" alt="Gambar bawah" loading="lazy"
+            <img src="/listpeserta/awan.webp" alt="Gambar bawah" loading="lazy"
                 class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-[15%] sm:h-[20%]" />
             
             <h1
@@ -26,16 +26,16 @@
                     Daftar peserta Fun Run
                 </p>
             </div>
-            <img src="/bunga/hiasan.png" alt="hiasan"
+            <img src="/bunga/hiasan.webp" alt="hiasan"
                 class="absolute bottom-[10%] sm:bottom-[20%] left-1/2 transform -translate-x-1/2 w-[100px] sm:w-[150px] py-6 sm:py-12 z-10" />
         </section>
 
         <section class="min-h-screen relative bg-[#F7F7F7] px-4 sm:px-6 lg:px-8 py-6 font-sans">
             
             <div class="absolute inset-0 z-0 pointer-events-none">
-                <img src="/registrasi/hijau.png" alt=""
+                <img src="/registrasi/hijau.webp" alt=""
                     class="absolute top-0 left-0 w-full opacity-5 hidden lg:block" />
-                <img src="/registrasi/biru.png" alt=""
+                <img src="/registrasi/biru.webp" alt=""
                     class="absolute bottom-0 right-0 w-full opacity-5 hidden lg:block" />
                 <h1
                     class="absolute top-10 sm:top-20 left-4 sm:left-20 text-gray-600 opacity-5 text-4xl sm:text-7xl lg:text-9xl font-black hidden sm:block">

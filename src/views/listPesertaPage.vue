@@ -370,7 +370,6 @@ export default {
                         wilayah_kerja: peserta.wilayah_kerja,
                         catatan: peserta.catatan,
                         aset: peserta.user.aset,
-                        media_sosial: peserta.media_sosial,
                         status: peserta.status || 'pending',
                         tanggalDaftar: new Date(peserta.created_at || Date.now()),
                         created_at: peserta.created_at,

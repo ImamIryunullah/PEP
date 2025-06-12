@@ -274,7 +274,7 @@
 
                                         <div class="text-sm text-gray-700 mb-3">
                                             <p><span class="font-medium">Cabang:</span> {{ participant.cabang_olahraga
-                                                }}</p>
+                                            }}</p>
                                             <p><span class="font-medium">Wilayah:</span> {{ participant.wilayah_kerja }}
                                             </p>
                                         </div>
